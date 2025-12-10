@@ -1,0 +1,307 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Acasă",
+          item: "https://moldovawebsite.md/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Politica de confidențialitate",
+          item: "https://moldovawebsite.md/politica-confidentialitate",
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      name: "Politica de confidențialitate",
+      url: "https://moldovawebsite.md/politica-confidentialitate",
+      inLanguage: "ro-MD",
+      about: { "@type": "Organization", name: "moldovawebsite.md" },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Politica de confidențialitate | moldovawebsite.md"
+      description="Află cum colectăm, folosim și protejăm datele tale personale. Politica de confidențialitate moldovawebsite.md – conformă cu GDPR."
+      canonicalUrl="https://moldovawebsite.md/politica-confidentialitate"
+      hreflangRo="https://moldovawebsite.md/politica-confidentialitate"
+      hreflangRu="https://moldovawebsite.md/ru/Политика-конфиденциальности"
+      jsonLd={jsonLd}
+    />
+    <style>
+      .legal-hero {
+        padding: 120px 0 40px;
+        background: var(--color-background);
+      }
+      .legal {
+        padding: var(--spacing-6) 0;
+      }
+      .legal h2 {
+        margin-top: var(--spacing-4);
+      }
+      .toc {
+        background: #fff;
+        border-radius: 12px;
+        padding: var(--spacing-3);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      }
+      .toc ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .toc li {
+        margin: 0.35rem 0;
+      }
+      .badge-date {
+        display: inline-block;
+        background: var(--color-background);
+        padding: 0.35rem 0.6rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+      }
+      .legal table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+      .legal th,
+      .legal td {
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 0.6rem 0.4rem;
+      }
+      .note {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <Header lang="ro" />
+
+    <!-- Hero -->
+    <section class="hero legal-hero">
+      <div class="container">
+        <h1>Politica de confidențialitate</h1>
+        <p class="subheading">
+          Cum colectăm, folosim și protejăm datele personale atunci când
+          utilizezi <strong>moldovawebsite.md</strong> (denumit în continuare „Site-ul").
+        </p>
+        <p class="badge-date">Ultima actualizare: 10 septembrie 2025</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
+      <ol
+        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
+      >
+        <li>
+          <a href="/" style="text-decoration: none; color: #0a2463">Acasă</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li><span aria-current="page">Politica de confidențialitate</span></li>
+      </ol>
+    </nav>
+
+    <!-- Content -->
+    <section class="legal">
+      <div class="container grid">
+        <aside class="toc" style="grid-column: span 4">
+          <h3>Cuprins</h3>
+          <ul>
+            <li><a href="#cine-suntem">1. Cine suntem</a></li>
+            <li><a href="#ce-date">2. Ce date colectăm</a></li>
+            <li><a href="#scopuri-baze">3. Scopuri & baze legale</a></li>
+            <li><a href="#cookies">4. Cookies & tehnologii similare</a></li>
+            <li><a href="#retentie">5. Păstrarea datelor</a></li>
+            <li><a href="#partajare">6. Partajarea datelor</a></li>
+            <li><a href="#transferuri">7. Transferuri internaționale</a></li>
+            <li><a href="#securitate">8. Securitate</a></li>
+            <li><a href="#drepturi">9. Drepturile tale</a></li>
+            <li><a href="#minori">10. Minori</a></li>
+            <li><a href="#modificari">11. Modificări ale politicii</a></li>
+            <li><a href="/contact">12. Contact</a></li>
+          </ul>
+        </aside>
+
+        <article style="grid-column: span 8">
+          <h2 id="cine-suntem">1. Cine suntem</h2>
+          <p>
+            <strong>Operator de date:</strong> moldovawebsite.md – str. Ioana Radu
+            27/2, Chișinău, Moldova. E-mail: <a
+              href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            >, Tel: <a href="tel:+37361211739">+373 61 211 739</a>.
+          </p>
+
+          <h2 id="ce-date">2. Ce date colectăm</h2>
+          <ul>
+            <li>
+              <strong>Date furnizate de tine</strong> – nume, e-mail, telefon, preferință
+              limbă, detalii proiect (prin formulare).
+            </li>
+            <li>
+              <strong>Date tehnice</strong> – IP anonim(izat), tip dispozitiv, browser,
+              pagini vizitate, timpi de răspuns.
+            </li>
+            <li>
+              <strong>Cookies/trackere</strong> – necesare, analiză (ex. GA4), preferințe.
+              Vezi secțiunea cookie.
+            </li>
+          </ul>
+
+          <h2 id="scopuri-baze">3. Scopuri & baze legale</h2>
+          <table aria-label="Scopuri și temeiuri legale">
+            <thead>
+              <tr><th>Scop</th><th>Baza legală</th><th>Exemple</th></tr>
+            </thead>
+            <tbody>
+              <tr
+                ><td>Răspuns la cereri/ofertare</td><td
+                  >Art. 6(1)(b) – executarea unui contract; Art. 6(1)(f) –
+                  interes legitim</td
+                ><td>Contactare prin e-mail/telefon</td></tr
+              >
+              <tr
+                ><td>Administrarea site-ului & securitate</td><td
+                  >Art. 6(1)(f) – interes legitim</td
+                ><td>Logs, prevenire spam/abuz</td></tr
+              >
+              <tr
+                ><td>Analiză trafic & îmbunătățiri</td><td
+                  >Art. 6(1)(a) – consimțământ (unde este cazul)</td
+                ><td>Google Analytics 4, heatmaps</td></tr
+              >
+              <tr
+                ><td>Marketing direct</td><td
+                  >Art. 6(1)(a) – consimțământ / Art. 6(1)(f) – interes legitim
+                  (clienți existenți)</td
+                ><td>Follow-up ofertă, noutăți</td></tr
+              >
+            </tbody>
+          </table>
+
+          <h2 id="cookies">4. Cookies & tehnologii similare</h2>
+          <p>
+            Folosim cookie-uri pentru funcționarea site-ului, analiză și
+            preferințe. La prima vizită poți alege ce categorii permiți.
+          </p>
+          <table aria-label="Categorii cookie">
+            <thead>
+              <tr><th>Categorie</th><th>Scop</th><th>Exemplu durată</th></tr>
+            </thead>
+            <tbody>
+              <tr
+                ><td>Necesare</td><td>Funcționare, securitate, anti-spam</td><td
+                  >până la 12 luni</td
+                ></tr
+              >
+              <tr
+                ><td>Analiză</td><td>Măsurarea traficului & performanței</td><td
+                  >până la 24 luni</td
+                ></tr
+              >
+              <tr
+                ><td>Preferințe</td><td>Limba selectată, opțiuni UI</td><td
+                  >până la 12 luni</td
+                ></tr
+              >
+            </tbody>
+          </table>
+          <p class="note">
+            Poți șterge sau bloca cookie-uri din setările browser-ului. Unele
+            funcții pot fi afectate.
+          </p>
+
+          <h2 id="retentie">5. Păstrarea datelor</h2>
+          <p>
+            Păstrăm datele cât este necesar pentru scopurile colectării, conform
+            cerințelor legale aplicabile. Exemple: date de ofertare – până la 24
+            luni; date contractuale/facturare – conform legislației fiscale.
+          </p>
+
+          <h2 id="partajare">6. Partajarea datelor</h2>
+          <p>
+            Putem partaja date către furnizori care ne ajută să operăm
+            serviciile (găzduire, e-mail, analiză trafic, anti-spam), în baza
+            unor acorduri și obligații de confidențialitate. Nu vindem datele
+            tale.
+          </p>
+
+          <h2 id="transferuri">7. Transferuri internaționale</h2>
+          <p>
+            Dacă furnizorii noștri procesează date în afara țării, folosim
+            garanții adecvate (de ex., clauze contractuale standard).
+          </p>
+
+          <h2 id="securitate">8. Securitate</h2>
+          <p>
+            Aplicăm măsuri tehnice și organizatorice: HTTPS/SSL, minimizarea
+            accesului, actualizări regulate, protecție anti-spam (ex.
+            Turnstile).
+          </p>
+
+          <h2 id="drepturi">9. Drepturile tale</h2>
+          <ul>
+            <li>
+              Acces la date, rectificare, ștergere („dreptul de a fi uitat")
+            </li>
+            <li>Restricționare sau opoziție la prelucrare</li>
+            <li>Portabilitatea datelor</li>
+            <li>Retragerea consimțământului oricând</li>
+            <li>Plângere la autoritatea competentă</li>
+          </ul>
+          <p>
+            Pentru exercitarea drepturilor, scrie la <a
+              href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            >. Vom răspunde, de regulă, în 30 de zile.
+          </p>
+
+          <h2 id="minori">10. Minori</h2>
+          <p>
+            Serviciile noastre nu se adresează persoanelor sub 16 ani. Nu
+            colectăm cu bună știință date despre minori.
+          </p>
+
+          <h2 id="modificari">11. Modificări ale politicii</h2>
+          <p>
+            Putem actualiza această politică periodic. Versiunea curentă este
+            publicată pe această pagină.
+          </p>
+
+          <h2 id="contact">12. Contact</h2>
+          <p>
+            <strong>moldovawebsite.md</strong> – str. Ioana Radu 27/2, Chișinău, Moldova<br
+            />
+            E-mail: <a href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            > · Tel: <a href="tel:+37361211739">+373 61 211 739</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

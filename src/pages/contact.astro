@@ -1,0 +1,316 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_URL } from "../consts";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      name: "Contact",
+      url: "https://moldovawebsite.md/contact",
+      inLanguage: "ro-MD",
+      about: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Contact – Creare site web ieftin în Moldova"
+      description="Contactează-ne pentru o ofertă gratuită: web design accesibil în Chișinău și toată Moldova. Răspundem rapid, în română sau rusă."
+      canonicalUrl="https://moldovawebsite.md/contact"
+      hreflangRo="https://moldovawebsite.md/contact"
+      hreflangRu="https://moldovawebsite.md/ru/Контакты"
+      image="/assets/og-image-contact.png"
+      jsonLd={jsonLd}
+    />
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer
+    ></script>
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg-poster.webp" type="image/webp" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Contact Hero -->
+    <section class="hero contact-hero" id="contact-hero">
+      <div class="container">
+        <div
+          class="form-header"
+          style="max-width: 860px; margin: 0 auto 1.25rem"
+        >
+          <h1 style="color: #fff">Contactează-ne – răspundem rapid</h1>
+          <p style="color: #fff; opacity: 0.92">
+            Contactează-ne si spune pe scurt ce ai nevoie. Răspundem în aceeași
+            zi lucrătoare.
+          </p>
+        </div>
+
+        <div class="contact-wrap">
+          <!-- Form -->
+          <form
+            class="form-card"
+            id="contactForm"
+            method="post"
+            action="/api/contact"
+            novalidate
+          >
+            <div class="field">
+              <input
+                class="input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder=" "
+                required
+                aria-describedby="nameHelp"
+              />
+              <label class="label" for="name">Nume și prenume *</label>
+            </div>
+
+            <div class="field">
+              <input
+                class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                required
+                aria-describedby="emailHelp"
+              />
+              <label class="label" for="email">Email *</label>
+              <div id="emailHelp" class="help">Ex.: nume@domeniu.md</div>
+            </div>
+
+            <div class="field">
+              <input
+                class="input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder=" "
+                inputmode="tel"
+                pattern="^[0-9+\s()-]{6,}$"
+                aria-describedby="phoneHelp"
+              />
+              <label class="label" for="phone">Telefon (opțional)</label>
+              <div id="phoneHelp" class="help">Ex.: +373 6xx xxx xx</div>
+            </div>
+
+            <div class="field">
+              <input
+                class="input"
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder=" "
+                required
+                aria-describedby="subjectHelp"
+              />
+              <label class="label" for="subject">Subiect *</label>
+              <div id="subjectHelp" class="help">
+                Ex.: "Site de prezentare pentru cafenea în Chișinău"
+              </div>
+            </div>
+
+            <!-- Project Type Chips -->
+            <div class="field">
+              <div class="help" style="margin-bottom: 0.35rem">Tip proiect</div>
+              <div
+                class="chip-group"
+                role="radiogroup"
+                aria-label="Tip proiect"
+              >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="true"
+                  data-value="Site de prezentare">Site de prezentare</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Magazin online">Magazin online</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Landing page">Landing page</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Redesign">Redesign</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Altceva">Altceva</button
+                >
+              </div>
+              <input
+                type="hidden"
+                name="project_type"
+                id="project_type"
+                value="Site de prezentare"
+              />
+            </div>
+
+            <!-- Budget -->
+            <div class="field">
+              <div class="help" style="margin-bottom: 0.35rem">
+                Buget estimativ (EUR)
+              </div>
+              <div class="range-wrap">
+                <input
+                  class="range"
+                  type="range"
+                  id="budget"
+                  name="budget"
+                  min="50"
+                  max="2000"
+                  step="50"
+                  value="300"
+                />
+                <span class="badge" id="budgetBadge">€300</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <textarea
+                class="textarea"
+                id="message"
+                name="message"
+                placeholder=" "
+                required
+                aria-describedby="messageHelp"></textarea>
+              <label class="label" for="message">Mesaj *</label>
+              <div id="messageHelp" class="help">
+                Detalii utile: pagini, funcții, exemple, termene.
+              </div>
+            </div>
+
+            <!-- Language -->
+            <div class="field">
+              <select
+                class="select"
+                id="lang"
+                name="lang"
+                aria-label="Preferință limbă"
+              >
+                <option value="RO" selected>Română</option>
+                <option value="RU">Rusă</option>
+              </select>
+            </div>
+
+            <!-- Consent + Turnstile -->
+            <div class="form-row">
+              <div class="field" style="margin: 0">
+                <label
+                  style="display: flex; gap: 0.6rem; align-items: flex-start; cursor: pointer;"
+                >
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    id="consent"
+                    required
+                    style="margin-top: 0.25rem"
+                  />
+                  <span
+                    >Sunt de acord cu prelucrarea datelor conform politicii GDPR
+                    și doresc să fiu contactat.</span
+                  >
+                </label>
+              </div>
+
+              <div class="field" style="margin: 0">
+                <div
+                  class="cf-turnstile"
+                  data-sitekey="0x4AAAAAAB0f_L28X_bHlrIA"
+                  data-theme="auto"
+                >
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit" id="submitBtn">
+                <span class="btn-label">Trimite mesajul</span>
+              </button>
+              <span class="status" id="formStatus" aria-live="polite"></span>
+            </div>
+          </form>
+
+          <!-- Contact Info / Extras -->
+          <aside class="info-card">
+            <h2 style="margin-bottom: 0.75rem">Date de contact</h2>
+            <ul class="info-list">
+              <li>
+                <strong>Adresă:</strong> str. Ioana Radu 27/2, Chișinău, MD
+              </li>
+              <li>
+                <strong>Telefon:</strong>
+                <a href="tel:+37361211739">+373 61 211 739</a>
+              </li>
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:contact@moldovawebsite.md"
+                  >contact@moldovawebsite.md</a>
+              </li>
+              <li><strong>Program:</strong> L–V 09:00–18:00</li>
+            </ul>
+            <hr
+              style="margin: 1rem 0; border: none; height: 1px; background: rgba(0,0,0,0.08);"
+            />
+            <p class="help">
+              Preferi WhatsApp? Scrie-ne direct – răspundem rapid.
+            </p>
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/37361211739"
+              target="_blank"
+              rel="noopener">Deschide WhatsApp</a
+            >
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

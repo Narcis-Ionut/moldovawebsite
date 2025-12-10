@@ -1,0 +1,468 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "SEO On-Page în Moldova | Optimizare Site pentru Google",
+  description:
+    "Servicii profesionale de SEO on-page în Moldova: optimizare tehnică, meta taguri, conținut local, structură site și îmbunătățire viteza încărcare. Soluții pentru afaceri din Chișinău și Moldova.",
+  url: "https://moldovawebsite.md/serviciiBlog/seo-on-page",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "moldovawebsite.md",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chișinău",
+      addressCountry: "MD",
+    },
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Acasă",
+        item: "https://moldovawebsite.md/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Servicii",
+        item: "https://moldovawebsite.md/serviciiBlog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "SEO On-Page",
+        item: "https://moldovawebsite.md/serviciiBlog/seo-on-page",
+      },
+    ],
+  },
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="SEO On-Page în Moldova"
+      description="Servicii profesionale de SEO on-page în Moldova: optimizare tehnică, meta taguri, conținut local, structură site și îmbunătățire viteza încărcare. Soluții pentru afaceri din Chișinău și toată țara."
+      canonicalUrl="https://moldovawebsite.md/serviciiBlog/seo-on-page"
+      hreflangRo="https://moldovawebsite.md/serviciiBlog/seo-on-page"
+      hreflangRu="https://moldovawebsite.md/serviciiBlog/seo-оптимизация"
+      ogType="article"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body class="page--lighttext">
+    <!-- Full-page background -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster-serviciiB.png"
+      >
+        <source src="/assets/bg-poster-serviciiB.png" type="image/png" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>
+            SEO On-Page în Moldova — Optimizare Site pentru Vizibilitate în
+            Google
+          </h1>
+          <p class="subheading">
+            Servicii profesionale de optimizare on-page pentru site-uri web din
+            Moldova, adaptate pentru <strong>căutări locale</strong> și creșterea
+            traficului organic din Chișinău și toată țara.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary"
+              >Solicită ofertă gratuită</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>De ce este esențial SEO on-page pentru afacerea ta</h2>
+          <p>
+            Optimizarea on-page îmbunătățește vizibilitatea site-ului tău pentru
+            clienții potențiali.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Vizibilitate în căutările locale din Moldova</h3>
+            <p>
+              Majoritatea clienților caută afaceri și servicii online înainte de
+              a face o achiziție:
+            </p>
+            <ul>
+              <li>
+                Peste 80% din consumatorii din Moldova folosesc Google pentru a
+                găsi afaceri locale
+              </li>
+              <li>93% din experiențele online încep cu un motor de căutare</li>
+              <li>
+                75% din utilizatori nu trec niciodată de prima pagină de
+                rezultate
+              </li>
+              <li>
+                Primele 3 rezultate primesc peste 60% din toate click-urile
+              </li>
+            </ul>
+            <p>
+              Optimizarea SEO on-page este esențială pentru a apărea în aceste
+              rezultate valoroase pentru căutări relevante în Moldova și
+              Chișinău.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/seo-on-page-1.png"
+              alt="Optimizare pentru căutări locale în Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid reverse">
+          <div class="content-block">
+            <h3>Trafic organic de calitate, fără costuri continue</h3>
+            <p>
+              Spre deosebire de publicitatea plătită, SEO generează rezultate pe
+              termen lung:
+            </p>
+            <ul>
+              <li>Trafic constant fără a plăti pentru fiecare click</li>
+              <li>
+                Vizitatori deja interesați de produsele sau serviciile tale
+              </li>
+              <li>
+                Credibilitate și încredere crescută (rezultatele organice sunt
+                mai de încredere)
+              </li>
+              <li>Avantaj competitiv față de concurenții neoptimizați</li>
+            </ul>
+            <p>
+              Investiția în SEO on-page are unul dintre cele mai bune ROI-uri în
+              marketing digital, cu efecte ce durează mult timp.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/seo-on-page-2.png"
+              alt="Trafic organic pentru afaceri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Experiență utilizator îmbunătățită</h3>
+            <p>
+              SEO on-page nu înseamnă doar optimizare pentru motoarele de
+              căutare:
+            </p>
+            <ul>
+              <li>
+                Site-uri care se încarcă mai rapid (factor important de ranking)
+              </li>
+              <li>Structură logică și ușor de navigat</li>
+              <li>Conținut relevant și bine organizat</li>
+              <li>Experiență optimizată pe dispozitive mobile</li>
+            </ul>
+            <p>
+              Toate aceste îmbunătățiri cresc nu doar vizibilitatea în Google,
+              ci și rata de conversie și satisfacția utilizatorilor.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/seo-on-page-3.png"
+              alt="Experiență utilizator îmbunătățită pentru site-uri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum optimizăm site-ul tău pentru motoarele de căutare</h2>
+          <p>
+            Proces structurat pentru SEO on-page eficient, adaptat pentru piața
+            din Moldova.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Audit SEO complet</h3>
+            <p class="step-desc">
+              Analizăm starea actuală a site-ului, identificăm probleme și
+              oportunități de optimizare.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Cercetare cuvinte cheie</h3>
+            <p class="step-desc">
+              Identificăm termenii relevanți căutați de potențialii clienți din
+              Moldova pentru afacerea ta.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Implementare optimizări</h3>
+            <p class="step-desc">
+              Aplicăm modificările tehnice și de conținut necesare pentru a
+              îmbunătăți vizibilitatea.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Monitorizare și raportare</h3>
+            <p class="step-desc">
+              Urmărim rezultatele, ajustăm strategia și oferim rapoarte clare
+              despre evoluție.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ce include serviciul nostru de SEO on-page</h2>
+          <p>Optimizare completă pentru vizibilitate organică în Moldova.</p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3 class="service-title">Optimizare meta taguri</h3>
+            <p class="service-desc">
+              Title, description și headings optimizate pentru cuvinte cheie
+              relevante.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Optimizare mobile</h3>
+            <p class="service-desc">
+              Adaptare pentru experiență perfectă pe dispozitive mobile
+              (Mobile-First Index).
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3 class="service-title">Optimizare viteză</h3>
+            <p class="service-desc">
+              Îmbunătățirea timpilor de încărcare și a Core Web Vitals (LCP,
+              CLS, FID).
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📋</div>
+            <h3 class="service-title">Structură și arhitectură</h3>
+            <p class="service-desc">
+              Organizare logică a conținutului, URL-uri prietenoase și navigare
+              optimizată.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📄</div>
+            <h3 class="service-title">Optimizare conținut</h3>
+            <p class="service-desc">
+              Îmbunătățirea textelor existente și recomandări pentru conținut
+              nou.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3 class="service-title">Schema markup</h3>
+            <p class="service-desc">
+              Implementare JSON-LD pentru rich snippets și vizibilitate
+              îmbunătățită.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="pricing">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pachete SEO on-page pentru afaceri din Moldova</h2>
+          <p>Soluții adaptate nevoilor și bugetului tău.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card card1">
+            <h3>Pachet Basic</h3>
+            <div class="price">de la 50 EUR</div>
+            <ul>
+              <li>Audit SEO tehnic</li>
+              <li>Optimizare meta taguri (10 pagini)</li>
+              <li>Optimizare viteză de bază</li>
+              <li>Configurare Google Search Console</li>
+              <li>Raport inițial de optimizare</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary">Solicită ofertă</a>
+          </div>
+
+          <div class="price-card card2 featured">
+            <div class="popular-tag">Popular</div>
+            <h3>Pachet Business</h3>
+            <div class="price">de la 150 EUR</div>
+            <ul>
+              <li>Audit SEO complet</li>
+              <li>Cercetare cuvinte cheie locală</li>
+              <li>Optimizare meta taguri (30 pagini)</li>
+              <li>Optimizare conținut existent</li>
+              <li>Optimizare viteză avansată</li>
+              <li>Implementare Schema Markup</li>
+              <li>Raport detaliat și recomandări</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary">Solicită ofertă</a>
+          </div>
+
+          <div class="price-card card3">
+            <h3>Pachet Premium</h3>
+            <div class="price">de la 300 EUR</div>
+            <ul>
+              <li>Toate serviciile din pachetul Business</li>
+              <li>Analiză competitori detaliată</li>
+              <li>Optimizare conținut pentru toate paginile</li>
+              <li>Creare conținut nou optimizat (3 pagini)</li>
+              <li>Implementare avansată Schema Markup</li>
+              <li>Optimizare locală pentru Chișinău/Moldova</li>
+              <li>Suport SEO 30 zile post-implementare</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary">Solicită ofertă</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente despre SEO on-page</h2>
+          <p>
+            Răspunsuri la cele mai comune întrebări despre optimizarea pentru
+            motoarele de căutare.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary
+              >Cât durează până vedem rezultate după optimizarea SEO?</summary
+            >
+            <p>
+              Optimizarea SEO on-page este o strategie pe termen mediu și lung.
+              Primele îmbunătățiri tehnice pot fi vizibile în 2-4 săptămâni (de
+              exemplu, viteză mai bună, indexare, corectarea erorilor). Pentru
+              creșteri semnificative în clasamente și trafic organic, procesul
+              durează în general 3-6 luni, în funcție de competitivitatea
+              domeniului și starea inițială a site-ului. Rezultatele continuă să
+              se îmbunătățească în timp.
+            </p>
+          </details>
+          <details>
+            <summary>Ce diferențiază SEO on-page de SEO off-page?</summary>
+            <p>
+              SEO on-page se referă la toate optimizările care se fac direct pe
+              site-ul tău: structură, meta taguri, conținut, viteză, experiență
+              utilizator, etc. SEO off-page include activitățile din afara
+              site-ului, precum construirea de link-uri, prezența pe rețele
+              sociale, mențiuni în directoare și alte tactici de creștere a
+              autorității domeniului. Ambele componente sunt importante pentru o
+              strategie SEO completă, dar on-page este fundația esențială.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Cum adaptați strategia SEO pentru piața din Moldova?</summary
+            >
+            <p>
+              Pentru afacerile din Moldova, adaptăm strategia SEO pentru
+              specificul local prin: cercetare de cuvinte cheie în română și
+              rusă specifice pieței locale, optimizare pentru termeni geografici
+              relevanți (Chișinău, Moldova, Bălți, etc.), configurarea corectă a
+              targetării geografice în Google Search Console, implementarea
+              Schema Markup cu informații locale, și optimizare pentru Google
+              Business Profile. Aceste tactici ajută afacerea ta să fie vizibilă
+              pentru căutările relevante din Moldova.
+            </p>
+          </details>
+          <details>
+            <summary>SEO on-page este o investiție unică sau continuă?</summary>
+            <p>
+              Deși optimizarea SEO on-page poate începe ca un proiect unic
+              pentru a corecta problemele fundamentale, pentru rezultate optime
+              recomandăm o abordare continuă. Algoritmii Google se schimbă
+              constant, competitorii își îmbunătățesc strategiile, iar site-ul
+              tău evoluează cu conținut nou. O monitorizare periodică și
+              ajustări regulate asigură menținerea și îmbunătățirea poziționării
+              în timp. Oferim atât proiecte unice de optimizare, cât și pachete
+              lunare de mentenanță SEO.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Pregătit să-ți crești vizibilitatea online în Moldova?</h2>
+          <p class="subheading">
+            Solicită un audit SEO gratuit și află cum putem optimiza site-ul tău
+            pentru mai mulți clienți.
+          </p>
+          <a href="/contact" class="btn btn-primary">Solicită ofertă gratuită</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

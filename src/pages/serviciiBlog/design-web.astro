@@ -1,0 +1,376 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Design Web Profesional în Moldova | Interfețe Moderne",
+  description:
+    "Servicii de design web în Moldova cu focus pe experiența utilizatorului (UX), interfețe moderne și optimizare pentru conversii. Soluții pentru afaceri din Chișinău și Moldova.",
+  url: "https://moldovawebsite.md/serviciiBlog/design-web",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "moldovawebsite.md",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chișinău",
+      addressCountry: "MD",
+    },
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Acasă",
+        item: "https://moldovawebsite.md/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Servicii",
+        item: "https://moldovawebsite.md/serviciiBlog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Design Web",
+        item: "https://moldovawebsite.md/serviciiBlog/design-web",
+      },
+    ],
+  },
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Design Web Profesional în Moldova"
+      description="Servicii de design web în Moldova cu focus pe experiența utilizatorului (UX), interfețe moderne și optimizare pentru conversii. Soluții accesibile pentru afaceri mici din Chișinău și întreaga țară."
+      canonicalUrl="https://moldovawebsite.md/serviciiBlog/design-web"
+      hreflangRo="https://moldovawebsite.md/serviciiBlog/design-web"
+      hreflangRu="https://moldovawebsite.md/serviciiBlog/дизайн-веb"
+      ogType="article"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body class="page--lighttext">
+    <!-- Full-page background -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster-serviciiB.png"
+      >
+        <source src="/assets/bg-poster-serviciiB.png" type="image/png" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>
+            Design Web Profesional în Moldova — Interfețe care atrag și
+            convertesc
+          </h1>
+          <p class="subheading">
+            Creăm designuri web atractive și funcționale, optimizate pentru
+            utilizatorii din <strong>Moldova</strong>, cu focus pe conversii și
+            experiență plăcută pe toate dispozitivele.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary"
+              >Solicită ofertă gratuită</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ce înseamnă un design web de calitate pentru afacerea ta</h2>
+          <p>
+            Un design web profesional este mai mult decât aspect estetic — este
+            cheia succesului online.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Prima impresie contează</h3>
+            <p>
+              Știai că vizitatorii își formează o părere despre site-ul tău în
+              primele 50 de milisecunde? Un design modern și profesional inspiră
+              încredere și crește credibilitatea afacerii tale în ochii
+              potențialilor clienți din Chișinău și întreaga Moldova.
+            </p>
+            <p>
+              Abordarea noastră combină principiile designului modern cu
+              necesitățile specifice ale publicului local, creând interfețe
+              atractive și familiare pentru utilizatorii din Moldova.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/design-web-1.png"
+              alt="Design web profesional pentru afaceri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid reverse">
+          <div class="content-block">
+            <h3>Experiența utilizatorului (UX) este prioritară</h3>
+            <p>
+              Un site frumos dar dificil de utilizat nu va aduce rezultate.
+              Punem accentul pe:
+            </p>
+            <ul>
+              <li>Navigare intuitivă și simplă</li>
+              <li>Structură logică a informației</li>
+              <li>Timpi de încărcare rapizi (sub 3 secunde)</li>
+              <li>Elemente interactive plasate strategic</li>
+              <li>Formulare simple și eficiente</li>
+            </ul>
+            <p>
+              Rezultatul? Vizitatori care găsesc ușor informația dorită și
+              convertesc in clienți.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/design-web-2.png"
+              alt="Experiența utilizatorului optimizată pentru site-uri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Design adaptat tuturor dispozitivelor (Responsive)</h3>
+            <p>
+              În Moldova, peste 65% din traficul web provine de pe dispozitive
+              mobile. Fiecare design pe care îl creăm este optimizat pentru
+              toate dimensiunile de ecran:
+            </p>
+            <ul>
+              <li>Telefoane mobile (toate dimensiunile)</li>
+              <li>Tablete</li>
+              <li>Laptopuri și desktopuri</li>
+            </ul>
+            <p>
+              Site-ul tău va arăta și va funcționa perfect indiferent de
+              dispozitivul folosit de client.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/design-web-3.png"
+              alt="Design responsive pentru toate dispozitivele"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum creăm designul site-ului tău</h2>
+          <p>
+            Proces simplu și eficient, cu focus pe rezultate concrete pentru
+            afacerea ta.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Analiză și cercetare</h3>
+            <p class="step-desc">
+              Studiem domeniul tău de activitate, competiția și nevoile
+              specifice ale clienților din Moldova.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Wireframe și structură</h3>
+            <p class="step-desc">
+              Creăm schița site-ului cu toate elementele importante, înainte de
+              design vizual.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Design vizual</h3>
+            <p class="step-desc">
+              Adăugăm culorile, imaginile și elementele grafice conform
+              identității tale vizuale.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Feedback și ajustări</h3>
+            <p class="step-desc">
+              Îți prezentăm designul, colectăm feedback și facem modificările
+              necesare.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ce include serviciul nostru de design web</h2>
+          <p>Soluții complete pentru o prezență online de succes în Moldova.</p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3 class="service-title">Design personalizat</h3>
+            <p class="service-desc">
+              Nu folosim șabloane generice. Fiecare design este creat special
+              pentru afacerea ta.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Responsive Design</h3>
+            <p class="service-desc">
+              Adaptare perfectă la toate dispozitivele, de la telefoane la
+              desktopuri.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🖼️</div>
+            <h3 class="service-title">Selecție imagini</h3>
+            <p class="service-desc">
+              Alegerea imaginilor potrivite care reflectă identitatea afacerii
+              tale.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3 class="service-title">Optimizare UX/UI</h3>
+            <p class="service-desc">
+              Interfețe intuitive care ghidează vizitatorii spre conversii.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3 class="service-title">Testare utilizabilitate</h3>
+            <p class="service-desc">
+              Verificăm că site-ul este ușor de folosit pentru utilizatorii din
+              Moldova.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3 class="service-title">Optimizare viteză</h3>
+            <p class="service-desc">
+              Design care se încarcă rapid și funcționează eficient.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente despre design web</h2>
+          <p>
+            Răspunsuri la cele mai comune întrebări despre serviciile noastre de
+            design.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary
+              >Cât durează crearea unui design web pentru afaceri din Moldova?</summary
+            >
+            <p>
+              În general, procesul de design durează între 7-14 zile lucrătoare,
+              în funcție de complexitatea proiectului. Pentru magazine online
+              sau site-uri mai complexe, timpul poate fi mai lung.
+            </p>
+          </details>
+          <details>
+            <summary
+              >De ce aveți nevoie pentru a începe procesul de design?</summary
+            >
+            <p>
+              Pentru a începe eficient, avem nevoie de: logo-ul afacerii (dacă
+              există), paletă de culori preferată, exemple de site-uri care vă
+              plac, conținut text principal și imagini (dacă le aveți deja).
+            </p>
+          </details>
+          <details>
+            <summary>Pot face modificări la design după ce îl văd?</summary>
+            <p>
+              Absolut! Procesul nostru include o etapă de feedback unde puteți
+              solicita ajustări. Pachetul standard include două runde de
+              revizuiri pentru a ne asigura că designul final corespunde
+              așteptărilor dumneavoastră.
+            </p>
+          </details>
+          <details>
+            <summary>Ce se întâmplă după finalizarea designului?</summary>
+            <p>
+              După aprobarea designului, trecem la etapa de dezvoltare, unde
+              transformăm designul static într-un site web funcțional. Putem
+              gestiona întregul proces sau vă putem livra fișierele de design
+              dacă preferați să lucrați cu propria echipă de dezvoltare.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Pregătit pentru un design web care atrage clienți?</h2>
+          <p class="subheading">
+            Solicită o consultație gratuită și află cum putem transforma
+            prezența ta online.
+          </p>
+          <a href="/contact" class="btn btn-primary">Solicită ofertă gratuită</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

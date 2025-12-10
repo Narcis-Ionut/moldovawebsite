@@ -1,47 +1,136 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
+import { GA_TRACKING_ID, SITE_URL } from "../consts";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
+  canonicalUrl?: string;
+  lang?: string;
+  hreflangRo?: string;
+  hreflangRu?: string;
+  ogType?: string;
+  ogLocale?: string;
+  noindex?: boolean;
+  jsonLd?: object | object[];
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = Astro.props.canonicalUrl
+  ? new URL(Astro.props.canonicalUrl, SITE_URL)
+  : new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const {
+  title,
+  description,
+  image = "/assets/og-image.png",
+  lang = "ro",
+  hreflangRo,
+  hreflangRu,
+  ogType = "website",
+  ogLocale = "ro_MD",
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const fullImageUrl = new URL(image, SITE_URL).toString();
 ---
 
-<!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+></script>
+<script define:vars={{ GA_TRACKING_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", GA_TRACKING_ID);
+</script>
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<!-- Global Metadata -->
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#0A2463" />
+
+<!-- Language / geo -->
+<meta http-equiv="content-language" content={`${lang}-MD`} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- hreflang tags for language variants -->
+{hreflangRo && <link rel="alternate" hreflang="ro-MD" href={hreflangRo} />}
+{hreflangRu && <link rel="alternate" hreflang="ru-MD" href={hreflangRu} />}
+{hreflangRo && <link rel="alternate" hreflang="x-default" href={hreflangRo} />}
+
+<!-- Robots -->
+{
+  noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <meta name="robots" content="index, follow" />
+  )
+}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Favicons -->
+<link
+  rel="icon"
+  type="image/png"
+  href="/assets/favicon-96x96.png"
+  sizes="96x96"
+/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="shortcut icon" href="/assets/favicon.ico" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/apple-touch-icon.png"
+/>
+<meta name="apple-mobile-web-app-title" content="moldovawebsite.md" />
+<link rel="manifest" href="/assets/site.webmanifest" />
+
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content="moldovawebsite.md" />
+<meta property="og:image" content={fullImageUrl} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImageUrl} />
+
+<!-- JSON-LD Structured Data -->
+{
+  jsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  )
+}

@@ -1,0 +1,457 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_URL } from "../consts";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Acasă",
+          item: "https://moldovawebsite.md/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Prețuri",
+          item: "https://moldovawebsite.md/preturi",
+        },
+      ],
+    },
+    {
+      "@type": "OfferCatalog",
+      name: "Pachete creare site web - Moldova",
+      url: "https://moldovawebsite.md/preturi",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Basic",
+          url: "https://moldovawebsite.md/preturi#pachet-basic",
+          price: "50",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          itemOffered: {
+            "@type": "Service",
+            name: "Landing page (1 pagină)",
+            areaServed: { "@type": "Country", name: "Moldova" },
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Standard",
+          url: "https://moldovawebsite.md/preturi#pachet-standard",
+          price: "150",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          itemOffered: {
+            "@type": "Service",
+            name: "Site de prezentare (până la 5 pagini)",
+            areaServed: { "@type": "Country", name: "Moldova" },
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Pro",
+          url: "https://moldovawebsite.md/preturi#pachet-pro",
+          price: "300",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          itemOffered: {
+            "@type": "Service",
+            name: "Site avansat / mini-magazin",
+            areaServed: { "@type": "Country", name: "Moldova" },
+          },
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Pot plăti în MDL sau în două tranșe?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru pachetele Standard/Pro acceptăm și plata în două tranșe (50% avans, 50% la livrare).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Ce include SEO on-page?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Meta-taguri, structură corectă (H1–H3), optimizare viteză, schema JSON-LD și configurări de bază pentru indexare.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Domeniul și găzduirea sunt incluse?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nu. Îți recomandăm opțiuni potrivite bugetului și te ajutăm cu configurarea (DNS, SSL, e-mailuri).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "După lansare, pot modifica singur conținutul?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da, pachetele Standard/Pro includ CMS. Oferim și ghid + training (în Pro).",
+          },
+        },
+      ],
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Prețuri creare site web în Moldova"
+      description="Alege pachetul potrivit: Basic 50€, Standard 150€, Pro 300€. Creare site web ieftin și web design accesibil în Chișinău și toată Moldova: site de prezentare, magazin online, SEO on-page, mentenanță."
+      canonicalUrl="https://moldovawebsite.md/preturi"
+      hreflangRo="https://moldovawebsite.md/preturi"
+      hreflangRu="https://moldovawebsite.md/ru/Цены"
+      image="/assets/og-image-preturi.png"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero / Page Title -->
+    <section class="hero" id="preturi-hero">
+      <div class="container grid">
+        <div class="hero-content backplate">
+          <h1>Prețuri & Pachete – Creare site web în Moldova</h1>
+          <p class="subheading">
+            Alege pachetul potrivit pentru bugetul tău:
+            <strong>Basic 50€</strong>, <strong>Standard 150€</strong>, <strong
+              >Pro 300€</strong
+            >. Web design accesibil în Chișinău și toată Moldova.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary">Cere ofertă gratuită</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Prețuri transparente &amp; termene rapide</li>
+            <li>SEO on-page inclus, orientat pe Moldova</li>
+            <li>Suport în română &amp; rusă</li>
+          </ul>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-bg-shape"></div>
+          <div class="hero-device">
+            <svg
+              viewBox="0 0 500 300"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Ilustrație pachete preț"
+            >
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#0A2463"></stop>
+                  <stop offset="100%" stop-color="#63B3ED"></stop>
+                </linearGradient>
+                <clipPath id="screenClip">
+                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
+                </clipPath>
+              </defs>
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="url(#gradient)"></rect>
+              <image
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                href="/assets/bg-poster-prices.png"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#screenClip)"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="#000"
+                opacity="0.12"
+                clip-path="url(#screenClip)"></rect>
+              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
+              ></circle>
+              <rect
+                x="150"
+                y="145"
+                height="10"
+                width="200"
+                fill="white"
+                opacity="0.6"></rect>
+              <rect
+                x="180"
+                y="167"
+                height="6"
+                width="140"
+                fill="white"
+                opacity="0.4"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
+      <ol
+        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
+      >
+        <li>
+          <a href="/" style="text-decoration: none; color: #0a2463">Acasă</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li><span aria-current="page">Prețuri</span></li>
+      </ol>
+    </nav>
+
+    <!-- Pricing Cards -->
+    <section class="pricing" id="preturi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pachete și prețuri</h2>
+          <p>
+            Alege varianta potrivită pentru Creare website <strong
+              >afaceri mici</strong
+            > sau proiecte personale.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Basic 50€ -->
+          <article
+            class="price-card card1"
+            id="pachet-basic"
+            aria-labelledby="titlu-basic"
+          >
+            <h3 id="titlu-basic">Basic – 50€</h3>
+            <p style="opacity: 0.85; margin-bottom: 0.75rem">
+              Landing page (1 pagină) – soluția rapidă și ieftină
+            </p>
+            <ul>
+              <li>Design responsiv mobil/tabletă</li>
+              <li>Formular de contact, hartă Google</li>
+              <li>SSL, optimizare viteză de bază</li>
+              <li>SEO on-page de bază (Titlu, Meta, H1-H3)</li>
+              <li>1 revizuire inclusă</li>
+              <li>Livrare: 2–3 zile lucrătoare</li>
+            </ul>
+            <p style="font-size: 0.9rem; opacity: 0.8">
+              * Domeniu & găzduire nu sunt incluse. Te putem ajuta cu setarea.
+            </p>
+            <a
+              href="/contact"
+              class="btn btn-primary"
+              aria-label="Solicită oferta pentru pachetul Basic 50 euro"
+              >Solicită ofertă</a
+            >
+          </article>
+
+          <!-- Standard 150€ -->
+          <article
+            class="price-card card2"
+            id="pachet-standard"
+            aria-labelledby="titlu-standard"
+          >
+            <h3 id="titlu-standard">Standard – 150€</h3>
+            <p style="opacity: 0.85; margin-bottom: 0.75rem">
+              Site de prezentare (până la 5 pagini) + setup esențial
+            </p>
+            <ul>
+              <li>Design modern & UX orientat pe conversie</li>
+              <li>CMS ușor (administrare conținut)</li>
+              <li>SEO on-page extins + schema JSON-LD</li>
+              <li>Configurare GA4 & Search Console</li>
+              <li>2–3 revizuiri incluse</li>
+              <li>Livrare: 7–10 zile lucrătoare</li>
+            </ul>
+            <p style="font-size: 0.9rem; opacity: 0.8">
+              * Ideal pentru afaceri locale care vor vizibilitate în căutări.
+            </p>
+            <a
+              href="/contact"
+              class="btn btn-primary"
+              aria-label="Solicită oferta pentru pachetul Standard 150 euro"
+              >Solicită ofertă</a
+            >
+          </article>
+
+          <!-- Pro 300€ -->
+          <article
+            class="price-card card3"
+            id="pachet-pro"
+            aria-labelledby="titlu-pro"
+          >
+            <h3 id="titlu-pro">Pro – 300€</h3>
+            <p style="opacity: 0.85; margin-bottom: 0.75rem">
+              Site avansat (până la 12 pagini) sau mini-magazin
+            </p>
+            <ul>
+              <li>Design personalizat + componente premium</li>
+              <li>Mini-magazin (până la 10 produse), coș, livrare & plăți</li>
+              <li>SEO avansat (structură, viteză, rich results)</li>
+              <li>RO + RU (multi-language) – opțional</li>
+              <li>5 revizuiri incluse + training 1 oră</li>
+              <li>Livrare: 10–14 zile lucrătoare</li>
+            </ul>
+            <p style="font-size: 0.9rem; opacity: 0.8">
+              * Include 1 lună mentenanță de bază post-lansare.
+            </p>
+            <a
+              href="/contact"
+              class="btn btn-primary"
+              aria-label="Solicită oferta pentru pachetul Pro 300 euro"
+              >Solicită ofertă</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add-ons -->
+    <section class="services" id="adaugiri">
+      <div class="container grid">
+        <div class="section-title">
+          <h2>Adăugiri opționale</h2>
+          <p>Extinde pachetul ales, când ai nevoie.</p>
+        </div>
+
+        <div class="service-card" aria-labelledby="addon-logo">
+          <h3 id="addon-logo" class="service-title">
+            Logo & identitate vizuală
+          </h3>
+          <p class="service-desc">
+            De la 30€ – variantă principală + kit pentru web.
+          </p>
+        </div>
+
+        <div class="service-card" aria-labelledby="addon-copy">
+          <h3 id="addon-copy" class="service-title">Copywriting SEO</h3>
+          <p class="service-desc">
+            De la 10€/pagină – texte optimizate pentru RO/RU.
+          </p>
+        </div>
+
+        <div class="service-card" aria-labelledby="addon-multilang">
+          <h3 id="addon-multilang" class="service-title">
+            Multi-language RO/RU
+          </h3>
+          <p class="service-desc">De la 30€ – pagini traduse + switcher.</p>
+        </div>
+
+        <div class="service-card" aria-labelledby="addon-mentenanta">
+          <h3 id="addon-mentenanta" class="service-title">Mentenanță</h3>
+          <p class="service-desc">
+            De la 25€/lună – actualizări, securitate, backup.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente</h2>
+          <p>Detalii practice despre pachetele de preț.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Pot plăti în MDL sau în două tranșe?</summary>
+            <p>
+              Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru
+              pachetele Standard/Pro acceptăm și plata în două tranșe (50%
+              avans, 50% la livrare).
+            </p>
+          </details>
+
+          <details>
+            <summary>Ce include SEO on-page?</summary>
+            <p>
+              Meta-taguri, structură corectă pe pagină (H1–H3), optimizare
+              viteză, schema JSON-LD (acolo unde e relevant) și configurări de
+              bază pentru indexare.
+            </p>
+          </details>
+
+          <details>
+            <summary>Domeniul și găzduirea sunt incluse?</summary>
+            <p>
+              Nu. Îți recomandăm variante potrivite bugetului și te ajutăm la
+              configurare (DNS, SSL, e-mailuri).
+            </p>
+          </details>
+
+          <details>
+            <summary>După lansare, pot modifica singur conținutul?</summary>
+            <p>
+              Da, pachetele Standard/Pro includ CMS (administrare conținut).
+              Oferim și un mic ghid + training (în Pro).
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Ai găsit pachetul potrivit?</h2>
+          <p class="subheading">
+            Trimite-ne pe scurt obiectivele tale și îți răspundem cu o ofertă
+            personalizată.
+          </p>
+          <a href="/contact" class="btn btn-primary">Contactează-ne</a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

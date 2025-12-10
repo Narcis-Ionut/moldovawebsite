@@ -1,0 +1,299 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Acasă",
+          item: "https://moldovawebsite.md/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Termeni și condiții",
+          item: "https://moldovawebsite.md/termeni",
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      name: "Termeni și condiții",
+      url: "https://moldovawebsite.md/termeni",
+      inLanguage: "ro-MD",
+      about: { "@type": "Organization", name: "moldovawebsite.md" },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Termeni și condiții | moldovawebsite.md"
+      description="Termenii și condițiile de utilizare ale site-ului și serviciilor moldovawebsite.md: comenzi, plăți, proprietate intelectuală, garanții, responsabilitate."
+      canonicalUrl="https://moldovawebsite.md/termeni"
+      hreflangRo="https://moldovawebsite.md/termeni"
+      hreflangRu="https://moldovawebsite.md/ru/Условия"
+      jsonLd={jsonLd}
+    />
+    <style>
+      .legal-hero {
+        padding: 120px 0 40px;
+        background: var(--color-background);
+      }
+      .legal {
+        padding: var(--spacing-6) 0;
+      }
+      .legal h2 {
+        margin-top: var(--spacing-4);
+      }
+      .toc {
+        background: #fff;
+        border-radius: 12px;
+        padding: var(--spacing-3);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+      }
+      .toc ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .toc li {
+        margin: 0.35rem 0;
+      }
+      .badge-date {
+        display: inline-block;
+        background: var(--color-background);
+        padding: 0.35rem 0.6rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+      }
+      .note {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <Header lang="ro" />
+
+    <!-- Hero -->
+    <section class="hero legal-hero">
+      <div class="container">
+        <h1>Termeni și condiții</h1>
+        <p class="subheading">
+          Regulile care guvernează utilizarea Site-ului și furnizarea
+          serviciilor noastre de creare site-uri web.
+        </p>
+        <p class="badge-date">Ultima actualizare: 10 septembrie 2025</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
+      <ol
+        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
+      >
+        <li>
+          <a href="/" style="text-decoration: none; color: #0a2463">Acasă</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li><span aria-current="page">Termeni și condiții</span></li>
+      </ol>
+    </nav>
+
+    <!-- Content -->
+    <section class="legal">
+      <div class="container grid">
+        <aside class="toc" style="grid-column: span 4">
+          <h3>Cuprins</h3>
+          <ul>
+            <li><a href="#acceptare">1. Acceptarea termenilor</a></li>
+            <li><a href="#servicii">2. Servicii & oferte</a></li>
+            <li><a href="#preturi-plati">3. Prețuri, plăți & facturare</a></li>
+            <li><a href="#continut">4. Conținutul furnizat de client</a></li>
+            <li>
+              <a href="#drepturi-ip">5. Drepturi de proprietate intelectuală</a>
+            </li>
+            <li><a href="#revizuiri">6. Revizuiri & aprobare</a></li>
+            <li><a href="#termen-livrare">7. Termene de livrare</a></li>
+            <li><a href="#garantii">8. Garanții & limitări</a></li>
+            <li><a href="#responsabilitate">9. Limitarea răspunderii</a></li>
+            <li>
+              <a href="/politica-confidentialitate"
+                >10. Confidențialitate & date personale</a>
+            </li>
+            <li><a href="#resiliere">11. Reziliere & anulări</a></li>
+            <li><a href="#forta-majora">12. Forță majoră</a></li>
+            <li><a href="#lege">13. Legea aplicabilă & litigii</a></li>
+            <li><a href="#modificari">14. Modificări ale termenilor</a></li>
+            <li><a href="/contact">15. Contact</a></li>
+          </ul>
+        </aside>
+
+        <article style="grid-column: span 8">
+          <h2 id="acceptare">1. Acceptarea termenilor</h2>
+          <p>
+            Accesând Site-ul sau comandând servicii de la <strong
+              >moldovawebsite.md</strong
+            >, confirmi că ai citit și accepți acești Termeni și orice politici
+            conexe (ex. Politica de confidențialitate).
+          </p>
+
+          <h2 id="servicii">2. Servicii & oferte</h2>
+          <p>
+            Oferim servicii de design și dezvoltare web, SEO on-page și
+            mentenanță. Ofertele noastre pot fi personalizate; o ofertă devine
+            fermă după confirmarea scrisă și, unde este cazul, plata avansului.
+          </p>
+
+          <h2 id="preturi-plati">3. Prețuri, plăți & facturare</h2>
+          <ul>
+            <li>
+              Prețurile afișate (ex. 50€/150€/300€) sunt orientative și pot
+              varia în funcție de cerințe.
+            </li>
+            <li>
+              Plata se poate face în EUR sau echivalent MDL. Pentru proiecte
+              Standard/Pro, de regulă: 50% avans, 50% la livrare.
+            </li>
+            <li>
+              Serviciile terțe (domeniu, găzduire, licențe) se facturează
+              separat, dacă nu se prevede altfel.
+            </li>
+          </ul>
+
+          <h2 id="continut">4. Conținutul furnizat de client</h2>
+          <p>
+            Clientul garantează că deține drepturile necesare pentru toate
+            materialele trimise (texte, imagini, logo, video) și că acestea nu
+            încalcă drepturile altor persoane. Clientul este responsabil de
+            acuratețea informațiilor publicate.
+          </p>
+
+          <h2 id="drepturi-ip">5. Drepturi de proprietate intelectuală</h2>
+          <ul>
+            <li>
+              După plata integrală, clientul primește o licență de utilizare
+              asupra livrabilelor finale ale proiectului, conform scopului
+              agreat.
+            </li>
+            <li>
+              Componentele terțe (teme, fonturi, pluginuri) sunt supuse
+              licențelor lor proprii.
+            </li>
+            <li>
+              Ne rezervăm dreptul de a menționa proiectul în portofoliu, cu
+              excepția cazului în care clientul solicită contrariul în scris.
+            </li>
+          </ul>
+
+          <h2 id="revizuiri">6. Revizuiri & aprobare</h2>
+          <p>
+            Pachetele includ un număr de revizuiri specific (ex. 1 pentru Basic,
+            2–3 pentru Standard, 5 pentru Pro). Revizuirile suplimentare sau
+            schimbările majore de direcție pot implica costuri extra. Lansarea
+            are loc după aprobarea finală a clientului.
+          </p>
+
+          <h2 id="termen-livrare">7. Termene de livrare</h2>
+          <p>
+            Termenele estimative (ex. 2–3 zile, 7–10 zile, 10–14 zile) depind de
+            complexitate și promptitudinea feedback-ului și materialelor
+            furnizate de client.
+          </p>
+
+          <h2 id="garantii">8. Garanții & limitări</h2>
+          <ul>
+            <li>
+              Garantăm funcționalitatea livrată conform specificațiilor agreate,
+              pe browsere/sisteme moderne suportate.
+            </li>
+            <li>
+              Nu garantăm poziții specifice în motoarele de căutare; SEO on-page
+              îmbunătățește șansele, însă rezultatele depind de mulți factori
+              externi.
+            </li>
+            <li>
+              Performanța (ex. scor Lighthouse) poate varia în timp în funcție
+              de conținut, găzduire și modificări ulterioare.
+            </li>
+          </ul>
+
+          <h2 id="responsabilitate">9. Limitarea răspunderii</h2>
+          <p>
+            Răspunderea noastră totală pentru orice pretenție se limitează la
+            valoarea sumei plătite pentru serviciul care a generat pretenția. Nu
+            răspundem pentru pierderi indirecte (ex. pierdere de profit, date,
+            oportunități), în măsura permisă de lege.
+          </p>
+
+          <h2 id="confidentialitate">10. Confidențialitate & date personale</h2>
+          <p>
+            Prelucrăm datele personale în conformitate cu Politica de
+            confidențialitate. Părțile păstrează confidențiale informațiile
+            comerciale primite în cadrul colaborării.
+          </p>
+
+          <h2 id="resiliere">11. Reziliere & anulări</h2>
+          <ul>
+            <li>
+              Clientul poate renunța oricând; serviciile prestate până la acel
+              moment rămân datorate.
+            </li>
+            <li>
+              Putem suspenda/înceta serviciile în caz de nerespectare a
+              termenilor sau neplată.
+            </li>
+          </ul>
+
+          <h2 id="forta-majora">12. Forță majoră</h2>
+          <p>
+            Nicio parte nu răspunde pentru neexecutare dacă este cauzată de
+            evenimente de forță majoră (conform legii), cu notificarea
+            celeilalte părți.
+          </p>
+
+          <h2 id="lege">13. Legea aplicabilă & litigii</h2>
+          <p>
+            Prezentul document este guvernat de legea Republicii Moldova.
+            Litigiile se soluționează pe cale amiabilă sau, în lipsa unui acord,
+            de instanțele competente din Chișinău.
+          </p>
+
+          <h2 id="modificari">14. Modificări ale termenilor</h2>
+          <p>
+            Putem actualiza acești Termeni periodic; versiunea în vigoare este
+            publicată pe această pagină.
+          </p>
+
+          <h2 id="contact">15. Contact</h2>
+          <p>
+            <strong>moldovawebsite.md</strong> – str. Ioana Radu 27/2, Chișinău, Moldova<br
+            />
+            E-mail: <a href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            > · Tel: <a href="tel:+37361211739">+373 61 211 739</a>
+          </p>
+
+          <p class="note">
+            Dacă orice prevedere este considerată nulă/inaplicabilă, restul
+            termenilor rămân valabili.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

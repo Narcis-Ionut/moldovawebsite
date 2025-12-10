@@ -1,50 +1,498 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../consts";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "moldovawebsite.md",
+      url: "https://moldovawebsite.md/",
+      inLanguage: "ro-MD",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://moldovawebsite.md/cauta?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      name: "moldovawebsite.md",
+      description:
+        "Creare site web ieftin în Moldova, web design accesibil în Chișinău: site de prezentare, magazin online, SEO on-page, mentenanță.",
+      areaServed: { "@type": "Country", name: "Moldova" },
+      url: "https://moldovawebsite.md/",
+      email: "contact@moldovawebsite.md",
+      telephone: "+37361211739",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "str. Ioana Radu 27/2",
+        addressLocality: "Chișinău",
+        addressCountry: "MD",
+      },
+      sameAs: ["https://www.facebook.com/", "https://www.linkedin.com/"],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Pot obține un site web ieftin fără să sacrific calitatea?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Folosim componente optimizate și un proces eficient pentru a livra rapid un site modern, la preț accesibil.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Lucrați în Chișinău și în toată Moldova?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Oferim servicii locale în Chișinău și colaborăm online cu clienți din toată Moldova.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Includeți SEO on-page?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Setăm meta-taguri, structură corectă, viteza paginilor și schema JSON-LD pentru vizibilitate mai bună în căutări.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Faceți și magazine online?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Implementăm magazine online cu catalog, coș, plăți și livrare, optimizate pentru conversie.",
+          },
+        },
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Creare site web ieftin în Moldova | Web design accesibil Chișinău"
+      description={SITE_DESCRIPTION}
+      hreflangRo="https://moldovawebsite.md/"
+      hreflangRu="https://moldovawebsite.md/ru/Главная"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>
+            Creare site web ieftin în Moldova – web design accesibil pentru
+            afaceri mici
+          </h1>
+          <p class="subheading">
+            Site-uri moderne și rapide (Lighthouse 95+) care aduc clienți.
+            Servicii locale în Chișinău și toată Moldova:
+            <strong>site de prezentare</strong>,
+            <strong>magazin online</strong>, <strong>SEO on-page</strong> și
+            <strong>mentenanță</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary"
+              >Solicită ofertă gratuită</a
+            >
+          </div>
+          <ul class="hero-bullets">
+            <li>Prețuri accesibile &amp; soluții scalabile</li>
+            <li>Implementare rapidă + optimizare SEO tehnică</li>
+            <li>Suport local în limba română &amp; rusă</li>
+          </ul>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-bg-shape"></div>
+          <div class="hero-device">
+            <svg
+              viewBox="0 0 500 300"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              role="img"
+              aria-label="Ilustrație web modernă"
+            >
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#0A2463"></stop>
+                  <stop offset="100%" stop-color="#63B3ED"></stop>
+                </linearGradient>
+                <clipPath id="screenClip">
+                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
+                </clipPath>
+              </defs>
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="url(#gradient)"></rect>
+              <image
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                href="/assets/hero-screen.png"
+                xlink:href="/assets/hero-screen.png"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#screenClip)"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="#000"
+                opacity="0.12"
+                clip-path="url(#screenClip)"></rect>
+              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
+              ></circle>
+              <rect
+                x="150"
+                y="145"
+                height="10"
+                width="200"
+                fill="white"
+                opacity="0.6"></rect>
+              <rect
+                x="180"
+                y="167"
+                height="6"
+                width="140"
+                fill="white"
+                opacity="0.4"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition / Services -->
+    <section class="services" id="servicii">
+      <div class="container grid">
+        <div class="section-title">
+          <h2>
+            Servicii de creare site ieftin & web design accesibil în Moldova
+          </h2>
+          <p>
+            Soluții complete pentru <strong>afaceri mici</strong> și persoane fizice
+            – de la idee la lansare.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3 class="service-title">Design modern & UX</h3>
+          <p class="service-desc">
+            Interfețe curate, ușor de folosit, care cresc conversiile și
+            încrederea.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3 class="service-title">Performanță & viteză</h3>
+          <p class="service-desc">
+            Optimizare tehnică (LCP/CLS), caching și bune practici pentru timpi
+            de încărcare rapizi.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3 class="service-title">SEO on-page pentru Moldova</h3>
+          <p class="service-desc">
+            Structură corectă, meta-taguri, scheme JSON-LD și conținut localizat
+            (Chișinău, MD).
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛒</div>
+          <h3 class="service-title">Magazin online accesibil</h3>
+          <p class="service-desc">
+            Implementare ecommerce cu plăți, livrare și catalog – fără costuri
+            exagerate.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-title">Mentenanță & suport local</h3>
+          <p class="service-desc">
+            Actualizări, securitate și asistență în română & rusă, când ai
+            nevoie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+      <div class="container">
+        <div class="section-title">
+          <h2>
+            De încredere pentru afaceri locale din Chișinău și toată Moldova
+          </h2>
+          <p>
+            Recomandări reale de la clienți care au ales soluții <em
+              >accesibile</em
+            >, nu ieftine la întâmplare.
+          </p>
+        </div>
+
+        <div class="grid" id="portofoliu">
+          <div class="testimonial">
+            <p class="testimonial-content">
+              După lansarea noului site, primim cu 40% mai multe cereri lunar.
+              Echipa a lucrat rapid, clar și la un preț accesibil.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Ion Popescu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Ne-am mărit vânzările cu 35% în primele trei luni după lansarea
+              magazinului online. Platforma este ușor de administrat chiar și
+              pentru noi care nu avem experiență tehnică.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Maria Cojocaru</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Apreciez foarte mult optimizările SEO implementate. Acum apărem în
+              primele rezultate pentru căutări locale în Chișinău, iar traficul
+              organic a crescut semnificativ fără investiții în publicitate.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Andrei Rusu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Un aspect esențial pentru noi a fost adaptarea site-ului pentru
+              dispozitive mobile. Acum 70% din clienții noștri ne accesează de
+              pe telefon, iar experiența este impecabilă. Recomand cu încredere!
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Elena Munteanu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing / Preturi -->
+    <section class="pricing" id="preturi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Prețuri transparente pentru afaceri mici</h2>
+          <p>
+            Alege soluția potrivită: <strong>site de prezentare</strong>, <strong
+              >landing page</strong
+            >, <strong>magazin online</strong>.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card card1">
+            <h3>Site de prezentare</h3>
+            <ul>
+              <li>Design modern + 5 pagini</li>
+              <li>Optimizare SEO on-page</li>
+              <li>Formular de contact & hărți</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary">Solicită ofertă</a>
+          </div>
+
+          <div class="price-card card2">
+            <h3>Magazin online</h3>
+            <ul>
+              <li>Catalog produse + coș</li>
+              <li>Metode de plată & livrare</li>
+              <li>SEO tehnic & structură</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary">Solicită ofertă</a>
+          </div>
+
+          <div class="price-card card3">
+            <h3>SEO & mentenanță</h3>
+            <ul>
+              <li>Actualizări & securitate</li>
+              <li>Optimizări conținut & viteză</li>
+              <li>Raportare lunară</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary">Solicită ofertă</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum lucrăm – simplu și transparent</h2>
+          <p>
+            Proces clar de la consultație gratuită la lansare + SEO on-page.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Consultație gratuită</h3>
+            <p class="step-desc">
+              Stabilim obiectivele, bugetul și tipul de site (prezentare,
+              magazin online).
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Design</h3>
+            <p class="step-desc">
+              Propuneri vizuale & wireframe-uri centrate pe conversie.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Dezvoltare</h3>
+            <p class="step-desc">
+              Implementăm rapid, cu bune practici de performanță & securitate.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Lansare & SEO</h3>
+            <p class="step-desc">
+              Publicăm site-ul, configurăm SEO on-page și oferim suport.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente</h2>
+          <p>Răspunsuri rapide pentru alegeri informate.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary
+              >Pot obține un site web ieftin fără să sacrific calitatea?</summary
+            >
+            <p>
+              Da. Folosim componente optimizate și un proces eficient, astfel
+              încât să livrezi rapid un site modern, la preț accesibil.
+            </p>
+          </details>
+
+          <details>
+            <summary>Lucrați în Chișinău și în toată Moldova?</summary>
+            <p>
+              Da. Oferim servicii locale în Chișinău și colaborăm online cu
+              clienți din toată Moldova.
+            </p>
+          </details>
+
+          <details>
+            <summary>Includeți SEO on-page?</summary>
+            <p>
+              Da. Setăm meta-taguri, structură corectă, viteza paginilor și
+              schema JSON-LD pentru vizibilitate mai bună în căutări.
+            </p>
+          </details>
+
+          <details>
+            <summary>Faceți și magazine online?</summary>
+            <p>
+              Da. Implementăm magazine online cu catalog, coș, plăți și livrare,
+              optimizate pentru conversie.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Vrei un site web la preț accesibil în Moldova?</h2>
+          <p class="subheading">
+            Spune-ne pe scurt ce îți dorești și îți trimitem o ofertă gratuită.
+          </p>
+          <a href="/contact" class="btn btn-primary">Solicită ofertă gratuită</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
 </html>

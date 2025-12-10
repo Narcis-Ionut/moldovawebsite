@@ -1,0 +1,25 @@
+# robots.txt for moldovawebsite.md
+# Allow all search engines and AI tools to index content
+
+User-agent: *
+Allow: /
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GrokBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://moldovawebsite.md/sitemap.xml

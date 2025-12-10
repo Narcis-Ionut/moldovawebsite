@@ -1,0 +1,394 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Dezvoltare Web Profesională în Moldova | Programare Site",
+  description:
+    "Servicii de dezvoltare web în Moldova: site-uri de prezentare, magazine online, aplicații personalizate și integrări API. Soluții tehnice pentru afaceri din Chișinău și Moldova.",
+  url: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "moldovawebsite.md",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chișinău",
+      addressCountry: "MD",
+    },
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Acasă",
+        item: "https://moldovawebsite.md/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Servicii",
+        item: "https://moldovawebsite.md/serviciiBlog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Dezvoltare Web",
+        item: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web",
+      },
+    ],
+  },
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Dezvoltare Web Profesională în Moldova"
+      description="Servicii de dezvoltare web în Moldova: site-uri de prezentare, magazine online, aplicații personalizate și integrări API. Soluții tehnice accesibile pentru afaceri mici din Chișinău și toată țara."
+      canonicalUrl="https://moldovawebsite.md/serviciiBlog/dezvoltare-web"
+      hreflangRo="https://moldovawebsite.md/serviciiBlog/dezvoltare-web"
+      hreflangRu="https://moldovawebsite.md/serviciiBlog/веб-разработка"
+      ogType="article"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body class="page--lighttext">
+    <!-- Full-page background -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster-serviciiB.png"
+      >
+        <source src="/assets/bg-poster-serviciiB.png" type="image/png" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>
+            Dezvoltare Web Profesională în Moldova — Site-uri Funcționale și
+            Eficiente
+          </h1>
+          <p class="subheading">
+            Transformăm designul în cod funcțional, cu soluții tehnice moderne
+            și <strong>optimizate pentru viteză</strong>, adaptate afacerilor
+            din Moldova și Chișinău.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary"
+              >Solicită ofertă gratuită</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>De ce este importantă dezvoltarea web pentru afacerea ta</h2>
+          <p>
+            Dincolo de aspect, codul de calitate asigură funcționalitatea și
+            performanța site-ului tău.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Fundația tehnică pentru succesul online</h3>
+            <p>
+              Un site web bine dezvoltat este ca o mașină cu un motor puternic
+              sub capotă: chiar dacă nu se vede, face toată diferența în
+              performanță. Codul de calitate Profesională asigură:
+            </p>
+            <ul>
+              <li>Încărcare rapidă a paginilor (sub 3 secunde)</li>
+              <li>Funcționalitate fără erori pe toate browserele</li>
+              <li>Securitate împotriva atacurilor comune</li>
+              <li>Stabilitate în condiții de trafic crescut</li>
+            </ul>
+            <p>
+              Toate acestea contribuie direct la experiența vizitatorilor din
+              Moldova și la rata de conversie.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/dezvoltare-web-1.png"
+              alt="Dezvoltare web pentru afaceri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid reverse">
+          <div class="content-block">
+            <h3>Tehnologii moderne pentru afaceri în creștere</h3>
+            <p>
+              Utilizăm tehnologii funcționale moderne dar stabile, care asigură
+              că site-ul tău:
+            </p>
+            <ul>
+              <li>Se încarcă rapid chiar și pe conexiuni mai lente</li>
+              <li>Este ușor de actualizat și întreținut</li>
+              <li>Poate fi extins cu funcționalități noi în viitor</li>
+              <li>Este optimizat pentru motoarele de căutare</li>
+            </ul>
+            <p>
+              Indiferent dacă ai nevoie de un site simplu de prezentare sau un
+              magazin online complex, codul de bază trebuie să fie solid și bine
+              structurat.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/dezvoltare-web-2.png"
+              alt="Tehnologii web moderne pentru site-uri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Adaptabilitate și scalabilitate</h3>
+            <p>
+              Afacerea ta va crește, iar site-ul trebuie să crească odată cu ea.
+              Dezvoltăm site-uri:
+            </p>
+            <ul>
+              <li>Modulare, care pot fi extinse ușor</li>
+              <li>Cu sisteme de administrare intuitive</li>
+              <li>Optimizate pentru trafic în creștere</li>
+              <li>
+                Cu posibilitatea de integrare cu alte sisteme (CRM, ERP, etc.)
+              </li>
+            </ul>
+            <p>
+              Astfel, investiția inițială este protejată pe termen lung, fără a
+              fi nevoie să reconstruiești site-ul de la zero când afacerea
+              crește.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/dezvoltare-web-3.png"
+              alt="Soluții web scalabile pentru companii din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum dezvoltăm site-ul tău</h2>
+          <p>
+            Proces tehnic structurat, cu focus pe calitate și rezultate
+            durabile.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Planificare tehnică</h3>
+            <p class="step-desc">
+              Definim arhitectura, tehnologiile și funcționalitățile necesare
+              pentru a atinge obiectivele tale.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Dezvoltare front-end</h3>
+            <p class="step-desc">
+              Transformăm designul în cod HTML, CSS și JavaScript performant și
+              responsive.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Dezvoltare back-end</h3>
+            <p class="step-desc">
+              Implementăm funcționalitățile complexe, baza de date și sistemul
+              de administrare.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Testare și optimizare</h3>
+            <p class="step-desc">
+              Verificăm funcționalitatea, securitatea și performanța pe toate
+              dispozitivele și browserele.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ce include serviciul nostru de dezvoltare web</h2>
+          <p>
+            Soluții tehnice complete pentru o prezență online robustă în
+            Moldova.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3 class="service-title">Site-uri de prezentare</h3>
+            <p class="service-desc">
+              Soluții simple dar eficiente pentru a prezenta afacerea ta online.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h3 class="service-title">Magazine online</h3>
+            <p class="service-desc">
+              Platforme e-commerce complete cu catalog, coș, plăți și livrare.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Aplicații web responsive</h3>
+            <p class="service-desc">
+              Aplicații complexe care funcționează perfect pe orice dispozitiv.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔄</div>
+            <h3 class="service-title">Integrări API</h3>
+            <p class="service-desc">
+              Conectarea site-ului cu sisteme externe și servicii terțe.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔒</div>
+            <h3 class="service-title">Securitate web</h3>
+            <p class="service-desc">
+              Protecție împotriva vulnerabilităților comune și atacurilor web.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3 class="service-title">Optimizare performanță</h3>
+            <p class="service-desc">
+              Timpi de încărcare rapizi și experiență fluidă pentru utilizatori.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente despre dezvoltarea web</h2>
+          <p>
+            Răspunsuri la cele mai comune întrebări despre serviciile noastre
+            tehnice.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary
+              >Ce tehnologii folosiți pentru dezvoltarea site-urilor?</summary
+            >
+            <p>
+              Folosim tehnologii moderne și stabile, adaptate fiecărui proiect
+              în parte. Pentru site-uri simple de prezentare, utilizăm HTML5,
+              CSS3 și JavaScript. Pentru proiecte mai complexe, implementăm
+              soluții bazate pe WordPress, WooCommerce, sau dezvoltăm aplicații
+              personalizate folosind PHP, Node.js sau alte tehnologii potrivite
+              cerințelor specifice.
+            </p>
+          </details>
+          <details>
+            <summary>Cât durează dezvoltarea unui site web?</summary>
+            <p>
+              Durata variază în funcție de complexitatea proiectului: 2-3
+              săptămâni pentru un site de prezentare simplu, 4-6 săptămâni
+              pentru un magazin online de complexitate medie, și 8+ săptămâni
+              pentru aplicații web complexe cu funcționalități personalizate. La
+              început de proiect, vă oferim un calendar detaliat cu termene
+              clare.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Site-ul va fi optimizat pentru motoarele de căutare?</summary
+            >
+            <p>
+              Da, toate site-urile noastre includ optimizare tehnică SEO de
+              bază: structură corectă a codului, meta-taguri configurabile,
+              scheme JSON-LD, URL-uri prietenoase, optimizare pentru viteză și
+              conformitate cu standardele web. Pentru strategii SEO avansate,
+              oferim servicii dedicate de optimizare pentru căutările locale din
+              Moldova.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Cum pot actualiza conținutul site-ului după lansare?</summary
+            >
+            <p>
+              Toate site-urile noastre includ un sistem de administrare intuitiv
+              care vă permite să actualizați texte, imagini, produse și alte
+              conținuturi fără cunoștințe tehnice. Oferim instruire gratuită
+              pentru echipa dumneavoastră și documentație în română. Pentru
+              actualizări mai complexe, suntem disponibili prin pachete de
+              mentenanță lunare.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Pregătit pentru un site web performant și funcțional?</h2>
+          <p class="subheading">
+            Solicită o consultație gratuită și află cum putem implementa soluția
+            potrivită pentru afacerea ta.
+          </p>
+          <a href="/contact" class="btn btn-primary">Solicită ofertă gratuită</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

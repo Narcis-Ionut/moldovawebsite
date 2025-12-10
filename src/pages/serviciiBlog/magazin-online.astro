@@ -1,0 +1,385 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Creare Magazin Online în Moldova | E-commerce Accesibil",
+  description:
+    "Servicii de creare magazin online în Moldova: platforme e-commerce accesibile, optimizare pentru conversii, integrări de plată și livrare. Soluții pentru afaceri din Chișinău și Moldova.",
+  url: "https://moldovawebsite.md/serviciiBlog/magazin-online",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "moldovawebsite.md",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Chișinău",
+      addressCountry: "MD",
+    },
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Acasă",
+        item: "https://moldovawebsite.md/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Servicii",
+        item: "https://moldovawebsite.md/serviciiBlog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Magazin Online",
+        item: "https://moldovawebsite.md/serviciiBlog/magazin-online",
+      },
+    ],
+  },
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Creare Magazin Online în Moldova"
+      description="Servicii de creare magazin online în Moldova: platforme e-commerce accesibile, optimizare pentru conversii, integrări de plată și livrare. Soluții complete pentru afaceri mici din Chișinău și toată țara."
+      canonicalUrl="https://moldovawebsite.md/serviciiBlog/magazin-online"
+      hreflangRo="https://moldovawebsite.md/serviciiBlog/magazin-online"
+      hreflangRu="https://moldovawebsite.md/serviciiBlog/интернет-магазин"
+      ogType="article"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body class="page--lighttext">
+    <!-- Full-page background -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster-serviciiB.png"
+      >
+        <source src="/assets/bg-poster-serviciiB.png" type="image/png" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>
+            Creare Magazin Online în Moldova — Soluții E-commerce Accesibile
+          </h1>
+          <p class="subheading">
+            Lansează-ți afacerea online cu un magazin complet funcțional, <strong
+              >optimizat pentru vânzări</strong
+            > și adaptat pieței din Moldova și Chișinău.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn-primary"
+              >Solicită ofertă gratuită</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>De ce ai nevoie de un magazin online pentru afacerea ta</h2>
+          <p>
+            E-commerce-ul deschide noi oportunități pentru afacerile din
+            Moldova.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Vânzări 24/7 fără limitări geografice</h3>
+            <p>Un magazin online îți permite să vinzi produse și servicii:</p>
+            <ul>
+              <li>Non-stop, 24 de ore din 24, 7 zile pe săptămână</li>
+              <li>În toată Moldova, nu doar în localitatea ta</li>
+              <li>Fără costurile ridicate ale unui spațiu fizic</li>
+              <li>Cu personal redus comparativ cu un magazin tradițional</li>
+            </ul>
+            <p>
+              Chiar și afacerile mici din Moldova devin accesibile și pot
+              concura acum cu jucători mari, având acces la aceeași piață
+              online.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/magazin-online-1.png"
+              alt="Magazin online pentru afaceri din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid reverse">
+          <div class="content-block">
+            <h3>Experiență de cumpărare simplă și profesională</h3>
+            <p>
+              Magazinele online pe care le creăm sunt gândite pentru conversie:
+            </p>
+            <ul>
+              <li>Navigare intuitivă în categorii și produse</li>
+              <li>Căutare rapidă și filtrare eficientă</li>
+              <li>Proces de checkout simplificat în 3 pași</li>
+              <li>Metode de plată familiare pentru clienții din Moldova</li>
+              <li>Opțiuni de livrare adaptate pieței locale</li>
+            </ul>
+            <p>
+              Fiecare element este optimizat pentru a transforma vizitatorii în
+              cumpărători.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/magazin-online-2.png"
+              alt="Experiență de cumpărare optimizată pentru clienții din Moldova"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-block">
+            <h3>Administrare simplă și autonomie</h3>
+            <p>
+              Magazinele noastre online sunt create pentru a fi ușor de
+              gestionat:
+            </p>
+            <ul>
+              <li>Panou de administrare intuitiv în limba română</li>
+              <li>Adăugare și editare simplă de produse și categorii</li>
+              <li>Gestionare facilă a stocurilor și prețurilor</li>
+              <li>Rapoarte de vânzări și statistici clare</li>
+              <li>Posibilitatea de a crea promoții și cupoane de reducere</li>
+            </ul>
+            <p>
+              Nu ai nevoie de cunoștințe tehnice pentru a-ți administra
+              magazinul online zi de zi.
+            </p>
+          </div>
+          <div class="content-image">
+            <img
+              src="/assets/magazin-online-3.png"
+              alt="Administrare simplă a magazinului online"
+              width="500"
+              height="300"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum creăm magazinul tău online</h2>
+          <p>
+            Proces structurat pentru un magazin online de succes în Moldova.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Analiză și planificare</h3>
+            <p class="step-desc">
+              Definim tipurile de produse, categorii, metode de plată și livrare
+              potrivite pentru afacerea ta.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Design și structură</h3>
+            <p class="step-desc">
+              Creăm interfața magazinului, optimizată pentru conversie și ușor
+              de navigat.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Dezvoltare și integrări</h3>
+            <p class="step-desc">
+              Implementăm funcționalitățile e-commerce și integrăm metodele de
+              plată și livrare.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Testare și lansare</h3>
+            <p class="step-desc">
+              Verificăm întregul proces de cumpărare și lansăm magazinul tău
+              online.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ce include serviciul nostru de creare magazin online</h2>
+          <p>Soluții e-commerce complete pentru afaceri din Moldova.</p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="service-icon">📋</div>
+            <h3 class="service-title">Catalog de produse</h3>
+            <p class="service-desc">
+              Sistem complet de gestionare a produselor, categoriilor și
+              atributelor.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h3 class="service-title">Coș și checkout</h3>
+            <p class="service-desc">
+              Proces de comandă simplu și intuitiv, optimizat pentru conversie.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💳</div>
+            <h3 class="service-title">Integrare plăți</h3>
+            <p class="service-desc">
+              Conectare cu metodele de plată populare în Moldova (card,
+              transfer, cash).
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚚</div>
+            <h3 class="service-title">Opțiuni de livrare</h3>
+            <p class="service-desc">
+              Integrare cu servicii de curierat și puncte de ridicare din
+              Moldova.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Versiune mobilă</h3>
+            <p class="service-desc">
+              Experiență perfectă de cumpărare pe telefoane și tablete.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3 class="service-title">Analiză vânzări</h3>
+            <p class="service-desc">
+              Rapoarte și statistici pentru monitorizarea performanței
+              magazinului.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente despre magazinele online</h2>
+          <p>
+            Răspunsuri la cele mai comune întrebări despre serviciile noastre
+            e-commerce.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Cât costă crearea unui magazin online în Moldova?</summary>
+            <p>
+              Costul variază în funcție de complexitatea proiectului. Un magazin
+              online de bază pentru o afacere mică începe de la 500-800 EUR, în
+              timp ce platformele cu funcționalități avansate, mii de produse și
+              integrări complexe pot ajunge la 1500-2500 EUR. Oferim soluții
+              scalabile care pot crește odată cu afacerea ta. Solicită o ofertă
+              personalizată pentru a primi un preț exact.
+            </p>
+          </details>
+          <details>
+            <summary>Ce platformă folosiți pentru magazinele online?</summary>
+            <p>
+              În funcție de nevoile afacerii tale, implementăm soluții bazate pe
+              WooCommerce (WordPress), OpenCart sau Shopify. Alegem platforma în
+              funcție de numărul de produse, funcționalitățile necesare și
+              bugetul disponibil. Fiecare platformă are avantaje specifice, iar
+              noi te ajutăm să faci alegerea potrivită pentru afacerea ta din
+              Moldova.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Ce metode de plată pot integra în magazinul online?</summary
+            >
+            <p>
+              Integrăm toate metodele de plată relevante pentru piața din
+              Moldova: plata cu cardul (Visa, Mastercard) prin procesatori
+              locali, plata prin transfer bancar, plata la livrare (ramburs),
+              precum și soluții de plată mobile populare în Moldova. Recomandăm
+              să oferi mai multe opțiuni pentru a satisface preferințele diverse
+              ale clienților.
+            </p>
+          </details>
+          <details>
+            <summary
+              >Cât durează crearea unui magazin online funcțional?</summary
+            >
+            <p>
+              În general, procesul complet durează între 4-8 săptămâni, în
+              funcție de complexitate. Magazinele simple cu câteva zeci de
+              produse pot fi finalizate mai rapid, în timp ce platformele
+              complexe cu mii de produse și integrări multiple necesită mai mult
+              timp. După lansare, oferim asistență pentru optimizare continuă și
+              adăugarea de noi funcționalități.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Pregătit să-ți lansezi afacerea online?</h2>
+          <p class="subheading">
+            Solicită o consultație gratuită și află cum putem crea magazinul
+            online potrivit pentru tine.
+          </p>
+          <a href="/contact" class="btn btn-primary">Solicită ofertă gratuită</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

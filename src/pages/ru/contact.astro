@@ -1,0 +1,333 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <BaseHead
+      title="Контакты – Создание недорогих сайтов в Молдове"
+      description="Свяжитесь с нами для получения бесплатного предложения: доступный веб-дизайн в Кишиневе и по всей Молдове. Быстро отвечаем на румынском или русском языках."
+      canonicalUrl="https://moldovawebsite.md/ru/contact"
+      lang="ru"
+      hreflangRo="https://moldovawebsite.md/contact"
+      hreflangRu="https://moldovawebsite.md/ru/contact"
+      ogLocale="ru_MD"
+    />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer
+    ></script>
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg-poster.webp" type="image/webp" />
+      </video>
+    </div>
+
+    <Header lang="ru" />
+
+    <!-- Contact Hero -->
+    <section class="hero contact-hero" id="contact-hero">
+      <div class="container">
+        <div
+          class="form-header"
+          style="max-width: 860px; margin: 0 auto 1.25rem"
+        >
+          <h1 style="color: #fff">Свяжитесь с нами – отвечаем быстро</h1>
+          <p style="color: #fff; opacity: 0.92">
+            Расскажите кратко, что вам нужно. Отвечаем в тот же рабочий день.
+          </p>
+        </div>
+
+        <div class="contact-wrap">
+          <!-- Form -->
+          <form
+            class="form-card"
+            id="contactForm"
+            method="post"
+            action="/api/contact"
+            novalidate
+          >
+            <!-- Honeypot -->
+            <input
+              type="text"
+              name="website"
+              autocomplete="off"
+              tabindex="-1"
+              aria-hidden="true"
+              class="visually-hidden"
+            />
+
+            <div class="field">
+              <input
+                class="input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder=" "
+                required
+                aria-describedby="nameHelp"
+              />
+              <label class="label" for="name">Имя и фамилия *</label>
+            </div>
+
+            <div class="field">
+              <input
+                class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                required
+                aria-describedby="emailHelp"
+              />
+              <label class="label" for="email">Email *</label>
+              <div id="emailHelp" class="help">Пример: name@domain.md</div>
+            </div>
+
+            <div class="field">
+              <input
+                class="input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder=" "
+                inputmode="tel"
+                pattern="^[0-9+\s()-]{6,}$"
+                aria-describedby="phoneHelp"
+              />
+              <label class="label" for="phone">Телефон (опционально)</label>
+              <div id="phoneHelp" class="help">Пример: +373 6xx xxx xx</div>
+            </div>
+
+            <div class="field">
+              <input
+                class="input"
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder=" "
+                required
+                aria-describedby="subjectHelp"
+              />
+              <label class="label" for="subject">Тема *</label>
+              <div id="subjectHelp" class="help">
+                Пр.: "Сайт-визитка для кафе в Кишиневе"
+              </div>
+            </div>
+
+            <!-- Project Type Chips -->
+            <div class="field">
+              <div class="help" style="margin-bottom: 0.35rem">Тип проекта</div>
+              <div
+                class="chip-group"
+                role="radiogroup"
+                aria-label="Тип проекта"
+              >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="true"
+                  data-value="Сайт-визитка">Сайт-визитка</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Интернет-магазин">Интернет-магазин</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Лендинг">Лендинг</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Редизайн">Редизайн</button
+                >
+                <button
+                  type="button"
+                  class="chip"
+                  role="radio"
+                  aria-checked="false"
+                  data-value="Другое">Другое</button
+                >
+              </div>
+              <input
+                type="hidden"
+                name="project_type"
+                id="project_type"
+                value="Сайт-визитка"
+              />
+            </div>
+
+            <!-- Budget -->
+            <div class="field">
+              <div class="help" style="margin-bottom: 0.35rem">
+                Предполагаемый бюджет (EUR)
+              </div>
+              <div class="range-wrap">
+                <input
+                  type="range"
+                  id="budget"
+                  name="budget"
+                  min="50"
+                  max="500"
+                  value="150"
+                  step="50"
+                  aria-describedby="budgetOut"
+                  class="range"
+                />
+                <output id="budgetOut" for="budget" class="range-output"
+                  >150 €</output
+                >
+              </div>
+            </div>
+
+            <div class="field">
+              <textarea
+                class="input textarea"
+                id="message"
+                name="message"
+                placeholder=" "
+                rows="4"
+                required></textarea>
+              <label class="label" for="message">Сообщение *</label>
+            </div>
+
+            <!-- Turnstile widget -->
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAABdBFafjc2wAF8H7"
+              data-callback="onTurnstileVerify"
+            >
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-full"
+              id="submitBtn"
+              disabled>Отправить сообщение</button
+            >
+            <p class="form-note">
+              Нажимая «Отправить», вы соглашаетесь с <a
+                href="/ru/politica-confidentialitate"
+                >Политикой конфиденциальности</a
+              >.
+            </p>
+          </form>
+
+          <!-- Contact Info Side -->
+          <aside class="contact-info-panel">
+            <h2>Прямой контакт</h2>
+            <address>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:contact@moldovawebsite.md"
+                  >contact@moldovawebsite.md</a>
+              </p>
+              <p>
+                <strong>Телефон:</strong>
+                <a href="tel:+37361211739">+373 61 211 739</a>
+              </p>
+              <p>
+                <strong>Адрес:</strong> Кишинев, Молдова<br />ул. Иоана Раду
+                27/2
+              </p>
+            </address>
+            <hr />
+            <h3>Почему выбрать нас?</h3>
+            <ul>
+              <li>✓ Бесплатная консультация</li>
+              <li>✓ Прозрачные цены</li>
+              <li>✓ SEO на странице включено</li>
+              <li>✓ Поддержка на RO и RU</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ru" />
+
+    <script is:inline>
+      // Turnstile callback
+      function onTurnstileVerify(token) {
+        document.getElementById("submitBtn").disabled = false;
+      }
+
+      // Chip selection
+      document.querySelectorAll(".chip-group .chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chip
+            .closest(".chip-group")
+            .querySelectorAll(".chip")
+            .forEach((c) => c.setAttribute("aria-checked", "false"));
+          chip.setAttribute("aria-checked", "true");
+          document.getElementById("project_type").value = chip.dataset.value;
+        });
+      });
+
+      // Budget range output
+      const budget = document.getElementById("budget");
+      const budgetOut = document.getElementById("budgetOut");
+      if (budget && budgetOut) {
+        budget.addEventListener(
+          "input",
+          () => (budgetOut.textContent = budget.value + " €")
+        );
+      }
+
+      // Form submission
+      document
+        .getElementById("contactForm")
+        ?.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const btn = form.querySelector("#submitBtn");
+          const originalText = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = "Отправка...";
+
+          try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: formData,
+            });
+
+            if (response.ok) {
+              form.innerHTML =
+                '<div class="success-message"><h3>✓ Сообщение отправлено!</h3><p>Мы ответим вам в ближайшее время.</p></div>';
+            } else {
+              throw new Error("Ошибка отправки");
+            }
+          } catch (error) {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            alert("Ошибка. Попробуйте еще раз или свяжитесь с нами по email.");
+          }
+        });
+    </script>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

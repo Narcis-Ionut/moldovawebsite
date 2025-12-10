@@ -1,0 +1,345 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const tocItems = [
+  { id: "cine-suntem", text: "1. Кто мы" },
+  { id: "ce-date", text: "2. Какие данные мы собираем" },
+  { id: "scopuri-baze", text: "3. Цели и правовые основы" },
+  { id: "cookies", text: "4. Cookies и подобные технологии" },
+  { id: "retentie", text: "5. Хранение данных" },
+  { id: "partajare", text: "6. Передача данных" },
+  { id: "transferuri", text: "7. Международная передача" },
+  { id: "securitate", text: "8. Безопасность" },
+  { id: "drepturi", text: "9. Ваши права" },
+  { id: "minori", text: "10. Несовершеннолетние" },
+  { id: "modificari", text: "11. Изменения политики" },
+  { id: "contact", text: "12. Контакты" },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Политика конфиденциальности",
+  description:
+    "Узнайте, как мы собираем, используем и защищаем ваши персональные данные. Политика конфиденциальности moldovawebsite.md – соответствует GDPR.",
+  url: "https://moldovawebsite.md/ru/politica-confidentialitate",
+  inLanguage: "ru-MD",
+  dateModified: "2025-09-10",
+  publisher: {
+    "@type": "Organization",
+    name: "moldovawebsite.md",
+    url: "https://moldovawebsite.md",
+  },
+};
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <BaseHead
+      title="Политика конфиденциальности | moldovawebsite.md"
+      description="Узнайте, как мы собираем, используем и защищаем ваши персональные данные. Политика конфиденциальности moldovawebsite.md – соответствует GDPR."
+      canonicalUrl="https://moldovawebsite.md/ru/politica-confidentialitate"
+      lang="ru"
+      hreflangRo="https://moldovawebsite.md/politica-confidentialitate"
+      hreflangRu="https://moldovawebsite.md/ru/politica-confidentialitate"
+      ogType="website"
+      jsonLd={jsonLd}
+    />
+    <style>
+      .legal-hero {
+        padding: 120px 0 40px;
+        background: var(--color-background);
+      }
+      .legal {
+        padding: var(--spacing-6) 0;
+      }
+      .legal h2 {
+        margin-top: var(--spacing-4);
+      }
+      .toc {
+        background: #fff;
+        border-radius: 12px;
+        padding: var(--spacing-3);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+        position: sticky;
+        top: 100px;
+      }
+      .toc ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .toc li {
+        margin: 0.35rem 0;
+      }
+      .toc a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .toc a:hover {
+        color: var(--color-primary);
+      }
+      .badge-date {
+        display: inline-block;
+        background: var(--color-background);
+        padding: 0.35rem 0.6rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+      }
+      .legal-content {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: var(--spacing-4);
+      }
+      .legal table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+      .legal th,
+      .legal td {
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 0.6rem 0.4rem;
+      }
+      .note {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+      @media (max-width: 900px) {
+        .legal-content {
+          grid-template-columns: 1fr;
+        }
+        .toc {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header lang="ru" />
+
+    <!-- Hero -->
+    <section class="hero legal-hero">
+      <div class="container">
+        <h1>Политика конфиденциальности</h1>
+        <p class="subheading">
+          Как мы собираем, используем и защищаем ваши персональные данные при
+          использовании <strong>moldovawebsite.md</strong> (далее «Сайт»).
+        </p>
+        <p class="badge-date">Последнее обновление: 10 сентября 2025</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
+      <ol
+        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
+      >
+        <li>
+          <a href="/ru" style="text-decoration: none; color: #0a2463"
+            >Главная</a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li><span aria-current="page">Политика конфиденциальности</span></li>
+      </ol>
+    </nav>
+
+    <!-- Content -->
+    <section class="legal">
+      <div class="container legal-content">
+        <aside class="toc">
+          <h3>Содержание</h3>
+          <ul>
+            {
+              tocItems.map((item) => (
+                <li>
+                  <a href={`#${item.id}`}>{item.text}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </aside>
+
+        <article>
+          <h2 id="cine-suntem">1. Кто мы</h2>
+          <p>
+            <strong>Оператор данных:</strong> moldovawebsite.md – ул. Иоана Раду 27/2,
+            Кишинев, Молдова.<br />
+            E-mail: <a href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            >, Тел: <a href="tel:+37361211739">+373 61 211 739</a>.
+          </p>
+
+          <h2 id="ce-date">2. Какие данные мы собираем</h2>
+          <ul>
+            <li>
+              <strong>Данные, предоставленные вами</strong> – имя, e-mail, телефон,
+              предпочтение языка, детали проекта (через формы).
+            </li>
+            <li>
+              <strong>Технические данные</strong> – анонимизированный IP, тип устройства,
+              браузер, посещенные страницы, время отклика.
+            </li>
+            <li>
+              <strong>Cookies/трекеры</strong> – необходимые, аналитика (напр. GA4),
+              предпочтения. См. раздел cookie.
+            </li>
+          </ul>
+
+          <h2 id="scopuri-baze">3. Цели и правовые основы</h2>
+          <table aria-label="Цели и правовые основы">
+            <thead>
+              <tr>
+                <th>Цель</th>
+                <th>Правовая основа</th>
+                <th>Примеры</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ответы на запросы/предложения</td>
+                <td
+                  >Ст. 6(1)(b) – исполнение договора; Ст. 6(1)(f) – законный
+                  интерес</td
+                >
+                <td>Контакт по e-mail/телефону</td>
+              </tr>
+              <tr>
+                <td>Администрирование сайта и безопасность</td>
+                <td>Ст. 6(1)(f) – законный интерес</td>
+                <td>Логи, предотвращение спама/злоупотреблений</td>
+              </tr>
+              <tr>
+                <td>Анализ трафика и улучшения</td>
+                <td>Ст. 6(1)(a) – согласие (где применимо)</td>
+                <td>Google Analytics 4, тепловые карты</td>
+              </tr>
+              <tr>
+                <td>Прямой маркетинг</td>
+                <td
+                  >Ст. 6(1)(a) – согласие / Ст. 6(1)(f) – законный интерес
+                  (существующие клиенты)</td
+                >
+                <td>Последующие предложения, новости</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="cookies">4. Cookies и похожие технологии</h2>
+          <p>
+            Мы используем cookies для функционирования сайта, аналитики и
+            предпочтений. При первом посещении вы можете выбрать, какие
+            категории разрешить.
+          </p>
+          <table aria-label="Категории cookies">
+            <thead>
+              <tr>
+                <th>Категория</th>
+                <th>Цель</th>
+                <th>Пример срока</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Необходимые</td>
+                <td>Функционирование, безопасность, анти-спам</td>
+                <td>до 12 месяцев</td>
+              </tr>
+              <tr>
+                <td>Аналитика</td>
+                <td>Измерение трафика и производительности</td>
+                <td>до 24 месяцев</td>
+              </tr>
+              <tr>
+                <td>Предпочтения</td>
+                <td>Выбранный язык, настройки интерфейса</td>
+                <td>до 12 месяцев</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">
+            Вы можете удалить или заблокировать cookies в настройках браузера.
+            Некоторые функции могут быть затронуты.
+          </p>
+
+          <h2 id="retentie">5. Хранение данных</h2>
+          <p>
+            Мы храним данные столько, сколько необходимо для целей сбора, в
+            соответствии с применимыми законодательными требованиями. Примеры:
+            данные для предложений – до 24 месяцев; договорные/платежные данные
+            – в соответствии с налоговым законодательством.
+          </p>
+
+          <h2 id="partajare">6. Передача данных</h2>
+          <p>
+            Мы можем передавать данные поставщикам, которые помогают нам в
+            работе сервисов (хостинг, электронная почта, анализ трафика,
+            анти-спам), на основе соглашений и обязательств о
+            конфиденциальности. Мы не продаем ваши данные.
+          </p>
+
+          <h2 id="transferuri">7. Международная передача</h2>
+          <p>
+            Если наши поставщики обрабатывают данные за пределами страны, мы
+            используем соответствующие гарантии (например, стандартные
+            договорные условия).
+          </p>
+
+          <h2 id="securitate">8. Безопасность</h2>
+          <p>
+            Мы применяем технические и организационные меры: HTTPS/SSL,
+            минимизация доступа, регулярные обновления, защита от спама (напр.
+            Turnstile).
+          </p>
+
+          <h2 id="drepturi">9. Ваши права</h2>
+          <ul>
+            <li>
+              Доступ к данным, исправление, удаление («право на забвение»)
+            </li>
+            <li>Ограничение или возражение против обработки</li>
+            <li>Портативность данных</li>
+            <li>Отзыв согласия в любое время</li>
+            <li>Жалоба в компетентный орган</li>
+          </ul>
+          <p>
+            Для осуществления ваших прав напишите на <a
+              href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            >. Мы ответим, как правило, в течение 30 дней.
+          </p>
+
+          <h2 id="minori">10. Несовершеннолетние</h2>
+          <p>
+            Наши услуги не предназначены для лиц младше 16 лет. Мы не собираем
+            преднамеренно данные о несовершеннолетних.
+          </p>
+
+          <h2 id="modificari">11. Изменения политики</h2>
+          <p>
+            Мы можем периодически обновлять эту политику. Текущая версия
+            публикуется на этой странице.
+          </p>
+
+          <h2 id="contact">12. Контакты</h2>
+          <p>
+            <strong>moldovawebsite.md</strong> – ул. Иоана Раду 27/2, Кишинев, Молдова<br
+            />
+            E-mail: <a href="mailto:contact@moldovawebsite.md"
+              >contact@moldovawebsite.md</a
+            > · Тел: <a href="tel:+37361211739">+373 61 211 739</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Footer lang="ru" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
