@@ -75,6 +75,14 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "De ce prețurile sunt atât de accesibile?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Prețuri mici nu înseamnă calitate scăzută. Folosim tehnologii moderne (Astro, componente pre-optimizate, hosting Cloudflare) care reduc drastic timpul de dezvoltare – nu calitatea. Fiecare site primește aceeași atenție la detalii: design modern, cod curat și SEO on-page.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "Pot plăti în MDL sau în două tranșe?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -399,6 +407,19 @@ const jsonLd = {
         </div>
 
         <div class="faq-list">
+          <details open>
+            <summary>De ce prețurile sunt atât de accesibile?</summary>
+            <p>
+              <strong>Prețuri mici nu înseamnă calitate scăzută.</strong> Folosim
+              tehnologii moderne (Astro, componente pre-optimizate, hosting Cloudflare)
+              care reduc drastic timpul de dezvoltare – nu calitatea. În loc să reinventăm
+              roata la fiecare proiect, aplicăm un proces eficient și testat, astfel
+              încât putem oferi site-uri profesionale la prețuri corecte pentru piața
+              din Moldova. Fiecare site primește aceeași atenție la detalii: design
+              modern, cod curat și SEO on-page.
+            </p>
+          </details>
+
           <details>
             <summary>Pot plăti în MDL sau în două tranșe?</summary>
             <p>
