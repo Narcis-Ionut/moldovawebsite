@@ -2,7 +2,7 @@
 title: "Cât costă un site de prezentare în Moldova în 2025? Ghid complet de prețuri"
 description: "Descoperiți cât costă crearea unui site web în Moldova în 2025. Analiză detaliată: prețuri pentru landing page, site de prezentare, magazin online. De la 50€ la 1000€+."
 pubDate: "Dec 16 2024"
-heroImage: "/assets/blog-cat-costa-site-moldova-2025.webp"
+heroImage: "/assets/cat-costa-site-moldova-2025.webp"
 ---
 
 Dacă te-ai întrebat vreodată **„Cât costă un site de prezentare în Moldova?"** sau **„Cât costă crearea unui site web în Chișinău?"**, acest ghid îți oferă răspunsuri clare, bazate pe prețurile reale din piața moldovenească în 2025.
