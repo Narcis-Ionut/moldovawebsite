@@ -119,7 +119,7 @@ Diferența de preț vine din:
 
 ### Prețuri mici = calitate slabă?
 
-**Nu neapărat.** La [moldovawebsite.md](https://moldovawebsite.md/preturi/), oferim prețuri accesibile pentru că:
+**Nu neapărat.** La [pret creare site web](https://moldovawebsite.md/preturi/), oferim prețuri accesibile pentru că:
 
 - Folosim tehnologii moderne care reduc timpul de dezvoltare
 - Avem un proces standardizat și eficient
