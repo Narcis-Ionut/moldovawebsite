@@ -7,6 +7,8 @@ heroImage: "/assets/cat-costa-site-moldova-2025.webp"
 
 Dacă te-ai întrebat vreodată **„Cât costă un site de prezentare în Moldova?"** sau **„Cât costă crearea unui site web în Chișinău?"**, acest ghid îți oferă răspunsuri clare, bazate pe prețurile reale din piața moldovenească în 2025.
 
+În acest ghid despre **cât costă un site de prezentare în Moldova în 2025**, explicăm pe scurt intervalele de preț și ce influențează bugetul final.
+
 ## Rezumat rapid: Prețuri site web Moldova 2025
 
 | Tip de site                             | Preț orientativ | Timp de realizare |
