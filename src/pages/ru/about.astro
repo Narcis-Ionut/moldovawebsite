@@ -1,0 +1,376 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <BaseHead
+      title="О нас: создание сайтов недорого в Молдове | moldovawebsite.md"
+      description="Узнайте, кто мы и как делаем доступный веб-дизайн в Кишиневе: сайт-визитка, интернет-магазин, SEO on-page и поддержка."
+      canonicalUrl="https://moldovawebsite.md/ru/about/"
+      hreflangRo="https://moldovawebsite.md/about/"
+      hreflangRu="https://moldovawebsite.md/ru/about/"
+      image="/assets/og-image.webp"
+      lang="ru"
+    />
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <Header lang="ru" />
+
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>О нас: создание сайтов недорого в Молдове</h1>
+          <p class="subheading">
+            moldovawebsite.md предлагает <strong>доступный веб-дизайн</strong> в
+            Кишиневе и по всей Молдове для малого бизнеса: <strong
+              >сайт-визитка</strong
+            >, <strong>интернет-магазин</strong>, <strong>SEO on-page</strong> и
+            <strong>обслуживание</strong>.
+          </p>
+          <p class="subheading">
+            Если вам нужно <strong>создание сайтов недорого в Молдове</strong>,
+            мы показываем, что входит в работу, сколько занимает процесс и как
+            получить быстрый результат без лишних затрат.
+          </p>
+          <p class="subheading">
+            Мы работаем прозрачно, объясняем каждый этап и адаптируем решение к
+            реальным задачам локального рынка.
+          </p>
+          <div class="hero-actions">
+            <a href="/ru/contact/" class="btn btn-primary"
+              >Получить бесплатную консультацию</a
+            >
+            <a href="/ru/preturi/" class="btn btn-secondary">Посмотреть цены</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Прозрачные цены и быстрые сроки</li>
+            <li>Современный дизайн, ориентированный на конверсию</li>
+            <li>Локальная поддержка на русском и румынском</li>
+          </ul>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-bg-shape"></div>
+          <div class="hero-device">
+            <svg
+              viewBox="0 0 500 300"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Иллюстрация команды веб-дизайна"
+            >
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#0A2463"></stop>
+                  <stop offset="100%" stop-color="#63B3ED"></stop>
+                </linearGradient>
+                <clipPath id="screenClip">
+                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
+                </clipPath>
+              </defs>
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="url(#gradient)"></rect>
+              <image
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                href="/assets/hero-screen.png"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#screenClip)"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="#000"
+                opacity="0.12"
+                clip-path="url(#screenClip)"></rect>
+              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
+              ></circle>
+              <rect
+                x="150"
+                y="145"
+                height="10"
+                width="200"
+                fill="white"
+                opacity="0.6"></rect>
+              <rect
+                x="180"
+                y="167"
+                height="6"
+                width="140"
+                fill="white"
+                opacity="0.4"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="services" id="despre">
+      <div class="container grid">
+        <div class="section-title">
+          <h2>Кто мы и как работаем</h2>
+          <p>
+            Мы локальная команда, которая делает <strong>создание сайтов</strong>
+            быстрым и понятным. Наш фокус — <strong>доступный веб-дизайн</strong>
+            для Молдовы и проекты, которые реально дают результат в поиске.
+          </p>
+          <p>
+            Используем современные технологии (Astro, Cloudflare), чтобы
+            ускорить разработку и снизить стоимость. Так вы получаете надежный
+            <strong>сайт-визитку</strong> или <strong>интернет-магазин</strong>,
+            который быстро загружается и хорошо выглядит на мобильных.
+          </p>
+          <p>
+            Мы анализируем нишу, цели и запросы, подбираем структуру страниц и
+            подсвечиваем сильные стороны бизнеса. Это помогает быстрее получать
+            заявки и улучшает видимость в Google.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3 class="service-title">Наша миссия</h3>
+          <p class="service-desc">
+            Предлагать <strong>создание сайтов недорого в Молдове</strong> без
+            компромиссов по дизайну, скорости и SEO on-page.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3 class="service-title">Фокус на результат</h3>
+          <p class="service-desc">
+            Мы строим страницы, которые конвертируют и помогают привлекать
+            клиентов из Google.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">03</div>
+          <h3 class="service-title">Современные технологии</h3>
+          <p class="service-desc">
+            Быстрая загрузка, чистый код и стабильность — основа наших решений.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">04</div>
+          <h3 class="service-title">Поддержка и обслуживание</h3>
+          <p class="service-desc">
+            После запуска помогаем с обновлениями, безопасностью и развитием
+            сайта.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof" id="de-ce-noi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Почему выбирают moldovawebsite.md</h2>
+          <p>
+            Мы объединяем <strong>создание сайтов недорого</strong> и
+            ориентированный на бизнес подход. Работаем с локальными задачами —
+            от простых проектов до полноценных интернет-магазинов.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Получили быстрый сайт с SEO и удобной админкой. Цена была
+              справедливой для рынка Молдовы.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Локальный клиент, Кишинев</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Все объяснили простыми словами и помогли выбрать пакет под наш
+              бюджет. Результат понравился.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Малый бизнес, Молдова</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Быстрое внедрение, четкая коммуникация и поддержка после запуска.
+              Сайт выглядит профессионально на всех устройствах.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Сфера услуг</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Как мы создаем сайт быстро и эффективно</h2>
+          <p>
+            Четкий процесс, прозрачные шаги и предсказуемые сроки — основа
+            успешного проекта.
+          </p>
+          <p>
+            Согласуем этапы, сроки и материалы заранее, чтобы вы понимали, что
+            происходит на каждом шаге и могли планировать запуск без сюрпризов.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Бриф и цели</h3>
+            <p class="step-desc">
+              Определяем формат проекта: сайт-визитка, интернет-магазин или
+              landing page.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Дизайн и структура</h3>
+            <p class="step-desc">
+              Создаем понятный интерфейс и структуру, ориентированную на
+              конверсию.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Разработка и SEO</h3>
+            <p class="step-desc">
+              Внедряем сайт, оптимизируем скорость и настраиваем SEO on-page.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Запуск и поддержка</h3>
+            <p class="step-desc">
+              Запускаем проект, передаем доступы и помогаем с поддержкой.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Частые вопросы о нас</h2>
+          <p>Короткие ответы перед началом работы.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Вы работаете только в Кишиневе?</summary>
+            <p>
+              Нет. Мы обслуживаем клиентов по всей Молдове и также работаем
+              онлайн с другими регионами.
+            </p>
+          </details>
+
+          <details>
+            <summary>SEO on-page входит в пакет?</summary>
+            <p>
+              Да. Мы настраиваем мета-теги, структуру и базовую оптимизацию для
+              видимости в Google.
+            </p>
+          </details>
+
+          <details>
+            <summary>Можно ли сделать сайт с небольшим бюджетом?</summary>
+            <p>
+              Да. Подберем оптимальный пакет и дадим рекомендации по экономии
+              без потери качества.
+            </p>
+          </details>
+
+          <details>
+            <summary>Вы обеспечиваете поддержку после запуска?</summary>
+            <p>
+              Да. Мы предлагаем обслуживание, обновления и помощь в развитии
+              сайта.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Готовы начать проект?</h2>
+          <p class="subheading">
+            Опишите вашу задачу, и мы подготовим предложение по созданию сайта в
+            Молдове.
+          </p>
+          <p class="subheading">
+            Отвечаем быстро и согласуем следующие шаги по вашему проекту.
+          </p>
+          <a href="/ru/contact/" class="btn btn-primary">Связаться с нами</a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ru" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

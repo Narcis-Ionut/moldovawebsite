@@ -1,0 +1,394 @@
+---
+import BaseHead from "../../../components/BaseHead.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const pageTitle =
+  "Блог: создание сайтов недорого в Молдове | Гайды и цены";
+const pageDescription =
+  "Статьи о создании сайтов недорого в Молдове: доступный веб-дизайн, SEO on-page, цены на сайт-визитку и интернет-магазин.";
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <BaseHead
+      title={pageTitle}
+      description={pageDescription}
+      canonicalUrl="https://moldovawebsite.md/ru/blog/"
+      hreflangRo="https://moldovawebsite.md/blog/"
+      hreflangRu="https://moldovawebsite.md/ru/blog/"
+      image="/assets/og-image.webp"
+      lang="ru"
+    />
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <Header lang="ru" />
+
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>Блог: создание сайтов недорого в Молдове</h1>
+          <p class="subheading">
+            Полезные материалы про <strong>доступный веб-дизайн</strong> в
+            Кишиневе и по всей Молдове: <strong>сайт-визитка</strong>,
+            <strong>интернет-магазин</strong>, <strong>SEO on-page</strong> и
+            <strong>поддержка</strong>.
+          </p>
+          <p class="subheading">
+            Если вы ищете <strong>создание сайтов недорого в Молдове</strong>,
+            здесь вы найдете простые объяснения про цены, технологии и шаги, от
+            которых зависит результат.
+          </p>
+          <div class="hero-actions">
+            <a href="/ru/preturi/" class="btn btn-primary">Посмотреть цены</a>
+            <a href="/ru/contact/" class="btn btn-secondary">Получить оффер</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Понятные статьи без сложных терминов</li>
+            <li>Локальные примеры и практические советы</li>
+            <li>Стратегии, которые дают быстрый эффект</li>
+          </ul>
+          <p class="subheading">
+            Пишите, и мы подскажем оптимальный вариант для вашей задачи.
+          </p>
+          <p class="subheading">
+            Если у вас остались вопросы по стоимости, напишите нам — дадим
+            рекомендации без лишнего жаргона, с учетом рынка Молдовы.
+          </p>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-bg-shape"></div>
+          <div class="hero-device">
+            <svg
+              viewBox="0 0 500 300"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Иллюстрация блога веб-дизайна"
+            >
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#0A2463"></stop>
+                  <stop offset="100%" stop-color="#63B3ED"></stop>
+                </linearGradient>
+                <clipPath id="screenClip">
+                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
+                </clipPath>
+              </defs>
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="url(#gradient)"></rect>
+              <image
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                href="/assets/hero-screen.png"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#screenClip)"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="#000"
+                opacity="0.12"
+                clip-path="url(#screenClip)"></rect>
+              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
+              ></circle>
+              <rect
+                x="150"
+                y="145"
+                height="10"
+                width="200"
+                fill="white"
+                opacity="0.6"></rect>
+              <rect
+                x="180"
+                y="167"
+                height="6"
+                width="140"
+                fill="white"
+                opacity="0.4"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you'll find -->
+    <section class="services" id="despre-blog">
+      <div class="container grid">
+        <div class="section-title">
+          <h2>Что вы найдете в блоге</h2>
+          <p>
+            Мы пишем о <strong>создании сайтов</strong>, <strong>ценах</strong>,
+            SEO-оптимизации и решениях для малого бизнеса в Молдове.
+          </p>
+          <p>
+            Наша цель — объяснить, как выбрать подрядчика по <strong
+              >доступному веб-дизайну</strong
+            > и как грамотно распределить бюджет.
+          </p>
+          <p>
+            Подходит и для новичков, и для тех, кто хочет улучшить существующий
+            сайт: даем практические шаги, локальные примеры и четкие рекомендации
+            без лишних затрат.
+          </p>
+          <p>
+            Мы также публикуем чек-листы и мини-гайды, которые помогают
+            подготовить контент, сэкономить время и избежать типичных ошибок.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3 class="service-title">Реальные цены</h3>
+          <p class="service-desc">
+            Сравниваем пакеты, объясняем, что включено, и когда стоит делать
+            апгрейд.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3 class="service-title">SEO on-page</h3>
+          <p class="service-desc">
+            Простые советы по структуре, скорости и контенту, чтобы сайт выше
+            ранжировался в Google.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">03</div>
+          <h3 class="service-title">Сайт-визитка</h3>
+          <p class="service-desc">
+            Подсказываем, как сделать страницы, которые четко объясняют услуги и
+            приводят заявки.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">04</div>
+          <h3 class="service-title">Интернет-магазин</h3>
+          <p class="service-desc">
+            Разбираем каталог, оплаты, доставку и удобство для покупателя.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to use the blog -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Как использовать статьи блога</h2>
+          <p>
+            Если вы только начинаете и ищете <strong>создание сайтов недорого в
+            Молдове</strong>, следуйте шагам ниже, чтобы быстро разобраться с
+            бюджетом и требованиями.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Определите тип сайта</h3>
+            <p class="step-desc">
+              Выберите формат: сайт-визитка, landing page или интернет-магазин,
+              в зависимости от целей бизнеса.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Поймите стоимость</h3>
+            <p class="step-desc">
+              Статьи о ценах показывают, что входит в пакеты и где можно
+              сократить расходы без потери качества.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Улучшите SEO</h3>
+            <p class="step-desc">
+              Следуйте рекомендациям по SEO on-page: структура, скорость и
+              релевантный контент для локальных запросов.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Примените и запросите оффер</h3>
+            <p class="step-desc">
+              Когда появится ясность, свяжитесь с нами и получите персональное
+              предложение и реалистичный план работ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="portfolio" id="articole">
+      <div class="container">
+        <div class="section-title">
+          <h2>Свежие статьи о создании сайтов</h2>
+          <p>
+            Читайте материалы о стоимости, процессе и оптимизации для быстрого
+            результата.
+          </p>
+          <p>
+            Мы регулярно обновляем статьи, чтобы вы получали актуальную
+            информацию о ценах, технологиях и эффективных решениях.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          {
+            posts.map((post) => (
+              <article class="portfolio-card">
+                <div class="portfolio-image">
+                  <img
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                  />
+                  <div class="portfolio-overlay">
+                    <span class="portfolio-category">Статья</span>
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.description}</p>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                  <ul class="portfolio-features">
+                    <li>✓ Доступный веб-дизайн</li>
+                    <li>✓ SEO on-page</li>
+                    <li>✓ Прозрачные цены</li>
+                  </ul>
+                  <a href={`/blog/${post.id}/`} class="portfolio-link"
+                    >Читать статью →</a
+                  >
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Частые вопросы о блоге</h2>
+          <p>Короткие ответы перед началом изучения.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Вы публикуете материалы о ценах?</summary>
+            <p>
+              Да. В блоге есть статьи о том, сколько стоит сайт в Молдове и что
+              включает каждый пакет.
+            </p>
+          </details>
+
+          <details>
+            <summary>Есть советы по SEO on-page?</summary>
+            <p>
+              Да. Мы объясняем структуру, скорость, мета-теги и другие факторы
+              ранжирования.
+            </p>
+          </details>
+
+          <details>
+            <summary>Можно запросить оффер после чтения?</summary>
+            <p>
+              Конечно. Если статья помогла определиться, напишите нам и мы
+              подготовим персональное предложение.
+            </p>
+          </details>
+
+          <details>
+            <summary>Вы пишете про поддержку сайта?</summary>
+            <p>
+              Да. Объясняем, зачем нужна поддержка, сколько она стоит и как
+              влияет на безопасность и скорость.
+            </p>
+          </details>
+
+          <details>
+            <summary>Подходит ли блог для новичков?</summary>
+            <p>
+              Да. Мы используем простые термины и приводим примеры, чтобы
+              даже без опыта было понятно, как выбрать подрядчика и пакет.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Нужен доступный сайт?</h2>
+          <p class="subheading">
+            Расскажите о задаче, и мы подскажем оптимальное решение под ваш
+            бюджет.
+          </p>
+          <p class="subheading">Отвечаем быстро, на русском или румынском.</p>
+          <a href="/ru/contact/" class="btn btn-primary"
+            >Получить бесплатную консультацию</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ru" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
