@@ -1,62 +1,359 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Despre noi: creare site web ieftin în Moldova | moldovawebsite.md"
+      description="Află cine suntem și cum oferim web design accesibil în Chișinău: site de prezentare, magazin online, SEO on-page și mentenanță."
+      canonicalUrl="https://moldovawebsite.md/about/"
+      image="/assets/og-image.webp"
+    />
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+    <Header lang="ro" />
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>Despre noi: creare site web ieftin în Moldova</h1>
+          <p class="subheading">
+            moldovawebsite.md oferă <strong>web design accesibil</strong> în
+            Chișinău și toată Moldova pentru afaceri mici: <strong>site de
+            prezentare</strong>, <strong>magazin online</strong>, <strong
+              >SEO on-page</strong
+            > și <strong>mentenanță</strong>.
+          </p>
+          <p class="subheading">
+            Dacă vrei <strong>creare site web ieftin în Moldova</strong>, îți
+            arătăm clar ce primești, cât durează și cum obții rezultate rapide.
+          </p>
+          <p class="subheading">
+            Lucrăm transparent, explicăm fiecare etapă și adaptăm soluția la
+            realitățile pieței locale.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact/" class="btn btn-primary">Cere ofertă gratuită</a>
+            <a href="/preturi/" class="btn btn-secondary">Vezi prețuri</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Prețuri transparente și livrare rapidă</li>
+            <li>Design modern, optimizat pentru conversie</li>
+            <li>Suport local în română și rusă</li>
+          </ul>
+        </div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-bg-shape"></div>
+          <div class="hero-device">
+            <svg
+              viewBox="0 0 500 300"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Ilustrație echipă web design"
+            >
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#0A2463"></stop>
+                  <stop offset="100%" stop-color="#63B3ED"></stop>
+                </linearGradient>
+                <clipPath id="screenClip">
+                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
+                </clipPath>
+              </defs>
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="url(#gradient)"></rect>
+              <image
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                href="/assets/hero-screen.png"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#screenClip)"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="#000"
+                opacity="0.12"
+                clip-path="url(#screenClip)"></rect>
+              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
+              ></circle>
+              <rect
+                x="150"
+                y="145"
+                height="10"
+                width="200"
+                fill="white"
+                opacity="0.6"></rect>
+              <rect
+                x="180"
+                y="167"
+                height="6"
+                width="140"
+                fill="white"
+                opacity="0.4"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+    <!-- Social Proof -->
+    <section class="social-proof" id="de-ce-noi">
+      <div class="container">
+        <div class="section-title">
+          <h2>De ce clienții aleg moldovawebsite.md</h2>
+          <p>
+            Combinăm <strong>creare site web ieftin</strong> cu un proces clar și
+            un design modern. Ne axăm pe rezultate locale, fie că ai nevoie de
+            un site de prezentare simplu sau de un magazin online complet.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Am primit un site rapid, optimizat SEO și ușor de administrat.
+              Prețul a fost corect pentru piața din Moldova.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Client local, Chișinău</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Echipa a explicat clar ce include fiecare pachet și ne-a ajutat să
+              alegem varianta potrivită pentru bugetul nostru.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Afacere mică din Moldova</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-content">
+              Ne-au plăcut viteza de livrare, comunicarea și suportul după
+              lansare. Site-ul arată profesionist pe mobil și desktop.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true"></div>
+              <div class="author-details">
+                <span class="author-name">Servicii locale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="services" id="despre">
+      <div class="container grid">
+        <div class="section-title">
+          <h2>Cine suntem și cum lucrăm</h2>
+          <p>
+            Suntem o echipă locală care livrează <strong>creare site web</strong>
+            rapidă și <strong>web design accesibil</strong> pentru Moldova. Ne
+            concentrăm pe proiecte clare, livrabile și rezultate vizibile în
+            căutări.
+          </p>
+          <p>
+            Folosim tehnologii moderne (Astro, Cloudflare) pentru viteze mari și
+            costuri mai mici, astfel încât să obții un <strong>site de
+            prezentare</strong> sau <strong>magazin online</strong> care
+            performează.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3 class="service-title">Misiunea noastră</h3>
+          <p class="service-desc">
+            Să oferim <strong>creare site web ieftin în Moldova</strong> fără
+            compromis la calitate, design și SEO on-page.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3 class="service-title">Focus pe rezultate</h3>
+          <p class="service-desc">
+            Construim pagini rapide care convertesc și care pot fi ușor
+            promovate în Google.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">03</div>
+          <h3 class="service-title">Tehnologie modernă</h3>
+          <p class="service-desc">
+            Astro + Cloudflare înseamnă timp de încărcare mic și costuri
+            optimizate pentru afaceri locale.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">04</div>
+          <h3 class="service-title">Suport și mentenanță</h3>
+          <p class="service-desc">
+            Oferim mentenanță, actualizări și ajutor continuu după lansare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum livrăm un site web rapid și eficient</h2>
+          <p>
+            Proces clar, comunicare simplă și livrare la timp. Așa obții un site
+            modern, optimizat și ușor de administrat.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Brief & obiective</h3>
+            <p class="step-desc">
+              Stabilim ce tip de site ai nevoie: prezentare, magazin online sau
+              landing page.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Design & structură</h3>
+            <p class="step-desc">
+              Creăm un design accesibil și intuitiv, orientat pe conversie.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Dezvoltare & SEO</h3>
+            <p class="step-desc">
+              Implementăm rapid, optimizăm viteza și setăm SEO on-page.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Lansare & suport</h3>
+            <p class="step-desc">
+              Publicăm site-ul și oferim suport, mentenanță și recomandări
+              pentru creștere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente despre noi</h2>
+          <p>Claritate înainte de a începe proiectul.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Lucrați doar în Chișinău?</summary>
+            <p>
+              Nu. Oferim servicii în Chișinău și în toată Moldova, inclusiv
+              online, pentru proiecte locale și internaționale.
+            </p>
+          </details>
+
+          <details>
+            <summary>Includeți SEO on-page în pachete?</summary>
+            <p>
+              Da. Setăm meta-taguri, structură corectă și optimizare de bază
+              pentru vizibilitate mai bună în Google.
+            </p>
+          </details>
+
+          <details>
+            <summary>Pot primi un site de prezentare cu buget mic?</summary>
+            <p>
+              Da. Avem pachete accesibile și recomandăm soluția optimă pentru
+              afaceri mici.
+            </p>
+          </details>
+
+          <details>
+            <summary>Oferiți mentenanță după lansare?</summary>
+            <p>
+              Da. Putem continua cu mentenanță lunară, actualizări și suport
+              tehnic.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Vrei să lucrăm împreună?</h2>
+          <p class="subheading">
+            Spune-ne despre proiectul tău și îți trimitem o ofertă personalizată
+            pentru creare site web în Moldova.
+          </p>
+          <a href="/contact/" class="btn btn-primary">Contactează-ne</a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>

@@ -1,111 +1,375 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const pageTitle =
+  "Blog creare site web ieftin în Moldova | Ghiduri și prețuri";
+const pageDescription =
+  "Articole despre creare site web ieftin în Moldova, web design accesibil, SEO on-page și prețuri pentru site de prezentare sau magazin online.";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title={pageTitle}
+      description={pageDescription}
+      canonicalUrl="https://moldovawebsite.md/blog/"
+      image="/assets/og-image.webp"
+    />
+  </head>
+  <body>
+    <!-- Full-page background video -->
+    <div class="bg-video" aria-hidden="true">
+      <video
+        class="bg-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/assets/bg-poster.webp"
+      >
+        <source src="/assets/bg.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <Header lang="ro" />
+
+    <!-- Hero Section -->
+    <section class="hero" id="acasa">
+      <div class="container grid">
+        <div class="hero-content">
+          <h1>Blog: creare site web ieftin în Moldova</h1>
+          <p class="subheading">
+            Ghiduri practice despre <strong>web design accesibil</strong> în
+            Chișinău și toată Moldova: <strong>site de prezentare</strong>,
+            <strong>magazin online</strong>, <strong>SEO on-page</strong> și
+            <strong>mentenanță</strong>.
+          </p>
+          <p class="subheading">
+            Dacă vrei <strong>creare site web ieftin în Moldova</strong>, aici
+            găsești explicații simple despre prețuri, tehnologii și pașii corecți.
+          </p>
+          <div class="hero-actions">
+            <a href="/preturi/" class="btn btn-primary">Vezi prețuri</a>
+            <a href="/contact/" class="btn btn-secondary">Cere ofertă</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Articole clare, fără termeni complicați</li>
+            <li>Exemple locale și recomandări practice</li>
+            <li>Strategii simple pentru rezultate rapide</li>
+          </ul>
+          <p class="subheading">
+            Dacă ai întrebări despre costuri, scrie-ne și îți oferim recomandări
+            concrete, fără jargon, potrivite pieței din Moldova.
+          </p>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <div class="hero-bg-shape"></div>
+          <div class="hero-device">
+            <svg
+              viewBox="0 0 500 300"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Ilustrație blog web design"
+            >
+              <defs>
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#0A2463"></stop>
+                  <stop offset="100%" stop-color="#63B3ED"></stop>
+                </linearGradient>
+                <clipPath id="screenClip">
+                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
+                </clipPath>
+              </defs>
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="url(#gradient)"></rect>
+              <image
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                href="/assets/hero-screen.png"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#screenClip)"
+              />
+              <rect
+                x="50"
+                y="30"
+                width="400"
+                height="240"
+                rx="10"
+                fill="#000"
+                opacity="0.12"
+                clip-path="url(#screenClip)"></rect>
+              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
+              ></circle>
+              <rect
+                x="150"
+                y="145"
+                height="10"
+                width="200"
+                fill="white"
+                opacity="0.6"></rect>
+              <rect
+                x="180"
+                y="167"
+                height="6"
+                width="140"
+                fill="white"
+                opacity="0.4"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to use the blog -->
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Cum folosești articolele din blog</h2>
+          <p>
+            Dacă ești la început și cauți <strong>creare site web ieftin în
+            Moldova</strong>, parcurge pașii de mai jos pentru a-ți clarifica
+            rapid bugetul și direcția.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Stabilește tipul de site</h3>
+            <p class="step-desc">
+              Alege între site de prezentare, landing page sau magazin online,
+              în funcție de obiectivele tale.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Înțelege prețurile</h3>
+            <p class="step-desc">
+              Articolele despre costuri explică ce include fiecare pachet și
+              cum poți reduce bugetul fără compromisuri.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Optimizează pentru Google</h3>
+            <p class="step-desc">
+              Urmează recomandările de SEO on-page pentru structură, viteză și
+              conținut relevant în căutări locale.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Aplică și cere ofertă</h3>
+            <p class="step-desc">
+              După ce ai claritate, contactează-ne pentru o ofertă personalizată
+              și un plan realist de livrare.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you'll find -->
+    <section class="services" id="despre-blog">
+      <div class="container grid">
+        <div class="section-title">
+          <h2>Ce găsești în blog</h2>
+          <p>
+            Publicăm articole despre <strong>creare site web</strong>,
+            <strong>prețuri</strong>, optimizare SEO și soluții potrivite pentru
+            afaceri mici din Moldova.
+          </p>
+          <p>
+            Scopul nostru este să explicăm clar ce contează când alegi un
+            furnizor de <strong>web design accesibil</strong> și cum îți
+            optimizezi bugetul.
+          </p>
+          <p>
+            Indiferent dacă ești la început sau vrei să îmbunătățești un site
+            existent, găsești pași practici, exemple locale și recomandări
+            concrete. Astfel, iei decizii rapide și eviți costurile inutile.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3 class="service-title">Prețuri reale</h3>
+          <p class="service-desc">
+            Comparăm pachete, explicăm ce include un site și când merită un
+            upgrade.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3 class="service-title">SEO on-page</h3>
+          <p class="service-desc">
+            Sfaturi pentru structură, conținut și viteză, astfel încât site-ul
+            tău să apară mai sus în Google.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">03</div>
+          <h3 class="service-title">Site de prezentare</h3>
+          <p class="service-desc">
+            Ghiduri pentru pagini care convertesc și comunică clar serviciile
+            tale.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">04</div>
+          <h3 class="service-title">Magazin online</h3>
+          <p class="service-desc">
+            Recomandări despre produse, plăți și experiența de cumpărare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="portfolio" id="articole">
+      <div class="container">
+        <div class="section-title">
+          <h2>Articole recente despre creare site web</h2>
+          <p>
+            Citește ghiduri actuale despre costuri, proces și optimizare pentru
+            rezultate rapide.
+          </p>
+          <p>
+            Actualizăm constant materialele, astfel încât să ai informații
+            relevante despre prețuri, tehnologii și alegeri inteligente.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          {
+            posts.map((post) => (
+              <article class="portfolio-card">
+                <div class="portfolio-image">
+                  <img
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                  />
+                  <div class="portfolio-overlay">
+                    <span class="portfolio-category">Articol</span>
+                  </div>
+                </div>
+                <div class="portfolio-content">
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.description}</p>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                  <ul class="portfolio-features">
+                    <li>✓ Web design accesibil</li>
+                    <li>✓ SEO on-page</li>
+                    <li>✓ Prețuri transparente</li>
+                  </ul>
+                  <a
+                    href={`/blog/${post.id}/`}
+                    class="portfolio-link">Citește articolul →</a
+                  >
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Întrebări frecvente despre blog</h2>
+          <p>Răspunsuri rapide înainte să începi documentarea.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Publicați ghiduri despre prețuri?</summary>
+            <p>
+              Da. Vei găsi articole despre cât costă un site în Moldova și ce
+              include fiecare pachet.
+            </p>
+          </details>
+
+          <details>
+            <summary>Găsesc sfaturi pentru SEO on-page?</summary>
+            <p>
+              Da. Explicăm structura paginilor, viteza, meta-tagurile și alte
+              elemente care influențează poziția în Google.
+            </p>
+          </details>
+
+          <details>
+            <summary>Pot solicita o ofertă după ce citesc?</summary>
+            <p>
+              Sigur. Dacă un articol te ajută să-ți clarifici nevoile, ne poți
+              contacta pentru o ofertă personalizată.
+            </p>
+          </details>
+
+          <details>
+            <summary>Abordați și mentenanța site-ului?</summary>
+            <p>
+              Da. Explicăm ce presupune mentenanța, cât costă și de ce este
+              importantă pentru securitate și performanță.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container grid">
+        <div class="cta-container">
+          <h2>Ai nevoie de un site web accesibil?</h2>
+          <p class="subheading">
+            Spune-ne ce tip de site vrei și îți recomandăm soluția potrivită
+            pentru bugetul tău.
+          </p>
+          <p class="subheading">Răspundem rapid, în română sau rusă.</p>
+          <a href="/contact/" class="btn btn-primary">Cere ofertă gratuită</a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+
+    <script src="/script.js" defer></script>
+  </body>
 </html>
