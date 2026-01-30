@@ -1,27 +1,28 @@
 # HTML extension removal
 /index.html                /            301
-/*.html                    /:splat      301
+/*.html                    /:splat/ 301
 
 # Russian static URLs to Astro routes
-/ru/Главная.html           /ru          301
-/ru/Главная                /ru          301
-/ru/Цены.html              /ru/preturi  301
-/ru/Цены                   /ru/preturi  301
-/ru/Контакты.html          /ru/contact  301
-/ru/Контакты               /ru/contact  301
-/ru/Условия.html           /ru/termeni  301
-/ru/Условия                /ru/termeni  301
-/ru/Политика-конфиденциальности.html  /ru/politica-confidentialitate  301
-/ru/Политика-конфиденциальности       /ru/politica-confidentialitate  301
+/ru/Главная.html /ru/ 301
+/ru/Главная /ru/ 301
+/ru/Цены.html              /ru/preturi/  301
+/ru/Цены                   /ru/preturi/  301
+/ru/Контакты.html          /ru/contact/  301
+/ru/Контакты               /ru/contact/  301
+/ru/Условия.html           /ru/termeni/  301
+/ru/Условия                /ru/termeni/  301
+/ru/Политика-конфиденциальности.html  /ru/politica-confidentialitate/  301
+/ru/Политика-конфиденциальности       /ru/politica-confidentialitate/  301
 
 # Russian service blog redirects
-/serviciiBlog/дизайн-веb.html         /ru/serviciiBlog/design-web      301
-/serviciiBlog/дизайн-веb              /ru/serviciiBlog/design-web      301
-/serviciiBlog/веб-разработка.html     /ru/serviciiBlog/dezvoltare-web  301
-/serviciiBlog/веб-разработка          /ru/serviciiBlog/dezvoltare-web  301
-/serviciiBlog/seo-оптимизация.html    /ru/serviciiBlog/seo-on-page     301
-/serviciiBlog/seo-оптимизация         /ru/serviciiBlog/seo-on-page     301
-/serviciiBlog/интернет-магазин.html   /ru/serviciiBlog/magazin-online  301
-/serviciiBlog/интернет-магазин        /ru/serviciiBlog/magazin-online  301
-/serviciiBlog/техническая-поддержка.html  /ru/serviciiBlog/mentenanta  301
-/serviciiBlog/техническая-поддержка       /ru/serviciiBlog/mentenanta  301
+/serviciiBlog/дизайн-веb.html         /ru/serviciiBlog/design-web/  301
+/serviciiBlog/дизайн-веb              /ru/serviciiBlog/design-web/  301
+/serviciiBlog/веб-разработка.html     /ru/serviciiBlog/dezvoltare-web/  301
+/serviciiBlog/веб-разработка          /ru/serviciiBlog/dezvoltare-web/  301
+/serviciiBlog/seo-оптимизация.html    /ru/serviciiBlog/seo-on-page/  301
+/serviciiBlog/seo-оптимизация         /ru/serviciiBlog/seo-on-page/  301
+/serviciiBlog/интернет-магазин.html   /ru/serviciiBlog/magazin-online/  301
+/serviciiBlog/интернет-магазин        /ru/serviciiBlog/magazin-online/  301
+/serviciiBlog/техническая-поддержка.html  /ru/serviciiBlog/mentenanta/  301
+/serviciiBlog/техническая-поддержка       /ru/serviciiBlog/mentenanta/  301
+

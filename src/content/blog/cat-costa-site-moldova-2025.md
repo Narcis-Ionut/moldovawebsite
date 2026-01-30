@@ -119,7 +119,7 @@ Diferența de preț vine din:
 
 ### Prețuri mici = calitate slabă?
 
-**Nu neapărat.** La [moldovawebsite.md](https://moldovawebsite.md/preturi), oferim prețuri accesibile pentru că:
+**Nu neapărat.** La [moldovawebsite.md](https://moldovawebsite.md/preturi/), oferim prețuri accesibile pentru că:
 
 - Folosim tehnologii moderne care reduc timpul de dezvoltare
 - Avem un proces standardizat și eficient
@@ -180,8 +180,16 @@ Pentru o **afacere mică din Moldova** care are nevoie de un site de prezentare 
 
 Vrei să afli exact cât ar costa site-ul pentru afacerea ta? Contactează-ne pentru o **consultație gratuită** și o ofertă detaliată.
 
-👉 [Solicită ofertă gratuită](/contact)
+👉 [Solicită ofertă gratuită](/contact/)
 
 ---
 
 _Ultima actualizare: Decembrie 2024. Prețurile sunt orientative și pot varia în funcție de cerințele specifice._
+
+
+
+
+
+
+
+
