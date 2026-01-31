@@ -54,8 +54,73 @@ const jsonLd = {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+				padding: 1.25rem;
+				color: var(--fg);
+				background: var(--surface);
+				border-radius: 14px;
+				box-shadow: var(--shadow-1);
+			}
+			.prose > * + * {
+				margin-top: 1rem;
+			}
+			.prose h2 {
+				margin-top: 2.25rem;
+				margin-bottom: 0.5rem;
+			}
+			.prose h3 {
+				margin-top: 1.5rem;
+				margin-bottom: 0.35rem;
+			}
+			.prose p {
+				margin: 0 0 1rem;
+			}
+			.prose ul,
+			.prose ol {
+				margin: 0 0 1rem 1.25rem;
+				padding-left: 0.25rem;
+			}
+			.prose li + li {
+				margin-top: 0.4rem;
+			}
+			.prose table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 1.5rem 0;
+				font-size: 0.98rem;
+			}
+			.prose th,
+			.prose td {
+				text-align: left;
+				padding: 0.65rem 0.75rem;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			}
+			.prose thead th {
+				background: color-mix(in oklch, var(--surface) 85%, transparent);
+				font-weight: 700;
+			}
+			.prose blockquote {
+				margin: 1.25rem 0;
+				padding: 0.75rem 1rem;
+				background: color-mix(in oklch, var(--surface) 92%, transparent);
+				border-left: 4px solid var(--accent);
+				border-radius: 10px;
+			}
+			.prose hr {
+				border: none;
+				height: 1px;
+				background: var(--border);
+				margin: 2rem 0;
+			}
+			.prose a {
+				text-decoration: underline;
+				text-decoration-color: color-mix(
+					in oklch,
+					var(--brand-1) 35%,
+					transparent
+				);
+			}
+			.prose strong {
+				color: var(--brand-1);
 			}
 			.title {
 				margin-bottom: 1em;
