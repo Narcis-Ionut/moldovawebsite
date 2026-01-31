@@ -13,6 +13,20 @@ const pageTitle =
   "Blog creare site web ieftin în Moldova | Ghiduri și prețuri";
 const pageDescription =
   "Articole despre creare site web ieftin în Moldova, web design accesibil, SEO on-page și prețuri pentru site de prezentare sau magazin online.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: pageTitle,
+  description: pageDescription,
+  url: "https://moldovawebsite.md/blog/",
+  inLanguage: "ro-MD",
+  publisher: {
+    "@type": "Organization",
+    name: "moldovawebsite.md",
+    url: "https://moldovawebsite.md/",
+  },
+};
+
 ---
 
 <!doctype html>
@@ -23,6 +37,7 @@ const pageDescription =
       description={pageDescription}
       canonicalUrl="https://moldovawebsite.md/blog/"
       image="/assets/og-image.webp"
+      jsonLd={jsonLd}
     />
   </head>
   <body>

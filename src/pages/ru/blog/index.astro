@@ -13,6 +13,20 @@ const pageTitle =
   "Блог: создание сайтов недорого в Молдове | Гайды и цены";
 const pageDescription =
   "Статьи о создании сайтов недорого в Молдове: доступный веб-дизайн, SEO on-page, цены на сайт-визитку и интернет-магазин.";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: pageTitle,
+  description: pageDescription,
+  url: "https://moldovawebsite.md/ru/blog/",
+  inLanguage: "ru-MD",
+  publisher: {
+    "@type": "Organization",
+    name: "moldovawebsite.md",
+    url: "https://moldovawebsite.md/",
+  },
+};
+
 ---
 
 <!doctype html>
@@ -26,6 +40,7 @@ const pageDescription =
       hreflangRu="https://moldovawebsite.md/ru/blog/"
       image="/assets/og-image.webp"
       lang="ru"
+      jsonLd={jsonLd}
     />
   </head>
   <body>

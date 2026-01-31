@@ -2,6 +2,21 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "Despre noi: creare site web ieftin in Moldova | moldovawebsite.md",
+  description:
+    "Afla cine suntem si cum oferim web design accesibil in Chisinau: site de prezentare, magazin online, SEO on-page si mentenanta.",
+  url: "https://moldovawebsite.md/about/",
+  inLanguage: "ro-MD",
+  about: {
+    "@type": "Organization",
+    name: "moldovawebsite.md",
+    url: "https://moldovawebsite.md/",
+  },
+};
 ---
 
 <!doctype html>
@@ -12,6 +27,7 @@ import Footer from "../components/Footer.astro";
       description="Află cine suntem și cum oferim web design accesibil în Chișinău: site de prezentare, magazin online, SEO on-page și mentenanță."
       canonicalUrl="https://moldovawebsite.md/about/"
       image="/assets/og-image.webp"
+      jsonLd={jsonLd}
     />
   </head>
   <body>
