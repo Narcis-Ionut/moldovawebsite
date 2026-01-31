@@ -2,11 +2,11 @@
 import BaseHead from "../../../components/BaseHead.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
-import { getCollection } from "astro:content";
 import FormattedDate from "../../../components/FormattedDate.astro";
+import { blogPosts } from "../../../data/blogPosts";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = [...blogPosts].sort(
+  (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf(),
 );
 
 const pageTitle =
@@ -301,8 +301,8 @@ const jsonLd = {
               <article class="portfolio-card">
                 <div class="portfolio-image">
                   <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
+                    src={post.heroImage}
+                    alt={post.title}
                     loading="lazy"
                     width="400"
                     height="250"
@@ -312,17 +312,17 @@ const jsonLd = {
                   </div>
                 </div>
                 <div class="portfolio-content">
-                  <h3>{post.data.title}</h3>
-                  <p>{post.data.description}</p>
+                  <h3>{post.title}</h3>
+                  <p>{post.description}</p>
                   <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
+                    <FormattedDate date={post.pubDate} />
                   </p>
                   <ul class="portfolio-features">
                     <li>✓ Доступный веб-дизайн</li>
                     <li>✓ SEO on-page</li>
                     <li>✓ Прозрачные цены</li>
                   </ul>
-                  <a href={`/blog/${post.id}/`} class="portfolio-link"
+                  <a href={`/blog/${post.slug}/`} class="portfolio-link"
                     >Читать статью →</a
                   >
                 </div>
