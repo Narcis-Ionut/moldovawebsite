@@ -36,350 +36,853 @@ const jsonLd = {
 	<head>
 		<BaseHead title={title} description={description} jsonLd={jsonLd} />
 		<style>
+			/* ============================================
+			   2025 PROFESSIONAL BLOG POST STYLES
+			   Modern, Clean, Premium Aesthetic
+			   ============================================ */
+
+			/* CSS Custom Properties for Blog */
+			:root {
+				--blog-max-width: 820px;
+				--blog-content-width: 720px;
+				--blog-radius: 24px;
+				--blog-radius-sm: 16px;
+				--blog-radius-xs: 12px;
+				--blog-glow: 0 0 40px color-mix(in oklch, var(--accent) 15%, transparent);
+				--blog-shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+				--blog-shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+				--blog-shadow-elevated: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.06);
+			}
+
+			/* Main Layout */
 			main {
-				width: calc(100% - 2em);
+				width: 100%;
 				max-width: 100%;
 				margin: 0;
-				padding-top: 80px;
+				padding: 100px 0 0;
+				position: relative;
 			}
+
+			/* Subtle background gradient */
+			main::before {
+				content: '';
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 60vh;
+				background: radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklch, var(--accent) 12%, transparent), transparent);
+				pointer-events: none;
+				z-index: -1;
+			}
+
+			/* ============================================
+			   HERO IMAGE SECTION
+			   ============================================ */
 			.hero-image {
 				width: 100%;
 				position: relative;
-				margin-bottom: 2rem;
+				margin-bottom: -80px;
+				z-index: 1;
 			}
+
 			.hero-image::after {
-				content: "";
+				content: '';
 				position: absolute;
 				inset: 0;
-				background: linear-gradient(to bottom, transparent 60%, var(--surface) 100%);
+				background: linear-gradient(to bottom, transparent 40%, color-mix(in oklch, var(--surface) 90%, transparent) 85%, var(--surface) 100%);
 				pointer-events: none;
-				border-radius: 16px;
+				border-radius: var(--blog-radius);
 			}
+
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
 				width: 100%;
-				max-width: 1020px;
-				border-radius: 16px;
-				box-shadow: var(--shadow-2);
+				max-width: 1200px;
+				height: auto;
+				max-height: 500px;
 				object-fit: cover;
+				border-radius: var(--blog-radius);
+				box-shadow: var(--blog-shadow-elevated);
+				transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
 			}
+
+			.hero-image:hover img {
+				transform: scale(1.01);
+				box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15), 0 12px 32px rgba(0, 0, 0, 0.08);
+			}
+
+			/* ============================================
+			   PROSE / ARTICLE CONTENT
+			   ============================================ */
 			.prose {
-				width: 780px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 2rem 2.5rem;
+				width: var(--blog-max-width);
+				max-width: calc(100% - 2rem);
+				margin: 0 auto;
+				padding: 3.5rem 4rem;
 				color: var(--fg);
 				background: var(--surface);
-				border-radius: 20px;
-				box-shadow: var(--shadow-2), 0 0 0 1px color-mix(in oklch, var(--border) 50%, transparent);
+				border-radius: var(--blog-radius);
+				box-shadow: var(--blog-shadow-medium), 0 0 0 1px color-mix(in oklch, var(--border) 40%, transparent);
+				position: relative;
+				z-index: 2;
+				animation: prose-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+				animation-delay: 0.1s;
 			}
+
+			@keyframes prose-enter {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			/* Typography Base */
 			.prose > * + * {
-				margin-top: 1.25rem;
+				margin-top: 1.75rem;
 			}
-			.prose h2 {
-				margin-top: 2.5rem;
-				margin-bottom: 0.75rem;
-				padding-bottom: 0.5rem;
-				border-bottom: 2px solid color-mix(in oklch, var(--accent) 30%, transparent);
-				font-size: var(--step-3);
+
+			.prose > *:first-child {
+				margin-top: 0;
 			}
-			.prose h3 {
-				margin-top: 2rem;
-				margin-bottom: 0.5rem;
-				color: var(--brand-2);
-				font-size: var(--step-2);
+
+			/* ============================================
+			   TITLE SECTION
+			   ============================================ */
+			.title {
+				margin-bottom: 3rem;
+				padding: 0 0 2.5rem;
+				text-align: center;
+				position: relative;
+				border-bottom: 1px solid color-mix(in oklch, var(--border) 50%, transparent);
 			}
-			.prose p {
+
+			.title::after {
+				content: '';
+				position: absolute;
+				bottom: -2px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 120px;
+				height: 3px;
+				background: linear-gradient(90deg, transparent, var(--brand-1), var(--accent), var(--brand-2), transparent);
+				border-radius: 3px;
+			}
+
+			.title h1 {
 				margin: 0 0 1.25rem;
-				line-height: 1.75;
+				font-size: clamp(1.75rem, 4vw, 2.75rem);
+				line-height: 1.2;
+				font-weight: 800;
+				letter-spacing: -0.02em;
+				background: linear-gradient(135deg, var(--brand-1) 0%, color-mix(in oklch, var(--brand-1) 70%, var(--brand-2)) 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
 			}
+
+			.date {
+				margin-bottom: 0.75rem;
+				color: var(--muted);
+				font-size: 0.9rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+			}
+
+			.date::before {
+				content: '📅';
+				font-size: 0.875rem;
+			}
+
+			.last-updated-on {
+				font-style: normal;
+				color: var(--muted);
+				font-size: 0.85rem;
+				margin-top: 0.5rem;
+				padding: 0.35rem 0.9rem;
+				background: color-mix(in oklch, var(--accent) 8%, transparent);
+				border-radius: 20px;
+				display: inline-block;
+			}
+
+			/* ============================================
+			   HEADINGS
+			   ============================================ */
+			.prose h2 {
+				margin-top: 3.5rem;
+				margin-bottom: 1.25rem;
+				padding-bottom: 0.75rem;
+				font-size: clamp(1.35rem, 3vw, 1.85rem);
+				font-weight: 700;
+				color: var(--brand-1);
+				position: relative;
+				border-bottom: 2px solid color-mix(in oklch, var(--border) 40%, transparent);
+			}
+
+			.prose h2::before {
+				content: '';
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 60px;
+				height: 2px;
+				background: linear-gradient(90deg, var(--accent), var(--brand-2));
+				border-radius: 2px;
+			}
+
+			.prose h3 {
+				margin-top: 2.5rem;
+				margin-bottom: 1rem;
+				font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+				font-weight: 600;
+				color: color-mix(in oklch, var(--brand-1) 85%, var(--brand-2));
+				position: relative;
+				padding-left: 1rem;
+			}
+
+			.prose h3::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0.35rem;
+				bottom: 0.35rem;
+				width: 4px;
+				background: linear-gradient(180deg, var(--accent), var(--brand-2));
+				border-radius: 2px;
+			}
+
+			.prose h4 {
+				margin-top: 2rem;
+				margin-bottom: 0.75rem;
+				font-size: 1.15rem;
+				font-weight: 600;
+				color: var(--fg);
+			}
+
+			/* ============================================
+			   PARAGRAPHS & TEXT
+			   ============================================ */
+			.prose p {
+				margin: 0 0 1.5rem;
+				line-height: 1.85;
+				font-size: 1.05rem;
+				color: color-mix(in oklch, var(--fg) 95%, black);
+			}
+
+			.prose strong {
+				color: var(--brand-1);
+				font-weight: 600;
+				background: linear-gradient(180deg, transparent 60%, color-mix(in oklch, var(--accent) 20%, transparent) 60%);
+				padding: 0 0.15rem;
+			}
+
+			/* Lead paragraph */
+			.prose > p:first-of-type {
+				font-size: 1.2rem;
+				line-height: 1.75;
+				color: color-mix(in oklch, var(--fg) 85%, black);
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				background: linear-gradient(135deg, color-mix(in oklch, var(--bg) 95%, white) 0%, color-mix(in oklch, var(--accent) 5%, transparent) 100%);
+				border-radius: var(--blog-radius-sm);
+				border-left: 4px solid var(--accent);
+			}
+
+			/* ============================================
+			   LINKS
+			   ============================================ */
+			.prose a {
+				color: var(--brand-1);
+				text-decoration: none;
+				font-weight: 500;
+				border-bottom: 2px solid color-mix(in oklch, var(--accent) 50%, transparent);
+				transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+				position: relative;
+			}
+
+			.prose a:hover {
+				color: var(--brand-2);
+				border-bottom-color: var(--brand-2);
+				background: linear-gradient(180deg, transparent 60%, color-mix(in oklch, var(--accent) 15%, transparent) 60%);
+			}
+
+			.prose a:focus-visible {
+				outline: 2px solid var(--accent);
+				outline-offset: 3px;
+				border-radius: 3px;
+			}
+
+			/* ============================================
+			   LISTS
+			   ============================================ */
 			.prose ul,
 			.prose ol {
-				margin: 0 0 1.25rem 0;
-				padding-left: 1.5rem;
+				margin: 1.5rem 0;
+				padding-left: 0;
+				list-style: none;
 			}
+
 			.prose li {
-				margin-bottom: 0.5rem;
-				padding-left: 0.5rem;
+				margin-bottom: 0.875rem;
+				padding-left: 2rem;
+				position: relative;
+				line-height: 1.7;
 			}
-			.prose li + li {
-				margin-top: 0.35rem;
+
+			/* Custom bullet points */
+			.prose ul li::before {
+				content: '';
+				position: absolute;
+				left: 0.5rem;
+				top: 0.65rem;
+				width: 8px;
+				height: 8px;
+				background: linear-gradient(135deg, var(--accent), var(--brand-2));
+				border-radius: 50%;
+				box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent) 15%, transparent);
 			}
-			.prose li::marker {
-				color: var(--accent);
-				font-weight: 600;
+
+			.prose ol {
+				counter-reset: item;
 			}
-			.prose ol li::marker {
-				color: var(--brand-2);
+
+			.prose ol li {
+				counter-increment: item;
 			}
-			
-			/* Enhanced Table Styles */
+
+			.prose ol li::before {
+				content: counter(item);
+				position: absolute;
+				left: 0;
+				top: 0.15rem;
+				width: 1.5rem;
+				height: 1.5rem;
+				background: linear-gradient(135deg, var(--brand-1), var(--accent));
+				color: white;
+				font-size: 0.75rem;
+				font-weight: 700;
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				box-shadow: 0 4px 12px color-mix(in oklch, var(--brand-1) 25%, transparent);
+			}
+
+			/* Nested lists */
+			.prose li > ul,
+			.prose li > ol {
+				margin: 0.75rem 0 0.5rem;
+			}
+
+			/* ============================================
+			   TABLES - Premium Style
+			   ============================================ */
 			.prose table {
 				width: 100%;
 				border-collapse: separate;
 				border-spacing: 0;
-				margin: 1.75rem 0;
+				margin: 2.5rem 0;
 				font-size: 0.95rem;
-				border-radius: 12px;
+				border-radius: var(--blog-radius-sm);
 				overflow: hidden;
-				box-shadow: var(--shadow-1);
-			}
-			.prose thead {
-				background: linear-gradient(135deg, var(--brand-1) 0%, color-mix(in oklch, var(--brand-1) 80%, var(--accent)) 100%);
-			}
-			.prose th {
-				color: white;
-				font-weight: 700;
-				padding: 1rem 1.25rem;
-				text-align: left;
-				font-size: 0.9rem;
-				text-transform: uppercase;
-				letter-spacing: 0.03em;
-			}
-			.prose td {
-				padding: 1rem 1.25rem;
-				border-bottom: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+				box-shadow: var(--blog-shadow-medium);
 				background: var(--surface);
 			}
+
+			.prose thead {
+				background: linear-gradient(135deg, var(--brand-1) 0%, color-mix(in oklch, var(--brand-1) 80%, var(--accent)) 100%);
+				position: relative;
+			}
+
+			.prose thead::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(90deg, var(--accent), var(--brand-2));
+			}
+
+			.prose th {
+				color: white;
+				font-weight: 600;
+				padding: 1.25rem 1.5rem;
+				text-align: left;
+				font-size: 0.85rem;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.prose td {
+				padding: 1.25rem 1.5rem;
+				border-bottom: 1px solid color-mix(in oklch, var(--border) 50%, transparent);
+				background: var(--surface);
+				transition: background 0.2s ease;
+			}
+
 			.prose tbody tr:last-child td {
 				border-bottom: none;
 			}
+
 			.prose tbody tr:nth-child(even) td {
-				background: color-mix(in oklch, var(--bg) 50%, var(--surface));
+				background: color-mix(in oklch, var(--bg) 30%, var(--surface));
 			}
+
 			.prose tbody tr:hover td {
-				background: color-mix(in oklch, var(--accent) 8%, var(--surface));
+				background: color-mix(in oklch, var(--accent) 5%, var(--surface));
 			}
+
 			.prose td strong {
 				color: var(--brand-1);
+				font-weight: 600;
+				background: none;
+				padding: 0;
 			}
-			
-			/* Enhanced Blockquote */
+
+			/* Price highlight in tables */
+			.prose td:nth-child(2) {
+				font-weight: 600;
+				color: var(--brand-2);
+				font-family: var(--font-heading);
+			}
+
+			/* ============================================
+			   BLOCKQUOTE - Premium Card Style
+			   ============================================ */
 			.prose blockquote {
-				margin: 1.75rem 0;
-				padding: 1.25rem 1.5rem;
-				background: linear-gradient(135deg, color-mix(in oklch, var(--accent) 10%, var(--surface)) 0%, color-mix(in oklch, var(--brand-1) 5%, var(--surface)) 100%);
-				border-left: 4px solid var(--accent);
-				border-radius: 0 12px 12px 0;
+				margin: 2.5rem 0;
+				padding: 2rem 2rem 2rem 3.5rem;
+				background: linear-gradient(135deg, color-mix(in oklch, var(--accent) 6%, var(--surface)) 0%, color-mix(in oklch, var(--brand-1) 4%, var(--surface)) 100%);
+				border: 1px solid color-mix(in oklch, var(--accent) 20%, transparent);
+				border-radius: var(--blog-radius-sm);
 				position: relative;
+				box-shadow: var(--blog-shadow-soft);
 			}
+
 			.prose blockquote::before {
 				content: '"';
 				position: absolute;
-				top: 0.5rem;
-				left: 1rem;
-				font-size: 4rem;
+				top: 1rem;
+				left: 1.25rem;
+				font-size: 5rem;
 				color: var(--accent);
-				opacity: 0.15;
-				font-family: Georgia, serif;
+				opacity: 0.25;
+				font-family: Georgia, 'Times New Roman', serif;
 				line-height: 1;
+				font-style: italic;
 			}
+
+			.prose blockquote p {
+				margin: 0;
+				font-style: italic;
+				color: color-mix(in oklch, var(--fg) 90%, black);
+				line-height: 1.8;
+			}
+
 			.prose blockquote strong:first-child {
 				color: var(--brand-1);
+				font-weight: 600;
+				font-style: normal;
 			}
-			
-			/* Enhanced HR */
+
+			/* ============================================
+			   HORIZONTAL RULE
+			   ============================================ */
 			.prose hr {
 				border: none;
-				height: 2px;
-				background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--accent) 50%, var(--border) 80%, transparent 100%);
-				margin: 2.5rem 0;
+				height: 1px;
+				background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--border) 70%, transparent) 20%, color-mix(in oklch, var(--border) 70%, transparent) 80%, transparent);
+				margin: 3.5rem auto;
 				position: relative;
+				max-width: 80%;
 			}
+
+			.prose hr::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: 40px;
+				height: 40px;
+				background: var(--surface);
+				border-radius: 50%;
+				box-shadow: var(--blog-shadow-soft);
+			}
+
 			.prose hr::after {
-				content: "◆";
+				content: '◆';
 				position: absolute;
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
 				color: var(--accent);
-				font-size: 0.75rem;
-				background: var(--surface);
-				padding: 0 0.75rem;
+				font-size: 0.875rem;
+				background: linear-gradient(135deg, var(--brand-1), var(--accent));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
 			}
-			
-			/* Enhanced Links */
-			.prose a {
-				color: var(--brand-1);
-				text-decoration: none;
-				border-bottom: 2px solid color-mix(in oklch, var(--brand-1) 30%, transparent);
-				transition: all 0.2s ease;
-				font-weight: 500;
-			}
-			.prose a:hover {
-				color: var(--brand-2);
-				border-bottom-color: var(--brand-2);
-			}
-			
-			.prose strong {
-				color: var(--brand-1);
-				font-weight: 600;
-			}
-			
-			/* Enhanced Title Section */
-			.title {
-				margin-bottom: 1.5em;
-				padding: 1.5em 0;
-				text-align: center;
-				line-height: 1;
-				position: relative;
-			}
-			.title::after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				width: 80px;
-				height: 4px;
-				background: linear-gradient(90deg, var(--brand-1), var(--accent));
-				border-radius: 2px;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-				font-size: var(--step-4);
-				line-height: 1.2;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: var(--muted);
-				font-size: var(--step--1);
-			}
-			.last-updated-on {
-				font-style: italic;
-				color: var(--muted);
-				font-size: var(--step--1);
-			}
-			
-			/* Lead paragraph */
-			.prose .lead {
-				font-size: var(--step-1);
-				color: var(--fg);
-				line-height: 1.7;
-				margin-bottom: 1.5rem;
-			}
-			.prose .lead strong {
-				color: var(--brand-2);
-			}
-			
-			/* Company Cards for Top 5 */
+
+			/* ============================================
+			   COMPANY CARDS (Top 5 Style)
+			   ============================================ */
 			.company-card {
-				background: linear-gradient(135deg, color-mix(in oklch, var(--bg) 80%, white) 0%, var(--surface) 100%);
-				border-radius: 16px;
-				padding: 1.5rem 2rem;
-				margin: 1.5rem 0 2rem 0;
-				border: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
-				box-shadow: var(--shadow-1);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				background: linear-gradient(145deg, var(--surface) 0%, color-mix(in oklch, var(--bg) 60%, white) 100%);
+				border-radius: var(--blog-radius-sm);
+				padding: 2rem 2.5rem;
+				margin: 2rem 0 2.5rem;
+				border: 1px solid color-mix(in oklch, var(--border) 40%, transparent);
+				box-shadow: var(--blog-shadow-medium);
+				transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+				position: relative;
+				overflow: hidden;
 			}
+
+			.company-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, var(--brand-1), var(--accent), var(--brand-2));
+			}
+
 			.company-card:hover {
-				transform: translateY(-4px);
-				box-shadow: var(--shadow-2);
+				transform: translateY(-6px);
+				box-shadow: var(--blog-shadow-elevated);
 			}
+
 			.company-header {
 				display: flex;
 				align-items: center;
-				gap: 1rem;
-				margin-bottom: 1rem;
-				padding-bottom: 0.75rem;
-				border-bottom: 2px solid color-mix(in oklch, var(--accent) 25%, transparent);
+				gap: 1.25rem;
+				margin-bottom: 1.25rem;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid color-mix(in oklch, var(--border) 40%, transparent);
 			}
+
 			.company-rank {
-				width: 48px;
-				height: 48px;
-				background: linear-gradient(135deg, var(--brand-1) 0%, var(--accent) 100%);
+				width: 56px;
+				height: 56px;
+				background: linear-gradient(135deg, var(--brand-1) 0%, var(--accent) 50%, var(--brand-2) 100%);
 				color: white;
 				border-radius: 50%;
 				display: grid;
 				place-items: center;
 				font-weight: 800;
-				font-size: 1.25rem;
-				box-shadow: 0 4px 12px color-mix(in oklch, var(--brand-1) 30%, transparent);
+				font-size: 1.35rem;
+				box-shadow: 0 8px 24px color-mix(in oklch, var(--brand-1) 30%, transparent);
+				flex-shrink: 0;
 			}
+
 			.company-card h2 {
 				margin: 0 !important;
 				padding: 0 !important;
 				border: none !important;
-				font-size: var(--step-2) !important;
+				font-size: 1.5rem !important;
+				background: linear-gradient(135deg, var(--brand-1), color-mix(in oklch, var(--brand-1) 70%, var(--accent)));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
 			}
+
 			.company-card p {
-				margin-bottom: 0.75rem;
+				margin-bottom: 0.875rem;
+				line-height: 1.75;
 			}
+
 			.company-card p:last-child {
 				margin-bottom: 0;
 			}
+
 			.company-card a[rel="nofollow"] {
 				display: inline-flex;
 				align-items: center;
 				gap: 0.5rem;
-				background: color-mix(in oklch, var(--brand-1) 10%, transparent);
-				padding: 0.35rem 0.85rem;
-				border-radius: 20px;
-				border: 1px solid color-mix(in oklch, var(--brand-1) 20%, transparent);
+				background: linear-gradient(135deg, color-mix(in oklch, var(--brand-1) 10%, transparent), color-mix(in oklch, var(--accent) 5%, transparent));
+				padding: 0.5rem 1.1rem;
+				border-radius: 24px;
+				border: 1.5px solid color-mix(in oklch, var(--brand-1) 20%, transparent);
 				font-weight: 600;
-				transition: all 0.2s ease;
 				font-size: 0.9rem;
+				transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+				margin-top: 0.5rem;
 			}
+
 			.company-card a[rel="nofollow"]:hover {
 				background: var(--brand-1);
 				color: white;
 				border-color: var(--brand-1);
-				transform: translateY(-1px);
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px color-mix(in oklch, var(--brand-1) 25%, transparent);
 			}
-			
-			/* Quick Choice List */
+
+			/* ============================================
+			   QUICK CHOICE LIST
+			   ============================================ */
 			.prose ul.quick-choice {
 				list-style: none;
 				padding: 0;
-				margin: 1.5rem 0;
+				margin: 2rem 0;
 			}
+
 			.prose ul.quick-choice li {
-				background: linear-gradient(135deg, color-mix(in oklch, var(--bg) 70%, white) 0%, var(--surface) 100%);
-				padding: 1rem 1.25rem;
-				margin-bottom: 0.75rem;
-				border-radius: 12px;
-				border-left: 4px solid var(--accent);
-				box-shadow: var(--shadow-1);
-				transition: transform 0.2s ease;
+				background: linear-gradient(135deg, var(--surface) 0%, color-mix(in oklch, var(--bg) 50%, white) 100%);
+				padding: 1.25rem 1.5rem 1.25rem 3rem;
+				margin-bottom: 1rem;
+				border-radius: var(--blog-radius-xs);
+				border: 1px solid color-mix(in oklch, var(--border) 35%, transparent);
+				box-shadow: var(--blog-shadow-soft);
+				transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				position: relative;
 			}
+
+			.prose ul.quick-choice li::before {
+				content: '→';
+				position: absolute;
+				left: 1.25rem;
+				top: 50%;
+				transform: translateY(-50%);
+				width: auto;
+				height: auto;
+				background: none;
+				border-radius: 0;
+				box-shadow: none;
+				color: var(--accent);
+				font-weight: 700;
+				font-size: 1.1rem;
+			}
+
 			.prose ul.quick-choice li:hover {
-				transform: translateX(4px);
-				border-left-color: var(--brand-2);
+				transform: translateX(8px);
+				border-color: color-mix(in oklch, var(--accent) 50%, transparent);
+				box-shadow: var(--blog-shadow-medium);
 			}
+
 			.prose ul.quick-choice li strong {
 				color: var(--brand-1);
 			}
-			.prose ul.quick-choice li a {
-				font-weight: 600;
+
+			/* ============================================
+			   INFO BOXES / CALLOUTS
+			   ============================================ */
+			.prose .info-box,
+			.prose .warning-box,
+			.prose .tip-box {
+				padding: 1.5rem 2rem;
+				margin: 2rem 0;
+				border-radius: var(--blog-radius-xs);
+				position: relative;
+				border-left: 4px solid;
 			}
-			
-			/* Responsive */
-			@media (max-width: 768px) {
+
+			.prose .info-box {
+				background: color-mix(in oklch, var(--accent) 8%, var(--surface));
+				border-color: var(--accent);
+			}
+
+			.prose .warning-box {
+				background: color-mix(in oklch, var(--brand-2) 8%, var(--surface));
+				border-color: var(--brand-2);
+			}
+
+			.prose .tip-box {
+				background: color-mix(in oklch, #10b981 8%, var(--surface));
+				border-color: #10b981;
+			}
+
+			/* ============================================
+			   CODE (if present)
+			   ============================================ */
+			.prose code {
+				font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+				font-size: 0.875em;
+				background: color-mix(in oklch, var(--bg) 80%, black);
+				padding: 0.2rem 0.5rem;
+				border-radius: 6px;
+				color: var(--brand-1);
+				font-weight: 500;
+			}
+
+			.prose pre {
+				background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+				border-radius: var(--blog-radius-xs);
+				padding: 1.5rem;
+				overflow-x: auto;
+				margin: 2rem 0;
+				box-shadow: var(--blog-shadow-medium);
+			}
+
+			.prose pre code {
+				background: transparent;
+				color: #e2e8f0;
+				padding: 0;
+				font-size: 0.9rem;
+				line-height: 1.7;
+			}
+
+			/* ============================================
+			   RESPONSIVE DESIGN
+			   ============================================ */
+			@media (max-width: 900px) {
 				.prose {
-					padding: 1.5rem;
-					border-radius: 16px;
+					padding: 2.5rem 3rem;
 				}
-				.prose table {
-					font-size: 0.85rem;
+			}
+
+			@media (max-width: 768px) {
+				.hero-image {
+					margin-bottom: -60px;
 				}
-				.prose th,
-				.prose td {
-					padding: 0.75rem;
+
+				.hero-image img {
+					max-height: 300px;
+					border-radius: var(--blog-radius-sm);
 				}
+
+				.prose {
+					padding: 2rem 1.5rem;
+					border-radius: var(--blog-radius-sm);
+					max-width: calc(100% - 1rem);
+				}
+
+				.title {
+					margin-bottom: 2rem;
+					padding-bottom: 1.5rem;
+				}
+
 				.title h1 {
-					font-size: var(--step-3);
+					font-size: 1.65rem;
 				}
-				.company-card {
+
+				.prose h2 {
+					margin-top: 2.5rem;
+					font-size: 1.35rem;
+				}
+
+				.prose h3 {
+					margin-top: 2rem;
+					font-size: 1.15rem;
+				}
+
+				.prose > p:first-of-type {
+					font-size: 1.1rem;
 					padding: 1.25rem;
 				}
-				.company-header {
-					gap: 0.75rem;
+
+				.prose table {
+					font-size: 0.85rem;
+					border-radius: var(--blog-radius-xs);
 				}
+
+				.prose th,
+				.prose td {
+					padding: 0.875rem;
+				}
+
+				.prose blockquote {
+					padding: 1.5rem 1.5rem 1.5rem 2.75rem;
+					margin: 2rem 0;
+				}
+
+				.prose blockquote::before {
+					font-size: 4rem;
+					top: 0.75rem;
+					left: 0.75rem;
+				}
+
+				.company-card {
+					padding: 1.5rem;
+					margin: 1.5rem 0 2rem;
+				}
+
+				.company-header {
+					gap: 1rem;
+				}
+
 				.company-rank {
-					width: 40px;
-					height: 40px;
+					width: 48px;
+					height: 48px;
+					font-size: 1.15rem;
+				}
+
+				.company-card h2 {
+					font-size: 1.25rem !important;
+				}
+
+				.prose li {
+					padding-left: 1.75rem;
+				}
+
+				.prose ul.quick-choice li {
+					padding-left: 2.5rem;
+				}
+
+				.prose ul.quick-choice li::before {
+					left: 1rem;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.prose {
+					padding: 1.5rem 1.25rem;
+				}
+
+				.prose p {
 					font-size: 1rem;
+				}
+
+				.prose table {
+					display: block;
+					overflow-x: auto;
+					white-space: nowrap;
+				}
+
+				.prose hr {
+					margin: 2.5rem auto;
+				}
+			}
+
+			/* ============================================
+			   DARK MODE SUPPORT (if enabled)
+			   ============================================ */
+			@media (prefers-color-scheme: dark) {
+				.prose > p:first-of-type {
+					background: linear-gradient(135deg, color-mix(in oklch, var(--surface) 95%, black) 0%, color-mix(in oklch, var(--accent) 8%, transparent) 100%);
+				}
+
+				.company-card {
+					background: linear-gradient(145deg, var(--surface) 0%, color-mix(in oklch, var(--surface) 90%, black) 100%);
+				}
+			}
+
+			/* ============================================
+			   PRINT STYLES
+			   ============================================ */
+			@media print {
+				.hero-image::after {
+					display: none;
+				}
+
+				.prose {
+					box-shadow: none;
+					border: 1px solid var(--border);
+				}
+
+				.company-card {
+					box-shadow: none;
+					border: 1px solid var(--border);
+					break-inside: avoid;
 				}
 			}
 		</style>
