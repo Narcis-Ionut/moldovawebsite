@@ -1,126 +1,224 @@
----
+﻿---
 import BlogPost from "../../layouts/BlogPost.astro";
 
 const data = {
-  title: "Top 5 cei mai buni in R Moldova",
+  title: "Top 5 cei mai buni în R. Moldova",
   description:
-    "Top 5 agentii/companii tech din R Moldova: FusionWorks, Qream, Studio Webmaster, Endava si ilab.md.",
+    "Top 5 agenții/companii tech din R. Moldova: FusionWorks, Qream, Studio Webmaster, Endava și ilab.md.",
   pubDate: new Date("2026-01-31"),
   heroImage: "/blog-placeholder-1.jpg",
 };
 ---
 
 <BlogPost {...data}>
-  <p class="lead">
-    Daca vrei o lista scurta cu firme care livreaza rezultate solide in
-    Republica Moldova, mai jos ai un <strong>top 5 cu punctele lor forte</strong>. Fiecare are
-    un profil diferit, asa ca alege in functie de buget, stil si complexitatea
-    proiectului.
-  </p>
-
-  <div class="company-card">
-    <div class="company-header">
-      <span class="company-rank">1</span>
-      <h2>FusionWorks</h2>
+  <section class="content-block">
+    <div class="text-card is-lead">
+      <p>
+        Dacă vrei o listă scurtă cu firme care livrează rezultate solide în
+        Republica Moldova, mai jos ai un <strong>top 5 cu punctele lor forte</strong>.
+        Fiecare are un profil diferit, așa că alege în funcție de buget, stil și
+        complexitatea proiectului.
+      </p>
     </div>
-    <p>
-      Website: <a href="https://fusion.works" rel="nofollow">fusion.works</a>
-    </p>
-    <p>
-      FusionWorks este un nume puternic in scena tech locala, cunoscut mai ales
-      pentru proiecte complexe, nu doar site-uri de prezentare. Construiesc
-      aplicatii web full-scale, platforme fintech si produse pentru startup-uri de
-      la zero. Daca ai nevoie de un partener care poate actiona ca un co-fondator
-      tehnic sau poate livra un sistem cu logica backend serioasa (de exemplu, o
-      platforma de logistica sau un tool AI), aceasta este alegerea de top. Sunt
-      activi si in comunitate, organizand "Moldova Developer Conference".
-    </p>
-  </div>
 
-  <div class="company-card">
-    <div class="company-header">
-      <span class="company-rank">2</span>
-      <h2>Qream</h2>
+    <div class="card-grid">
+      <div class="stat-card">
+        <strong>Criterii</strong>
+        Portofoliu, specializare, capacitate de livrare.
+      </div>
+      <div class="stat-card">
+        <strong>Bugete</strong>
+        De la startup-uri la enterprise.
+      </div>
+      <div class="stat-card">
+        <strong>Tipuri proiect</strong>
+        Site-uri, platforme, produse digitale.
+      </div>
     </div>
-    <p>
-      Website: <a href="https://theqream.com" rel="nofollow">theqream.com</a>
-    </p>
-    <p>
-      Qream este "artistul" din grup. In timp ce multe agentii se concentreaza pe
-      cod, Qream pune accent pe design UI/UX premium si experiente vizuale
-      memorabile. Sunt alegerea ideala pentru branduri care vor un efect "wow"
-      prin animatii, tipografie curajoasa si un stil care iese in evidenta.
-      Lucreaza foarte bine cu startup-uri tech moderne si branduri lifestyle care
-      vor sa arate cutting-edge.
-    </p>
-  </div>
+  </section>
 
-  <div class="company-card">
-    <div class="company-header">
-      <span class="company-rank">3</span>
-      <h2>Studio Webmaster</h2>
+  <section class="content-block">
+    <div class="block-header">
+      <span class="block-kicker">Top 5</span>
+      <h2 class="block-title">Agenții și companii tech recomandate</h2>
     </div>
-    <p>
-      Website: <a href="https://webmaster.md" rel="nofollow">webmaster.md</a>
-    </p>
-    <p>
-      Studio Webmaster este una dintre cele mai vechi agentii full-service din
-      Chisinau. Functioneaza ca un "one-stop-shop" pentru business-uri locale si
-      proiecte e-commerce: construiesc site-ul, ofera hosting, integreaza sisteme
-      locale (precum 1C), apoi ruleaza SEO si campanii de marketing. Au un
-      portofoliu mare de clienti moldoveni.
-    </p>
-  </div>
 
-  <div class="company-card">
-    <div class="company-header">
-      <span class="company-rank">4</span>
-      <h2>Endava (Moldova)</h2>
+    <div class="company-card">
+      <div class="company-header">
+        <span class="company-rank">1</span>
+        <h2>FusionWorks</h2>
+      </div>
+      <div class="company-meta">
+        <a class="company-link" href="https://fusion.works" rel="nofollow">fusion.works</a>
+        <span class="pill">Platforme complexe</span>
+        <span class="pill">Fintech</span>
+        <span class="pill">AI & sisteme custom</span>
+      </div>
+      <div class="company-grid">
+        <div class="text-card">
+          <p>
+            FusionWorks este un nume puternic în scena tech locală, cunoscut pentru
+            proiecte complexe, nu doar site-uri de prezentare. Construiesc aplicații
+            web full-scale, platforme fintech și produse pentru startup-uri de la zero.
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Potrivit pentru</h3>
+          <ul>
+            <li>platforme logistice sau enterprise</li>
+            <li>produse SaaS cu backend avansat</li>
+            <li>startup-uri care au nevoie de partener tehnic</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <p>
-      Website: <a href="https://www.endava.com" rel="nofollow">endava.com</a>
-    </p>
-    <p>
-      Endava este un gigant global IT, cu una dintre cele mai mari echipe de
-      livrare in Chisinau. Alegerea premium pentru clienti enterprise: banci,
-      asiguratori, corporatii multinationale. Nu fac de obicei site-uri mici, ci
-      construiesc platforme digitale masive, sigure si scalabile, care deservesc
-      milioane de utilizatori. Daca securitatea, conformitatea si scalarea sunt
-      prioritati, Endava este standardul industriei.
-    </p>
-  </div>
 
-  <div class="company-card">
-    <div class="company-header">
-      <span class="company-rank">5</span>
-      <h2>ilab.md</h2>
+    <div class="company-card">
+      <div class="company-header">
+        <span class="company-rank">2</span>
+        <h2>Qream</h2>
+      </div>
+      <div class="company-meta">
+        <a class="company-link" href="https://theqream.com" rel="nofollow">theqream.com</a>
+        <span class="pill">UI/UX premium</span>
+        <span class="pill">Branding vizual</span>
+        <span class="pill">Animații</span>
+      </div>
+      <div class="company-grid">
+        <div class="text-card">
+          <p>
+            Qream este „artistul” din grup. Pun accent pe design UI/UX premium și
+            experiențe vizuale memorabile. Sunt alegerea ideală pentru branduri care
+            vor un efect „wow” prin animații, tipografie curajoasă și un stil care
+            iese în evidență.
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Potrivit pentru</h3>
+          <ul>
+            <li>branduri care vor un impact vizual puternic</li>
+            <li>landing page-uri de lansare</li>
+            <li>startup-uri tech cu focus pe design</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <p>
-      Website: <a href="https://ilab.md" rel="nofollow">ilab.md</a>
-    </p>
-    <p>
-      ilab.md este o agentie boutique apreciata, care combina skill tehnic cu
-      preturi competitive. Sunt bine vazuti pentru site-uri custom curate si
-      platforme digitale functionale. Recenziile mentioneaza constant livrarea la
-      timp si flexibilitatea in adaptarea la cerintele clientului. Este o optiune
-      excelenta de "mijloc" pentru business-uri care vor un site profesionist
-      fara costurile unei agentii enterprise.
-    </p>
-  </div>
 
-  <hr />
+    <div class="company-card">
+      <div class="company-header">
+        <span class="company-rank">3</span>
+        <h2>Studio Webmaster</h2>
+      </div>
+      <div class="company-meta">
+        <a class="company-link" href="https://webmaster.md" rel="nofollow">webmaster.md</a>
+        <span class="pill">Full-service</span>
+        <span class="pill">E-commerce local</span>
+        <span class="pill">SEO & marketing</span>
+      </div>
+      <div class="company-grid">
+        <div class="text-card">
+          <p>
+            Studio Webmaster este una dintre cele mai vechi agenții full-service din
+            Chișinău. Funcționează ca un „one-stop-shop” pentru business-uri locale:
+            construiesc site-ul, oferă hosting, integrează sisteme locale (precum 1C)
+            și rulează SEO sau campanii de marketing.
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Potrivit pentru</h3>
+          <ul>
+            <li>business-uri locale și magazine online</li>
+            <li>proiecte care cer integrare cu sisteme locale</li>
+            <li>clienți care vor suport complet, într-un singur loc</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <h2>✅ Cum alegi rapid?</h2>
-  <ul class="quick-choice">
-    <li><strong>Vrei produs complex si backend solid:</strong> <a href="https://fusion.works" rel="nofollow">FusionWorks</a></li>
-    <li><strong>Vrei impact vizual si UI/UX premium:</strong> <a href="https://theqream.com" rel="nofollow">Qream</a></li>
-    <li><strong>Vrei pachet complet pentru business local:</strong> <a href="https://webmaster.md" rel="nofollow">Studio Webmaster</a></li>
-    <li><strong>Vrei enterprise, securitate si scalare:</strong> <a href="https://www.endava.com" rel="nofollow">Endava</a></li>
-    <li><strong>Vrei echilibru intre calitate si buget:</strong> <a href="https://ilab.md" rel="nofollow">ilab.md</a></li>
-  </ul>
+    <div class="company-card">
+      <div class="company-header">
+        <span class="company-rank">4</span>
+        <h2>Endava (Moldova)</h2>
+      </div>
+      <div class="company-meta">
+        <a class="company-link" href="https://www.endava.com" rel="nofollow">endava.com</a>
+        <span class="pill">Enterprise</span>
+        <span class="pill">Securitate & conformitate</span>
+        <span class="pill">Scalare</span>
+      </div>
+      <div class="company-grid">
+        <div class="text-card">
+          <p>
+            Endava este un gigant global IT, cu una dintre cele mai mari echipe de
+            livrare în Chișinău. Alegerea premium pentru clienți enterprise: bănci,
+            asigurători și corporații multinaționale. Livrare la scară mare, cu focus
+            pe securitate și stabilitate.
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Potrivit pentru</h3>
+          <ul>
+            <li>companii enterprise cu cerințe stricte</li>
+            <li>proiecte cu volum mare de utilizatori</li>
+            <li>platforme critice și integrare complexă</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-  <p>
-    Daca vrei, pot ajusta topul in functie de industrie, buget sau tipul de
-    proiect.
-  </p>
+    <div class="company-card">
+      <div class="company-header">
+        <span class="company-rank">5</span>
+        <h2>ilab.md</h2>
+      </div>
+      <div class="company-meta">
+        <a class="company-link" href="https://ilab.md" rel="nofollow">ilab.md</a>
+        <span class="pill">Boutique</span>
+        <span class="pill">Buget echilibrat</span>
+        <span class="pill">Livrare flexibilă</span>
+      </div>
+      <div class="company-grid">
+        <div class="text-card">
+          <p>
+            ilab.md este o agenție boutique apreciată, care combină skill tehnic cu
+            prețuri competitive. Sunt bine văzuți pentru site-uri custom curate și
+            platforme digitale funcționale. Recenziile menționează livrarea la timp
+            și flexibilitatea în adaptarea la cerințe.
+          </p>
+        </div>
+        <div class="text-card">
+          <h3>Potrivit pentru</h3>
+          <ul>
+            <li>IMM-uri care vor un site profesionist</li>
+            <li>proiecte cu buget mediu și așteptări clare</li>
+            <li>clienți care vor comunicare rapidă</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <div class="block-header">
+      <span class="block-kicker">Alege rapid</span>
+      <h2 class="block-title">Cum alegi în 30 de secunde</h2>
+    </div>
+
+    <div class="text-card">
+      <ul class="quick-choice">
+        <li><strong>Produs complex și backend solid:</strong> <a href="https://fusion.works" rel="nofollow">FusionWorks</a></li>
+        <li><strong>Impact vizual și UI/UX premium:</strong> <a href="https://theqream.com" rel="nofollow">Qream</a></li>
+        <li><strong>Pachet complet pentru business local:</strong> <a href="https://webmaster.md" rel="nofollow">Studio Webmaster</a></li>
+        <li><strong>Enterprise, securitate și scalare:</strong> <a href="https://www.endava.com" rel="nofollow">Endava</a></li>
+        <li><strong>Echilibru între calitate și buget:</strong> <a href="https://ilab.md" rel="nofollow">ilab.md</a></li>
+      </ul>
+    </div>
+
+    <div class="text-card">
+      <p>
+        Dacă vrei, pot ajusta topul în funcție de industrie, buget sau tipul de
+        proiect. Spune-mi ce îți dorești și îți ofer o recomandare directă.
+      </p>
+    </div>
+  </section>
 </BlogPost>

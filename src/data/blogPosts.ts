@@ -10,9 +10,9 @@
   },
   {
     slug: "top-5-cei-mai-buni-in-r-moldova",
-    title: "Top 5 cei mai buni in R Moldova",
+    title: "Top 5 cei mai buni în R. Moldova",
     description:
-      "Top 5 agentii/companii tech din R Moldova: FusionWorks, Qream, Studio Webmaster, Endava si ilab.md.",
+      "Top 5 agenții/companii tech din R. Moldova: FusionWorks, Qream, Studio Webmaster, Endava și ilab.md.",
     pubDate: new Date("2026-01-31"),
     heroImage: "/blog-placeholder-1.jpg",
   },
