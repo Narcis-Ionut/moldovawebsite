@@ -1,0 +1,376 @@
+﻿---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { SITE_URL } from "../consts";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const postPath = Astro.url.pathname.endsWith("/")
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const postUrl = new URL(postPath, SITE_URL).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  ...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+  ...(heroImage ? { image: new URL(heroImage, SITE_URL).toString() } : {}),
+  author: {
+    "@type": "Organization",
+    name: "moldovawebsite.md",
+    url: SITE_URL,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "moldovawebsite.md",
+    url: SITE_URL,
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+};
+---
+
+<html lang="ro">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      canonicalUrl={postUrl}
+      jsonLd={jsonLd}
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .blog-revamp {
+        background: radial-gradient(circle at 20% -10%, #f3ebe1, #f7f4ee 40%, #f5efe7 100%);
+        color: #182126;
+        font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .blog-revamp main {
+        padding: 110px 0 80px;
+      }
+
+      .story-shell {
+        width: min(1120px, calc(100% - 2.5rem));
+        margin: 0 auto;
+        display: grid;
+        gap: 2.75rem;
+      }
+
+      .story-hero {
+        display: grid;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .hero-media {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(18, 26, 31, 0.18);
+        background: #f0e7dc;
+      }
+
+      .hero-media img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-copy {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .meta-pill {
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(24, 33, 38, 0.08);
+        color: #182126;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .story-title {
+        margin: 0;
+        font-family: "Fraunces", "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .story-body {
+        display: grid;
+        gap: 2.5rem;
+      }
+
+      .story-body p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+      }
+
+      .story-body h2,
+      .story-body h3 {
+        font-family: "Fraunces", "Times New Roman", serif;
+      }
+
+      .story-body ul,
+      .story-body ol {
+        padding-left: 1.1rem;
+      }
+
+      .content-block {
+        background: #fff;
+        border-radius: 26px;
+        padding: 2.2rem 2.6rem;
+        border: 1px solid rgba(24, 33, 38, 0.08);
+        box-shadow: 0 18px 40px rgba(18, 26, 31, 0.08);
+        display: grid;
+        gap: 1.6rem;
+      }
+
+      .block-header {
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .block-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: rgba(24, 33, 38, 0.55);
+      }
+
+      .block-title {
+        margin: 0;
+        font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+      }
+
+      .text-card {
+        background: linear-gradient(160deg, rgba(248, 244, 238, 0.95), rgba(255, 255, 255, 0.9));
+        border-radius: 20px;
+        padding: 1.5rem 1.75rem;
+        border: 1px solid rgba(24, 33, 38, 0.08);
+        box-shadow: 0 12px 30px rgba(18, 26, 31, 0.08);
+      }
+
+      .text-card.is-lead {
+        background: linear-gradient(140deg, rgba(231, 213, 194, 0.55), rgba(255, 255, 255, 0.96));
+        border-left: 4px solid rgba(197, 107, 60, 0.8);
+        font-size: 1.12rem;
+      }
+
+      .card-grid {
+        display: grid;
+        gap: 1.4rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .stat-card {
+        background: rgba(24, 33, 38, 0.04);
+        border-radius: 18px;
+        padding: 1.2rem 1.4rem;
+        border: 1px solid rgba(24, 33, 38, 0.08);
+        font-weight: 600;
+      }
+
+      .stat-card strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        font-family: "Fraunces", "Times New Roman", serif;
+      }
+
+      .table-card {
+        border-radius: 18px;
+        background: #fff;
+        border: 1px solid rgba(24, 33, 38, 0.08);
+        overflow: hidden;
+      }
+
+      .table-card table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table-card th,
+      .table-card td {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(24, 33, 38, 0.08);
+        text-align: left;
+      }
+
+      .table-card thead {
+        background: rgba(24, 33, 38, 0.08);
+      }
+
+      .callout-card {
+        background: rgba(197, 107, 60, 0.1);
+        border-radius: 18px;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid rgba(197, 107, 60, 0.25);
+      }
+
+      .checklist {
+        display: grid;
+        gap: 0.8rem;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        padding: 0.85rem 1rem;
+        border-radius: 14px;
+        background: rgba(24, 33, 38, 0.04);
+        border: 1px solid rgba(24, 33, 38, 0.08);
+      }
+
+      .company-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2rem 2.2rem;
+        border: 1px solid rgba(24, 33, 38, 0.08);
+        box-shadow: 0 20px 45px rgba(18, 26, 31, 0.08);
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .company-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .company-rank {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #182126;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .company-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        align-items: center;
+      }
+
+      .company-link {
+        font-weight: 700;
+        text-decoration: none;
+        color: #182126;
+        border-bottom: 2px solid rgba(197, 107, 60, 0.6);
+      }
+
+      .pill {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.3rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(24, 33, 38, 0.08);
+      }
+
+      .company-grid {
+        display: grid;
+        gap: 1.1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .quick-choice {
+        list-style: none;
+        padding-left: 0;
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .quick-choice li {
+        background: rgba(24, 33, 38, 0.04);
+        border: 1px solid rgba(24, 33, 38, 0.08);
+        padding: 0.95rem 1rem;
+        border-radius: 16px;
+      }
+
+      @media (min-width: 920px) {
+        .story-hero {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        .hero-media {
+          order: 2;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .story-shell {
+          width: min(100%, calc(100% - 1.5rem));
+        }
+
+        .content-block {
+          padding: 1.6rem 1.8rem;
+        }
+
+        .text-card {
+          padding: 1.25rem 1.4rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="blog-revamp">
+    <Header />
+    <main>
+      <article class="story-shell">
+        <header class="story-hero">
+          <div class="hero-copy">
+            <div class="meta-row">
+              <span class="meta-pill"><FormattedDate date={pubDate} /></span>
+              {updatedDate && (
+                <span class="meta-pill">Last updated on <FormattedDate date={updatedDate} /></span>
+              )}
+            </div>
+            <h1 class="story-title">{title}</h1>
+          </div>
+          {heroImage && (
+            <figure class="hero-media">
+              <img width={1020} height={610} src={heroImage} alt="" loading="lazy" />
+            </figure>
+          )}
+        </header>
+
+        <div class="story-body">
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
