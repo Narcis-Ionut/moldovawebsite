@@ -235,12 +235,105 @@
     line-height: 1.6;
     color: var(--fg);
     background: var(--bg);
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     /* Modern text rendering */
     font-optical-sizing: auto;
     text-size-adjust: none;
     -webkit-text-size-adjust: none;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  body::before {
+    z-index: -2;
+    background:
+      radial-gradient(
+        1200px 800px at 5% -10%,
+        color-mix(in oklch, var(--accent) 22%, transparent),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 700px at 110% 10%,
+        color-mix(in oklch, var(--brand-2) 18%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        800px 600px at 40% 110%,
+        color-mix(in oklch, var(--brand-1) 14%, transparent),
+        transparent 60%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in oklch, var(--bg) 94%, white) 0%,
+        var(--bg) 100%
+      );
+  }
+
+  body::after {
+    z-index: -1;
+    background-image:
+      radial-gradient(
+        color-mix(in oklch, var(--brand-1) 18%, transparent) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        color-mix(in oklch, var(--brand-2) 18%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 28px 28px, 52px 52px;
+    background-position: 0 0, 12px 12px;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+  }
+
+  body.page--lighttext::before {
+    background:
+      radial-gradient(
+        1200px 800px at 10% -15%,
+        color-mix(in oklch, var(--brand-1) 55%, transparent),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 700px at 110% 0%,
+        color-mix(in oklch, var(--brand-2) 45%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        800px 600px at 50% 120%,
+        color-mix(in oklch, var(--accent) 35%, transparent),
+        transparent 60%
+      ),
+      linear-gradient(180deg, oklch(18% 0.03 250) 0%, oklch(12% 0.02 250) 100%);
+  }
+
+  body.page--lighttext::after {
+    background-image:
+      radial-gradient(
+        color-mix(in oklch, white 35%, transparent) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        color-mix(in oklch, var(--accent) 45%, transparent) 1px,
+        transparent 1px
+      );
+    opacity: 0.16;
+    mix-blend-mode: screen;
+  }
+
+  @media (max-width: 720px) {
+    body::after {
+      opacity: 0.08;
+    }
   }
 
   h1,
@@ -330,9 +423,6 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
-    }
-    .bg-video__media {
-      display: none;
     }
   }
 }
@@ -1337,7 +1427,7 @@
     color: #b00020;
   }
 
-  /* Hero-only scrim for readability on video bg */
+  /* Hero scrim for readability */
   .contact-hero::before {
     content: "";
     position: absolute;
@@ -1780,46 +1870,6 @@
     max-width: 100%;
   }
 
-  /* ---------- Background video (site-wide) ---------- */
-  .bg-video {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-    /* Stop at footer if you later set a concrete height */
-    height: calc(100% - var(--footer-height, 0px));
-    min-height: 100%;
-  }
-  .bg-video__media {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    min-inline-size: 100%;
-    min-block-size: 100%;
-    inline-size: 100vw;
-    block-size: 100vh;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    object-position: center;
-    filter: none;
-  }
-  .bg-video::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.85) 100%
-    );
-    pointer-events: none;
-  }
-  @supports (height: 100dvh) {
-    .bg-video {
-      height: 100dvh;
-    }
-  }
 }
 
 /* =========================================================
@@ -2307,23 +2357,6 @@
 }
 
 /* ---------------------------------
-   BACKGROUND VIDEO (avoid layout fights)
----------------------------------- */
-@layer components {
-  /* If the video ever causes jank on small devices, dim or disable it */
-  @media (max-width: 480px) {
-    .bg-video__media {
-      opacity: 0.85;
-    }
-  }
-  @media (max-width: 360px) {
-    .bg-video {
-      display: none;
-    } /* last-resort hard off for very small phones */
-  }
-}
-
-/* ---------------------------------
    OVERFLOW GUARDRAILS (texts/urls)
 ---------------------------------- */
 @layer base {
@@ -2463,7 +2496,6 @@
   @media print {
     header.site-header,
     footer,
-    .bg-video,
     .hamburger,
     .language-toggle,
     .back-to-top {

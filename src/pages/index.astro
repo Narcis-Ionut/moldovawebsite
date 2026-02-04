@@ -1,4 +1,4 @@
----
+﻿---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -89,21 +89,6 @@ const jsonLd = {
     />
   </head>
   <body>
-    <!-- Full-page background video -->
-    <div class="bg-video" aria-hidden="true">
-      <video
-        class="bg-video__media"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="/assets/bg-poster.webp"
-      >
-        <source src="/assets/bg.mp4" type="video/mp4" />
-      </video>
-    </div>
-
     <Header lang="ro" />
 
     <!-- Hero Section -->
@@ -647,4 +632,6 @@ const jsonLd = {
     <script src="/script.js" defer></script>
   </body>
 </html>
+
+
 
