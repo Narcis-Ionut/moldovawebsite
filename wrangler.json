@@ -18,7 +18,7 @@
   "preview_urls": false,
   "vars": {
     "RESEND_FROM": "moldovawebsite.md <noreply@mail.moldovawebsite.md>",
-    "RESEND_TO": "contact@moldovawebsite.md",
+    "RESEND_TO": "narcis.gusa@gmail.com",
     "REPLY_TO": "contact@moldovawebsite.md"
   },
   "observability": {
