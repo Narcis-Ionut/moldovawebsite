@@ -342,7 +342,7 @@
    ========================================================= */
 @layer components {
   /* ---------- Header / Navigation - 2025 Enhanced ---------- */
-  header {
+  header.site-header {
     position: fixed;
     inset-block-start: 0;
     inline-size: 100%;
@@ -365,8 +365,8 @@
     }
   }
   /* Scroll-aware header states via :has() or JS class */
-  header.scrolled,
-  header:has(+ main[data-scrolled="true"]) {
+  header.site-header.scrolled,
+  header.site-header:has(+ main[data-scrolled="true"]) {
     background: var(--surface);
     box-shadow: var(--shadow-2);
   }
@@ -2461,7 +2461,7 @@
 /* ---------- Print Styles ---------- */
 @layer utilities {
   @media print {
-    header,
+    header.site-header,
     footer,
     .bg-video,
     .hamburger,
