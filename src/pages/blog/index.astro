@@ -9,8 +9,7 @@ const posts = [...blogPosts].sort(
   (a, b) => b.pubDate.valueOf() - a.pubDate.valueOf(),
 );
 
-const pageTitle =
-  "Blog creare site web ieftin în Moldova | Ghiduri și prețuri";
+const pageTitle = "Blog creare site web ieftin în Moldova | Ghiduri și prețuri";
 const pageDescription =
   "Articole despre creare site web ieftin în Moldova, web design accesibil, SEO on-page și prețuri pentru site de prezentare sau magazin online.";
 const jsonLd = {
@@ -26,7 +25,6 @@ const jsonLd = {
     url: "https://moldovawebsite.md/",
   },
 };
-
 ---
 
 <!doctype html>
@@ -51,14 +49,15 @@ const jsonLd = {
         <div class="hero-content">
           <h1>Blog: creare site web ieftin în Moldova</h1>
           <p class="subheading">
-            Ghiduri practice despre <strong>web design accesibil</strong> în
-            Chișinău și toată Moldova: <strong>site de prezentare</strong>,
+            Ghiduri practice despre <strong>web design accesibil</strong> în Chișinău
+            și toată Moldova: <strong>site de prezentare</strong>,
             <strong>magazin online</strong>, <strong>SEO on-page</strong> și
             <strong>mentenanță</strong>.
           </p>
           <p class="subheading">
             Dacă vrei <strong>creare site web ieftin în Moldova</strong>, aici
-            găsești explicații simple despre prețuri, tehnologii și pașii corecți.
+            găsești explicații simple despre prețuri, tehnologii și pașii
+            corecți.
           </p>
           <div class="hero-actions">
             <a href="/preturi/" class="btn btn-primary">Vezi prețuri</a>
@@ -152,9 +151,10 @@ const jsonLd = {
         <div class="section-title">
           <h2>Cum folosești articolele din blog</h2>
           <p>
-            Dacă ești la început și cauți <strong>creare site web ieftin în
-            Moldova</strong>, parcurge pașii de mai jos pentru a-ți clarifica
-            rapid bugetul și direcția.
+            Dacă ești la început și cauți <strong
+              >creare site web ieftin în Moldova</strong
+            >, parcurge pașii de mai jos pentru a-ți clarifica rapid bugetul și
+            direcția.
           </p>
         </div>
 
@@ -172,8 +172,8 @@ const jsonLd = {
             <div class="step-number">2</div>
             <h3 class="step-title">Înțelege prețurile</h3>
             <p class="step-desc">
-              Articolele despre costuri explică ce include fiecare pachet și
-              cum poți reduce bugetul fără compromisuri.
+              Articolele despre costuri explică ce include fiecare pachet și cum
+              poți reduce bugetul fără compromisuri.
             </p>
           </div>
 
@@ -210,8 +210,8 @@ const jsonLd = {
           </p>
           <p>
             Scopul nostru este să explicăm clar ce contează când alegi un
-            furnizor de <strong>web design accesibil</strong> și cum îți
-            optimizezi bugetul.
+            furnizor de <strong>web design accesibil</strong> și cum îți optimizezi
+            bugetul.
           </p>
           <p>
             Indiferent dacă ești la început sau vrei să îmbunătățești un site
@@ -299,10 +299,9 @@ const jsonLd = {
                     <li>✓ SEO on-page</li>
                     <li>✓ Prețuri transparente</li>
                   </ul>
-                  <a
-                    href={`/blog/${post.slug}/`}
-                    class="portfolio-link">Citește articolul →</a
-                  >
+                  <a href={`/blog/${post.slug}/`} class="portfolio-link">
+                    Citește: {post.title} →
+                  </a>
                 </div>
               </article>
             ))
@@ -375,5 +374,3 @@ const jsonLd = {
     <script src="/script.js" defer></script>
   </body>
 </html>
-
-
