@@ -91,6 +91,41 @@ const jsonLd = {
         font-size: 0.9rem;
         opacity: 0.85;
       }
+      .legal-content-block {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .legal-content-block h3 {
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+      }
+      .legal-content-block p {
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+      .legal-content-block ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .legal-content-block li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      .legal-intro {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border-left: 4px solid var(--color-primary);
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 2rem;
+      }
+      .legal-intro p {
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
     </style>
   </head>
   <body>
@@ -138,11 +173,24 @@ const jsonLd = {
             <li><a href="#drepturi">9. Drepturile tale</a></li>
             <li><a href="#minori">10. Minori</a></li>
             <li><a href="#modificari">11. Modificări ale politicii</a></li>
-            <li><a href="/contact/">12. Contact</a></li>
+            <li><a href="#contact">12. Contact</a></li>
           </ul>
         </aside>
 
         <article style="grid-column: span 8">
+          <div class="legal-intro">
+            <p>
+              Această politică de confidențialitate explică modul în care <strong
+                >moldovawebsite.md</strong
+              >
+              colectează, utilizează, stochează și protejează informațiile tale personale
+              atunci când utilizezi site-ul nostru și serviciile noastre. Ne angajăm
+              să protejăm confidențialitatea și securitatea datelor tale personale
+              în conformitate cu Regulamentul General privind Protecția Datelor (GDPR)
+              și legislația Republicii Moldova în vigoare.
+            </p>
+          </div>
+
           <h2 id="cine-suntem">1. Cine suntem</h2>
           <p>
             <strong>Operator de date:</strong> moldovawebsite.md – str. Ioana Radu
@@ -151,24 +199,45 @@ const jsonLd = {
               >contact@moldovawebsite.md</a
             >, Tel: <a href="tel:+37361211739">+373 61 211 739</a>.
           </p>
+          <p>
+            Suntem o companie specializată în creare site web ieftin în Moldova,
+            oferind servicii de web design, dezvoltare web, SEO on-page și
+            mentenanță pentru afaceri mici și mijlocii din Chișinău și toată
+            țara. Această politică se aplică tuturor serviciilor pe care le
+            oferim și tuturor interacțiunilor pe care le ai cu noi.
+          </p>
 
           <h2 id="ce-date">2. Ce date colectăm</h2>
+          <p>
+            Colectăm diferite categorii de date personale în funcție de modul în
+            care interacționezi cu noi:
+          </p>
           <ul>
             <li>
               <strong>Date furnizate de tine</strong> – nume, e-mail, telefon, preferință
-              limbă, detalii proiect (prin formulare).
+              limbă, detalii proiect (prin formulare de contact sau email).
             </li>
             <li>
               <strong>Date tehnice</strong> – IP anonim(izat), tip dispozitiv, browser,
-              pagini vizitate, timpi de răspuns.
+              pagini vizitate, timpi de răspuns, fus orar, sistem de operare.
             </li>
             <li>
-              <strong>Cookies/trackere</strong> – necesare, analiză (ex. GA4), preferințe.
-              Vezi secțiunea cookie.
+              <strong>Cookies/trackere</strong> – necesare pentru funcționarea site-ului,
+              analiză (ex. Google Analytics 4), preferințe utilizator. Vezi secțiunea
+              dedicată cookie-urilor pentru mai multe detalii.
+            </li>
+            <li>
+              <strong>Date de comunicare</strong> – corespondența prin email, telefon
+              sau alte canale de comunicare pe care le folosim pentru a răspunde solicitărilor
+              tale.
             </li>
           </ul>
 
           <h2 id="scopuri-baze">3. Scopuri & baze legale</h2>
+          <p>
+            Prelucrăm datele tale personale doar în scopuri legitime și în baza
+            unor temeiuri legale solide:
+          </p>
           <table aria-label="Scopuri și temeiuri legale">
             <thead>
               <tr><th>Scop</th><th>Baza legală</th><th>Exemple</th></tr>
@@ -178,23 +247,24 @@ const jsonLd = {
                 ><td>Răspuns la cereri/ofertare</td><td
                   >Art. 6(1)(b) – executarea unui contract; Art. 6(1)(f) –
                   interes legitim</td
-                ><td>Contactare prin e-mail/telefon</td></tr
+                ><td>Contactare prin e-mail/telefon pentru ofertă</td></tr
               >
               <tr
                 ><td>Administrarea site-ului & securitate</td><td
                   >Art. 6(1)(f) – interes legitim</td
-                ><td>Logs, prevenire spam/abuz</td></tr
+                ><td>Logs, prevenire spam/abuz, securitate IT</td></tr
               >
               <tr
                 ><td>Analiză trafic & îmbunătățiri</td><td
                   >Art. 6(1)(a) – consimțământ (unde este cazul)</td
-                ><td>Google Analytics 4, heatmaps</td></tr
+                ><td>Google Analytics 4, heatmaps, teste A/B</td></tr
               >
               <tr
                 ><td>Marketing direct</td><td
                   >Art. 6(1)(a) – consimțământ / Art. 6(1)(f) – interes legitim
                   (clienți existenți)</td
-                ><td>Follow-up ofertă, noutăți</td></tr
+                ><td>Follow-up ofertă, noutăți, newsletter (cu consimțământ)</td
+                ></tr
               >
             </tbody>
           </table>
@@ -202,7 +272,10 @@ const jsonLd = {
           <h2 id="cookies">4. Cookies & tehnologii similare</h2>
           <p>
             Folosim cookie-uri pentru funcționarea site-ului, analiză și
-            preferințe. La prima vizită poți alege ce categorii permiți.
+            preferințe. La prima vizită poți alege ce categorii permiți prin
+            bannerul de consimțământ pentru cookie-uri. Cookie-urile sunt
+            fișiere text mici stocate pe dispozitivul tău care ne ajută să
+            îmbunătățim experiența pe site.
           </p>
           <table aria-label="Categorii cookie">
             <thead>
@@ -228,73 +301,148 @@ const jsonLd = {
           </table>
           <p class="note">
             Poți șterge sau bloca cookie-uri din setările browser-ului. Unele
-            funcții pot fi afectate.
+            funcții pot fi afectate dacă dezactivezi cookie-urile necesare.
           </p>
 
           <h2 id="retentie">5. Păstrarea datelor</h2>
           <p>
             Păstrăm datele cât este necesar pentru scopurile colectării, conform
-            cerințelor legale aplicabile. Exemple: date de ofertare – până la 24
-            luni; date contractuale/facturare – conform legislației fiscale.
+            cerințelor legale aplicabile și politicilor noastre interne de
+            păstrare a datelor. Exemple:
+          </p>
+          <ul>
+            <li>Date de ofertare – până la 24 de luni</li>
+            <li>
+              Date contractuale/facturare – conform legislației fiscale (7 ani)
+            </li>
+            <li>
+              Date de corespondență – până la 12 luni de la ultima interacțiune
+            </li>
+            <li>Date de analiză anonimizate – până la 36 de luni</li>
+          </ul>
+          <p>
+            După expirarea perioadelor de păstrare, datele sunt șterse sau
+            anonimizate în siguranță.
           </p>
 
           <h2 id="partajare">6. Partajarea datelor</h2>
           <p>
             Putem partaja date către furnizori care ne ajută să operăm
             serviciile (găzduire, e-mail, analiză trafic, anti-spam), în baza
-            unor acorduri și obligații de confidențialitate. Nu vindem datele
-            tale.
+            unor acorduri și obligații de confidențialitate. Acești furnizori
+            sunt selectați cu grijă și oferă garanții adecvate de protecție a
+            datelor.
+          </p>
+          <p>
+            <strong>Nu vindem datele tale</strong> către terți și nu le folosim în
+            alte scopuri decât cele declarate în această politică.
           </p>
 
           <h2 id="transferuri">7. Transferuri internaționale</h2>
           <p>
-            Dacă furnizorii noștri procesează date în afara țării, folosim
-            garanții adecvate (de ex., clauze contractuale standard).
+            Dacă furnizorii noștri procesează date în afara Republicii Moldova
+            sau Uniunii Europene, folosim garanții adecvate pentru protecția
+            datelor (de ex., clauze contractuale standard aprobate de Comisia
+            Europeană, sau furnizori certificați Privacy Shield unde este
+            cazul).
           </p>
 
           <h2 id="securitate">8. Securitate</h2>
           <p>
-            Aplicăm măsuri tehnice și organizatorice: HTTPS/SSL, minimizarea
-            accesului, actualizări regulate, protecție anti-spam (ex.
-            Turnstile).
+            Aplicăm măsuri tehnice și organizatorice pentru a proteja datele
+            tale:
           </p>
+          <ul>
+            <li>Conexiuni criptate HTTPS/SSL pentru toate paginile</li>
+            <li>Minimizarea accesului la date (doar persoane autorizate)</li>
+            <li>Actualizări regulate ale sistemelor și software-ului</li>
+            <li>Protecție anti-spam (ex. Cloudflare Turnstile)</li>
+            <li>Backup-uri periodice și planuri de recuperare</li>
+            <li>Politici interne stricte de securitate a informațiilor</li>
+          </ul>
 
           <h2 id="drepturi">9. Drepturile tale</h2>
+          <p>
+            Conform GDPR și legislației din Moldova, ai următoarele drepturi:
+          </p>
           <ul>
             <li>
-              Acces la date, rectificare, ștergere („dreptul de a fi uitat")
+              <strong>Dreptul de acces</strong> – poți solicita o copie a datelor
+              tale personale
             </li>
-            <li>Restricționare sau opoziție la prelucrare</li>
-            <li>Portabilitatea datelor</li>
-            <li>Retragerea consimțământului oricând</li>
-            <li>Plângere la autoritatea competentă</li>
+            <li>
+              <strong>Dreptul la rectificare</strong> – poți cere corectarea datelor
+              inexacte
+            </li>
+            <li>
+              <strong>Dreptul la ștergere</strong> („dreptul de a fi uitat") – poți
+              solicita ștergerea datelor
+            </li>
+            <li>
+              <strong>Dreptul la restricționarea prelucrării</strong> – în anumite
+              circumstanțe
+            </li>
+            <li>
+              <strong>Dreptul la portabilitatea datelor</strong> – poți primi datele
+              într-un format structurat
+            </li>
+            <li>
+              <strong>Dreptul la opoziție</strong> – te poți opune prelucrării pentru
+              marketing direct
+            </li>
+            <li>
+              <strong>Dreptul de a retrage consimțământul</strong> – oricând, fără
+              a afecta legalitatea prelucrării anterioare
+            </li>
+            <li>
+              <strong>Dreptul de a depune plângere</strong> – la autoritatea de supraveghere
+              competentă
+            </li>
           </ul>
           <p>
-            Pentru exercitarea drepturilor, scrie la <a
+            Pentru exercitarea acestor drepturi, contactează-ne la <a
               href="mailto:contact@moldovawebsite.md"
               >contact@moldovawebsite.md</a
-            >. Vom răspunde, de regulă, în 30 de zile.
+            >. Vom răspunde, de regulă, în termen de 30 de zile calendaristice.
           </p>
 
           <h2 id="minori">10. Minori</h2>
           <p>
-            Serviciile noastre nu se adresează persoanelor sub 16 ani. Nu
-            colectăm cu bună știință date despre minori.
+            Serviciile noastre nu se adresează în mod direct persoanelor sub 16
+            ani. Nu colectăm cu bună știință date despre minori. Dacă descoperim
+            că am colectat accidental date ale unui minor, vom lua măsuri
+            imediate pentru ștergerea acestora.
           </p>
 
           <h2 id="modificari">11. Modificări ale politicii</h2>
           <p>
-            Putem actualiza această politică periodic. Versiunea curentă este
-            publicată pe această pagină.
+            Putem actualiza această politică periodic pentru a reflecta
+            schimbările în practicile noastre sau în legislație. Versiunea
+            curentă este întotdeauna publicată pe această pagină cu data ultimei
+            actualizări. Îți recomandăm să revizuiești periodic această pagină.
+          </p>
+          <p>
+            În cazul unor modificări semnificative, vom încerca să te notificăm
+            prin email sau printr-un anunț vizibil pe site.
           </p>
 
           <h2 id="contact">12. Contact</h2>
           <p>
-            <strong>moldovawebsite.md</strong> – str. Ioana Radu 27/2, Chișinău, Moldova<br
-            />
+            Pentru orice întrebări sau solicitări legate de protecția datelor,
+            ne poți contacta:
+          </p>
+          <p>
+            <strong>moldovawebsite.md</strong><br />
+            str. Ioana Radu 27/2, Chișinău, Moldova<br />
             E-mail: <a href="mailto:contact@moldovawebsite.md"
               >contact@moldovawebsite.md</a
-            > · Tel: <a href="tel:+37361211739">+373 61 211 739</a>
+            ><br />
+            Tel: <a href="tel:+37361211739">+373 61 211 739</a>
+          </p>
+          <p>
+            Suntem dedicați transparenței și protecției datelor tale. Nu ezita
+            să ne contactezi dacă ai nelămuriri sau preocupări legate de
+            confidențialitate.
           </p>
         </article>
       </div>
@@ -305,8 +453,3 @@ const jsonLd = {
     <script src="/script.js" defer></script>
   </body>
 </html>
-
-
-
-
-

@@ -207,7 +207,8 @@ const addons = [
   },
   {
     title: "Обслуживание",
-    description: "От 25€/месяц – обновления, безопасность, резервное копирование.",
+    description:
+      "От 25€/месяц – обновления, безопасность, резервное копирование.",
   },
 ];
 
@@ -236,6 +237,40 @@ const faqs = [
     question: "Смогу ли я самостоятельно изменять контент после запуска?",
     answer:
       "Да, пакеты Standard/Pro включают CMS (управление контентом). Мы также предоставляем небольшое руководство + обучение (в Pro).",
+  },
+];
+
+const whyChooseUs = [
+  {
+    icon: "🎯",
+    title: "Честная цена",
+    description:
+      "Мы показываем точные цены без скрытых платежей. Вы знаете, за что платите.",
+  },
+  {
+    icon: "⚡",
+    title: "Быстрая разработка",
+    description:
+      "Современные технологии позволяют нам создавать сайты быстро без потери качества.",
+  },
+  {
+    icon: "🔒",
+    title: "Надежность",
+    description:
+      "Мы используем проверенные решения и предоставляем гарантию на все наши работы.",
+  },
+];
+
+const testimonials = [
+  {
+    content:
+      "Отличное соотношение цены и качества. Сайт был готов быстрее, чем ожидалось, и выглядит профессионально.",
+    author: "Клиент из Кишинева",
+  },
+  {
+    content:
+      "Прозрачные цены, никаких сюрпризов. Оплатил 50% upfront, остальное после запуска. Рекомендую!",
+    author: "Владелец бизнеса",
   },
 ];
 ---
@@ -372,6 +407,19 @@ const faqs = [
         margin-bottom: 0.5rem;
       }
 
+      .dev-hero-intro {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        text-align: center;
+      }
+
+      .dev-hero-intro p {
+        color: var(--dev-text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
       /* Breadcrumbs */
       .dev-breadcrumbs {
         padding: 1rem 0;
@@ -423,7 +471,7 @@ const faqs = [
       }
 
       .dev-price-card.featured::before {
-        content: "Recomandat";
+        content: "Рекомендуем";
         position: absolute;
         top: -1px;
         left: 50%;
@@ -553,6 +601,85 @@ const faqs = [
         font-size: 0.9rem;
         line-height: 1.6;
         margin: 0;
+      }
+
+      /* Why Choose Us */
+      .dev-why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .dev-why-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .dev-why-card:hover {
+        border-color: var(--dev-accent);
+        transform: translateY(-4px);
+      }
+
+      .dev-why-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .dev-why-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-why-card p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Testimonials */
+      .dev-testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .dev-testimonial {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        position: relative;
+      }
+
+      .dev-testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 4rem;
+        color: var(--dev-accent);
+        opacity: 0.2;
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .dev-testimonial-content {
+        color: var(--dev-text);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .dev-testimonial-author {
+        color: var(--dev-accent);
+        font-size: 0.85rem;
+        font-weight: 600;
       }
 
       /* FAQ */
@@ -686,6 +813,19 @@ const faqs = [
           <p>Выберите подходящий пакет: Basic 50€, Standard 150€, Pro 300€.</p>
           <p>Доступный веб-дизайн в Кишиневе и по всей Молдове.</p>
         </div>
+        <div class="dev-hero-intro">
+          <p>
+            Мы предлагаем прозрачное и честное ценообразование на создание
+            сайтов в Молдове. Наша цель – сделать профессиональный веб-дизайн
+            доступным для малого бизнеса. Все цены указаны в евро, но возможна
+            оплата в леях по текущему курсу.
+          </p>
+          <p>
+            Каждый пакет включает всё необходимое для запуска вашего сайта:
+            дизайн, разработку, базовое SEO и обучение работе с сайтом. Никаких
+            скрытых платежей – вы точно знаете, сколько заплатите.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -734,8 +874,30 @@ const faqs = [
       </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Почему мы</span>
+          <h2>Почему стоит выбрать нас?</h2>
+          <p>Наши преимущества при работе с клиентами из Молдовы</p>
+        </div>
+        <div class="dev-why-grid">
+          {
+            whyChooseUs.map((w) => (
+              <div class="dev-why-card">
+                <div class="dev-why-icon">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <!-- Factors Section -->
-    <section class="dev-section" id="preturi-explicate">
+    <section class="dev-section dev-section-alt" id="preturi-explicate">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Информация</span>
@@ -756,7 +918,7 @@ const faqs = [
     </section>
 
     <!-- Addons Section -->
-    <section class="dev-section dev-section-alt" id="adaugiri">
+    <section class="dev-section" id="adaugiri">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Дополнительно</span>
@@ -769,6 +931,27 @@ const faqs = [
               <div class="dev-info-card">
                 <h3>{a.title}</h3>
                 <p>{a.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Отзывы</span>
+          <h2>Что говорят наши клиенты</h2>
+          <p>Реальные отзывы о наших ценах и качестве</p>
+        </div>
+        <div class="dev-testimonials-grid">
+          {
+            testimonials.map((t) => (
+              <div class="dev-testimonial">
+                <p class="dev-testimonial-content">{t.content}</p>
+                <div class="dev-testimonial-author">{t.author}</div>
               </div>
             ))
           }

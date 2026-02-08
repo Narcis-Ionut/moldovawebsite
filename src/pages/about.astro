@@ -114,6 +114,49 @@ const faqs = [
       "Da. Putem continua cu mentenanță lunară, actualizări și suport tehnic.",
   },
 ];
+
+const benefits = [
+  {
+    title: "Prețuri accesibile",
+    description:
+      "Oferim creare site web ieftin în Moldova fără a compromite calitatea. Fiecare proiect primește aceeași atenție la detalii, indiferent de buget.",
+  },
+  {
+    title: "Timp de livrare rapid",
+    description:
+      "Un site de prezentare simplu este gata în 7-14 zile. Respectăm termenele promise și comunicăm transparent pe parcursul dezvoltării.",
+  },
+  {
+    title: "Design modern și responsive",
+    description:
+      "Toate site-urile noastre arată perfect pe orice dispozitiv: smartphone, tabletă sau calculator. Design-ul se adaptează automat pentru cea mai bună experiență.",
+  },
+];
+
+const whyChooseUs = [
+  {
+    title: "Experiență locală",
+    description:
+      "Conștientizăm nevoile specifice ale pieței din Moldova și adaptăm soluțiile pentru afaceri locale din Chișinău și toată țara.",
+  },
+  {
+    title: "Tehnologie modernă",
+    description:
+      "Folosim Astro și Cloudflare pentru viteză maximă și costuri reduse. Site-urile noastre încarcă în mai puțin de 2 secunde.",
+  },
+  {
+    title: "SEO inclus",
+    description:
+      "Optimizarea pentru motoarele de căutare este inclusă în fiecare pachet. Structură corectă, meta-taguri și date structurate.",
+  },
+];
+
+const teamInfo = {
+  experience: "3+ ani",
+  projects: "50+",
+  satisfaction: "95%",
+  support: "24/7",
+};
 ---
 
 <!doctype html>
@@ -558,6 +601,111 @@ const faqs = [
         font-size: 0.8rem;
       }
 
+      /* Stats */
+      .dev-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .dev-stat {
+        text-align: center;
+        padding: 2rem;
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+      }
+
+      .dev-stat-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: var(--dev-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      .dev-stat-label {
+        color: var(--dev-text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* Benefits */
+      .dev-benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .dev-benefit-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2rem;
+        border-left: 4px solid var(--dev-accent);
+        transition: all 0.3s ease;
+      }
+
+      .dev-benefit-card:hover {
+        transform: translateX(8px);
+        border-color: var(--dev-accent);
+      }
+
+      .dev-benefit-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-benefit-card p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      /* Why Choose Us */
+      .dev-why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .dev-why-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .dev-why-card:hover {
+        border-color: var(--dev-accent-2);
+        transform: translateY(-4px);
+      }
+
+      .dev-why-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+
+      .dev-why-card p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      .dev-why-icon {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
       /* FAQ */
       .dev-faq-list {
         max-width: 800px;
@@ -674,6 +822,24 @@ const faqs = [
         pointer-events: none;
         z-index: -1;
       }
+
+      /* Content Text */
+      .dev-content-text {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .dev-content-text p {
+        color: var(--dev-text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .dev-content-text strong {
+        color: var(--dev-text);
+      }
     </style>
   </head>
   <body style="background: #0a0a0f; color: #e4e4e7;">
@@ -781,6 +947,80 @@ const faqs = [
       </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Rezultate</span>
+          <h2>Cifrele noastre</h2>
+          <p>Experiență și dedicare în fiecare proiect</p>
+        </div>
+        <div class="dev-stats-grid">
+          <div class="dev-stat">
+            <div class="dev-stat-value">{teamInfo.experience}</div>
+            <div class="dev-stat-label">Ani de experiență</div>
+          </div>
+          <div class="dev-stat">
+            <div class="dev-stat-value">{teamInfo.projects}</div>
+            <div class="dev-stat-label">Proiecte finalizate</div>
+          </div>
+          <div class="dev-stat">
+            <div class="dev-stat-value">{teamInfo.satisfaction}</div>
+            <div class="dev-stat-label">Clienți mulțumiți</div>
+          </div>
+          <div class="dev-stat">
+            <div class="dev-stat-value">{teamInfo.support}</div>
+            <div class="dev-stat-label">Suport disponibil</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Cine suntem</span>
+          <h2>Web design pentru afacerile mici din Moldova</h2>
+        </div>
+        <div class="dev-content-text">
+          <p>
+            <strong>moldovawebsite.md</strong> este o echipă tânără și pasionată de
+            profesioniști din domeniul web design și dezvoltare web, cu sediul în
+            Chișinău, Republica Moldova. Am început această călătorie cu un scop clar:
+            să democratizăm accesul la servicii web profesionale pentru afacerile
+            mici și mijlocii din Moldova.
+          </p>
+          <p>
+            Credem că fiecare afacere merită o prezență online de calitate,
+            indiferent de buget. De aceea, ne-am specializat în <strong
+              >creare site web ieftin în Moldova</strong
+            >, oferind soluții accesibile fără a compromite calitatea. Înțelegem
+            provocările cu care se confruntă antreprenorii locali și ne-am
+            adaptat serviciile pentru a răspunde nevoilor reale ale pieței din
+            Chișinău și din întreaga țară.
+          </p>
+          <p>
+            Portofoliul nostru include site-uri de prezentare pentru diverse
+            industrii: restaurante și cafenele, clinici medicale, saloane de
+            înfrumusețare, firme de construcții, servicii de consultanță și
+            multe altele. Fiecare proiect este tratat cu aceeași atenție și
+            dedicare, pentru că succesul clienților noștri este și succesul
+            nostru.
+          </p>
+          <p>
+            Folosim tehnologii moderne precum <strong>Astro</strong>, <strong
+              >React</strong
+            > și
+            <strong>Cloudflare</strong> pentru a crea site-uri rapide, sigure și optimizate
+            pentru motoarele de căutare. Abordarea noastră este transparentă și orientată
+            spre rezultate: îți explicăm fiecare etapă, îți oferim opțiuni clare și
+            livrăm ceea ce promitem.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="dev-section dev-section-alt" id="de-ce-noi">
       <div class="container">
@@ -809,6 +1049,52 @@ const faqs = [
                     <span>{t.location}</span>
                   </div>
                 </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Beneficii</span>
+          <h2>De ce să alegi serviciile noastre?</h2>
+          <p>
+            Descoperă avantajele care ne diferențiază pe piața de web design din
+            Moldova.
+          </p>
+        </div>
+        <div class="dev-benefits-grid">
+          {
+            benefits.map((b) => (
+              <div class="dev-benefit-card">
+                <h3>{b.title}</h3>
+                <p>{b.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Avantaje</span>
+          <h2>De ce să lucrezi cu noi?</h2>
+          <p>Iată câteva motive pentru care clienții ne recomandă</p>
+        </div>
+        <div class="dev-why-grid">
+          {
+            whyChooseUs.map((w) => (
+              <div class="dev-why-card">
+                <div class="dev-why-icon">🎯</div>
+                <h3>{w.title}</h3>
+                <p>{w.description}</p>
               </div>
             ))
           }

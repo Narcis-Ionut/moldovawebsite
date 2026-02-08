@@ -96,6 +96,53 @@ const services = [
       "Обновляем существующий сайт современным дизайном, улучшенной скоростью и SEO-оптимизацией.",
   },
 ];
+
+const faqs = [
+  {
+    question: "Сколько времени занимает создание сайта?",
+    answer:
+      "Простой сайт-визитка готов за 7-14 дней. Сложные проекты занимают 2-4 недели в зависимости от функциональности.",
+  },
+  {
+    question: "Какую информацию нужно предоставить?",
+    answer:
+      "Полезны: описание бизнеса, примеры понравившихся сайтов, текстовый контент (если есть), логотип и изображения. Мы проведем вас через весь процесс.",
+  },
+  {
+    question: "Работаете ли вы за пределами Кишинева?",
+    answer:
+      "Да, мы работаем с клиентами из всей Молдовы и даже международно. Общаемся онлайн и доставляем так же эффективно.",
+  },
+  {
+    question: "Можно ли платить частями?",
+    answer:
+      "Да, для крупных проектов предлагаем оплату в два транша: 50% предоплата и 50% при завершении.",
+  },
+];
+
+const contactMethods = [
+  {
+    icon: "📧",
+    title: "Email",
+    value: "contact@moldovawebsite.md",
+    link: "mailto:contact@moldovawebsite.md",
+    description: "Отвечаем максимум за 24 часа",
+  },
+  {
+    icon: "📱",
+    title: "Телефон / WhatsApp",
+    value: "+373 61 211 739",
+    link: "tel:+37361211739",
+    description: "Доступен Пн-Пт 09:00-18:00",
+  },
+  {
+    icon: "💬",
+    title: "Онлайн-форма",
+    value: "Заполните форму",
+    link: "#formular",
+    description: "Получите ответ в тот же день",
+  },
+];
 ---
 
 <!doctype html>
@@ -231,6 +278,23 @@ const services = [
         color: var(--dev-text-muted);
         font-size: 1.25rem;
         margin-bottom: 2rem;
+      }
+
+      .dev-hero-intro {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        text-align: center;
+      }
+
+      .dev-hero-intro p {
+        color: var(--dev-text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .dev-hero-intro strong {
+        color: var(--dev-text);
       }
 
       /* Contact Grid */
@@ -604,6 +668,111 @@ const services = [
         margin: 0;
       }
 
+      /* Contact Methods */
+      .dev-contact-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .dev-contact-method {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .dev-contact-method:hover {
+        border-color: var(--dev-accent);
+        transform: translateY(-4px);
+      }
+
+      .dev-contact-method .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .dev-contact-method h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .dev-contact-method a {
+        color: var(--dev-accent);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .dev-contact-method p {
+        color: var(--dev-text-muted);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+      }
+
+      /* FAQ */
+      .dev-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .dev-faq-item {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .dev-faq-item[open] {
+        border-color: var(--dev-accent);
+      }
+
+      .dev-faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        list-style: none;
+        transition: color 0.3s ease;
+      }
+
+      .dev-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .dev-faq-item summary::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+        transition: transform 0.3s ease;
+      }
+
+      .dev-faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+
+      .dev-faq-item summary:hover {
+        color: var(--dev-accent);
+      }
+
+      .dev-faq-item p {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--dev-text-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
       /* Grid Pattern */
       .dev-grid-pattern {
         position: fixed;
@@ -631,11 +800,53 @@ const services = [
             Расскажите кратко, что вам нужно. Мы отвечаем в тот же рабочий день.
           </p>
         </div>
+        <div class="dev-hero-intro">
+          <p>
+            Мы здесь, чтобы помочь вам создать присутствие в интернете. Будь то
+            <strong>простой сайт-визитка</strong>, <strong
+              >интернет-магазин</strong
+            > или просто желание обсудить варианты – мы готовы вас выслушать. Наша
+            команда из
+            <strong>Кишинева</strong> обслуживает клиентов по всей <strong
+              >Молдове</strong
+            >
+            и предлагает поддержку на русском и румынском языках.
+          </p>
+          <p>
+            Заполните форму ниже, позвоните нам или отправьте email. Мы обещаем
+            быстро ответить и предоставить всю необходимую информацию для
+            принятия лучшего решения для вашего бизнеса. Каждый проект
+            начинается с разговора – давайте поговорим!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Как связаться</span>
+          <h2>Выберите удобный способ</h2>
+          <p>Мы доступны на нескольких каналах для вашего удобства</p>
+        </div>
+        <div class="dev-contact-methods">
+          {
+            contactMethods.map((method) => (
+              <div class="dev-contact-method">
+                <div class="icon">{method.icon}</div>
+                <h3>{method.title}</h3>
+                <a href={method.link}>{method.value}</a>
+                <p>{method.description}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
 
     <!-- Contact Form Section -->
-    <section class="dev-section dev-section-alt">
+    <section class="dev-section" id="formular">
       <div class="container">
         <div class="dev-contact-grid">
           <form
@@ -665,7 +876,9 @@ const services = [
                 placeholder="nume@domeniu.md"
                 required
               />
-              <div class="dev-form-help">Мы свяжемся с вами по этому адресу</div>
+              <div class="dev-form-help">
+                Мы свяжемся с вами по этому адресу
+              </div>
             </div>
 
             <div class="dev-form-field">
@@ -705,15 +918,15 @@ const services = [
                 <button
                   type="button"
                   class="dev-chip"
-                  data-value="Magazin online">Интернет-магазин</button
+                  data-value="Интернет-магазин">Интернет-магазин</button
                 >
-                <button type="button" class="dev-chip" data-value="Landing page"
+                <button type="button" class="dev-chip" data-value="Лендинг"
                   >Лендинг</button
                 >
-                <button type="button" class="dev-chip" data-value="Redesign"
+                <button type="button" class="dev-chip" data-value="Редизайн"
                   >Редизайн</button
                 >
-                <button type="button" class="dev-chip" data-value="Altceva"
+                <button type="button" class="dev-chip" data-value="Другое"
                   >Другое</button
                 >
               </div>
@@ -758,8 +971,8 @@ const services = [
               <label class="dev-checkbox">
                 <input type="checkbox" name="consent" id="consent" required />
                 <span
-                  >Я согласен(а) на обработку данных согласно GDPR
-                  и хочу, чтобы со мной связались.</span
+                  >Я согласен(а) на обработку данных согласно GDPR и хочу, чтобы
+                  со мной связались.</span
                 >
               </label>
             </div>
@@ -773,7 +986,8 @@ const services = [
               </div>
             </div>
 
-            <button type="submit" class="dev-submit">Отправить сообщение</button>
+            <button type="submit" class="dev-submit">Отправить сообщение</button
+            >
             <span
               class="dev-form-help"
               id="formStatus"
@@ -841,7 +1055,9 @@ const services = [
             </ul>
 
             <div class="dev-info-divider"></div>
-            <p>Предпочитаете WhatsApp? Напишите нам напрямую — ответим быстро.</p>
+            <p>
+              Предпочитаете WhatsApp? Напишите нам напрямую — ответим быстро.
+            </p>
             <a
               href="https://wa.me/37361211739"
               target="_blank"
@@ -858,7 +1074,7 @@ const services = [
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                 ></path>
               </svg>
-              Deschide WhatsApp
+              Открыть WhatsApp
             </a>
           </aside>
         </div>
@@ -866,7 +1082,7 @@ const services = [
     </section>
 
     <!-- Features Section -->
-    <section class="dev-section">
+    <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Почему мы?</span>
@@ -888,7 +1104,7 @@ const services = [
     </section>
 
     <!-- Process Section -->
-    <section class="dev-section dev-section-alt">
+    <section class="dev-section">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Процесс</span>
@@ -910,7 +1126,7 @@ const services = [
     </section>
 
     <!-- Services Section -->
-    <section class="dev-section">
+    <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Услуги</span>
@@ -930,79 +1146,28 @@ const services = [
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">FAQ</span>
+          <h2>Часто задаваемые вопросы</h2>
+          <p>Ответы на самые распространенные вопросы</p>
+        </div>
+        <div class="dev-faq-list">
+          {
+            faqs.map((faq) => (
+              <details class="dev-faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <Footer lang="ru" />
     <script src="/script.js" defer></script>
-    <script>
-      // Chip selection
-      document.querySelectorAll(".dev-chip").forEach((chip) => {
-        chip.addEventListener("click", () => {
-          document
-            .querySelectorAll(".dev-chip")
-            .forEach((c) => c.classList.remove("active"));
-          chip.classList.add("active");
-          const projectType = document.getElementById("project_type");
-          if (projectType && "value" in projectType) {
-            projectType.value = (chip as HTMLElement).dataset.value || "";
-          }
-        });
-      });
-
-      // Budget range
-      const budgetRange = document.getElementById(
-        "budget",
-      ) as HTMLInputElement | null;
-      const budgetBadge = document.getElementById("budgetBadge");
-      budgetRange?.addEventListener("input", (e) => {
-        const target = e.target as HTMLInputElement;
-        if (budgetBadge) {
-          budgetBadge.textContent = `€${target.value}`;
-        }
-      });
-
-      // Form submission
-      const form = document.getElementById(
-        "contactForm",
-      ) as HTMLFormElement | null;
-      const formStatus = document.getElementById("formStatus");
-
-      form?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const submitBtn = form.querySelector(
-          ".dev-submit",
-        ) as HTMLButtonElement | null;
-        if (!submitBtn) return;
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Отправка...";
-
-        try {
-          const formData = new FormData(form);
-          const response = await fetch("/api/contact", {
-            method: "POST",
-            body: formData,
-          });
-
-          if (response.ok) {
-            if (formStatus) {
-              formStatus.textContent =
-                "Сообщение отправлено! Мы свяжемся с вами в ближайшее время.";
-              formStatus.style.color = "#34d399";
-            }
-            form.reset();
-          } else {
-            throw new Error("Ошибка отправки");
-          }
-        } catch (error) {
-          if (formStatus) {
-            formStatus.textContent =
-              "Произошла ошибка. Попробуйте еще раз или свяжитесь с нами напрямую.";
-            formStatus.style.color = "#ef4444";
-          }
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Отправить сообщение";
-        }
-      });
-    </script>
   </body>
 </html>

@@ -96,6 +96,53 @@ const services = [
       "Reîmprospătăm site-ul tău actual cu un design modern, viteză îmbunătățită și optimizare SEO.",
   },
 ];
+
+const faqs = [
+  {
+    question: "Cât durează realizarea unui site?",
+    answer:
+      "Un site de prezentare simplu este gata în 7-14 zile. Proiectele complexe pot dura 2-4 săptămâni, în funcție de funcționalități.",
+  },
+  {
+    question: "Ce informații trebuie să vă ofer?",
+    answer:
+      "Ne sunt utile: descrierea afacerii, exemple de site-uri care îți plac, conținutul text (dacă ai), logo și imagini. Te ghidăm pas cu pas.",
+  },
+  {
+    question: "Oferiți servicii și în afara Chișinăului?",
+    answer:
+      "Da, lucrăm cu clienți din toată Moldova și chiar internațional. Comunicăm online și livrăm la fel de eficient.",
+  },
+  {
+    question: "Pot plăti în rate?",
+    answer:
+      "Da, pentru proiecte mai mari oferim posibilitatea de plată în două tranșe: 50% la început și 50% la finalizare.",
+  },
+];
+
+const contactMethods = [
+  {
+    icon: "📧",
+    title: "Email",
+    value: "contact@moldovawebsite.md",
+    link: "mailto:contact@moldovawebsite.md",
+    description: "Răspundem în maxim 24 de ore",
+  },
+  {
+    icon: "📱",
+    title: "Telefon / WhatsApp",
+    value: "+373 61 211 739",
+    link: "tel:+37361211739",
+    description: "Disponibil L-V 09:00-18:00",
+  },
+  {
+    icon: "💬",
+    title: "Formular online",
+    value: "Completează formularul",
+    link: "#formular",
+    description: "Primești răspuns în aceeași zi",
+  },
+];
 ---
 
 <!doctype html>
@@ -229,6 +276,23 @@ const services = [
         color: var(--dev-text-muted);
         font-size: 1.25rem;
         margin-bottom: 2rem;
+      }
+
+      .dev-hero-intro {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        text-align: center;
+      }
+
+      .dev-hero-intro p {
+        color: var(--dev-text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .dev-hero-intro strong {
+        color: var(--dev-text);
       }
 
       /* Contact Grid */
@@ -602,6 +666,111 @@ const services = [
         margin: 0;
       }
 
+      /* Contact Methods */
+      .dev-contact-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .dev-contact-method {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .dev-contact-method:hover {
+        border-color: var(--dev-accent);
+        transform: translateY(-4px);
+      }
+
+      .dev-contact-method .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .dev-contact-method h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .dev-contact-method a {
+        color: var(--dev-accent);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .dev-contact-method p {
+        color: var(--dev-text-muted);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+      }
+
+      /* FAQ */
+      .dev-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .dev-faq-item {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .dev-faq-item[open] {
+        border-color: var(--dev-accent);
+      }
+
+      .dev-faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        list-style: none;
+        transition: color 0.3s ease;
+      }
+
+      .dev-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .dev-faq-item summary::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+        transition: transform 0.3s ease;
+      }
+
+      .dev-faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+
+      .dev-faq-item summary:hover {
+        color: var(--dev-accent);
+      }
+
+      .dev-faq-item p {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--dev-text-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
       /* Grid Pattern */
       .dev-grid-pattern {
         position: fixed;
@@ -629,11 +798,53 @@ const services = [
             Spune pe scurt ce ai nevoie. Răspundem în aceeași zi lucrătoare.
           </p>
         </div>
+        <div class="dev-hero-intro">
+          <p>
+            Suntem aici pentru a te ajuta să-ți construiești prezența online.
+            Fie că ai nevoie de un
+            <strong>site de prezentare simplu</strong>, un <strong
+              >magazin online</strong
+            > sau doar dorești să discuți despre opțiuni, suntem g să te ascultăm.
+            Echipa noastră din
+            <strong>Chișinău</strong> servește clienți din toată <strong
+              >Moldova</strong
+            > și oferă suport atât în română, cât și în rusă.
+          </p>
+          <p>
+            Completează formularul de mai jos, sună-ne sau trimite-ne un email.
+            Promitem să răspundem rapid și să-ți oferim toate informațiile
+            necesare pentru a lua cea mai bună decizie pentru afacerea ta.
+            Fiecare proiect începe cu o conversație – haide să vorbim!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Cum ne contactezi</span>
+          <h2>Alege metoda preferată</h2>
+          <p>Suntem disponibili pe multiple canale pentru confortul tău</p>
+        </div>
+        <div class="dev-contact-methods">
+          {
+            contactMethods.map((method) => (
+              <div class="dev-contact-method">
+                <div class="icon">{method.icon}</div>
+                <h3>{method.title}</h3>
+                <a href={method.link}>{method.value}</a>
+                <p>{method.description}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
 
     <!-- Contact Form Section -->
-    <section class="dev-section dev-section-alt">
+    <section class="dev-section" id="formular">
       <div class="container">
         <div class="dev-contact-grid">
           <form
@@ -864,7 +1075,7 @@ const services = [
     </section>
 
     <!-- Features Section -->
-    <section class="dev-section">
+    <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">De ce noi?</span>
@@ -886,7 +1097,7 @@ const services = [
     </section>
 
     <!-- Process Section -->
-    <section class="dev-section dev-section-alt">
+    <section class="dev-section">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Proces</span>
@@ -908,7 +1119,7 @@ const services = [
     </section>
 
     <!-- Services Section -->
-    <section class="dev-section">
+    <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Servicii</span>
@@ -928,9 +1139,31 @@ const services = [
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">FAQ</span>
+          <h2>Întrebări frecvente</h2>
+          <p>Răspunsuri la cele mai comune întrebări</p>
+        </div>
+        <div class="dev-faq-list">
+          {
+            faqs.map((faq) => (
+              <details class="dev-faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <Footer lang="ro" />
     <script src="/script.js" defer></script>
     <script>
+      // @ts-nocheck
       // Chip selection
       document.querySelectorAll(".dev-chip").forEach((chip) => {
         chip.addEventListener("click", () => {
@@ -939,35 +1172,33 @@ const services = [
             .forEach((c) => c.classList.remove("active"));
           chip.classList.add("active");
           const projectType = document.getElementById("project_type");
-          if (projectType && "value" in projectType) {
-            projectType.value = (chip as HTMLElement).dataset.value || "";
+          if (projectType) {
+            projectType.value = chip.dataset.value || "";
           }
         });
       });
 
       // Budget range
-      const budgetRange = document.getElementById(
-        "budget",
-      ) as HTMLInputElement | null;
+      const budgetRange = document.getElementById("budget");
       const budgetBadge = document.getElementById("budgetBadge");
       budgetRange?.addEventListener("input", (e) => {
-        const target = e.target as HTMLInputElement;
+        const target = /** @type {HTMLInputElement} */ (e.target);
         if (budgetBadge) {
           budgetBadge.textContent = `€${target.value}`;
         }
       });
 
       // Form submission
-      const form = document.getElementById(
-        "contactForm",
-      ) as HTMLFormElement | null;
+      const form = /** @type {HTMLFormElement|null} */ (
+        document.getElementById("contactForm")
+      );
       const formStatus = document.getElementById("formStatus");
 
       form?.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const submitBtn = form.querySelector(
-          ".dev-submit",
-        ) as HTMLButtonElement | null;
+        const submitBtn = /** @type {HTMLButtonElement|null} */ (
+          form.querySelector(".dev-submit")
+        );
         if (!submitBtn) return;
 
         submitBtn.disabled = true;
