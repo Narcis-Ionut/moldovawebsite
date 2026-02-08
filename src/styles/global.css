@@ -581,6 +581,11 @@
     position: relative;
     overflow: clip;
   }
+
+  /* Ensure dev-hero containers fill flex width so text wraps normally */
+  .dev-hero > .container {
+    width: 100%;
+  }
   .hero-content {
     grid-column: 1 / span 7;
     color: white;
@@ -2626,7 +2631,7 @@
   }
 
   /* Content visibility for off-screen optimization */
-  section:not(.hero) {
+  section:not(.hero):not(.dev-hero) {
     content-visibility: auto;
     contain-intrinsic-size: auto 500px;
   }

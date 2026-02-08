@@ -2,6 +2,7 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../../consts";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -32,6 +33,7 @@ const jsonLd = {
         addressLocality: "Кишинев",
         addressCountry: "MD",
       },
+      sameAs: ["https://www.facebook.com/", "https://www.linkedin.com/"],
     },
     {
       "@type": "FAQPage",
@@ -60,10 +62,172 @@ const jsonLd = {
             text: "Да. Мы настраиваем мета-теги, правильную структуру, скорость страниц и схему JSON-LD для лучшей видимости в поисковых системах.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Вы создаете интернет-магазины?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Да. Мы разрабатываем интернет-магазины с каталогом, корзиной, платежами и доставкой, оптимизированные для конверсии.",
+          },
+        },
       ],
     },
   ],
 };
+
+const services = [
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.048 4.025a3 3 0 01-4.293 0l-1.172-1.172a3 3 0 010-4.242l7.586-7.586a3 3 0 014.242 0l1.172 1.172a3 3 0 010 4.242l-7.586 7.586z"/><path d="M14.25 9.75L16.5 12m0 0l2.25 2.25M16.5 12l2.25-2.25M16.5 12l-2.25 2.25"/></svg>`,
+    title: "Современный дизайн и UX",
+    description:
+      "Чистые, удобные интерфейсы, которые повышают конверсию и доверие.",
+    color: "#f59e0b",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>`,
+    title: "Производительность и скорость",
+    description:
+      "Техническая оптимизация (LCP/CLS), кэширование и лучшие практики для быстрой загрузки.",
+    color: "#10b981",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>`,
+    title: "SEO на странице для Молдовы",
+    description:
+      "Правильная структура, мета-теги, схемы JSON-LD и локализованный контент (Кишинев, MD).",
+    color: "#8b5cf6",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>`,
+    title: "Доступный интернет-магазин",
+    description:
+      "Внедрение электронной коммерции с платежами, доставкой и каталогом — без завышенных затрат.",
+    color: "#ec4899",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>`,
+    title: "Обслуживание и локальная поддержка",
+    description:
+      "Обновления, безопасность и помощь на румынском и русском языках, когда вам необходимо.",
+    color: "#06b6d4",
+  },
+];
+
+const testimonials = [
+  {
+    content:
+      "После запуска нового сайта мы получаем на 40% больше запросов ежемесячно. Команда работала быстро, четко и по доступной цене.",
+    author: "Иван Попеску",
+    role: "Владелец местного бизнеса",
+  },
+  {
+    content:
+      "Наши продажи выросли на 35% в течение первых трех месяцев после запуска интернет-магазина. Платформа проста в управлении даже для нас, не имеющих технического опыта.",
+    author: "Мария Кожокару",
+    role: "Менеджер интернет-магазина",
+  },
+  {
+    content:
+      "Очень ценю внедренные SEO-оптимизации. Теперь мы находимся в первых результатах для локальных поисковых запросов в Кишиневе.",
+    author: "Андрей Русу",
+    role: "Директор по маркетингу",
+  },
+  {
+    content:
+      "Ключевым аспектом для нас была адаптация сайта для мобильных устройств. Сейчас 70% наших клиентов заходят с телефонов, и опыт использования безупречен. Рекомендую!",
+    author: "Елена Мунтяну",
+    role: "Предприниматель",
+  },
+];
+
+const portfolio = [
+  {
+    image: "/assets/dentist-botanica.webp",
+    title: "DentalCare Ботаника",
+    category: "Стоматология",
+    description:
+      "Сайт-визитка для стоматологической клиники в секторе Ботаника, Кишинев. Включает систему онлайн-записи, галерею услуг и карту расположения.",
+    features: ["Адаптивный дизайн", "Онлайн-запись", "Локальное SEO"],
+  },
+  {
+    image: "/assets/pizza-riscani.webp",
+    title: "Pizza Express Рышкань",
+    category: "Ресторан",
+    description:
+      "Мини-интернет-магазин для пиццерии в Рышкань с цифровым меню, корзиной заказов и интеграцией со службами доставки.",
+    features: ["Интерактивное меню", "Система заказов", "Интеграция доставки"],
+  },
+  {
+    image: "/assets/salon-beauty.webp",
+    title: "Beauty Studio Центр",
+    category: "Салон красоты",
+    description:
+      "Элегантный сайт для салона красоты в центре Кишинева. Включает фотогалерею, прайс-лист и формы бронирования.",
+    features: ["Фотогалерея", "Онлайн-бронирование", "Премиум-дизайн"],
+  },
+  {
+    image: "/assets/r-ro-ai.webp",
+    title: "R-RO AI – Юридический ассистент",
+    category: "AI Веб-приложение",
+    description:
+      "AI платформа для румын в диаспоре. Генерирует жалобы ANPC, заявления на компенсацию за рейс (до 600€), расторжение контрактов и полные юридические руководства на румынском языке.",
+    features: [
+      "Продвинутая AI интеграция",
+      "PWA веб-приложение",
+      "Современный адаптивный дизайн",
+    ],
+    link: "https://r-ro.com",
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Бесплатная консультация",
+    description:
+      "Определяем цели, бюджет и тип сайта (визитка, интернет-магазин).",
+  },
+  {
+    number: "02",
+    title: "Дизайн",
+    description:
+      "Визуальные предложения и прототипы, ориентированные на конверсию.",
+  },
+  {
+    number: "03",
+    title: "Разработка",
+    description:
+      "Быстрая реализация с лучшими практиками производительности и безопасности.",
+  },
+  {
+    number: "04",
+    title: "Запуск и SEO",
+    description: "Публикуем сайт, настраиваем SEO на странице и обеспечиваем поддержку.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Можно ли получить недорогой сайт без ущерба для качества?",
+    answer:
+      "Да. Мы используем оптимизированные компоненты и эффективный процесс, чтобы быстро создать современный сайт по доступной цене.",
+  },
+  {
+    question: "Вы работаете в Кишиневе и по всей Молдове?",
+    answer:
+      "Да. Мы предлагаем локальные услуги в Кишиневе и сотрудничаем онлайн с клиентами по всей Молдове.",
+  },
+  {
+    question: "Вы включаете SEO на странице?",
+    answer:
+      "Да. Мы настраиваем мета-теги, правильную структуру, скорость страниц и схему JSON-LD для лучшей видимости в поисковых системах.",
+  },
+  {
+    question: "Вы создаете интернет-магазины?",
+    answer:
+      "Да. Мы разрабатываем интернет-магазины с каталогом, корзиной, платежами и доставкой, оптимизированные для конверсии.",
+  },
+];
 ---
 
 <!doctype html>
@@ -74,540 +238,1417 @@ const jsonLd = {
       description="Создаем недорогие и быстрые сайты для малого бизнеса и частных лиц в Кишиневе и по всей Молдове: сайты-визитки, интернет-магазины, SEO на странице, обслуживание. Запросите бесплатное предложение."
       canonicalUrl="https://moldovawebsite.md/ru/"
       lang="ru"
+      ogLocale="ru_MD"
       hreflangRo="https://moldovawebsite.md/"
       hreflangRu="https://moldovawebsite.md/ru/"
-      ogLocale="ru_MD"
       jsonLd={jsonLd}
     />
+    <style>
+      /* ============================================
+         DEV THEME - PROFESSIONAL REDESIGN
+         Dark mode developer aesthetic with vibrant accents
+         ============================================ */
+
+      :root {
+        --dev-bg: #0a0a0f;
+        --dev-surface: #12121a;
+        --dev-surface-2: #1a1a25;
+        --dev-border: #2a2a3a;
+        --dev-text: #e4e4e7;
+        --dev-text-muted: #71717a;
+        --dev-accent: #22d3ee;
+        --dev-accent-2: #a855f7;
+        --dev-accent-3: #f472b6;
+        --dev-success: #34d399;
+        --dev-warning: #fbbf24;
+        --dev-glow: rgba(34, 211, 238, 0.15);
+        --dev-gradient: linear-gradient(
+          135deg,
+          #22d3ee 0%,
+          #a855f7 50%,
+          #f472b6 100%
+        );
+      }
+
+      /* Hero Section - Terminal Style */
+      .dev-hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: var(--dev-bg);
+        padding-top: 80px;
+      }
+
+      .dev-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(34, 211, 238, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 60%,
+            rgba(168, 85, 247, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 40% 30% at 20% 80%,
+            rgba(244, 114, 182, 0.08),
+            transparent
+          );
+        pointer-events: none;
+      }
+
+      .dev-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-hero-content {
+        max-width: 600px;
+      }
+
+      .dev-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(34, 211, 238, 0.1);
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: var(--dev-accent);
+        margin-bottom: 1.5rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-hero-badge::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--dev-success);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .dev-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff 0%, #a5f3fc 50%, #c084fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .dev-hero h1 span {
+        display: block;
+        font-size: 0.6em;
+        font-weight: 500;
+        color: var(--dev-text-muted);
+        margin-top: 0.5rem;
+        -webkit-text-fill-color: var(--dev-text-muted);
+      }
+
+      .dev-hero-subtitle {
+        font-size: 1.125rem;
+        color: var(--dev-text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+
+      .dev-hero-subtitle strong {
+        color: var(--dev-text);
+        font-weight: 600;
+      }
+
+      .dev-hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+      }
+
+      .dev-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dev-btn-primary {
+        background: var(--dev-gradient);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3);
+      }
+
+      .dev-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(34, 211, 238, 0.4);
+      }
+
+      .dev-btn-secondary {
+        background: transparent;
+        color: var(--dev-text);
+        border: 1px solid var(--dev-border);
+      }
+
+      .dev-btn-secondary:hover {
+        background: var(--dev-surface-2);
+        border-color: var(--dev-accent);
+      }
+
+      .dev-hero-stats {
+        display: flex;
+        gap: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--dev-border);
+      }
+
+      .dev-stat {
+        text-align: left;
+      }
+
+      .dev-stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-stat-label {
+        font-size: 0.875rem;
+        color: var(--dev-text-muted);
+      }
+
+      /* Terminal Window */
+      .dev-terminal {
+        background: var(--dev-surface);
+        border-radius: 16px;
+        border: 1px solid var(--dev-border);
+        overflow: hidden;
+        box-shadow:
+          0 25px 50px -12px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      .dev-terminal-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 1.25rem;
+        background: var(--dev-surface-2);
+        border-bottom: 1px solid var(--dev-border);
+      }
+
+      .dev-terminal-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .dev-terminal-dot.red {
+        background: #ff5f56;
+      }
+      .dev-terminal-dot.yellow {
+        background: #ffbd2e;
+      }
+      .dev-terminal-dot.green {
+        background: #27ca40;
+      }
+
+      .dev-terminal-title {
+        margin-left: 0.75rem;
+        font-size: 0.875rem;
+        color: var(--dev-text-muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-terminal-body {
+        padding: 1.5rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.875rem;
+        line-height: 1.8;
+      }
+
+      .dev-terminal-line {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .dev-terminal-prompt {
+        color: var(--dev-success);
+        white-space: nowrap;
+      }
+
+      .dev-terminal-command {
+        color: var(--dev-text);
+      }
+
+      .dev-terminal-output {
+        color: var(--dev-text-muted);
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+
+      .dev-terminal-cursor {
+        display: inline-block;
+        width: 8px;
+        height: 1.2em;
+        background: var(--dev-accent);
+        animation: blink 1s infinite;
+        vertical-align: middle;
+        margin-left: 2px;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* Services Section */
+      .dev-section {
+        padding: 6rem 0;
+        background: var(--dev-bg);
+        position: relative;
+      }
+
+      .dev-section-alt {
+        background: var(--dev-surface);
+      }
+
+      .dev-section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+
+      .dev-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(168, 85, 247, 0.1);
+        border: 1px solid rgba(168, 85, 247, 0.2);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: var(--dev-accent-2);
+        margin-bottom: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-section h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-section p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+      }
+
+      .dev-services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .dev-service-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dev-service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          var(--card-color, var(--dev-accent)) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .dev-service-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--card-color, var(--dev-accent));
+      }
+
+      .dev-service-card:hover::before {
+        opacity: 0.05;
+      }
+
+      .dev-service-icon {
+        width: 56px;
+        height: 56px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-service-icon svg {
+        width: 28px;
+        height: 28px;
+        color: var(--card-color, var(--dev-accent));
+      }
+
+      .dev-service-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-service-card p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Testimonials - Code Block Style */
+      .dev-testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .dev-testimonial {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .dev-testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid var(--dev-border);
+      }
+
+      .dev-testimonial-dots {
+        display: flex;
+        gap: 0.375rem;
+      }
+
+      .dev-testimonial-dots span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--dev-border);
+      }
+
+      .dev-testimonial-dots span:first-child {
+        background: #ff5f56;
+      }
+      .dev-testimonial-dots span:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .dev-testimonial-dots span:last-child {
+        background: #27ca40;
+      }
+
+      .dev-testimonial-filename {
+        margin-left: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--dev-text-muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-testimonial-body {
+        padding: 1.5rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-testimonial-content {
+        color: var(--dev-text);
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 1rem;
+        border-left: 3px solid var(--dev-accent);
+      }
+
+      .dev-testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .dev-testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--dev-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #fff;
+        font-size: 0.875rem;
+      }
+
+      .dev-testimonial-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .dev-testimonial-name {
+        font-weight: 600;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+
+      .dev-testimonial-role {
+        font-size: 0.8rem;
+        color: var(--dev-text-muted);
+      }
+
+      /* Portfolio Section */
+      .dev-portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .dev-portfolio-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .dev-portfolio-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--dev-accent);
+        box-shadow: 0 20px 40px rgba(34, 211, 238, 0.1);
+      }
+
+      .dev-portfolio-image {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+      }
+
+      .dev-portfolio-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .dev-portfolio-card:hover .dev-portfolio-image img {
+        transform: scale(1.05);
+      }
+
+      .dev-portfolio-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 10, 15, 0.9) 0%,
+          transparent 60%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+      }
+
+      .dev-portfolio-category {
+        display: inline-block;
+        padding: 0.375rem 0.75rem;
+        background: rgba(34, 211, 238, 0.15);
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        border-radius: 6px;
+        font-size: 0.75rem;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-portfolio-content {
+        padding: 1.5rem;
+      }
+
+      .dev-portfolio-content h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+
+      .dev-portfolio-content p {
+        color: var(--dev-text-muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .dev-portfolio-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .dev-portfolio-features li {
+        padding: 0.25rem 0.625rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        font-size: 0.75rem;
+        color: var(--dev-text-muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-portfolio-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        color: var(--dev-accent);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: gap 0.3s ease;
+      }
+
+      .dev-portfolio-link:hover {
+        gap: 0.75rem;
+      }
+
+      /* Pricing Section */
+      .dev-pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .dev-pricing-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2.5rem 2rem;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .dev-pricing-card.featured {
+        border-color: var(--dev-accent);
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.1);
+      }
+
+      .dev-pricing-card.featured::before {
+        content: "Popular";
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.375rem 1rem;
+        background: var(--dev-accent);
+        color: #000;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 0 0 8px 8px;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-pricing-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--dev-accent-2);
+      }
+
+      .dev-pricing-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .dev-pricing-card > p {
+        color: var(--dev-text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .dev-pricing-features {
+        list-style: none;
+        margin: 0 0 2rem 0;
+        padding: 0;
+      }
+
+      .dev-pricing-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.625rem 0;
+        color: var(--dev-text);
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .dev-pricing-features li:last-child {
+        border-bottom: none;
+      }
+
+      .dev-pricing-features li::before {
+        content: "✓";
+        color: var(--dev-success);
+        font-weight: 700;
+      }
+
+      /* Process Section */
+      .dev-process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        position: relative;
+      }
+
+      .dev-process-grid::before {
+        content: "";
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--dev-accent),
+          var(--dev-accent-2),
+          var(--dev-accent-3)
+        );
+        opacity: 0.3;
+        z-index: 0;
+      }
+
+      @media (max-width: 768px) {
+        .dev-process-grid::before {
+          display: none;
+        }
+      }
+
+      .dev-process-step {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-process-number {
+        width: 64px;
+        height: 64px;
+        background: var(--dev-surface-2);
+        border: 2px solid var(--dev-border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--dev-accent);
+        margin: 0 auto 1.5rem;
+        font-family: "JetBrains Mono", monospace;
+        position: relative;
+      }
+
+      .dev-process-number::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        background: linear-gradient(
+            135deg,
+            var(--dev-accent),
+            var(--dev-accent-2)
+          )
+          border-box;
+        -webkit-mask:
+          linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .dev-process-step:hover .dev-process-number::after {
+        opacity: 1;
+      }
+
+      .dev-process-step h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+
+      .dev-process-step p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* FAQ Section */
+      .dev-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .dev-faq-item {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .dev-faq-item:hover {
+        border-color: var(--dev-border);
+      }
+
+      .dev-faq-item[open] {
+        border-color: var(--dev-accent);
+      }
+
+      .dev-faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        list-style: none;
+        transition: color 0.3s ease;
+      }
+
+      .dev-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .dev-faq-item summary::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+        transition: transform 0.3s ease;
+      }
+
+      .dev-faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+
+      .dev-faq-item summary:hover {
+        color: var(--dev-accent);
+      }
+
+      .dev-faq-item p {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--dev-text-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* CTA Section */
+      .dev-cta {
+        padding: 6rem 0;
+        background: var(--dev-surface);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dev-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 40% at 50% 100%,
+            rgba(34, 211, 238, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 40% 30% at 20% 50%,
+            rgba(168, 85, 247, 0.08),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 40% 30% at 80% 50%,
+            rgba(244, 114, 182, 0.08),
+            transparent
+          );
+        pointer-events: none;
+      }
+
+      .dev-cta-content {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-cta h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-cta p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Grid Pattern Background */
+      .dev-grid-pattern {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .dev-hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .dev-hero-content {
+          max-width: 100%;
+        }
+
+        .dev-hero-actions {
+          justify-content: center;
+        }
+
+        .dev-hero-stats {
+          justify-content: center;
+        }
+
+        .dev-terminal {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .dev-hero {
+          padding-top: 100px;
+        }
+
+        .dev-hero h1 {
+          font-size: 2rem;
+        }
+
+        .dev-section {
+          padding: 4rem 0;
+        }
+
+        .dev-services-grid,
+        .dev-testimonials-grid,
+        .dev-portfolio-grid,
+        .dev-pricing-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Code syntax highlighting simulation */
+      .syntax-keyword {
+        color: #c084fc;
+      }
+      .syntax-string {
+        color: #34d399;
+      }
+      .syntax-comment {
+        color: #71717a;
+      }
+      .syntax-function {
+        color: #22d3ee;
+      }
+    </style>
   </head>
-  <body>
+  <body class="dev-theme" style="background: #0a0a0f; color: #e4e4e7;">
+    <div class="dev-grid-pattern"></div>
     <Header lang="ru" />
 
     <!-- Hero Section -->
-    <section class="hero" id="acasa">
-      <div class="container grid">
-        <div class="hero-content">
-          <h1>
-            Создание недорогих сайтов в Молдове – доступный веб-дизайн для
-            малого бизнеса
-          </h1>
-          <p class="subheading">
-            <strong>Создание недорогих сайтов в Молдове</strong> — это наша основная
-            специализация. Мы делаем современные и быстрые сайты (Lighthouse 95+),
-            которые привлекают клиентов. Локальные услуги в Кишиневе и по всей Молдове:
-            <strong>сайты-визитки</strong>, <strong>интернет-магазины</strong>, <strong
-              >SEO на странице</strong
-            > и <strong>обслуживание</strong>.
-          </p>
-          <div class="hero-actions">
-            <a href="/ru/contact/" class="btn btn-primary"
-              >Запросить бесплатное предложение</a
-            >
-          </div>
-          <ul class="hero-bullets">
-            <li>Доступные цены и масштабируемые решения</li>
-            <li>Быстрое внедрение + техническая SEO-оптимизация</li>
-            <li>Локальная поддержка на румынском и русском языках</li>
-          </ul>
-        </div>
-        <div class="hero-image" aria-hidden="true">
-          <div class="hero-bg-shape"></div>
-          <div class="hero-device">
-            <svg
-              viewBox="0 0 500 300"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Современная веб-иллюстрация"
-            >
-              <defs>
-                <linearGradient
-                  id="gradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stop-color="#0A2463"></stop>
-                  <stop offset="100%" stop-color="#63B3ED"></stop>
-                </linearGradient>
-                <clipPath id="screenClip"
-                  ><rect x="50" y="30" width="400" height="240" rx="10"
-                  ></rect></clipPath
-                >
-              </defs>
-              <rect
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                rx="10"
-                fill="url(#gradient)"></rect>
-              <image
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                href="/assets/hero-screen.webp"
-                preserveAspectRatio="xMidYMid slice"
-                clip-path="url(#screenClip)"
-              />
-              <rect
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                rx="10"
-                fill="#000"
-                opacity="0.12"
-                clip-path="url(#screenClip)"></rect>
-              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
-              ></circle>
-              <rect
-                x="150"
-                y="145"
-                height="10"
-                width="200"
-                fill="white"
-                opacity="0.6"></rect>
-              <rect
-                x="180"
-                y="167"
-                height="6"
-                width="140"
-                fill="white"
-                opacity="0.4"></rect>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="services" id="servicii">
-      <div class="container grid">
-        <div class="section-title">
-          <h2>
-            Услуги по созданию недорогих сайтов и доступному веб-дизайну в
-            Молдове
-          </h2>
-          <p>
-            Наша компания специализируется на <strong
-              >создании недорогих сайтов в Молдове</strong
-            >, предлагая доступный веб-дизайн для малого бизнеса и частных лиц –
-            от идеи до запуска.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🎨</div>
-          <h3 class="service-title">Современный дизайн и UX</h3>
-          <p class="service-desc">
-            Чистые, удобные интерфейсы, которые повышают конверсию и доверие.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3 class="service-title">Производительность и скорость</h3>
-          <p class="service-desc">
-            Техническая оптимизация (LCP/CLS), кэширование и лучшие практики для
-            быстрой загрузки.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🔍</div>
-          <h3 class="service-title">SEO на странице для Молдовы</h3>
-          <p class="service-desc">
-            Правильная структура, мета-теги, схемы JSON-LD и локализованный
-            контент (Кишинев, MD).
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🛒</div>
-          <h3 class="service-title">Доступный интернет-магазин</h3>
-          <p class="service-desc">
-            Внедрение электронной коммерции с платежами, доставкой и каталогом –
-            без завышенных затрат.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🔧</div>
-          <h3 class="service-title">Обслуживание и локальная поддержка</h3>
-          <p class="service-desc">
-            Обновления, безопасность и помощь на румынском и русском языках,
-            когда вам необходимо.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="social-proof">
+    <section class="dev-hero" id="acasa">
       <div class="container">
-        <div class="section-title">
-          <h2>Доверие от местных предприятий в Кишиневе и по всей Молдове</h2>
-          <p>
-            Реальные рекомендации от клиентов, которые выбрали <em>доступные</em
-            >, а не случайно дешевые решения.
-          </p>
-        </div>
-
-        <div class="grid" id="portofoliu">
-          <div class="testimonial">
-            <p class="testimonial-content">
-              После запуска нового сайта мы получаем на 40% больше запросов
-              ежемесячно. Команда работала быстро, четко и по доступной цене.
+        <div class="dev-hero-grid">
+          <div class="dev-hero-content">
+            <div class="dev-hero-badge">Открыты для новых проектов</div>
+            <h1>
+              Создание недорогих сайтов в Молдове
+              <span
+                >Доступный веб-дизайн для малого бизнеса в Кишиневе и по всей
+                Молдове</span
+              >
+            </h1>
+            <p class="dev-hero-subtitle">
+              Современные и быстрые сайты <strong>(Lighthouse 95+)</strong> привлекают
+              клиентов. Локальные услуги: <strong>сайт-визитка</strong>, <strong
+                >интернет-магазин</strong
+              >,
+              <strong>SEO на странице</strong> и <strong>обслуживание</strong>.
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Иван Попеску</span>
+            <div class="dev-hero-actions">
+              <a href="/ru/contact/" class="dev-btn dev-btn-primary">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  ></path>
+                </svg>
+                Запросить бесплатное предложение
+              </a>
+              <a href="#portofoliu" class="dev-btn dev-btn-secondary">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                  ></path>
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Посмотреть портфолио
+              </a>
+            </div>
+            <div class="dev-hero-stats">
+              <div class="dev-stat">
+                <div class="dev-stat-value">95+</div>
+                <div class="dev-stat-label">Оценка Lighthouse</div>
+              </div>
+              <div class="dev-stat">
+                <div class="dev-stat-value">40%</div>
+                <div class="dev-stat-label">Средний рост</div>
+              </div>
+              <div class="dev-stat">
+                <div class="dev-stat-value">24h</div>
+                <div class="dev-stat-label">Время ответа</div>
               </div>
             </div>
           </div>
 
-          <div class="testimonial">
-            <p class="testimonial-content">
-              Наши продажи выросли на 35% в течение первых трех месяцев после
-              запуска интернет-магазина. Платформа проста в управлении даже для
-              нас, не имеющих технического опыта.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Мария Кожокару</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="testimonial-content">
-              Очень ценю внедренные SEO-оптимизации. Теперь мы находимся в
-              первых результатах для локальных поисковых запросов в Кишиневе.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Андрей Русу</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="testimonial-content">
-              Ключевым аспектом для нас была адаптация сайта для мобильных
-              устройств. Сейчас 70% наших клиентов заходят с телефонов, и опыт
-              использования безупречен. Рекомендую!
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Елена Мунтяну</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Портфолио / Portfolio -->
-    <section class="portfolio" id="portofoliu-sectiune">
-      <div class="container">
-        <div class="section-title">
-          <h2>Портфолио – Примеры созданных сайтов</h2>
-          <p>
-            Вот несколько примеров сайтов, которые мы создали для местного
-            бизнеса в Молдове.
-          </p>
-        </div>
-
-        <div class="portfolio-grid">
-          <!-- Проект 1: Стоматология -->
-          <article class="portfolio-card">
-            <div class="portfolio-image">
-              <img
-                src="/assets/dentist-botanica.webp"
-                alt="Сайт стоматологической клиники Ботаника - современный дизайн с онлайн-записью"
-                loading="lazy"
-                width="400"
-                height="250"
-              />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">Стоматология</span>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>DentalCare Ботаника</h3>
-              <p>
-                Сайт-визитка для стоматологической клиники в секторе Ботаника,
-                Кишинев. Включает систему онлайн-записи, галерею услуг и карту
-                расположения.
-              </p>
-              <ul class="portfolio-features">
-                <li>✓ Адаптивный дизайн</li>
-                <li>✓ Онлайн-запись</li>
-                <li>✓ Локальное SEO</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Проект 2: Пиццерия -->
-          <article class="portfolio-card">
-            <div class="portfolio-image">
-              <img
-                src="/assets/pizza-riscani.webp"
-                alt="Сайт пиццерии Рышкань - онлайн меню и заказы"
-                loading="lazy"
-                width="400"
-                height="250"
-              />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">Ресторан</span>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>Pizza Express Рышкань</h3>
-              <p>
-                Мини-интернет-магазин для пиццерии в Рышкань с цифровым меню,
-                корзиной заказов и интеграцией со службами доставки.
-              </p>
-              <ul class="portfolio-features">
-                <li>✓ Интерактивное меню</li>
-                <li>✓ Система заказов</li>
-                <li>✓ Интеграция доставки</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Проект 3: Салон красоты -->
-          <article class="portfolio-card">
-            <div class="portfolio-image">
-              <img
-                src="/assets/salon-beauty.webp"
-                alt="Сайт салона красоты - бронирование и услуги"
-                loading="lazy"
-                width="400"
-                height="250"
-              />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">Салон красоты</span>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>Beauty Studio Центр</h3>
-              <p>
-                Элегантный сайт для салона красоты в центре Кишинева. Включает
-                фотогалерею, прайс-лист и формы бронирования.
-              </p>
-              <ul class="portfolio-features">
-                <li>✓ Фотогалерея</li>
-                <li>✓ Онлайн-бронирование</li>
-                <li>✓ Премиум-дизайн</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Проект 4: AI Юридическая платформа -->
-          <article class="portfolio-card">
-            <div class="portfolio-image">
-              <img
-                src="/assets/r-ro-ai.webp"
-                alt="R-RO AI - Юридическая AI платформа для румын в диаспоре"
-                loading="lazy"
-                width="400"
-                height="250"
-              />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">AI Веб-приложение</span>
-              </div>
-            </div>
-            <div class="portfolio-content">
-              <h3>R-RO AI – Юридический ассистент</h3>
-              <p>
-                AI платформа для румын в диаспоре. Генерирует жалобы ANPC,
-                заявления на компенсацию за рейс (до 600€), расторжение
-                контрактов и полные юридические руководства на румынском языке.
-              </p>
-              <ul class="portfolio-features">
-                <li>✓ Продвинутая AI интеграция</li>
-                <li>✓ PWA веб-приложение</li>
-                <li>✓ Современный адаптивный дизайн</li>
-              </ul>
-              <a
-                href="https://r-ro.com"
-                target="_blank"
-                rel="noopener"
-                class="portfolio-link">Посетить сайт →</a
+          <div class="dev-terminal">
+            <div class="dev-terminal-header">
+              <span class="dev-terminal-dot red"></span>
+              <span class="dev-terminal-dot yellow"></span>
+              <span class="dev-terminal-dot green"></span>
+              <span class="dev-terminal-title"
+                >moldovawebsite.md — bash — 80x24</span
               >
             </div>
-          </article>
+            <div class="dev-terminal-body">
+              <div class="dev-terminal-line">
+                <span class="dev-terminal-prompt">➜</span>
+                <span class="dev-terminal-command"
+                  ><span class="syntax-function">init</span>
+                  <span class="syntax-string">"новый-проект"</span></span
+                >
+              </div>
+              <div class="dev-terminal-output">
+                ✓ Анализ требований завершен<br />
+                ✓ Сгенерирована дизайн-система<br />
+                ✓ Настроено SEO
+              </div>
+              <div class="dev-terminal-line">
+                <span class="dev-terminal-prompt">➜</span>
+                <span class="dev-terminal-command"
+                  ><span class="syntax-function">build</span>
+                  <span class="syntax-keyword">--prod</span></span
+                >
+              </div>
+              <div class="dev-terminal-output">
+                <span class="syntax-comment"
+                  ># Сборка успешно завершена</span
+                ><br />
+                Lighthouse: 98 Performance<br />
+                Lighthouse: 100 Accessibility<br />
+                Lighthouse: 100 Best Practices<br />
+                Lighthouse: 100 SEO
+              </div>
+              <div class="dev-terminal-line">
+                <span class="dev-terminal-prompt">➜</span>
+                <span class="dev-terminal-command"
+                  ><span class="syntax-function">deploy</span>
+                  <span class="syntax-keyword">--live</span></span
+                >
+              </div>
+              <div class="dev-terminal-output">
+                ✓ Сайт опубликован на moldovawebsite.md<br />
+                ✓ Домен подключен<br />
+                ✓ SSL активирован
+              </div>
+              <div class="dev-terminal-line">
+                <span class="dev-terminal-prompt">➜</span>
+                <span class="dev-terminal-cursor"></span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="portfolio-cta">
-          <p>Хотите подобный сайт для вашего бизнеса?</p>
-          <a href="/ru/contact/" class="btn btn-primary"
+    <!-- Services Section -->
+    <section class="dev-section dev-section-alt" id="servicii">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Услуги</span>
+          <h2>Комплексные решения для малого бизнеса</h2>
+          <p>
+            От идеи до запуска — превращаем вашу концепцию в цифровую
+            реальность
+          </p>
+        </div>
+        <div class="dev-services-grid">
+          {
+            services.map((service) => (
+              <div
+                class="dev-service-card"
+                style={`--card-color: ${service.color}`}
+              >
+                <div class="dev-service-icon" set:html={service.icon} />
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="dev-section" id="testimoniale">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Отзывы</span>
+          <h2>Нам доверяют местные бизнесы</h2>
+          <p>
+            Реальные рекомендации от клиентов, которые выбрали доступные, а не
+            случайно дешевые решения
+          </p>
+        </div>
+        <div class="dev-testimonials-grid">
+          {
+            testimonials.map((t, i) => (
+              <div class="dev-testimonial">
+                <div class="dev-testimonial-header">
+                  <div class="dev-testimonial-dots">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <span class="dev-testimonial-filename">
+                    review_{i + 1}.md
+                  </span>
+                </div>
+                <div class="dev-testimonial-body">
+                  <div class="dev-testimonial-content">"{t.content}"</div>
+                  <div class="dev-testimonial-author">
+                    <div class="dev-testimonial-avatar">
+                      {t.author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </div>
+                    <div class="dev-testimonial-info">
+                      <span class="dev-testimonial-name">{t.author}</span>
+                      <span class="dev-testimonial-role">{t.role}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="dev-section dev-section-alt" id="portofoliu">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Портфолио</span>
+          <h2>Примеры созданных сайтов</h2>
+          <p>
+            Вот несколько примеров сайтов, которые мы создали для местного бизнеса
+            в Молдове
+          </p>
+        </div>
+        <div class="dev-portfolio-grid">
+          {
+            portfolio.map((item) => (
+              <article class="dev-portfolio-card">
+                <div class="dev-portfolio-image">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    width="400"
+                    height="220"
+                  />
+                  <div class="dev-portfolio-overlay">
+                    <span class="dev-portfolio-category">{item.category}</span>
+                  </div>
+                </div>
+                <div class="dev-portfolio-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <ul class="dev-portfolio-features">
+                    {item.features.map((feature) => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener"
+                      class="dev-portfolio-link"
+                    >
+                      Посетить сайт →
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="/ru/contact/" class="dev-btn dev-btn-primary"
             >Запросить бесплатное предложение</a
           >
         </div>
       </div>
     </section>
 
-    <!-- Pricing Preview -->
-    <section class="pricing" id="preturi">
+    <!-- Pricing Section -->
+    <section class="dev-section" id="preturi">
       <div class="container">
-        <div class="section-title">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Цены</span>
           <h2>Прозрачные цены для малого бизнеса</h2>
           <p>
-            Выберите подходящее решение: <strong>сайт-визитка</strong>, <strong
-              >лендинг</strong
-            >, <strong>интернет-магазин</strong>.
+            Выберите подходящее решение: сайт-визитка, лендинг, интернет-магазин
           </p>
         </div>
-
-        <div class="pricing-grid">
-          <div class="price-card card1">
+        <div class="dev-pricing-grid">
+          <div class="dev-pricing-card">
             <h3>Сайт-визитка</h3>
-            <ul>
+            <p>
+              Идеально для бизнеса, которому нужен профессиональный онлайн‑образ
+            </p>
+            <ul class="dev-pricing-features">
               <li>Современный дизайн + 5 страниц</li>
-              <li>SEO-оптимизация на странице</li>
+              <li>SEO на странице</li>
               <li>Контактная форма и карты</li>
+              <li>Адаптивный дизайн</li>
+              <li>Поддержка 30 дней включена</li>
             </ul>
-            <a href="/ru/contact/" class="btn btn-primary"
-              >Запросить предложение</a
+            <a
+              href="/ru/contact/"
+              class="dev-btn dev-btn-secondary"
+              style="width: 100%; justify-content: center;">Запросить предложение</a
             >
           </div>
-
-          <div class="price-card card2">
+          <div class="dev-pricing-card featured">
             <h3>Интернет-магазин</h3>
-            <ul>
-              <li>Каталог продуктов + корзина</li>
-              <li>Способы оплаты и доставки</li>
+            <p>Полное ecommerce‑решение для онлайн‑продаж</p>
+            <ul class="dev-pricing-features">
+              <li>Каталог товаров + корзина</li>
+              <li>Методы оплаты и доставки</li>
               <li>Техническое SEO и структура</li>
+              <li>Удобная панель управления</li>
+              <li>Интеграция курьерских служб</li>
+              <li>Поддержка 60 дней включена</li>
             </ul>
-            <a href="/ru/contact/" class="btn btn-primary"
-              >Запросить предложение</a
+            <a
+              href="/ru/contact/"
+              class="dev-btn dev-btn-primary"
+              style="width: 100%; justify-content: center;">Запросить предложение</a
             >
           </div>
-
-          <div class="price-card card3">
+          <div class="dev-pricing-card">
             <h3>SEO и обслуживание</h3>
-            <ul>
+            <p>Поддерживайте сайт актуальным и оптимизированным</p>
+            <ul class="dev-pricing-features">
               <li>Обновления и безопасность</li>
               <li>Оптимизация контента и скорости</li>
               <li>Ежемесячная отчетность</li>
+              <li>Ежедневные автоматические бэкапы</li>
+              <li>Мониторинг доступности</li>
             </ul>
-            <a href="/ru/contact/" class="btn btn-primary"
-              >Запросить предложение</a
+            <a
+              href="/ru/contact/"
+              class="dev-btn dev-btn-secondary"
+              style="width: 100%; justify-content: center;">Запросить предложение</a
             >
           </div>
         </div>
+        <p
+          style="text-align: center; margin-top: 2rem; color: var(--dev-text-muted);"
+        >
+          Подробности о <a
+            href="/ru/preturi/"
+            style="color: var(--dev-accent);">ценах на создание сайтов</a
+          > на отдельной странице
+        </p>
       </div>
     </section>
 
-    <!-- Process -->
-    <section class="process">
+    <!-- Process Section -->
+    <section class="dev-section dev-section-alt" id="proces">
       <div class="container">
-        <div class="section-title">
-          <h2>Как мы работаем – просто и прозрачно</h2>
-          <p>
-            Понятный процесс от бесплатной консультации до запуска + SEO на
-            странице.
-          </p>
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Процесс</span>
+          <h2>Как мы работаем — просто и прозрачно</h2>
+          <p>Понятный процесс от бесплатной консультации до запуска + SEO на странице</p>
         </div>
-
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Бесплатная консультация</h3>
-            <p class="step-desc">
-              Определяем цели, бюджет и тип сайта (визитка, интернет-магазин).
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3 class="step-title">Дизайн</h3>
-            <p class="step-desc">
-              Визуальные предложения и прототипы, ориентированные на конверсию.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Разработка</h3>
-            <p class="step-desc">
-              Быстрая реализация с лучшими практиками производительности и
-              безопасности.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3 class="step-title">Запуск и SEO</h3>
-            <p class="step-desc">
-              Публикуем сайт, настраиваем SEO на странице и обеспечиваем
-              поддержку.
-            </p>
-          </div>
+        <div class="dev-process-grid">
+          {
+            process.map((step) => (
+              <div class="dev-process-step">
+                <div class="dev-process-number">{step.number}</div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
+    <!-- FAQ Section -->
+    <section class="dev-section" id="faq">
       <div class="container">
-        <div class="section-title">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">FAQ</span>
           <h2>Часто задаваемые вопросы</h2>
-          <p>Быстрые ответы для принятия информированных решений.</p>
+          <p>Краткие ответы для осознанного выбора</p>
         </div>
-
-        <div class="faq-list">
-          <details>
-            <summary
-              >Можно ли получить недорогой сайт без ущерба для качества?</summary
-            >
-            <p>
-              Да. Мы используем оптимизированные компоненты и эффективный
-              процесс, чтобы быстро создать современный сайт по доступной цене.
-            </p>
-          </details>
-          <details>
-            <summary>Вы работаете в Кишиневе и по всей Молдове?</summary>
-            <p>
-              Да. Мы предлагаем локальные услуги в Кишиневе и сотрудничаем
-              онлайн с клиентами по всей Молдове.
-            </p>
-          </details>
-          <details>
-            <summary>Вы включаете SEO на странице?</summary>
-            <p>
-              Да. Мы настраиваем мета-теги, правильную структуру, скорость
-              страниц и схему JSON-LD для лучшей видимости в поисковых системах.
-            </p>
-          </details>
-          <details>
-            <summary>Вы создаете интернет-магазины?</summary>
-            <p>
-              Да. Мы разрабатываем интернет-магазины с каталогом, корзиной,
-              платежами и доставкой, оптимизированные для конверсии.
-            </p>
-          </details>
+        <div class="dev-faq-list">
+          {
+            faqs.map((faq) => (
+              <details class="dev-faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="container grid">
-        <div class="cta-container">
-          <h2>Хотите недорогой сайт в Молдове?</h2>
-          <p class="subheading">
-            Расскажите кратко, что вам нужно, и мы отправим вам бесплатное
-            предложение.
+    <!-- CTA Section -->
+    <section class="dev-cta" id="contact">
+      <div class="container">
+        <div class="dev-cta-content">
+          <h2>Хотите сайт по доступной цене в Молдове?</h2>
+          <p>
+            Расскажите, что вам нужно, и мы подготовим бесплатное предложение,
+            адаптированное под ваши задачи.
           </p>
-          <a href="/ru/contact/" class="btn btn-primary"
-            >Запросить бесплатное предложение</a
+          <a
+            href="/ru/contact/"
+            class="dev-btn dev-btn-primary"
+            style="font-size: 1.125rem; padding: 1.25rem 2.5rem;"
           >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              ></path>
+            </svg>
+            Запросить бесплатное предложение
+          </a>
         </div>
       </div>
     </section>

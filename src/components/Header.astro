@@ -39,8 +39,24 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
 <header class="site-header">
   <div class="container nav-container">
     <a href={homeLink} class="logo" aria-label={ariaLabel}>
-      <div class="logo-icon" aria-hidden="true"></div>
-      moldovawebsite.md
+      <div class="logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"></rect>
+          <path
+            d="M8 12L12 20L16 12L20 20L24 12"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#22d3ee"></stop>
+              <stop offset="1" stop-color="#a855f7"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">moldovawebsite.md</span>
     </a>
 
     <ul
@@ -60,25 +76,286 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
       }
     </ul>
 
-    <div class="language-toggle" aria-label={langToggleAriaLabel}>
-      <button
-        class={`lang-btn ${lang === "ro" ? "active" : ""}`}
-        aria-pressed={lang === "ro" ? "true" : "false"}>RO</button
-      >
-      <button
-        class={`lang-btn ${lang === "ru" ? "active" : ""}`}
-        aria-pressed={lang === "ru" ? "true" : "false"}>RU</button
-      >
-    </div>
+    <div class="header-actions">
+      <div class="language-toggle" aria-label={langToggleAriaLabel}>
+        <a
+          href={lang === "ro" ? "/ru" : "/"}
+          class="lang-btn"
+          aria-label={lang === "ro"
+            ? "Переключиться на русский"
+            : "Switch to Romanian"}
+        >
+          {lang === "ro" ? "RU" : "RO"}
+        </a>
+      </div>
 
-    <button
-      type="button"
-      class="hamburger"
-      aria-label={hamburgerAriaLabel}
-      aria-expanded="false"
-      aria-controls="nav-menu"
-    >
-      <span></span><span></span><span></span>
-    </button>
+      <a href={lang === "ro" ? "/contact/" : "/ru/contact/"} class="header-cta">
+        {lang === "ro" ? "Contact" : "Контакт"}
+      </a>
+
+      <button
+        type="button"
+        class="hamburger"
+        aria-label={hamburgerAriaLabel}
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset-block-start: 0;
+    inline-size: 100%;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(12px) saturate(150%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .site-header.scrolled {
+    background: rgba(10, 10, 15, 0.95);
+    border-bottom-color: rgba(34, 211, 238, 0.2);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover {
+    opacity: 0.8;
+  }
+
+  .logo-icon {
+    inline-size: 36px;
+    block-size: 36px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .logo-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    .logo-text {
+      display: block;
+    }
+  }
+
+  .nav-menu {
+    display: none;
+    list-style: none;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-menu {
+      display: flex;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .language-toggle {
+    display: flex;
+  }
+
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #a1a1aa;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .lang-btn:hover {
+    color: #22d3ee;
+    border-color: #22d3ee;
+    background: rgba(34, 211, 238, 0.1);
+  }
+
+  .header-cta {
+    display: none;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #0a0a0f;
+    background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .header-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+  }
+
+  @media (min-width: 768px) {
+    .header-cta {
+      display: inline-flex;
+    }
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  @media (min-width: 1024px) {
+    .hamburger {
+      display: none;
+    }
+  }
+
+  .hamburger:hover {
+    border-color: #22d3ee;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile menu styles */
+  @media (max-width: 1023px) {
+    .nav-menu {
+      position: fixed;
+      top: 73px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 10, 15, 0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      padding: 2rem;
+      gap: 0.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-menu.active {
+      display: flex;
+      transform: translateX(0);
+    }
+
+    .nav-link {
+      padding: 1rem;
+      font-size: 1.125rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 0;
+    }
+  }
+</style>
+
+<script>
+  // Header scroll effect
+  const header = document.querySelector(".site-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger?.addEventListener("click", () => {
+    const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", String(!isExpanded));
+    navMenu?.classList.toggle("active");
+  });
+
+  // Close menu on link click
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger?.setAttribute("aria-expanded", "false");
+      navMenu?.classList.remove("active");
+    });
+  });
+</script>

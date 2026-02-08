@@ -117,6 +117,127 @@ const jsonLd = {
     },
   ],
 };
+
+const packages = [
+  {
+    id: "pachet-basic",
+    name: "Basic",
+    price: "50€",
+    description: "Landing page (1 pagină) – soluția rapidă și ieftină",
+    features: [
+      "Design responsiv mobil/tabletă",
+      "Formular de contact, hartă Google",
+      "SSL, optimizare viteză de bază",
+      "SEO on-page de bază (Titlu, Meta, H1-H3)",
+      "1 revizuire inclusă",
+      "Livrare: 2–3 zile lucrătoare",
+    ],
+    note: "Domeniu & găzduire nu sunt incluse. Te putem ajuta cu setarea.",
+    featured: false,
+  },
+  {
+    id: "pachet-standard",
+    name: "Standard",
+    price: "150€",
+    description: "Site de prezentare (până la 5 pagini) + setup esențial",
+    features: [
+      "Design modern & UX orientat pe conversie",
+      "CMS ușor (administrare conținut)",
+      "SEO on-page extins + schema JSON-LD",
+      "Configurare GA4 & Search Console",
+      "2–3 revizuiri incluse",
+      "Livrare: 7–10 zile lucrătoare",
+    ],
+    note: "Ideal pentru afaceri locale care vor vizibilitate în căutări.",
+    featured: true,
+  },
+  {
+    id: "pachet-pro",
+    name: "Pro",
+    price: "300€",
+    description: "Site avansat (până la 12 pagini) sau mini-magazin",
+    features: [
+      "Design personalizat + componente premium",
+      "Mini-magazin (până la 10 produse), coș, livrare & plăți",
+      "SEO avansat (structură, viteză, rich results)",
+      "RO + RU (multi-language) – opțional",
+      "5 revizuiri incluse + training 1 oră",
+      "Livrare: 10–14 zile lucrătoare",
+    ],
+    note: "Include 1 lună mentenanță de bază post-lansare.",
+    featured: false,
+  },
+];
+
+const factors = [
+  {
+    title: "Numărul de pagini",
+    description:
+      "Un site de prezentare cu 3-5 pagini este mai simplu decât unul cu 10-15 pagini, ceea ce influențează timpul de lucru și bugetul.",
+  },
+  {
+    title: "Design & identitate",
+    description:
+      "Template adaptat sau design personalizat? Cu cât crește nivelul de personalizare, cu atât crește și prețul.",
+  },
+  {
+    title: "Funcționalități speciale",
+    description:
+      "Formulare avansate, rezervări, integrare plăți sau mini-magazin adaugă dezvoltare suplimentară.",
+  },
+  {
+    title: "SEO & conținut",
+    description:
+      "Optimizarea SEO, textele copywriting și imaginile pot influența costul și rezultatele în Google.",
+  },
+];
+
+const addons = [
+  {
+    title: "Logo & identitate vizuală",
+    description: "De la 30€ – variantă principală + kit pentru web.",
+  },
+  {
+    title: "Copywriting SEO",
+    description: "De la 10€/pagină – texte optimizate pentru RO/RU.",
+  },
+  {
+    title: "Multi-language RO/RU",
+    description: "De la 30€ – pagini traduse + switcher.",
+  },
+  {
+    title: "Mentenanță",
+    description: "De la 25€/lună – actualizări, securitate, backup.",
+  },
+];
+
+const faqs = [
+  {
+    question: "De ce prețurile sunt atât de accesibile?",
+    answer:
+      "Prețuri mici nu înseamnă calitate scăzută. Folosim tehnologii moderne (Astro, componente pre-optimizate, hosting Cloudflare) care reduc drastic timpul de dezvoltare – nu calitatea. Fiecare site primește aceeași atenție la detalii: design modern, cod curat și SEO on-page.",
+  },
+  {
+    question: "Pot plăti în MDL sau în două tranșe?",
+    answer:
+      "Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru pachetele Standard/Pro acceptăm și plata în două tranșe (50% avans, 50% la livrare).",
+  },
+  {
+    question: "Ce include SEO on-page?",
+    answer:
+      "Meta-taguri, structură corectă pe pagină (H1–H3), optimizare viteză, schema JSON-LD (acolo unde e relevant) și configurări de bază pentru indexare.",
+  },
+  {
+    question: "Domeniul și găzduirea sunt incluse?",
+    answer:
+      "Nu. Îți recomandăm opțiuni potrivite bugetului și te ajutăm la configurare (DNS, SSL, e-mailuri).",
+  },
+  {
+    question: "După lansare, pot modifica singur conținutul?",
+    answer:
+      "Da, pachetele Standard/Pro includ CMS (administrare conținut). Oferim și un mic ghid + training (în Pro).",
+  },
+];
 ---
 
 <!doctype html>
@@ -131,395 +252,570 @@ const jsonLd = {
       image="/assets/og-image-preturi.webp"
       jsonLd={jsonLd}
     />
+    <style>
+      /* Dark Dev Theme - Prices Page */
+      :root {
+        --dev-bg: #0a0a0f;
+        --dev-surface: #12121a;
+        --dev-surface-2: #1a1a25;
+        --dev-border: #2a2a3a;
+        --dev-text: #e4e4e7;
+        --dev-text-muted: #71717a;
+        --dev-accent: #22d3ee;
+        --dev-accent-2: #a855f7;
+        --dev-accent-3: #f472b6;
+        --dev-success: #34d399;
+        --dev-gradient: linear-gradient(
+          135deg,
+          #22d3ee 0%,
+          #a855f7 50%,
+          #f472b6 100%
+        );
+      }
+
+      .dev-section {
+        padding: 5rem 0;
+        background: var(--dev-bg);
+        position: relative;
+      }
+
+      .dev-section-alt {
+        background: var(--dev-surface);
+      }
+
+      .dev-section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+
+      .dev-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(34, 211, 238, 0.1);
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: var(--dev-accent);
+        margin-bottom: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-section h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-section p {
+        color: var(--dev-text-muted);
+        font-size: 1.1rem;
+      }
+
+      /* Hero */
+      .dev-hero {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        background: var(--dev-bg);
+        padding-top: 120px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dev-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(34, 211, 238, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 60%,
+            rgba(168, 85, 247, 0.08),
+            transparent
+          );
+        pointer-events: none;
+      }
+
+      .dev-hero-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #fff;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #fff 0%, #a5f3fc 50%, #c084fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .dev-hero p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Breadcrumbs */
+      .dev-breadcrumbs {
+        padding: 1rem 0;
+        background: var(--dev-surface);
+        border-bottom: 1px solid var(--dev-border);
+      }
+
+      .dev-breadcrumbs ol {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+      }
+
+      .dev-breadcrumbs a {
+        color: var(--dev-accent);
+        text-decoration: none;
+      }
+
+      .dev-breadcrumbs [aria-current] {
+        color: var(--dev-text-muted);
+      }
+
+      /* Pricing Grid */
+      .dev-pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .dev-price-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2rem;
+        position: relative;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .dev-price-card.featured {
+        border-color: var(--dev-accent);
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.1);
+      }
+
+      .dev-price-card.featured::before {
+        content: "Recomandat";
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.375rem 1rem;
+        background: var(--dev-accent);
+        color: #000;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 0 0 8px 8px;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-price-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--dev-accent);
+      }
+
+      .dev-price-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .dev-price {
+        font-size: 3rem;
+        font-weight: 800;
+        background: var(--dev-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-family: "JetBrains Mono", monospace;
+        margin-bottom: 0.5rem;
+      }
+
+      .dev-price-card > p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .dev-price-features {
+        list-style: none;
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+        flex-grow: 1;
+      }
+
+      .dev-price-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.625rem 0;
+        color: var(--dev-text);
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .dev-price-features li::before {
+        content: "✓";
+        color: var(--dev-success);
+        font-weight: 700;
+      }
+
+      .dev-price-note {
+        font-size: 0.8rem;
+        color: var(--dev-text-muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .dev-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .dev-btn-primary {
+        background: var(--dev-gradient);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3);
+      }
+
+      .dev-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(34, 211, 238, 0.4);
+      }
+
+      /* Info Grid */
+      .dev-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .dev-info-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 1.75rem;
+        transition: all 0.3s ease;
+      }
+
+      .dev-info-card:hover {
+        border-color: var(--dev-accent-2);
+      }
+
+      .dev-info-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+
+      .dev-info-card p {
+        color: var(--dev-text-muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* FAQ */
+      .dev-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .dev-faq-item {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .dev-faq-item[open] {
+        border-color: var(--dev-accent);
+      }
+
+      .dev-faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        list-style: none;
+        transition: color 0.3s ease;
+      }
+
+      .dev-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .dev-faq-item summary::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+        transition: transform 0.3s ease;
+      }
+
+      .dev-faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+
+      .dev-faq-item summary:hover {
+        color: var(--dev-accent);
+      }
+
+      .dev-faq-item p {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--dev-text-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* CTA Section */
+      .dev-cta {
+        padding: 5rem 0;
+        background: var(--dev-surface);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dev-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 40% at 50% 100%,
+            rgba(34, 211, 238, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 40% 30% at 20% 50%,
+            rgba(168, 85, 247, 0.08),
+            transparent
+          );
+        pointer-events: none;
+      }
+
+      .dev-cta-content {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-cta h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-cta p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Grid Pattern */
+      .dev-grid-pattern {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+        z-index: -1;
+      }
+    </style>
   </head>
-  <body>
+  <body style="background: #0a0a0f; color: #e4e4e7;">
+    <div class="dev-grid-pattern"></div>
     <Header lang="ro" />
 
-    <!-- Hero / Page Title -->
-    <section class="hero" id="preturi-hero">
-      <div class="container grid">
-        <div class="hero-content backplate">
+    <!-- Hero -->
+    <section class="dev-hero">
+      <div class="container">
+        <div class="dev-hero-content">
+          <span class="dev-section-tag">Prețuri</span>
           <h1>Prețuri & Pachete – Creare site web în Moldova</h1>
-          <p class="subheading">
-            Alege pachetul potrivit pentru bugetul tău:
-            <strong>Basic 50€</strong>, <strong>Standard 150€</strong>, <strong
-              >Pro 300€</strong
-            >. Web design accesibil în Chișinău și toată Moldova.
-          </p>
-          <p class="subheading">
-            Pagina de <strong>creare site web în Moldova</strong> îți arată
-            prețurile și pachetele disponibile pentru orice buget.
-          </p>
-          <div class="hero-actions">
-            <a href="/contact/" class="btn btn-primary">Cere ofertă gratuită</a>
-          </div>
-          <ul class="hero-bullets">
-            <li>Prețuri transparente &amp; termene rapide</li>
-            <li>SEO on-page inclus, orientat pe Moldova</li>
-            <li>Suport în română &amp; rusă</li>
-          </ul>
-        </div>
-
-        <div class="hero-image" aria-hidden="true">
-          <div class="hero-bg-shape"></div>
-          <div class="hero-device">
-            <svg
-              viewBox="0 0 500 300"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Ilustrație pachete preț"
-            >
-              <defs>
-                <linearGradient
-                  id="gradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stop-color="#0A2463"></stop>
-                  <stop offset="100%" stop-color="#63B3ED"></stop>
-                </linearGradient>
-                <clipPath id="screenClip">
-                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
-                </clipPath>
-              </defs>
-              <rect
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                rx="10"
-                fill="url(#gradient)"></rect>
-              <image
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                href="/assets/bg-poster-prices.webp"
-                preserveAspectRatio="xMidYMid slice"
-                clip-path="url(#screenClip)"
-              />
-              <rect
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                rx="10"
-                fill="#000"
-                opacity="0.12"
-                clip-path="url(#screenClip)"></rect>
-              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
-              ></circle>
-              <rect
-                x="150"
-                y="145"
-                height="10"
-                width="200"
-                fill="white"
-                opacity="0.6"></rect>
-              <rect
-                x="180"
-                y="167"
-                height="6"
-                width="140"
-                fill="white"
-                opacity="0.4"></rect>
-            </svg>
-          </div>
+          <p>Alege pachetul potrivit: Basic 50€, Standard 150€, Pro 300€.</p>
+          <p>Web design accesibil în Chișinău și toată Moldova.</p>
         </div>
       </div>
     </section>
 
     <!-- Breadcrumbs -->
-    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
-      <ol
-        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
-      >
-        <li>
-          <a href="/" style="text-decoration: none; color: #0a2463">Acasă</a>
-        </li>
-        <li aria-hidden="true">/</li>
-        <li><span aria-current="page">Prețuri</span></li>
-      </ol>
+    <nav class="dev-breadcrumbs" aria-label="breadcrumb">
+      <div class="container">
+        <ol>
+          <li><a href="/">Acasă</a></li>
+          <li aria-hidden="true">/</li>
+          <li><span aria-current="page">Prețuri</span></li>
+        </ol>
+      </div>
     </nav>
 
-    <!-- Pricing Cards -->
-    <section class="pricing" id="preturi">
+    <!-- Pricing Section -->
+    <section class="dev-section dev-section-alt" id="preturi">
       <div class="container">
-        <div class="section-title">
-          <h2>Pachete și prețuri</h2>
-          <p>
-            Alege varianta potrivită pentru Creare website <strong
-              >afaceri mici</strong
-            > sau proiecte personale.
-          </p>
-          <p>
-            Dacă vrei pret creare site web pentru creare site web în Moldova,
-            mai jos găsești pachete clare și transparente.
-          </p>
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Pachete</span>
+          <h2>Alege varianta potrivită</h2>
+          <p>Pentru afaceri mici sau proiecte personale</p>
         </div>
-
-        <div class="pricing-grid">
-          <!-- Basic 50€ -->
-          <article
-            class="price-card card1"
-            id="pachet-basic"
-            aria-labelledby="titlu-basic"
-          >
-            <h3 id="titlu-basic">Basic – 50€</h3>
-            <p style="opacity: 0.85; margin-bottom: 0.75rem">
-              Landing page (1 pagină) – soluția rapidă și ieftină
-            </p>
-            <ul>
-              <li>Design responsiv mobil/tabletă</li>
-              <li>Formular de contact, hartă Google</li>
-              <li>SSL, optimizare viteză de bază</li>
-              <li>SEO on-page de bază (Titlu, Meta, H1-H3)</li>
-              <li>1 revizuire inclusă</li>
-              <li>Livrare: 2–3 zile lucrătoare</li>
-            </ul>
-            <p style="font-size: 0.9rem; opacity: 0.8">
-              * Domeniu & găzduire nu sunt incluse. Te putem ajuta cu setarea.
-            </p>
-            <a
-              href="/contact/"
-              class="btn btn-primary"
-              aria-label="Solicită oferta pentru pachetul Basic 50 euro"
-              >Solicită ofertă</a
-            >
-          </article>
-
-          <!-- Standard 150€ -->
-          <article
-            class="price-card card2"
-            id="pachet-standard"
-            aria-labelledby="titlu-standard"
-          >
-            <h3 id="titlu-standard">Standard – 150€</h3>
-            <p style="opacity: 0.85; margin-bottom: 0.75rem">
-              Site de prezentare (până la 5 pagini) + setup esențial
-            </p>
-            <ul>
-              <li>Design modern & UX orientat pe conversie</li>
-              <li>CMS ușor (administrare conținut)</li>
-              <li>SEO on-page extins + schema JSON-LD</li>
-              <li>Configurare GA4 & Search Console</li>
-              <li>2–3 revizuiri incluse</li>
-              <li>Livrare: 7–10 zile lucrătoare</li>
-            </ul>
-            <p style="font-size: 0.9rem; opacity: 0.8">
-              * Ideal pentru afaceri locale care vor vizibilitate în căutări.
-            </p>
-            <a
-              href="/contact/"
-              class="btn btn-primary"
-              aria-label="Solicită oferta pentru pachetul Standard 150 euro"
-              >Solicită ofertă</a
-            >
-          </article>
-
-          <!-- Pro 300€ -->
-          <article
-            class="price-card card3"
-            id="pachet-pro"
-            aria-labelledby="titlu-pro"
-          >
-            <h3 id="titlu-pro">Pro – 300€</h3>
-            <p style="opacity: 0.85; margin-bottom: 0.75rem">
-              Site avansat (până la 12 pagini) sau mini-magazin
-            </p>
-            <ul>
-              <li>Design personalizat + componente premium</li>
-              <li>Mini-magazin (până la 10 produse), coș, livrare & plăți</li>
-              <li>SEO avansat (structură, viteză, rich results)</li>
-              <li>RO + RU (multi-language) – opțional</li>
-              <li>5 revizuiri incluse + training 1 oră</li>
-              <li>Livrare: 10–14 zile lucrătoare</li>
-            </ul>
-            <p style="font-size: 0.9rem; opacity: 0.8">
-              * Include 1 lună mentenanță de bază post-lansare.
-            </p>
-            <a
-              href="/contact/"
-              class="btn btn-primary"
-              aria-label="Solicită oferta pentru pachetul Pro 300 euro"
-              >Solicită ofertă</a
-            >
-          </article>
+        <div class="dev-pricing-grid">
+          {
+            packages.map((pkg) => (
+              <article
+                class={`dev-price-card ${pkg.featured ? "featured" : ""}`}
+                id={pkg.id}
+              >
+                <h3>{pkg.name}</h3>
+                <div class="dev-price">{pkg.price}</div>
+                <p>{pkg.description}</p>
+                <ul class="dev-price-features">
+                  {pkg.features.map((f) => (
+                    <li>{f}</li>
+                  ))}
+                </ul>
+                <p class="dev-price-note">* {pkg.note}</p>
+                <a href="/contact/" class="dev-btn dev-btn-primary">
+                  Solicită ofertă
+                </a>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Price factors -->
-    <section class="services" id="preturi-explicate">
-      <div class="container grid">
-        <div class="section-title">
-          <h2>Ce influențează prețul unui site web?</h2>
-          <p>
-            Costul final depinde de complexitate, numărul de pagini și
-            funcționalități. Iată factorii principali care intră în preț.
-          </p>
+    <!-- Factors Section -->
+    <section class="dev-section" id="preturi-explicate">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Informații</span>
+          <h2>Ce influențează prețul?</h2>
+          <p>Factorii principali care intră în calculul costului final</p>
         </div>
-
-        <div class="service-card" aria-labelledby="factor-pagini">
-          <h3 id="factor-pagini" class="service-title">Numărul de pagini</h3>
-          <p class="service-desc">
-            Un site de prezentare cu 3-5 pagini este mai simplu decât unul cu
-            10-15 pagini, ceea ce influențează timpul de lucru și bugetul.
-          </p>
-        </div>
-
-        <div class="service-card" aria-labelledby="factor-design">
-          <h3 id="factor-design" class="service-title">Design & identitate</h3>
-          <p class="service-desc">
-            Template adaptat sau design personalizat? Cu cât crește nivelul de
-            personalizare, cu atât crește și prețul.
-          </p>
-        </div>
-
-        <div class="service-card" aria-labelledby="factor-functii">
-          <h3 id="factor-functii" class="service-title">
-            Funcționalități speciale
-          </h3>
-          <p class="service-desc">
-            Formulare avansate, rezervări, integrare plăți sau mini-magazin
-            adaugă dezvoltare suplimentară.
-          </p>
-        </div>
-
-        <div class="service-card" aria-labelledby="factor-seo">
-          <h3 id="factor-seo" class="service-title">SEO & conținut</h3>
-          <p class="service-desc">
-            Optimizarea SEO, textele copywriting și imaginile pot influența
-            costul și rezultatele în Google.
-          </p>
+        <div class="dev-info-grid">
+          {
+            factors.map((f) => (
+              <div class="dev-info-card">
+                <h3>{f.title}</h3>
+                <p>{f.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Add-ons -->
-    <section class="services" id="adaugiri">
-      <div class="container grid">
-        <div class="section-title">
+    <!-- Addons Section -->
+    <section class="dev-section dev-section-alt" id="adaugiri">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Extra</span>
           <h2>Adăugiri opționale</h2>
-          <p>Extinde pachetul ales, când ai nevoie.</p>
+          <p>Extinde pachetul ales, când ai nevoie</p>
         </div>
-
-        <div class="service-card" aria-labelledby="addon-logo">
-          <h3 id="addon-logo" class="service-title">
-            Logo & identitate vizuală
-          </h3>
-          <p class="service-desc">
-            De la 30€ – variantă principală + kit pentru web.
-          </p>
-        </div>
-
-        <div class="service-card" aria-labelledby="addon-copy">
-          <h3 id="addon-copy" class="service-title">Copywriting SEO</h3>
-          <p class="service-desc">
-            De la 10€/pagină – texte optimizate pentru RO/RU.
-          </p>
-        </div>
-
-        <div class="service-card" aria-labelledby="addon-multilang">
-          <h3 id="addon-multilang" class="service-title">
-            Multi-language RO/RU
-          </h3>
-          <p class="service-desc">De la 30€ – pagini traduse + switcher.</p>
-        </div>
-
-        <div class="service-card" aria-labelledby="addon-mentenanta">
-          <h3 id="addon-mentenanta" class="service-title">Mentenanță</h3>
-          <p class="service-desc">
-            De la 25€/lună – actualizări, securitate, backup.
-          </p>
+        <div class="dev-info-grid">
+          {
+            addons.map((a) => (
+              <div class="dev-info-card">
+                <h3>{a.title}</h3>
+                <p>{a.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
+    <!-- FAQ Section -->
+    <section class="dev-section" id="faq">
       <div class="container">
-        <div class="section-title">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">FAQ</span>
           <h2>Întrebări frecvente</h2>
-          <p>Detalii practice despre pachetele de preț.</p>
+          <p>Detalii practice despre pachetele de preț</p>
         </div>
-
-        <div class="faq-list">
-          <details open>
-            <summary>De ce prețurile sunt atât de accesibile?</summary>
-            <p>
-              <strong>Prețuri mici nu înseamnă calitate scăzută.</strong> Folosim
-              tehnologii moderne (Astro, componente pre-optimizate, hosting Cloudflare)
-              care reduc drastic timpul de dezvoltare – nu calitatea. În loc să reinventăm
-              roata la fiecare proiect, aplicăm un proces eficient și testat, astfel
-              încât putem oferi site-uri profesionale la prețuri corecte pentru piața
-              din Moldova. Fiecare site primește aceeași atenție la detalii: design
-              modern, cod curat și SEO on-page.
-            </p>
-          </details>
-
-          <details>
-            <summary>Pot plăti în MDL sau în două tranșe?</summary>
-            <p>
-              Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru
-              pachetele Standard/Pro acceptăm și plata în două tranșe (50%
-              avans, 50% la livrare).
-            </p>
-          </details>
-
-          <details>
-            <summary>Ce include SEO on-page?</summary>
-            <p>
-              Meta-taguri, structură corectă pe pagină (H1–H3), optimizare
-              viteză, schema JSON-LD (acolo unde e relevant) și configurări de
-              bază pentru indexare.
-            </p>
-          </details>
-
-          <details>
-            <summary>Domeniul și găzduirea sunt incluse?</summary>
-            <p>
-              Nu. Îți recomandăm variante potrivite bugetului și te ajutăm la
-              configurare (DNS, SSL, e-mailuri).
-            </p>
-          </details>
-
-          <details>
-            <summary>După lansare, pot modifica singur conținutul?</summary>
-            <p>
-              Da, pachetele Standard/Pro includ CMS (administrare conținut).
-              Oferim și un mic ghid + training (în Pro).
-            </p>
-          </details>
+        <div class="dev-faq-list">
+          {
+            faqs.map((faq) => (
+              <details class="dev-faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="cta-section">
-      <div class="container grid">
-        <div class="cta-container">
+    <!-- CTA Section -->
+    <section class="dev-cta" id="contact">
+      <div class="container">
+        <div class="dev-cta-content">
           <h2>Ai găsit pachetul potrivit?</h2>
-          <p class="subheading">
+          <p>
             Trimite-ne pe scurt obiectivele tale și îți răspundem cu o ofertă
             personalizată.
           </p>
-          <a href="/contact/" class="btn btn-primary">Contactează-ne</a>
+          <a
+            href="/contact/"
+            class="dev-btn dev-btn-primary"
+            style="width: auto; padding: 1rem 3rem;"
+          >
+            Contactează-ne
+          </a>
         </div>
       </div>
     </section>
 
     <Footer lang="ro" />
-
     <script src="/script.js" defer></script>
   </body>
 </html>
-
-
-
-
-
-
-

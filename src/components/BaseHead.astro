@@ -24,7 +24,11 @@ const canonicalURL = (() => {
     : new URL(Astro.url.pathname, Astro.site);
 
   // Normalize to a trailing slash for path-based routes (avoid file extensions).
-  if (url.pathname !== "/" && !url.pathname.endsWith("/") && !url.pathname.includes(".")) {
+  if (
+    url.pathname !== "/" &&
+    !url.pathname.endsWith("/") &&
+    !url.pathname.includes(".")
+  ) {
     url.pathname = `${url.pathname}/`;
   }
 
@@ -68,7 +72,7 @@ const fullImageUrl = new URL(image, SITE_URL).toString();
   content="width=device-width, initial-scale=1, viewport-fit=cover"
 />
 <meta name="generator" content={Astro.generator} />
-<meta name="theme-color" content="#0A2463" />
+<meta name="theme-color" content="#0a0a0f" />
 
 <!-- Language / geo -->
 <meta http-equiv="content-language" content={`${lang}-MD`} />
@@ -101,7 +105,7 @@ const fullImageUrl = new URL(image, SITE_URL).toString();
 
 <!-- Fonts -->
 <link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
   rel="stylesheet"
 />
 

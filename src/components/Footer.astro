@@ -58,31 +58,89 @@ const texts =
           "Creăm site-uri ieftine și rapide pentru afaceri mici – Chișinău & toată Moldova.",
         servicii: "Servicii",
         companie: "Companie",
-        contact: "Date de contact",
+        contact: "Contact",
         copyright: "moldovawebsite.md. Toate drepturile rezervate.",
+        backToTop: "Înapoi sus",
       }
     : {
         brand:
           "Создаём недорогие и быстрые сайты для малого бизнеса – Кишинёв и вся Молдова.",
         servicii: "Услуги",
         companie: "Компания",
-        contact: "Контактные данные",
+        contact: "Контакты",
         copyright: "moldovawebsite.md. Все права защищены.",
+        backToTop: "Наверх",
       };
 ---
 
-<footer id="contact">
-  <div class="footer-bg-overlay"></div>
+<footer class="dev-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col brand-col">
-        <h3>moldovawebsite.md</h3>
-        <p>{texts.brand}</p>
+    <div class="dev-footer-grid">
+      <div class="dev-footer-brand">
+        <a href={lang === "ro" ? "/" : "/ru"} class="dev-footer-logo">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="32"
+              height="32"
+              rx="8"
+              fill="url(#footer-logo-gradient)"></rect>
+            <path
+              d="M8 12L12 20L16 12L20 20L24 12"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <defs>
+              <linearGradient
+                id="footer-logo-gradient"
+                x1="0"
+                y1="0"
+                x2="32"
+                y2="32"
+              >
+                <stop stop-color="#22d3ee"></stop>
+                <stop offset="1" stop-color="#a855f7"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>moldovawebsite.md</span>
+        </a>
+        <p class="dev-footer-tagline">{texts.brand}</p>
+        <div class="dev-footer-social">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor"
+              ><path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor"
+              ><path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              ></path></svg
+            >
+          </a>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h3>{texts.servicii}</h3>
-        <ul class="footer-links">
+      <div class="dev-footer-links">
+        <h4>{texts.servicii}</h4>
+        <ul>
           {
             serviciiLinks.map((link) => (
               <li>
@@ -93,9 +151,9 @@ const texts =
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h3>{texts.companie}</h3>
-        <ul class="footer-links">
+      <div class="dev-footer-links">
+        <h4>{texts.companie}</h4>
+        <ul>
           {
             companieLinks.map((link) => (
               <li>
@@ -106,13 +164,47 @@ const texts =
         </ul>
       </div>
 
-      <div class="footer-col contact-col">
-        <h3>{texts.contact}</h3>
-        <address class="contact-info">
-          <p><span>Chișinău, Moldova</span></p>
-          <p><span>str. Ioana Radu 27/2</span></p>
-          <p><a href="tel:+37361211739">+373 61 211 739</a></p>
+      <div class="dev-footer-contact">
+        <h4>{texts.contact}</h4>
+        <address>
           <p>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+              ></path>
+            </svg>
+            <span>Chișinău, str. Ioana Radu 27/2</span>
+          </p>
+          <p>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+              ></path>
+            </svg>
+            <a href="tel:+37361211739">+373 61 211 739</a>
+          </p>
+          <p>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              ></path>
+            </svg>
             <a href="mailto:contact@moldovawebsite.md"
               >contact@moldovawebsite.md</a
             >
@@ -121,23 +213,229 @@ const texts =
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p class="copyright">
+    <div class="dev-footer-bottom">
+      <p class="dev-footer-copyright">
+        <span class="dev-footer-cursor">_</span>
         &copy; {today.getFullYear()}
         {texts.copyright}
       </p>
-      <a href="#acasa" class="back-to-top" aria-label="Înapoi sus">
+      <a href="#acasa" class="dev-footer-top" aria-label={texts.backToTop}>
         <svg
-          width="24"
-          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
         >
-          <path d="M18 15l-6-6-6 6"></path>
+          <path d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
         </svg>
       </a>
     </div>
   </div>
+
+  <style>
+    .dev-footer {
+      background: #0a0a0f;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 4rem 0 2rem;
+      position: relative;
+    }
+
+    .dev-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(34, 211, 238, 0.3),
+        transparent
+      );
+    }
+
+    .dev-footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 640px) {
+      .dev-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .dev-footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      }
+    }
+
+    .dev-footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 1rem;
+    }
+
+    .dev-footer-logo svg {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .dev-footer-tagline {
+      color: #71717a;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 300px;
+      margin-bottom: 1.5rem;
+    }
+
+    .dev-footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .dev-footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #a1a1aa;
+      transition: all 0.2s ease;
+    }
+
+    .dev-footer-social a:hover {
+      color: #22d3ee;
+      border-color: #22d3ee;
+      background: rgba(34, 211, 238, 0.1);
+    }
+
+    .dev-footer-social svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .dev-footer-links h4,
+    .dev-footer-contact h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .dev-footer-links ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dev-footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .dev-footer-links a,
+    .dev-footer-contact a {
+      color: #71717a;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .dev-footer-links a:hover,
+    .dev-footer-contact a:hover {
+      color: #22d3ee;
+    }
+
+    .dev-footer-contact address {
+      font-style: normal;
+    }
+
+    .dev-footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: #71717a;
+      font-size: 0.95rem;
+    }
+
+    .dev-footer-contact svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #22d3ee;
+    }
+
+    .dev-footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dev-footer-copyright {
+      color: #71717a;
+      font-size: 0.875rem;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .dev-footer-cursor {
+      color: #22d3ee;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      50% {
+        opacity: 1;
+      }
+      51%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .dev-footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #a1a1aa;
+      transition: all 0.2s ease;
+    }
+
+    .dev-footer-top:hover {
+      color: #22d3ee;
+      border-color: #22d3ee;
+      background: rgba(34, 211, 238, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .dev-footer-top svg {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 </footer>

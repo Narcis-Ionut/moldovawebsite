@@ -17,6 +17,103 @@ const jsonLd = {
     url: "https://moldovawebsite.md/",
   },
 };
+
+const values = [
+  {
+    number: "01",
+    title: "Misiunea noastră",
+    description:
+      "Să oferim creare site web ieftin în Moldova fără compromis la calitate, design și SEO on-page.",
+  },
+  {
+    number: "02",
+    title: "Focus pe rezultate",
+    description:
+      "Construim pagini rapide care convertesc și care pot fi ușor promovate în Google.",
+  },
+  {
+    number: "03",
+    title: "Tehnologie modernă",
+    description:
+      "Astro + Cloudflare înseamnă timp de încărcare mic și costuri optimizate pentru afaceri locale.",
+  },
+  {
+    number: "04",
+    title: "Suport și mentenanță",
+    description:
+      "Oferim mentenanță, actualizări și ajutor continuu după lansare.",
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Brief & obiective",
+    description:
+      "Stabilim ce tip de site ai nevoie: prezentare, magazin online sau landing page.",
+  },
+  {
+    number: "02",
+    title: "Design & structură",
+    description:
+      "Creăm un design accesibil și intuitiv, orientat pe conversie.",
+  },
+  {
+    number: "03",
+    title: "Dezvoltare & SEO",
+    description: "Implementăm rapid, optimizăm viteza și setăm SEO on-page.",
+  },
+  {
+    number: "04",
+    title: "Lansare & suport",
+    description:
+      "Publicăm site-ul și oferim suport, mentenanță și recomandări pentru creștere.",
+  },
+];
+
+const testimonials = [
+  {
+    content:
+      "Am primit un site rapid, optimizat SEO și ușor de administrat. Prețul a fost corect pentru piața din Moldova.",
+    author: "Client local",
+    location: "Chișinău",
+  },
+  {
+    content:
+      "Echipa a explicat clar ce include fiecare pachet și ne-a ajutat să alegem varianta potrivită pentru bugetul nostru.",
+    author: "Afacere mică",
+    location: "Moldova",
+  },
+  {
+    content:
+      "Ne-au plăcut viteza de livrare, comunicarea și suportul după lansare. Site-ul arată profesionist pe mobil și desktop.",
+    author: "Servicii locale",
+    location: "Chișinău",
+  },
+];
+
+const faqs = [
+  {
+    question: "Lucrați doar în Chișinău?",
+    answer:
+      "Nu. Oferim servicii în Chișinău și în toată Moldova, inclusiv online, pentru proiecte locale și internaționale.",
+  },
+  {
+    question: "Includeți SEO on-page în pachete?",
+    answer:
+      "Da. Setăm meta-taguri, structură corectă și optimizare de bază pentru vizibilitate mai bună în Google.",
+  },
+  {
+    question: "Pot primi un site de prezentare cu buget mic?",
+    answer:
+      "Da. Avem pachete accesibile și recomandăm soluția optimă pentru afaceri mici.",
+  },
+  {
+    question: "Oferiți mentenanță după lansare?",
+    answer:
+      "Da. Putem continua cu mentenanță lunară, actualizări și suport tehnic.",
+  },
+];
 ---
 
 <!doctype html>
@@ -31,334 +128,783 @@ const jsonLd = {
       image="/assets/og-image.webp"
       jsonLd={jsonLd}
     />
+    <style>
+      /* Dark Dev Theme - About Page */
+      :root {
+        --dev-bg: #0a0a0f;
+        --dev-surface: #12121a;
+        --dev-surface-2: #1a1a25;
+        --dev-border: #2a2a3a;
+        --dev-text: #e4e4e7;
+        --dev-text-muted: #71717a;
+        --dev-accent: #22d3ee;
+        --dev-accent-2: #a855f7;
+        --dev-accent-3: #f472b6;
+        --dev-success: #34d399;
+        --dev-gradient: linear-gradient(
+          135deg,
+          #22d3ee 0%,
+          #a855f7 50%,
+          #f472b6 100%
+        );
+      }
+
+      .dev-section {
+        padding: 6rem 0;
+        background: var(--dev-bg);
+        position: relative;
+      }
+
+      .dev-section-alt {
+        background: var(--dev-surface);
+      }
+
+      .dev-section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+
+      .dev-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(34, 211, 238, 0.1);
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: var(--dev-accent);
+        margin-bottom: 1rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-section h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-section p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+      }
+
+      /* Hero Section */
+      .dev-hero {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        background: var(--dev-bg);
+        padding-top: 120px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dev-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(34, 211, 238, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 60%,
+            rgba(168, 85, 247, 0.08),
+            transparent
+          );
+        pointer-events: none;
+      }
+
+      .dev-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 1024px) {
+        .dev-hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+      }
+
+      .dev-hero-content h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #fff 0%, #a5f3fc 50%, #c084fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .dev-hero-content p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+
+      .dev-hero-content strong {
+        color: var(--dev-text);
+      }
+
+      .dev-hero-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1024px) {
+        .dev-hero-actions {
+          justify-content: center;
+        }
+      }
+
+      .dev-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dev-btn-primary {
+        background: var(--dev-gradient);
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3);
+      }
+
+      .dev-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(34, 211, 238, 0.4);
+      }
+
+      .dev-btn-secondary {
+        background: transparent;
+        color: var(--dev-text);
+        border: 1px solid var(--dev-border);
+      }
+
+      .dev-btn-secondary:hover {
+        background: var(--dev-surface-2);
+        border-color: var(--dev-accent);
+      }
+
+      .dev-hero-visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 1024px) {
+        .dev-hero-visual {
+          display: none;
+        }
+      }
+
+      .dev-code-window {
+        width: 100%;
+        max-width: 450px;
+        background: var(--dev-surface);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .dev-code-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 1.25rem;
+        background: var(--dev-surface-2);
+        border-bottom: 1px solid var(--dev-border);
+      }
+
+      .dev-code-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .dev-code-dot.red {
+        background: #ff5f56;
+      }
+      .dev-code-dot.yellow {
+        background: #ffbd2e;
+      }
+      .dev-code-dot.green {
+        background: #27ca40;
+      }
+
+      .dev-code-body {
+        padding: 1.5rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        line-height: 1.8;
+      }
+
+      .dev-code-line {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .dev-code-num {
+        color: var(--dev-text-muted);
+        min-width: 1.5rem;
+      }
+      .dev-code-keyword {
+        color: #c084fc;
+      }
+      .dev-code-string {
+        color: #34d399;
+      }
+      .dev-code-comment {
+        color: #71717a;
+      }
+      .dev-code-func {
+        color: #22d3ee;
+      }
+
+      /* Values Grid */
+      .dev-values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .dev-value-card {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .dev-value-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--dev-accent);
+      }
+
+      .dev-value-num {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: var(--dev-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-family: "JetBrains Mono", monospace;
+        margin-bottom: 1rem;
+      }
+
+      .dev-value-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+
+      .dev-value-card p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Process */
+      .dev-process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        position: relative;
+      }
+
+      .dev-process-grid::before {
+        content: "";
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--dev-accent),
+          var(--dev-accent-2),
+          var(--dev-accent-3)
+        );
+        opacity: 0.3;
+        z-index: 0;
+      }
+
+      @media (max-width: 768px) {
+        .dev-process-grid::before {
+          display: none;
+        }
+      }
+
+      .dev-process-step {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-process-num {
+        width: 64px;
+        height: 64px;
+        background: var(--dev-surface-2);
+        border: 2px solid var(--dev-border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--dev-accent);
+        margin: 0 auto 1.5rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .dev-process-step h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+
+      .dev-process-step p {
+        color: var(--dev-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Testimonials */
+      .dev-testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .dev-testimonial {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        position: relative;
+      }
+
+      .dev-testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 4rem;
+        color: var(--dev-accent);
+        opacity: 0.2;
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .dev-testimonial-content {
+        color: var(--dev-text);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .dev-testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .dev-testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--dev-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #fff;
+        font-size: 0.875rem;
+      }
+
+      .dev-testimonial-info strong {
+        display: block;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+
+      .dev-testimonial-info span {
+        color: var(--dev-text-muted);
+        font-size: 0.8rem;
+      }
+
+      /* FAQ */
+      .dev-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .dev-faq-item {
+        background: var(--dev-surface-2);
+        border: 1px solid var(--dev-border);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .dev-faq-item[open] {
+        border-color: var(--dev-accent);
+      }
+
+      .dev-faq-item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        list-style: none;
+        transition: color 0.3s ease;
+      }
+
+      .dev-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .dev-faq-item summary::after {
+        content: "+";
+        font-size: 1.5rem;
+        color: var(--dev-accent);
+        font-family: "JetBrains Mono", monospace;
+        transition: transform 0.3s ease;
+      }
+
+      .dev-faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+
+      .dev-faq-item summary:hover {
+        color: var(--dev-accent);
+      }
+
+      .dev-faq-item p {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--dev-text-muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* CTA Section */
+      .dev-cta {
+        padding: 6rem 0;
+        background: var(--dev-surface);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dev-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 40% at 50% 100%,
+            rgba(34, 211, 238, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 40% 30% at 20% 50%,
+            rgba(168, 85, 247, 0.08),
+            transparent
+          );
+        pointer-events: none;
+      }
+
+      .dev-cta-content {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .dev-cta h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+
+      .dev-cta p {
+        color: var(--dev-text-muted);
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Grid Pattern */
+      .dev-grid-pattern {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+        z-index: -1;
+      }
+    </style>
   </head>
-  <body>
+  <body style="background: #0a0a0f; color: #e4e4e7;">
+    <div class="dev-grid-pattern"></div>
     <Header lang="ro" />
 
     <!-- Hero Section -->
-    <section class="hero" id="acasa">
-      <div class="container grid">
-        <div class="hero-content">
-          <h1>Despre noi: creare site web ieftin în Moldova</h1>
-          <p class="subheading">
-            moldovawebsite.md oferă <strong>web design accesibil</strong> în
-            Chișinău și toată Moldova pentru afaceri mici: <strong>site de
-            prezentare</strong>, <strong>magazin online</strong>, <strong
-              >SEO on-page</strong
-            > și <strong>mentenanță</strong>.
-          </p>
-          <p class="subheading">
-            Dacă vrei <strong>creare site web ieftin în Moldova</strong>, îți
-            arătăm clar ce primești, cât durează și cum obții rezultate rapide.
-          </p>
-          <p class="subheading">
-            Lucrăm transparent, explicăm fiecare etapă și adaptăm soluția la
-            realitățile pieței locale.
-          </p>
-          <div class="hero-actions">
-            <a href="/contact/" class="btn btn-primary">Cere ofertă gratuită</a>
-            <a href="/preturi/" class="btn btn-secondary">Vezi prețuri</a>
+    <section class="dev-hero" id="acasa">
+      <div class="container">
+        <div class="dev-hero-grid">
+          <div class="dev-hero-content">
+            <span class="dev-section-tag">Despre noi</span>
+            <h1>Creare site web ieftin în Moldova</h1>
+            <p>
+              moldovawebsite.md oferă <strong>web design accesibil</strong> în Chișinău
+              și toată Moldova pentru afaceri mici: <strong
+                >site de prezentare</strong
+              >, <strong>magazin online</strong>, <strong>SEO on-page</strong>
+              și <strong>mentenanță</strong>.
+            </p>
+            <p>
+              Dacă vrei <strong>creare site web ieftin în Moldova</strong>, îți
+              arătăm clar ce primești, cât durează și cum obții rezultate
+              rapide.
+            </p>
+            <div class="dev-hero-actions">
+              <a href="/contact/" class="dev-btn dev-btn-primary"
+                >Cere ofertă gratuită</a
+              >
+              <a href="/preturi/" class="dev-btn dev-btn-secondary"
+                >Vezi prețuri</a
+              >
+            </div>
           </div>
-          <ul class="hero-bullets">
-            <li>Prețuri transparente și livrare rapidă</li>
-            <li>Design modern, optimizat pentru conversie</li>
-            <li>Suport local în română și rusă</li>
-          </ul>
-        </div>
 
-        <div class="hero-image" aria-hidden="true">
-          <div class="hero-bg-shape"></div>
-          <div class="hero-device">
-            <svg
-              viewBox="0 0 500 300"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Ilustrație echipă web design"
-            >
-              <defs>
-                <linearGradient
-                  id="gradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stop-color="#0A2463"></stop>
-                  <stop offset="100%" stop-color="#63B3ED"></stop>
-                </linearGradient>
-                <clipPath id="screenClip">
-                  <rect x="50" y="30" width="400" height="240" rx="10"></rect>
-                </clipPath>
-              </defs>
-              <rect
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                rx="10"
-                fill="url(#gradient)"></rect>
-              <image
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                href="/assets/hero-screen.png"
-                preserveAspectRatio="xMidYMid slice"
-                clip-path="url(#screenClip)"
-              />
-              <rect
-                x="50"
-                y="30"
-                width="400"
-                height="240"
-                rx="10"
-                fill="#000"
-                opacity="0.12"
-                clip-path="url(#screenClip)"></rect>
-              <circle cx="250" cy="150" r="40" fill="white" opacity="0.8"
-              ></circle>
-              <rect
-                x="150"
-                y="145"
-                height="10"
-                width="200"
-                fill="white"
-                opacity="0.6"></rect>
-              <rect
-                x="180"
-                y="167"
-                height="6"
-                width="140"
-                fill="white"
-                opacity="0.4"></rect>
-            </svg>
+          <div class="dev-hero-visual">
+            <div class="dev-code-window">
+              <div class="dev-code-header">
+                <span class="dev-code-dot red"></span>
+                <span class="dev-code-dot yellow"></span>
+                <span class="dev-code-dot green"></span>
+              </div>
+              <div class="dev-code-body">
+                <div class="dev-code-line">
+                  <span class="dev-code-num">1</span>
+                  <span
+                    ><span class="dev-code-keyword">const</span>
+                    <span class="dev-code-func">misiuneaNoastra</span> = {
+                      `{`
+                    }</span
+                  >
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">2</span>
+                  <span>
+                    <span class="dev-code-keyword">target</span>: <span
+                      class="dev-code-string">"afaceri_mici"</span
+                    >,</span
+                  >
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">3</span>
+                  <span>
+                    <span class="dev-code-keyword">locatie</span>: <span
+                      class="dev-code-string">"Moldova"</span
+                    >,</span
+                  >
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">4</span>
+                  <span>
+                    <span class="dev-code-keyword">servicii</span>: [<span
+                      class="dev-code-string">"web"</span
+                    >, <span class="dev-code-string">"seo"</span>],</span
+                  >
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">5</span>
+                  <span>
+                    <span class="dev-code-keyword">preturi</span>: <span
+                      class="dev-code-string">"accesibile"</span
+                    ></span
+                  >
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">6</span>
+                  <span>{`}`};</span>
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">7</span>
+                  <span></span>
+                </div>
+                <div class="dev-code-line">
+                  <span class="dev-code-num">8</span>
+                  <span
+                    ><span class="dev-code-comment"
+                      >// Livrăm calitate, mereu</span
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof" id="de-ce-noi">
+    <!-- Testimonials Section -->
+    <section class="dev-section dev-section-alt" id="de-ce-noi">
       <div class="container">
-        <div class="section-title">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Testimoniale</span>
           <h2>De ce clienții aleg moldovawebsite.md</h2>
           <p>
-            Combinăm <strong>creare site web ieftin</strong> cu un proces clar și
-            un design modern. Ne axăm pe rezultate locale, fie că ai nevoie de
-            un site de prezentare simplu sau de un magazin online complet.
+            Combinăm creare site web ieftin cu un proces clar și un design
+            modern.
           </p>
         </div>
-
-        <div class="grid">
-          <div class="testimonial">
-            <p class="testimonial-content">
-              Am primit un site rapid, optimizat SEO și ușor de administrat.
-              Prețul a fost corect pentru piața din Moldova.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Client local, Chișinău</span>
+        <div class="dev-testimonials-grid">
+          {
+            testimonials.map((t) => (
+              <div class="dev-testimonial">
+                <p class="dev-testimonial-content">{t.content}</p>
+                <div class="dev-testimonial-author">
+                  <div class="dev-testimonial-avatar">
+                    {t.author
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                  <div class="dev-testimonial-info">
+                    <strong>{t.author}</strong>
+                    <span>{t.location}</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="testimonial-content">
-              Echipa a explicat clar ce include fiecare pachet și ne-a ajutat să
-              alegem varianta potrivită pentru bugetul nostru.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Afacere mică din Moldova</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <p class="testimonial-content">
-              Ne-au plăcut viteza de livrare, comunicarea și suportul după
-              lansare. Site-ul arată profesionist pe mobil și desktop.
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar" aria-hidden="true"></div>
-              <div class="author-details">
-                <span class="author-name">Servicii locale</span>
-              </div>
-            </div>
-          </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Who We Are -->
-    <section class="services" id="despre">
-      <div class="container grid">
-        <div class="section-title">
+    <!-- Values Section -->
+    <section class="dev-section" id="despre">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Valorile noastre</span>
           <h2>Cine suntem și cum lucrăm</h2>
           <p>
-            Suntem o echipă locală care livrează <strong>creare site web</strong>
-            rapidă și <strong>web design accesibil</strong> pentru Moldova. Ne
-            concentrăm pe proiecte clare, livrabile și rezultate vizibile în
-            căutări.
-          </p>
-          <p>
-            Folosim tehnologii moderne (Astro, Cloudflare) pentru viteze mari și
-            costuri mai mici, astfel încât să obții un <strong>site de
-            prezentare</strong> sau <strong>magazin online</strong> care
-            performează.
+            Suntem o echipă locală care livrează creare site web rapidă și web
+            design accesibil pentru Moldova.
           </p>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon">01</div>
-          <h3 class="service-title">Misiunea noastră</h3>
-          <p class="service-desc">
-            Să oferim <strong>creare site web ieftin în Moldova</strong> fără
-            compromis la calitate, design și SEO on-page.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">02</div>
-          <h3 class="service-title">Focus pe rezultate</h3>
-          <p class="service-desc">
-            Construim pagini rapide care convertesc și care pot fi ușor
-            promovate în Google.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">03</div>
-          <h3 class="service-title">Tehnologie modernă</h3>
-          <p class="service-desc">
-            Astro + Cloudflare înseamnă timp de încărcare mic și costuri
-            optimizate pentru afaceri locale.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">04</div>
-          <h3 class="service-title">Suport și mentenanță</h3>
-          <p class="service-desc">
-            Oferim mentenanță, actualizări și ajutor continuu după lansare.
-          </p>
+        <div class="dev-values-grid">
+          {
+            values.map((v) => (
+              <div class="dev-value-card">
+                <div class="dev-value-num">{v.number}</div>
+                <h3>{v.title}</h3>
+                <p>{v.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Process -->
-    <section class="process">
+    <!-- Process Section -->
+    <section class="dev-section dev-section-alt" id="proces">
       <div class="container">
-        <div class="section-title">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Proces</span>
           <h2>Cum livrăm un site web rapid și eficient</h2>
-          <p>
-            Proces clar, comunicare simplă și livrare la timp. Așa obții un site
-            modern, optimizat și ușor de administrat.
-          </p>
+          <p>Proces clar, comunicare simplă și livrare la timp.</p>
         </div>
-
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Brief & obiective</h3>
-            <p class="step-desc">
-              Stabilim ce tip de site ai nevoie: prezentare, magazin online sau
-              landing page.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3 class="step-title">Design & structură</h3>
-            <p class="step-desc">
-              Creăm un design accesibil și intuitiv, orientat pe conversie.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Dezvoltare & SEO</h3>
-            <p class="step-desc">
-              Implementăm rapid, optimizăm viteza și setăm SEO on-page.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3 class="step-title">Lansare & suport</h3>
-            <p class="step-desc">
-              Publicăm site-ul și oferim suport, mentenanță și recomandări
-              pentru creștere.
-            </p>
-          </div>
+        <div class="dev-process-grid">
+          {
+            process.map((p) => (
+              <div class="dev-process-step">
+                <div class="dev-process-num">{p.number}</div>
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
+    <!-- FAQ Section -->
+    <section class="dev-section" id="faq">
       <div class="container">
-        <div class="section-title">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">FAQ</span>
           <h2>Întrebări frecvente despre noi</h2>
           <p>Claritate înainte de a începe proiectul.</p>
         </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>Lucrați doar în Chișinău?</summary>
-            <p>
-              Nu. Oferim servicii în Chișinău și în toată Moldova, inclusiv
-              online, pentru proiecte locale și internaționale.
-            </p>
-          </details>
-
-          <details>
-            <summary>Includeți SEO on-page în pachete?</summary>
-            <p>
-              Da. Setăm meta-taguri, structură corectă și optimizare de bază
-              pentru vizibilitate mai bună în Google.
-            </p>
-          </details>
-
-          <details>
-            <summary>Pot primi un site de prezentare cu buget mic?</summary>
-            <p>
-              Da. Avem pachete accesibile și recomandăm soluția optimă pentru
-              afaceri mici.
-            </p>
-          </details>
-
-          <details>
-            <summary>Oferiți mentenanță după lansare?</summary>
-            <p>
-              Da. Putem continua cu mentenanță lunară, actualizări și suport
-              tehnic.
-            </p>
-          </details>
+        <div class="dev-faq-list">
+          {
+            faqs.map((faq) => (
+              <details class="dev-faq-item">
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="cta-section">
-      <div class="container grid">
-        <div class="cta-container">
+    <!-- CTA Section -->
+    <section class="dev-cta" id="contact">
+      <div class="container">
+        <div class="dev-cta-content">
           <h2>Vrei să lucrăm împreună?</h2>
-          <p class="subheading">
+          <p>
             Spune-ne despre proiectul tău și îți trimitem o ofertă personalizată
             pentru creare site web în Moldova.
           </p>
-          <a href="/contact/" class="btn btn-primary">Contactează-ne</a>
+          <a
+            href="/contact/"
+            class="dev-btn dev-btn-primary"
+            style="font-size: 1.125rem; padding: 1.25rem 2.5rem;"
+          >
+            Contactează-ne
+          </a>
         </div>
       </div>
     </section>
 
     <Footer lang="ro" />
-
     <script src="/script.js" defer></script>
   </body>
 </html>
-
-
