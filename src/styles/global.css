@@ -38,11 +38,11 @@
   --nf-shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
   --nf-shadow-red: 0 4px 20px rgba(229, 9, 20, 0.3);
   
-  /* Dark sections (for hero/footer) */
-  --nf-dark-bg: #141414;
-  --nf-dark-surface: #1f1f1f;
-  --nf-dark-text: #ffffff;
-  --nf-dark-text-muted: #b3b3b3;
+  /* Legacy dark tokens mapped to light theme */
+  --nf-dark-bg: #ffffff;
+  --nf-dark-surface: #fafafa;
+  --nf-dark-text: #141414;
+  --nf-dark-text-muted: #666666;
   
   /* Spacing Scale */
   --space-1: 0.25rem;
@@ -231,17 +231,17 @@ strong, b {
 }
 
 .nf-section-dark {
-  background: var(--nf-dark-bg);
-  color: var(--nf-dark-text);
+  background: var(--nf-bg-secondary);
+  color: var(--nf-text);
 }
 
 .nf-section-dark h2,
 .nf-section-dark h3 {
-  color: var(--nf-dark-text);
+  color: var(--nf-text);
 }
 
 .nf-section-dark p {
-  color: var(--nf-dark-text-muted);
+  color: var(--nf-text-muted);
 }
 
 .nf-section-header {
@@ -309,16 +309,17 @@ strong, b {
   color: #fff;
 }
 
-/* Secondary - Dark */
+/* Secondary */
 .nf-btn-secondary {
-  background: var(--nf-dark-bg);
-  color: #fff;
+  background: var(--nf-bg-secondary);
+  color: var(--nf-text);
+  border: 1px solid var(--nf-border);
 }
 
 .nf-btn-secondary:hover {
-  background: #333;
+  background: var(--nf-bg-tertiary);
   transform: translateY(-2px);
-  color: #fff;
+  color: var(--nf-text);
 }
 
 /* Outline */
@@ -336,14 +337,15 @@ strong, b {
 
 /* Ghost */
 .nf-btn-ghost {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: var(--nf-bg-secondary);
+  color: var(--nf-text-secondary);
+  border: 1px solid var(--nf-border);
   backdrop-filter: blur(10px);
 }
 
 .nf-btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
+  background: var(--nf-bg-tertiary);
+  color: var(--nf-text);
 }
 
 /* Sizes */
@@ -489,8 +491,8 @@ strong, b {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--nf-dark-bg);
-  color: var(--nf-dark-text);
+  background: var(--nf-bg);
+  color: var(--nf-text);
   padding-top: 80px;
   position: relative;
   overflow: hidden;
@@ -501,8 +503,8 @@ strong, b {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(229, 9, 20, 0.15), transparent),
-    linear-gradient(to bottom, transparent 0%, rgba(20, 20, 20, 0.8) 100%);
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(229, 9, 20, 0.08), transparent),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(245, 245, 245, 0.7) 100%);
   pointer-events: none;
 }
 
@@ -513,13 +515,13 @@ strong, b {
 }
 
 .nf-hero h1 {
-  color: #fff;
+  color: var(--nf-text);
   margin-bottom: var(--space-6);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: none;
 }
 
 .nf-hero p {
-  color: var(--nf-dark-text-muted);
+  color: var(--nf-text-muted);
   font-size: var(--text-xl);
   margin-bottom: var(--space-8);
 }
@@ -541,11 +543,13 @@ strong, b {
   z-index: 1000;
   padding: var(--space-4) 0;
   transition: all var(--transition-normal);
-  background: transparent;
+  background: var(--nf-bg);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
 .nf-header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--nf-bg);
   backdrop-filter: blur(20px);
   box-shadow: var(--nf-shadow-sm);
 }
@@ -583,7 +587,7 @@ strong, b {
 }
 
 .nf-nav-link {
-  color: #fff;
+  color: var(--nf-text-secondary);
   font-weight: 500;
   font-size: var(--text-sm);
   transition: color var(--transition-fast);
@@ -597,9 +601,10 @@ strong, b {
    FOOTER - Netflix Style
    ============================================ */
 .nf-footer {
-  background: var(--nf-dark-bg);
-  color: var(--nf-dark-text-muted);
+  background: var(--nf-bg);
+  color: var(--nf-text-muted);
   padding: var(--space-16) 0 var(--space-8);
+  border-top: 1px solid var(--nf-border);
 }
 
 .nf-footer-grid {
@@ -610,7 +615,7 @@ strong, b {
 }
 
 .nf-footer h4 {
-  color: var(--nf-dark-text);
+  color: var(--nf-text);
   font-size: var(--text-sm);
   font-weight: 600;
   margin-bottom: var(--space-4);
@@ -627,7 +632,7 @@ strong, b {
 }
 
 .nf-footer a {
-  color: var(--nf-dark-text-muted);
+  color: var(--nf-text-muted);
   font-size: var(--text-sm);
 }
 
@@ -636,7 +641,7 @@ strong, b {
 }
 
 .nf-footer-bottom {
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--nf-border);
   padding-top: var(--space-8);
   text-align: center;
 }
@@ -654,7 +659,7 @@ strong, b {
 /* Background Colors */
 .bg-white { background: var(--nf-bg); }
 .bg-light { background: var(--nf-bg-secondary); }
-.bg-dark { background: var(--nf-dark-bg); }
+.bg-dark { background: var(--nf-bg-secondary); }
 
 /* Flexbox */
 .flex { display: flex; }
@@ -689,6 +694,150 @@ strong, b {
 .hidden { display: none; }
 .block { display: block; }
 .inline-block { display: inline-block; }
+
+/* ============================================
+   LIGHT THEME ENFORCEMENT (Legacy Dev Pages)
+   ============================================ */
+:root {
+  --dev-bg: #ffffff !important;
+  --dev-surface: #fafafa !important;
+  --dev-surface-2: #f5f5f5 !important;
+  --dev-border: #e5e5e5 !important;
+  --dev-text: #141414 !important;
+  --dev-text-muted: #666666 !important;
+  --dev-accent: #e50914 !important;
+  --dev-accent-2: #b20710 !important;
+  --dev-accent-3: #ff6b6b !important;
+  --dev-success: #16a34a !important;
+  --dev-glow: rgba(229, 9, 20, 0.12) !important;
+  --dev-gradient: linear-gradient(135deg, #e50914 0%, #b20710 100%) !important;
+}
+
+body,
+body.dev-theme,
+body.dev-ru-theme {
+  background: var(--nf-bg) !important;
+  color: var(--nf-text) !important;
+}
+
+:is(
+  .dev-hero,
+  .dev-section,
+  .dev-section-alt,
+  .dev-cta,
+  .blog-hero,
+  .blog-index-hero,
+  .service-hero,
+  .hero,
+  .content-section,
+  .process,
+  .services,
+  .portfolio,
+  .faq,
+  .pricing,
+  .pricing-preview,
+  .cta,
+  .cta-section
+) {
+  background: var(--nf-bg) !important;
+  color: var(--nf-text) !important;
+}
+
+:is(
+  .dev-hero,
+  .dev-cta,
+  .blog-hero,
+  .blog-index-hero,
+  .service-hero,
+  .cta-section,
+  .hero,
+  .cta
+)::before {
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(229, 9, 20, 0.08), transparent),
+    radial-gradient(ellipse 50% 35% at 80% 80%, rgba(229, 9, 20, 0.05), transparent) !important;
+}
+
+:is(
+  .dev-hero,
+  .dev-section,
+  .dev-section-alt,
+  .dev-cta,
+  .blog-hero,
+  .blog-index-hero,
+  .service-hero,
+  .hero,
+  .content-section,
+  .process,
+  .services,
+  .portfolio,
+  .faq,
+  .pricing,
+  .pricing-preview,
+  .cta,
+  .cta-section
+) :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--nf-text) !important;
+  text-shadow: none !important;
+}
+
+:is(
+  .dev-hero,
+  .dev-section,
+  .dev-section-alt,
+  .dev-cta,
+  .blog-hero,
+  .blog-index-hero,
+  .service-hero,
+  .hero,
+  .content-section,
+  .process,
+  .services,
+  .portfolio,
+  .faq,
+  .pricing,
+  .pricing-preview,
+  .cta,
+  .cta-section
+) p {
+  color: var(--nf-text-muted) !important;
+}
+
+:is(
+  .dev-hero,
+  .dev-section,
+  .dev-section-alt,
+  .dev-cta,
+  .blog-hero,
+  .blog-index-hero,
+  .service-hero,
+  .hero,
+  .content-section,
+  .process,
+  .services,
+  .portfolio,
+  .faq,
+  .pricing,
+  .pricing-preview,
+  .cta,
+  .cta-section
+) strong {
+  color: var(--nf-text) !important;
+}
+
+.blog-content pre {
+  background: var(--nf-bg-secondary) !important;
+  border: 1px solid var(--nf-border);
+}
+
+.blog-content pre code {
+  color: var(--nf-text) !important;
+}
+
+.blog-content th {
+  background: var(--nf-bg-secondary) !important;
+  color: var(--nf-text) !important;
+}
 
 /* ============================================
    ANIMATIONS
