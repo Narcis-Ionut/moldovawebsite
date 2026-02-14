@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -45,88 +46,6 @@ const jsonLd = {
       hreflangRu="https://moldovawebsite.md/ru/politica-confidentialitate/"
       jsonLd={jsonLd}
     />
-    <style>
-      .legal-hero {
-        padding: 120px 0 40px;
-        background: var(--color-background);
-      }
-      .legal {
-        padding: var(--spacing-6) 0;
-      }
-      .legal h2 {
-        margin-top: var(--spacing-4);
-      }
-      .toc {
-        background: #fff;
-        border-radius: 12px;
-        padding: var(--spacing-3);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-      }
-      .toc ul {
-        list-style: none;
-        padding-left: 0;
-      }
-      .toc li {
-        margin: 0.35rem 0;
-      }
-      .badge-date {
-        display: inline-block;
-        background: var(--color-background);
-        padding: 0.35rem 0.6rem;
-        border-radius: 8px;
-        font-size: 0.85rem;
-      }
-      .legal table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1rem 0;
-      }
-      .legal th,
-      .legal td {
-        text-align: left;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        padding: 0.6rem 0.4rem;
-      }
-      .note {
-        font-size: 0.9rem;
-        opacity: 0.85;
-      }
-      .legal-content-block {
-        background: #fff;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-      .legal-content-block h3 {
-        color: var(--color-primary);
-        margin-bottom: 1rem;
-      }
-      .legal-content-block p {
-        margin-bottom: 1rem;
-        line-height: 1.7;
-      }
-      .legal-content-block ul {
-        margin-left: 1.5rem;
-        margin-bottom: 1rem;
-      }
-      .legal-content-block li {
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
-      }
-      .legal-intro {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        border-left: 4px solid var(--color-primary);
-        padding: 1.5rem;
-        border-radius: 0 12px 12px 0;
-        margin-bottom: 2rem;
-      }
-      .legal-intro p {
-        margin: 0;
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-    </style>
   </head>
   <body>
     <Header lang="ro" />
@@ -144,12 +63,10 @@ const jsonLd = {
     </section>
 
     <!-- Breadcrumbs -->
-    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
-      <ol
-        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
-      >
+    <nav aria-label="breadcrumb" class="container legal-breadcrumbs">
+      <ol class="legal-breadcrumb-list">
         <li>
-          <a href="/" style="text-decoration: none; color: #0a2463">Acasă</a>
+          <a href="/" class="legal-breadcrumb-home">Acasă</a>
         </li>
         <li aria-hidden="true">/</li>
         <li><span aria-current="page">Politica de confidențialitate</span></li>
@@ -158,8 +75,8 @@ const jsonLd = {
 
     <!-- Content -->
     <section class="legal">
-      <div class="container grid">
-        <aside class="toc" style="grid-column: span 4">
+      <div class="container legal-layout">
+        <aside class="toc legal-toc">
           <h3>Cuprins</h3>
           <ul>
             <li><a href="#cine-suntem">1. Cine suntem</a></li>
@@ -177,7 +94,7 @@ const jsonLd = {
           </ul>
         </aside>
 
-        <article style="grid-column: span 8">
+        <article class="legal-article">
           <div class="legal-intro">
             <p>
               Această politică de confidențialitate explică modul în care <strong

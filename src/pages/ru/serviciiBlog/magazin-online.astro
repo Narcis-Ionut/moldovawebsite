@@ -176,7 +176,7 @@ const faqs = [
     </section>
 
     <!-- Intro Section -->
-    <section class="content-section" style="background: #f8fafc;">
+    <section class="content-section services-alt">
       <div class="container">
         <div class="section-title">
           <h2>Почему вашему бизнесу нужен интернет-магазин</h2>
@@ -301,7 +301,7 @@ const faqs = [
     </section>
 
     <!-- Features Section -->
-    <section class="services" style="background: #f8fafc;">
+    <section class="services services-alt">
       <div class="container">
         <div class="section-title">
           <h2>Что включает наша услуга создания интернет-магазина</h2>
@@ -347,19 +347,16 @@ const faqs = [
     </section>
 
     <!-- Benefits Section -->
-    <section class="content-section" style="background: #f8fafc;">
+    <section class="content-section services-alt">
       <div class="container">
         <div class="section-title">
           <h2>Преимущества интернет-магазина для бизнеса</h2>
           <p>Почему стоит инвестировать в e-commerce прямо сейчас</p>
         </div>
-        <div class="content-grid" style="margin-bottom: 2rem;">
+        <div class="content-grid content-grid-tight">
           {
             benefits.map((benefit) => (
-              <div
-                class="content-block"
-                style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"
-              >
+              <div class="content-block content-block-plain">
                 <h3>{benefit.title}</h3>
                 <p>{benefit.description}</p>
               </div>

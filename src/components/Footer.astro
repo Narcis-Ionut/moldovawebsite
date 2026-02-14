@@ -77,12 +77,12 @@ const texts =
   <div class="container">
     <div class="nf-footer-grid">
       <div class="nf-footer-brand">
-        <a href={lang === "ro" ? "/" : "/ru"} class="nf-logo" style="margin-bottom: 1rem;">
+        <a href={lang === "ro" ? "/" : "/ru"} class="nf-logo nf-footer-logo">
           <svg
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style="width: 40px; height: 40px; border-radius: 8px;"
+            class="nf-footer-logo-icon"
           >
             <rect width="32" height="32" rx="8" fill="#e50914"></rect>
             <path
@@ -200,7 +200,7 @@ const texts =
 
     <div class="nf-footer-bottom">
       <p class="nf-footer-copyright">
-        <span style="color: #e50914;">_</span>
+        <span class="nf-footer-mark">_</span>
         &copy; {today.getFullYear()}
         {texts.copyright}
       </p>
@@ -217,172 +217,4 @@ const texts =
     </div>
   </div>
 
-  <style>
-    .nf-footer {
-      background: var(--nf-bg);
-      color: var(--nf-text-muted);
-      padding: 5rem 0 2rem;
-      border-top: 1px solid var(--nf-border);
-    }
-
-    .nf-footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    @media (min-width: 640px) {
-      .nf-footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .nf-footer-grid {
-        grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      }
-    }
-
-    .nf-footer .nf-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--nf-text);
-      text-decoration: none;
-    }
-
-    .nf-footer .nf-logo:hover {
-      color: #e50914;
-    }
-
-    .nf-footer-tagline {
-      color: var(--nf-text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 300px;
-      margin-bottom: 1.5rem;
-    }
-
-    .nf-footer-social {
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    .nf-footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: var(--nf-bg-tertiary);
-      border-radius: 8px;
-      color: var(--nf-text-secondary);
-      transition: all 0.2s ease;
-    }
-
-    .nf-footer-social a:hover {
-      background: #e50914;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .nf-footer-social svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .nf-footer-links h4,
-    .nf-footer-contact h4 {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--nf-text);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
-    }
-
-    .nf-footer-links ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nf-footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .nf-footer-links a,
-    .nf-footer-contact a {
-      color: var(--nf-text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .nf-footer-links a:hover,
-    .nf-footer-contact a:hover {
-      color: #e50914;
-    }
-
-    .nf-footer-contact address {
-      font-style: normal;
-    }
-
-    .nf-footer-contact p {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      color: var(--nf-text-muted);
-      font-size: 0.95rem;
-    }
-
-    .nf-footer-contact svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: #e50914;
-    }
-
-    .nf-footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 2rem;
-      border-top: 1px solid var(--nf-border);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .nf-footer-copyright {
-      color: var(--nf-text-muted);
-      font-size: 0.875rem;
-    }
-
-    .nf-footer-top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: var(--nf-bg-tertiary);
-      border-radius: 8px;
-      color: var(--nf-text);
-      transition: all 0.2s ease;
-    }
-
-    .nf-footer-top:hover {
-      background: #e50914;
-      transform: translateY(-2px);
-    }
-
-    .nf-footer-top svg {
-      width: 20px;
-      height: 20px;
-    }
-  </style>
 </footer>

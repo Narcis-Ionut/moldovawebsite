@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -45,42 +46,6 @@ const jsonLd = {
       hreflangRu="https://moldovawebsite.md/ru/termeni/"
       jsonLd={jsonLd}
     />
-    <style>
-      .legal-hero {
-        padding: 120px 0 40px;
-        background: var(--color-background);
-      }
-      .legal {
-        padding: var(--spacing-6) 0;
-      }
-      .legal h2 {
-        margin-top: var(--spacing-4);
-      }
-      .toc {
-        background: #fff;
-        border-radius: 12px;
-        padding: var(--spacing-3);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-      }
-      .toc ul {
-        list-style: none;
-        padding-left: 0;
-      }
-      .toc li {
-        margin: 0.35rem 0;
-      }
-      .badge-date {
-        display: inline-block;
-        background: var(--color-background);
-        padding: 0.35rem 0.6rem;
-        border-radius: 8px;
-        font-size: 0.85rem;
-      }
-      .note {
-        font-size: 0.9rem;
-        opacity: 0.85;
-      }
-    </style>
   </head>
   <body>
     <Header lang="ro" />
@@ -98,12 +63,10 @@ const jsonLd = {
     </section>
 
     <!-- Breadcrumbs -->
-    <nav aria-label="breadcrumb" class="container" style="margin-top: 1rem">
-      <ol
-        style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; color: #4a5568;"
-      >
+    <nav aria-label="breadcrumb" class="container legal-breadcrumbs">
+      <ol class="legal-breadcrumb-list">
         <li>
-          <a href="/" style="text-decoration: none; color: #0a2463">Acasă</a>
+          <a href="/" class="legal-breadcrumb-home">Acasă</a>
         </li>
         <li aria-hidden="true">/</li>
         <li><span aria-current="page">Termeni și condiții</span></li>
@@ -112,8 +75,8 @@ const jsonLd = {
 
     <!-- Content -->
     <section class="legal">
-      <div class="container grid">
-        <aside class="toc" style="grid-column: span 4">
+      <div class="container legal-layout">
+        <aside class="toc legal-toc">
           <h3>Cuprins</h3>
           <ul>
             <li><a href="#acceptare">1. Acceptarea termenilor</a></li>
@@ -139,7 +102,7 @@ const jsonLd = {
           </ul>
         </aside>
 
-        <article style="grid-column: span 8">
+        <article class="legal-article">
           <h2 id="acceptare">1. Acceptarea termenilor</h2>
           <p>
             Accesând Site-ul sau comandând servicii de la <strong
