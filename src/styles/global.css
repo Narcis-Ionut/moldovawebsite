@@ -104,20 +104,20 @@
 }
 
 /* =========================================================
-   TOKENS (HSL fallback, upgraded to OKLCH in @supports)
+   TOKENS (Professional palette - HSL fallback + OKLCH)
    ========================================================= */
 @layer tokens {
   :root {
     /* ---- Brand Colors (HSL fallback) ---- */
-    --brand-1-hsl: 223 83% 22%; /* #0a2463 */
-    --brand-2-hsl: 0 100% 70%; /* #ff6b6b */
-    --accent-hsl: 205 76% 66%; /* #63b3ed */
-    --fg-hsl: 216 22% 28%; /* #2d3748 */
-    --bg-hsl: 220 33% 97%; /* #f5f7fa */
+    --brand-1-hsl: 230 60% 22%; /* Deep navy - professional */
+    --brand-2-hsl: 350 70% 55%; /* Elegant red */
+    --accent-hsl: 190 80% 45%; /* Teal accent */
+    --fg-hsl: 220 25% 30%; /* Dark slate */
+    --bg-hsl: 210 30% 98%; /* Off-white */
     --surface-hsl: 0 0% 100%;
-    --muted-hsl: 216 16% 60%;
+    --muted-hsl: 220 15% 55%;
 
-    /* Moldovan flag accents */
+    /* Moldovan flag accents (kept for patriotism) */
     --md-blue-hex: #0245a5;
     --md-yellow-hex: #ffcb00;
     --md-red-hex: #d7141a;
@@ -130,30 +130,31 @@
     --bg: hsl(var(--bg-hsl));
     --surface: hsl(var(--surface-hsl));
     --muted: hsl(var(--muted-hsl));
-    --border: hsl(216 12% 86%);
+    --border: hsl(210 20% 88%);
 
-    /* Elevation */
-    --shadow-1: 0 2px 8px rgba(0, 0, 0, 0.06);
-    --shadow-2: 0 6px 18px rgba(0, 0, 0, 0.1);
-    --shadow-3: 0 14px 34px rgba(0, 0, 0, 0.14);
+    /* Elevation - softer, more professional */
+    --shadow-1: 0 2px 6px rgba(0, 0, 0, 0.04);
+    --shadow-2: 0 6px 16px rgba(0, 0, 0, 0.08);
+    --shadow-3: 0 12px 28px rgba(0, 0, 0, 0.12);
 
-    /* Typography — fluid scale */
-    --font-body: system-ui, -apple-system, "Inter", "Segoe UI", Roboto,
+    /* Typography — refined fluid scale */
+    --font-body:
+      system-ui, -apple-system, "Inter", "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    --font-heading:
+      "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    --font-heading: "Poppins", ui-sans-serif, system-ui, -apple-system,
-      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-      "Liberation Sans", sans-serif;
 
-    --step--2: clamp(0.72rem, 0.72rem + 0.1vw, 0.78rem);
-    --step--1: clamp(0.84rem, 0.82rem + 0.25vw, 0.95rem);
-    --step-0: clamp(1rem, 0.96rem + 0.45vw, 1.125rem); /* base */
-    --step-1: clamp(1.125rem, 1.02rem + 0.8vw, 1.35rem);
-    --step-2: clamp(1.35rem, 1.1rem + 1.6vw, 1.7rem);
-    --step-3: clamp(1.6rem, 1.24rem + 2.6vw, 2.2rem);
-    --step-4: clamp(2rem, 1.5rem + 3.7vw, 2.8rem);
-    --step-5: clamp(2.4rem, 1.8rem + 5.2vw, 3.4rem);
+    --step--2: clamp(0.75rem, 0.73rem + 0.1vw, 0.8rem);
+    --step--1: clamp(0.875rem, 0.85rem + 0.25vw, 1rem);
+    --step-0: clamp(1rem, 0.96rem + 0.4vw, 1.125rem); /* base */
+    --step-1: clamp(1.125rem, 1.02rem + 0.7vw, 1.3rem);
+    --step-2: clamp(1.3rem, 1.1rem + 1.4vw, 1.6rem);
+    --step-3: clamp(1.5rem, 1.2rem + 2.2vw, 1.9rem);
+    --step-4: clamp(1.8rem, 1.4rem + 3vw, 2.3rem);
+    --step-5: clamp(2.1rem, 1.6rem + 4vw, 2.8rem);
 
-    /* Spacing */
+    /* Spacing - more consistent */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -162,41 +163,44 @@
     --space-6: 2rem;
     --space-7: 3rem;
     --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
 
-    /* Radii & borders */
-    --radius-1: 6px;
-    --radius-2: 12px;
-    --radius-3: 16px;
+    /* Radii & borders - subtle */
+    --radius-1: 4px;
+    --radius-2: 8px;
+    --radius-3: 12px;
+    --radius-4: 16px;
 
     /* Layout */
-    --container-max: 1440px;
+    --container-max: 1280px;
     --grid-columns: 12;
-    --grid-gap: 20px;
+    --grid-gap: 24px;
 
-    /* Focus ring (used as box-shadow) */
-    --focus-ring: 0 0 0 3px color-mix(in hsl, var(--accent) 35%, white);
+    /* Focus ring */
+    --focus-ring: 0 0 0 3px color-mix(in hsl, var(--accent) 25%, white);
 
     /* Text wrapping preferences */
     --text-balance: balance;
     --text-pretty: pretty;
 
     /* Anchor scroll offset */
-    --anchor-offset: 96px;
+    --anchor-offset: 80px;
 
     color-scheme: light;
   }
 
   @supports (color: oklch(50% 0.12 200)) {
     :root {
-      --brand-1: oklch(49% 0.19 264);
-      --brand-2: oklch(78% 0.16 26);
-      --accent: oklch(78% 0.1 240);
-      --fg: oklch(36% 0.03 250);
-      --bg: oklch(97% 0.01 220);
+      --brand-1: oklch(45% 0.15 260); /* deeper navy */
+      --brand-2: oklch(60% 0.18 20); /* refined red */
+      --accent: oklch(65% 0.12 200); /* teal */
+      --fg: oklch(35% 0.03 250);
+      --bg: oklch(98% 0.005 220);
       --surface: oklch(100% 0 0);
-      --muted: oklch(63% 0.03 250);
-      --border: oklch(88% 0.01 220);
-      --focus-ring: 0 0 0 3px color-mix(in oklch, var(--accent) 45%, white);
+      --muted: oklch(55% 0.03 250);
+      --border: oklch(90% 0.01 220);
+      --focus-ring: 0 0 0 3px color-mix(in oklch, var(--accent) 30%, white);
     }
   }
 }
@@ -246,94 +250,25 @@
     -webkit-text-size-adjust: none;
   }
 
-  body::before,
-  body::after {
+  body::before {
     content: "";
     position: fixed;
     inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--bg) 95%, white) 0%,
+      var(--bg) 100%
+    );
     pointer-events: none;
   }
 
-  body::before {
-    z-index: -2;
-    background:
-      radial-gradient(
-        1200px 800px at 5% -10%,
-        color-mix(in oklch, var(--accent) 22%, transparent),
-        transparent 60%
-      ),
-      radial-gradient(
-        900px 700px at 110% 10%,
-        color-mix(in oklch, var(--brand-2) 18%, transparent),
-        transparent 55%
-      ),
-      radial-gradient(
-        800px 600px at 40% 110%,
-        color-mix(in oklch, var(--brand-1) 14%, transparent),
-        transparent 60%
-      ),
-      linear-gradient(
-        180deg,
-        color-mix(in oklch, var(--bg) 94%, white) 0%,
-        var(--bg) 100%
-      );
-  }
-
-  body::after {
-    z-index: -1;
-    background-image:
-      radial-gradient(
-        color-mix(in oklch, var(--brand-1) 18%, transparent) 1px,
-        transparent 1px
-      ),
-      radial-gradient(
-        color-mix(in oklch, var(--brand-2) 18%, transparent) 1px,
-        transparent 1px
-      );
-    background-size: 28px 28px, 52px 52px;
-    background-position: 0 0, 12px 12px;
-    opacity: 0.12;
-    mix-blend-mode: multiply;
-  }
-
   body.page--lighttext::before {
-    background:
-      radial-gradient(
-        1200px 800px at 10% -15%,
-        color-mix(in oklch, var(--brand-1) 55%, transparent),
-        transparent 60%
-      ),
-      radial-gradient(
-        900px 700px at 110% 0%,
-        color-mix(in oklch, var(--brand-2) 45%, transparent),
-        transparent 55%
-      ),
-      radial-gradient(
-        800px 600px at 50% 120%,
-        color-mix(in oklch, var(--accent) 35%, transparent),
-        transparent 60%
-      ),
-      linear-gradient(180deg, oklch(18% 0.03 250) 0%, oklch(12% 0.02 250) 100%);
-  }
-
-  body.page--lighttext::after {
-    background-image:
-      radial-gradient(
-        color-mix(in oklch, white 35%, transparent) 1px,
-        transparent 1px
-      ),
-      radial-gradient(
-        color-mix(in oklch, var(--accent) 45%, transparent) 1px,
-        transparent 1px
-      );
-    opacity: 0.16;
-    mix-blend-mode: screen;
-  }
-
-  @media (max-width: 720px) {
-    body::after {
-      opacity: 0.08;
-    }
+    background: linear-gradient(
+      135deg,
+      oklch(20% 0.02 250) 0%,
+      oklch(15% 0.02 250) 100%
+    );
   }
 
   h1,
@@ -380,7 +315,9 @@
   /* Modern link transitions */
   a {
     color: var(--brand-1);
-    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
     text-decoration-color: transparent;
     text-underline-offset: 0.2em;
   }
@@ -396,7 +333,9 @@
     box-shadow: var(--focus-ring);
     border-radius: var(--radius-1);
     /* Animate focus ring */
-    transition: outline-offset 0.15s ease, box-shadow 0.15s ease;
+    transition:
+      outline-offset 0.15s ease,
+      box-shadow 0.15s ease;
   }
 
   .container {
@@ -431,41 +370,21 @@
    COMPONENTS - 2025 Enhanced
    ========================================================= */
 @layer components {
-  /* ---------- Header / Navigation - 2025 Enhanced ---------- */
+  /* ---------- Header / Navigation - Professional ---------- */
   header.site-header {
     position: fixed;
     inset-block-start: 0;
     inline-size: 100%;
-    background: color-mix(in oklch, var(--surface) 90%, transparent);
-    backdrop-filter: blur(12px) saturate(150%);
+    background: var(--surface);
     box-shadow: var(--shadow-1);
     z-index: 1000;
-    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
-    /* Entrance animation */
-    animation: header-enter 0.6s ease both;
-  }
-  @keyframes header-enter {
-    from {
-      opacity: 0;
-      translate: 0 -100%;
-    }
-    to {
-      opacity: 1;
-      translate: 0 0;
-    }
-  }
-  /* Scroll-aware header states via :has() or JS class */
-  header.site-header.scrolled,
-  header.site-header:has(+ main[data-scrolled="true"]) {
-    background: var(--surface);
-    box-shadow: var(--shadow-2);
+    transition: box-shadow 0.3s ease;
   }
   .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: var(--space-5);
-    transition: padding 0.3s ease;
+    padding-block: var(--space-4);
   }
   .logo {
     display: inline-flex;
@@ -474,10 +393,6 @@
     font-weight: 700;
     font-size: var(--step-1);
     color: var(--brand-1);
-    transition: transform 0.3s ease;
-  }
-  .logo:hover {
-    transform: scale(1.02);
   }
   .logo-icon {
     inline-size: 32px;
@@ -489,7 +404,6 @@
       var(--md-yellow-hex) 50%,
       var(--md-red-hex) 100%
     );
-    box-shadow: var(--shadow-1);
   }
   .nav-menu {
     display: flex;
@@ -547,7 +461,9 @@
     cursor: pointer;
     position: relative;
     z-index: 1;
-    transition: transform 0.2s ease, color 0.25s ease;
+    transition:
+      transform 0.2s ease,
+      color 0.25s ease;
   }
   .lang-btn.active {
     background: var(--surface);
@@ -576,77 +492,45 @@
 
   /* ---------- Hero ---------- */
   .hero {
-    padding-block: 120px 80px;
-    background: transparent;
+    padding-block: 140px 100px;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--brand-1) 8%, white) 0%,
+      var(--bg) 100%
+    );
     position: relative;
-    overflow: clip;
+    overflow: hidden;
   }
 
-  /* Ensure dev-hero containers fill flex width so text wraps normally */
   .dev-hero > .container {
     width: 100%;
   }
   .hero-content {
     grid-column: 1 / span 7;
-    color: white;
-    background: color-mix(in oklch, black 35%, transparent);
-    backdrop-filter: blur(8px);
-    padding: var(--space-6);
-    border-radius: var(--radius-2);
-    box-shadow: var(--shadow-2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    /* Entrance animation */
-    animation: hero-content-enter 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-    animation-delay: 0.2s;
-  }
-  @keyframes hero-content-enter {
-    from {
-      opacity: 0;
-      translate: -30px 0;
-      scale: 0.95;
-    }
-    to {
-      opacity: 1;
-      translate: 0 0;
-      scale: 1;
-    }
+    color: var(--fg);
+    background: var(--surface);
+    padding: var(--space-7);
+    border-radius: var(--radius-3);
+    box-shadow: var(--shadow-2);
   }
   .subheading {
     font-size: var(--step-1);
-    color: color-mix(in oklch, white 90%, transparent);
+    color: var(--muted);
     margin-block-end: var(--space-5);
     font-weight: 500;
   }
   .hero-bullets {
     margin-block: var(--space-4) var(--space-5);
     padding-inline-start: 1.1rem;
-    color: white;
+    color: var(--fg);
     font-size: var(--step-0);
   }
   .hero-bullets li {
     margin-block-end: 0.45rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-    background: color-mix(in oklch, black 30%, transparent);
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
-    display: inline-block;
-    /* Staggered entrance */
-    animation: fade-in-up 0.5s ease both;
-    animation-delay: calc(0.4s + var(--i, 0) * 0.1s);
-  }
-  .hero-bullets li:nth-child(1) {
-    --i: 1;
-  }
-  .hero-bullets li:nth-child(2) {
-    --i: 2;
-  }
-  .hero-bullets li:nth-child(3) {
-    --i: 3;
-  }
-  .hero-bullets li:nth-child(4) {
-    --i: 4;
-  }
-  .hero-bullets li:nth-child(5) {
-    --i: 5;
+    background: color-mix(in oklch, var(--bg) 80%, transparent);
+    border-left: 3px solid var(--accent);
   }
 
   .hero-image {
@@ -672,7 +556,9 @@
   .hero-device {
     inline-size: 100%;
     border-radius: 12px;
-    box-shadow: var(--shadow-3), 0 30px 60px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      var(--shadow-3),
+      0 30px 60px rgba(0, 0, 0, 0.3);
     transform: translateZ(0) perspective(800px) rotateY(-15deg);
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Subtle floating animation */
@@ -690,7 +576,9 @@
   }
   .hero-device:hover {
     transform: translateZ(20px) perspective(800px) rotateY(-5deg) scale(1.02);
-    box-shadow: var(--shadow-3), 0 40px 80px rgba(0, 0, 0, 0.4);
+    box-shadow:
+      var(--shadow-3),
+      0 40px 80px rgba(0, 0, 0, 0.4);
   }
   .hero-bg-shape {
     position: absolute;
@@ -714,7 +602,7 @@
     }
   }
 
-  /* ---------- Buttons - 2025 Enhanced ---------- */
+  /* ---------- Buttons - Professional ---------- */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -727,106 +615,54 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    /* Modern spring animation */
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.25s ease, background 0.2s ease, color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease;
     will-change: transform;
-  }
-
-  /* Shimmer effect overlay */
-  .btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      110deg,
-      transparent 20%,
-      rgba(255, 255, 255, 0.3) 50%,
-      transparent 80%
-    );
-    translate: var(--shimmer-x) 0;
-    transition: --shimmer-x 0.6s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .btn:hover::before {
-    --shimmer-x: 100%;
+    border: 2px solid transparent;
   }
 
   .btn-primary {
     background: var(--brand-2);
     color: white;
-    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2),
-      0 0 0 0 rgba(255, 107, 107, 0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(255, 107, 107, 0.35),
-      0 0 40px rgba(255, 107, 107, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: color-mix(in oklch, var(--brand-2) 90%, black);
   }
 
   .btn-primary:active {
-    transform: translateY(-1px) scale(0.98);
+    transform: translateY(0);
     transition-duration: 0.1s;
   }
 
   .btn-secondary {
-    background: color-mix(in oklch, white 15%, transparent);
-    color: white;
-    backdrop-filter: blur(8px);
-    border: 1px solid color-mix(in oklch, white 30%, transparent);
+    background: transparent;
+    color: var(--brand-1);
+    border: 2px solid var(--brand-1);
   }
 
   .btn-secondary:hover {
-    background: color-mix(in oklch, white 25%, transparent);
-    border-color: color-mix(in oklch, white 50%, transparent);
+    background: var(--brand-1);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
 
   .btn[disabled] {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
-    filter: grayscale(0.3);
+    filter: grayscale(0.5);
   }
 
-  .btn[disabled]::before {
-    display: none;
-  }
-
-  /* Glow effect on focus */
   .btn:focus-visible {
-    --glow-opacity: 1;
-  }
-
-  .btn::after {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border-radius: calc(var(--radius-1) + 4px);
-    background: linear-gradient(
-      var(--gradient-angle),
-      var(--brand-2),
-      var(--accent),
-      var(--brand-1),
-      var(--brand-2)
-    );
-    opacity: calc(var(--glow-opacity) * 0.5);
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    animation: glow-rotate 3s linear infinite paused;
-  }
-
-  .btn:focus-visible::after {
-    animation-play-state: running;
-  }
-
-  @keyframes glow-rotate {
-    to {
-      --gradient-angle: 360deg;
-    }
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   /* ---------- Sections - 2025 Enhanced ---------- */
@@ -885,45 +721,18 @@
     box-shadow: var(--shadow-2);
     position: relative;
     overflow: hidden;
-    /* Scroll-driven staggered reveal */
+    /* Subtle entrance */
     animation: fade-in-up linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 40%;
-    /* Smooth hover with spring */
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.35s ease;
-  }
-
-  /* Card glow border on hover */
-  .service-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(
-      var(--gradient-angle),
-      transparent,
-      var(--accent),
-      transparent
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    animation: glow-rotate 4s linear infinite;
-  }
-
-  .service-card:hover::before {
-    opacity: 1;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-3),
-      0 0 40px color-mix(in oklch, var(--accent) 20%, transparent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-3);
   }
 
   .service-icon {
@@ -933,18 +742,20 @@
     margin-block-end: var(--space-4);
     display: grid;
     place-items: center;
-    background: color-mix(in oklch, var(--bg) 80%, white);
+    background: var(--surface);
     border-radius: 50%;
     color: var(--brand-1);
     font-size: 32px;
     border: 2px solid var(--brand-1);
     box-shadow: var(--shadow-1);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-      background 0.3s ease, color 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      color 0.3s ease;
   }
 
   .service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05);
     background: var(--brand-1);
     color: white;
   }
@@ -952,16 +763,19 @@
   .service-title {
     font-size: var(--step-2);
     margin-block-end: var(--space-3);
+    color: var(--brand-1);
   }
   .service-desc {
     color: var(--fg);
+    line-height: 1.6;
   }
 
   /* ---------- Social Proof ---------- */
   .social-proof {
     padding-block: var(--space-8);
-    background: color-mix(in oklch, var(--bg) 85%, white);
-    backdrop-filter: blur(6px);
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
   .clients {
     display: flex;
@@ -975,7 +789,9 @@
     block-size: 60px;
     filter: grayscale(100%);
     opacity: 0.75;
-    transition: filter 0.25s, opacity 0.25s;
+    transition:
+      filter 0.25s,
+      opacity 0.25s;
   }
   .client-logo:hover {
     filter: grayscale(0%);
@@ -988,20 +804,21 @@
     padding: var(--space-6);
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-2);
+    border: 1px solid var(--border);
   }
   .testimonial-content {
-    font-style: italic;
     margin-block-end: var(--space-4);
+    line-height: 1.6;
     position: relative;
+    padding-inline-start: var(--space-4);
   }
   .testimonial-content::before {
     content: "“";
-    font-size: 60px;
+    font-size: 32px;
     color: var(--accent);
-    opacity: 0.2;
     position: absolute;
-    inset-block-start: -20px;
-    inset-inline-start: -10px;
+    inset-block-start: -8px;
+    inset-inline-start: 0;
   }
   .testimonial-author {
     display: flex;
@@ -1012,12 +829,12 @@
     inline-size: 50px;
     block-size: 50px;
     border-radius: 50%;
-    background: linear-gradient(
-      135deg,
-      var(--md-blue-hex) 0%,
-      var(--md-yellow-hex) 50%,
-      var(--md-red-hex) 100%
-    );
+    background: var(--brand-1);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: var(--step-0);
   }
   .author-name {
     font-weight: 700;
@@ -1046,7 +863,8 @@
     overflow: hidden;
     box-shadow: var(--shadow-2);
     border: 1px solid var(--border);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
       box-shadow 0.3s ease;
     animation: fade-in-scale linear both;
     animation-timeline: view();
@@ -1121,7 +939,9 @@
     font-weight: 600;
     font-size: var(--step-0);
     text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
   }
   .portfolio-link:hover {
     color: var(--accent);
@@ -1141,97 +961,48 @@
     color: var(--fg);
   }
 
-  /* ---------- Pricing - 2025 Enhanced ---------- */
+  /* ---------- Pricing - Professional ---------- */
   .pricing {
     padding-block: var(--space-8);
     background: transparent;
   }
   .pricing-grid {
-    background: transparent;
-    position: relative;
-    z-index: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-6);
     margin-block-start: var(--space-5);
-    backdrop-filter: saturate(1.2) blur(6px);
-    border-radius: 22px;
-    padding: clamp(8px, 1.5vw, 16px);
   }
   .price-card {
-    background: transparent;
+    background: var(--surface);
     border-radius: var(--radius-2);
     padding: var(--space-6);
     box-shadow: var(--shadow-2);
     border: 1px solid var(--border);
-    color: var(--surface);
+    color: var(--fg);
     position: relative;
     overflow: hidden;
-    /* Scroll-driven reveal */
-    animation: fade-in-scale linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
-    /* Modern spring transition */
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.4s ease, border-color 0.3s ease;
-  }
-  /* Glassmorphism hover overlay */
-  .price-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(255, 255, 255, 0.05) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  .price-card:hover::after {
-    opacity: 1;
-  }
-  .price-card.card1 {
-    background-image: url("/assets/hero-screen-preturi1.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .price-card.card2 {
-    background-image: url("/assets/hero-screen-preturi2.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .price-card.card3 {
-    background-image: url("/assets/hero-screen-preturi3.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
   }
   .price-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-3), 0 0 50px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-3);
+    border-color: var(--brand-1);
   }
   .price-card h3 {
     margin-block-end: var(--space-3);
     color: var(--brand-1);
-    position: relative;
-    z-index: 1;
   }
   .price-card ul {
     list-style: none;
     margin: var(--space-3) 0 var(--space-5);
-    position: relative;
-    z-index: 1;
   }
   .price-card li {
     position: relative;
     margin-block: 0.45rem;
     padding-inline-start: 1.4rem;
-    border-radius: 4px;
-    padding-block: 0.25rem;
   }
   .price-card li::before {
     content: "✓";
@@ -1242,11 +1013,10 @@
     font-weight: 800;
   }
 
-  /* ---------- Contact - 2025 Enhanced ---------- */
+  /* ---------- Contact - Professional ---------- */
   .contact-hero {
     background: transparent;
-    padding-block: 120px 40px;
-    position: relative;
+    padding-block: var(--space-8) var(--space-6);
   }
   .contact-wrap {
     display: grid;
@@ -1256,16 +1026,11 @@
   }
   .form-card,
   .info-card {
-    background: color-mix(in oklch, white 94%, transparent);
-    backdrop-filter: blur(12px) saturate(140%);
+    background: var(--surface);
     border-radius: var(--radius-3);
-    border: 1px solid color-mix(in oklch, var(--border) 70%, white);
-    box-shadow: var(--shadow-2), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-2);
     padding: var(--space-7);
-    /* Scroll-driven reveal */
-    animation: fade-in-up linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
   }
   .field {
     position: relative;
@@ -1277,25 +1042,23 @@
     inline-size: 100%;
     padding: 1.1rem 1rem;
     border-radius: 12px;
-    border: 1px solid color-mix(in oklch, var(--border) 85%, white);
+    border: 1px solid var(--border);
     background: var(--surface);
     color: var(--fg);
     outline: none;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease,
-      background 0.25s ease, transform 0.2s ease;
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
   }
   .textarea {
     min-block-size: 140px;
     resize: vertical;
   }
-  /* Modern focus with scale */
   .input:focus,
   .textarea:focus,
   .select:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 4px color-mix(in oklch, var(--accent) 20%, transparent),
-      0 4px 12px color-mix(in oklch, var(--accent) 15%, transparent);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent) 20%, transparent);
   }
   /* Floating label with modern transitions */
   .label {
@@ -1305,8 +1068,11 @@
     padding: 0 0.35rem;
     background: var(--surface);
     color: color-mix(in oklch, var(--fg) 60%, white);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease,
-      inset-block-start 0.25s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.25s ease;
+    transition:
+      transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.25s ease,
+      inset-block-start 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      font-size 0.25s ease;
     pointer-events: none;
   }
   .input:not(:placeholder-shown) + .label,
@@ -1340,8 +1106,12 @@
     user-select: none;
     position: relative;
     overflow: hidden;
-    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease,
-      transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.25s ease;
   }
   .chip:hover {
     border-color: var(--brand-1);
@@ -1476,7 +1246,8 @@
     animation: fade-in-up linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 40%;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transition:
+      transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
       box-shadow 0.35s ease;
   }
   .step:hover {
@@ -1521,14 +1292,17 @@
     font-size: var(--step-3);
     font-weight: 800;
     margin: 0 auto var(--space-4);
-    box-shadow: 0 4px 15px color-mix(in oklch, var(--brand-1) 30%, transparent),
+    box-shadow:
+      0 4px 15px color-mix(in oklch, var(--brand-1) 30%, transparent),
       0 0 0 4px color-mix(in oklch, var(--brand-1) 15%, transparent);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
       box-shadow 0.3s ease;
   }
   .step:hover .step-number {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px color-mix(in oklch, var(--brand-1) 40%, transparent),
+    box-shadow:
+      0 8px 25px color-mix(in oklch, var(--brand-1) 40%, transparent),
       0 0 0 6px color-mix(in oklch, var(--brand-1) 20%, transparent);
   }
   .step-title {
@@ -1559,7 +1333,9 @@
     animation: fade-in-up linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 30%;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition:
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
   }
   .faq-list details:hover {
     box-shadow: var(--shadow-2);
@@ -1567,7 +1343,8 @@
   }
   .faq-list details[open] {
     border-color: var(--brand-1);
-    box-shadow: var(--shadow-2),
+    box-shadow:
+      var(--shadow-2),
       0 0 0 1px color-mix(in oklch, var(--brand-1) 20%, transparent);
   }
   .faq-list summary {
@@ -1874,7 +1651,6 @@
     hyphens: auto;
     max-width: 100%;
   }
-
 }
 
 /* =========================================================
@@ -1954,7 +1730,8 @@
 
   /* ---------- Hover effects ---------- */
   .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
       box-shadow 0.3s ease;
   }
   .hover-lift:hover {
@@ -2075,7 +1852,9 @@
     height: auto;
     border-radius: 18px;
     border: 1px solid color-mix(in oklch, canvas, canvastext 10%);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.06),
+      0 12px 24px rgba(0, 0, 0, 0.1);
     background: color-mix(in oklch, canvas, canvastext 3%);
   }
   .page--lighttext .content-image {
