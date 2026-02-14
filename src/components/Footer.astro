@@ -55,7 +55,7 @@ const texts =
   lang === "ro"
     ? {
         brand:
-          "Creăm site-uri ieftine și rapide pentru afaceri mici – Chișinău & toată Moldova.",
+          "Creăm site-uri moderne și rapide pentru afaceri mici – Chișinău & toată Moldova.",
         servicii: "Servicii",
         companie: "Companie",
         contact: "Contact",
@@ -64,7 +64,7 @@ const texts =
       }
     : {
         brand:
-          "Создаём недорогие и быстрые сайты для малого бизнеса – Кишинёв и вся Молдова.",
+          "Создаём современные и быстрые сайты для малого бизнеса – Кишинёв и вся Молдова.",
         servicii: "Услуги",
         companie: "Компания",
         contact: "Контакты",
@@ -73,44 +73,29 @@ const texts =
       };
 ---
 
-<footer class="dev-footer">
+<footer class="nf-footer">
   <div class="container">
-    <div class="dev-footer-grid">
-      <div class="dev-footer-brand">
-        <a href={lang === "ro" ? "/" : "/ru"} class="dev-footer-logo">
+    <div class="nf-footer-grid">
+      <div class="nf-footer-brand">
+        <a href={lang === "ro" ? "/" : "/ru"} class="nf-logo" style="margin-bottom: 1rem;">
           <svg
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            style="width: 40px; height: 40px; border-radius: 8px;"
           >
-            <rect
-              width="32"
-              height="32"
-              rx="8"
-              fill="url(#footer-logo-gradient)"></rect>
+            <rect width="32" height="32" rx="8" fill="#e50914"></rect>
             <path
               d="M8 12L12 20L16 12L20 20L24 12"
               stroke="white"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"></path>
-            <defs>
-              <linearGradient
-                id="footer-logo-gradient"
-                x1="0"
-                y1="0"
-                x2="32"
-                y2="32"
-              >
-                <stop stop-color="#22d3ee"></stop>
-                <stop offset="1" stop-color="#a855f7"></stop>
-              </linearGradient>
-            </defs>
           </svg>
           <span>moldovawebsite.md</span>
         </a>
-        <p class="dev-footer-tagline">{texts.brand}</p>
-        <div class="dev-footer-social">
+        <p class="nf-footer-tagline">{texts.brand}</p>
+        <div class="nf-footer-social">
           <a
             href="https://facebook.com"
             target="_blank"
@@ -138,7 +123,7 @@ const texts =
         </div>
       </div>
 
-      <div class="dev-footer-links">
+      <div class="nf-footer-links">
         <h4>{texts.servicii}</h4>
         <ul>
           {
@@ -151,7 +136,7 @@ const texts =
         </ul>
       </div>
 
-      <div class="dev-footer-links">
+      <div class="nf-footer-links">
         <h4>{texts.companie}</h4>
         <ul>
           {
@@ -164,7 +149,7 @@ const texts =
         </ul>
       </div>
 
-      <div class="dev-footer-contact">
+      <div class="nf-footer-contact">
         <h4>{texts.contact}</h4>
         <address>
           <p>
@@ -213,13 +198,13 @@ const texts =
       </div>
     </div>
 
-    <div class="dev-footer-bottom">
-      <p class="dev-footer-copyright">
-        <span class="dev-footer-cursor">_</span>
+    <div class="nf-footer-bottom">
+      <p class="nf-footer-copyright">
+        <span style="color: #e50914;">_</span>
         &copy; {today.getFullYear()}
         {texts.copyright}
       </p>
-      <a href="#acasa" class="dev-footer-top" aria-label={texts.backToTop}>
+      <a href="#acasa" class="nf-footer-top" aria-label={texts.backToTop}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -233,207 +218,169 @@ const texts =
   </div>
 
   <style>
-    .dev-footer {
-      background: #0a0a0f;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 4rem 0 2rem;
-      position: relative;
+    .nf-footer {
+      background: var(--nf-bg);
+      color: var(--nf-text-muted);
+      padding: 5rem 0 2rem;
+      border-top: 1px solid var(--nf-border);
     }
 
-    .dev-footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(34, 211, 238, 0.3),
-        transparent
-      );
-    }
-
-    .dev-footer-grid {
+    .nf-footer-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 3rem;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
     @media (min-width: 640px) {
-      .dev-footer-grid {
+      .nf-footer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (min-width: 1024px) {
-      .dev-footer-grid {
+      .nf-footer-grid {
         grid-template-columns: 2fr 1fr 1fr 1.5fr;
       }
     }
 
-    .dev-footer-logo {
+    .nf-footer .nf-logo {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1.25rem;
-      color: #fff;
+      color: var(--nf-text);
       text-decoration: none;
-      margin-bottom: 1rem;
     }
 
-    .dev-footer-logo svg {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+    .nf-footer .nf-logo:hover {
+      color: #e50914;
     }
 
-    .dev-footer-tagline {
-      color: #71717a;
+    .nf-footer-tagline {
+      color: var(--nf-text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
       max-width: 300px;
       margin-bottom: 1.5rem;
     }
 
-    .dev-footer-social {
+    .nf-footer-social {
       display: flex;
       gap: 0.75rem;
     }
 
-    .dev-footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      color: #a1a1aa;
-      transition: all 0.2s ease;
-    }
-
-    .dev-footer-social a:hover {
-      color: #22d3ee;
-      border-color: #22d3ee;
-      background: rgba(34, 211, 238, 0.1);
-    }
-
-    .dev-footer-social svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .dev-footer-links h4,
-    .dev-footer-contact h4 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.25rem;
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    .dev-footer-links ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .dev-footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .dev-footer-links a,
-    .dev-footer-contact a {
-      color: #71717a;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .dev-footer-links a:hover,
-    .dev-footer-contact a:hover {
-      color: #22d3ee;
-    }
-
-    .dev-footer-contact address {
-      font-style: normal;
-    }
-
-    .dev-footer-contact p {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      color: #71717a;
-      font-size: 0.95rem;
-    }
-
-    .dev-footer-contact svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: #22d3ee;
-    }
-
-    .dev-footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .dev-footer-copyright {
-      color: #71717a;
-      font-size: 0.875rem;
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    .dev-footer-cursor {
-      color: #22d3ee;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%,
-      50% {
-        opacity: 1;
-      }
-      51%,
-      100% {
-        opacity: 0;
-      }
-    }
-
-    .dev-footer-top {
+    .nf-footer-social a {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 44px;
       height: 44px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--nf-bg-tertiary);
       border-radius: 8px;
-      color: #a1a1aa;
+      color: var(--nf-text-secondary);
       transition: all 0.2s ease;
     }
 
-    .dev-footer-top:hover {
-      color: #22d3ee;
-      border-color: #22d3ee;
-      background: rgba(34, 211, 238, 0.1);
+    .nf-footer-social a:hover {
+      background: #e50914;
+      color: #fff;
       transform: translateY(-2px);
     }
 
-    .dev-footer-top svg {
+    .nf-footer-social svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .nf-footer-links h4,
+    .nf-footer-contact h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--nf-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .nf-footer-links ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nf-footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .nf-footer-links a,
+    .nf-footer-contact a {
+      color: var(--nf-text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nf-footer-links a:hover,
+    .nf-footer-contact a:hover {
+      color: #e50914;
+    }
+
+    .nf-footer-contact address {
+      font-style: normal;
+    }
+
+    .nf-footer-contact p {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: var(--nf-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .nf-footer-contact svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #e50914;
+    }
+
+    .nf-footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-top: 1px solid var(--nf-border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nf-footer-copyright {
+      color: var(--nf-text-muted);
+      font-size: 0.875rem;
+    }
+
+    .nf-footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--nf-bg-tertiary);
+      border-radius: 8px;
+      color: var(--nf-text);
+      transition: all 0.2s ease;
+    }
+
+    .nf-footer-top:hover {
+      background: #e50914;
+      transform: translateY(-2px);
+    }
+
+    .nf-footer-top svg {
       width: 20px;
       height: 20px;
     }

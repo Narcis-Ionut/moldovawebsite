@@ -36,31 +36,25 @@ const langToggleAriaLabel = lang === "ro" ? "Selectare limbă" : "Выбор я�
 const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть меню";
 ---
 
-<header class="site-header">
-  <div class="container nav-container">
-    <a href={homeLink} class="logo" aria-label={ariaLabel}>
-      <div class="logo-icon" aria-hidden="true">
+<header class="nf-header" id="header">
+  <div class="container nf-nav">
+    <a href={homeLink} class="nf-logo" aria-label={ariaLabel}>
+      <div class="nf-logo-icon" aria-hidden="true">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"></rect>
+          <rect width="32" height="32" rx="8" fill="#e50914"></rect>
           <path
             d="M8 12L12 20L16 12L20 20L24 12"
             stroke="white"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"></path>
-          <defs>
-            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
-              <stop stop-color="#22d3ee"></stop>
-              <stop offset="1" stop-color="#a855f7"></stop>
-            </linearGradient>
-          </defs>
         </svg>
       </div>
-      <span class="logo-text">moldovawebsite.md</span>
+      <span class="nf-logo-text">moldovawebsite.md</span>
     </a>
 
     <ul
-      class="nav-menu"
+      class="nf-nav-links"
       id="nav-menu"
       role="navigation"
       aria-label={navAriaLabel}
@@ -68,7 +62,7 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
       {
         navLinks.map((link) => (
           <li>
-            <a href={link.href} class="nav-link">
+            <a href={link.href} class="nf-nav-link">
               {link.label}
             </a>
           </li>
@@ -76,11 +70,12 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
       }
     </ul>
 
-    <div class="header-actions">
-      <div class="language-toggle" aria-label={langToggleAriaLabel}>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div class="nf-lang-toggle" aria-label={langToggleAriaLabel}>
         <a
           href={lang === "ro" ? "/ru" : "/"}
-          class="lang-btn"
+          class="nf-btn nf-btn-ghost nf-btn-sm"
+          style="text-transform: uppercase; font-weight: 700;"
           aria-label={lang === "ro"
             ? "Переключиться на русский"
             : "Switch to Romanian"}
@@ -89,13 +84,13 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
         </a>
       </div>
 
-      <a href={lang === "ro" ? "/contact/" : "/ru/contact/"} class="header-cta">
+      <a href={lang === "ro" ? "/contact/" : "/ru/contact/"} class="nf-btn nf-btn-primary nf-btn-sm nf-header-cta">
         {lang === "ro" ? "Contact" : "Контакт"}
       </a>
 
       <button
         type="button"
-        class="hamburger"
+        class="nf-hamburger"
         aria-label={hamburgerAriaLabel}
         aria-expanded="false"
         aria-controls="nav-menu"
@@ -107,153 +102,132 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
 </header>
 
 <style>
-  .site-header {
+  .nf-header {
     position: fixed;
-    inset-block-start: 0;
-    inline-size: 100%;
-    background: rgba(10, 10, 15, 0.85);
-    backdrop-filter: blur(12px) saturate(150%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    padding: 1rem 0;
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   }
 
-  .site-header.scrolled {
-    background: rgba(10, 10, 15, 0.95);
-    border-bottom-color: rgba(34, 211, 238, 0.2);
+  .nf-header.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   }
 
-  .nav-container {
+  .nf-header.scrolled .nf-logo-text {
+    color: #141414;
+  }
+
+  .nf-header.scrolled .nf-nav-link {
+    color: #444;
+  }
+
+  .nf-header.scrolled .nf-nav-link:hover {
+    color: #e50914;
+  }
+
+  .nf-header.scrolled .nf-hamburger span {
+    background: #141414;
+  }
+
+  .nf-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: 1rem;
   }
 
-  .logo {
+  .nf-logo {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: #fff;
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: #e50914;
     text-decoration: none;
     transition: all 0.3s ease;
   }
 
-  .logo:hover {
-    opacity: 0.8;
+  .nf-logo:hover {
+    transform: scale(1.02);
   }
 
-  .logo-icon {
-    inline-size: 36px;
-    block-size: 36px;
+  .nf-logo-icon {
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     overflow: hidden;
     flex-shrink: 0;
   }
 
-  .logo-icon svg {
+  .nf-logo-icon svg {
     width: 100%;
     height: 100%;
   }
 
-  .logo-text {
+  .nf-logo-text {
+    color: #141414;
     display: none;
+    font-weight: 800;
   }
 
   @media (min-width: 480px) {
-    .logo-text {
+    .nf-logo-text {
       display: block;
     }
   }
 
-  .nav-menu {
+  .nf-nav-links {
     display: none;
     list-style: none;
-    gap: 0.25rem;
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
   }
 
   @media (min-width: 1024px) {
-    .nav-menu {
+    .nf-nav-links {
       display: flex;
     }
   }
 
-  .nav-link {
+  .nf-nav-link {
     display: block;
     padding: 0.5rem 1rem;
     font-weight: 500;
     font-size: 0.875rem;
-    color: #a1a1aa;
+    color: #444;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: all 0.2s ease;
   }
 
-  .nav-link:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
+  .nf-nav-link:hover {
+    color: #e50914;
+    background: rgba(229, 9, 20, 0.1);
   }
 
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .language-toggle {
+  .nf-lang-toggle {
     display: flex;
   }
 
-  .lang-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #a1a1aa;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    font-family: "JetBrains Mono", monospace;
-  }
-
-  .lang-btn:hover {
-    color: #22d3ee;
-    border-color: #22d3ee;
-    background: rgba(34, 211, 238, 0.1);
-  }
-
-  .header-cta {
+  .nf-header-cta {
     display: none;
-    padding: 0.625rem 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #0a0a0f;
-    background: linear-gradient(135deg, #22d3ee 0%, #a855f7 100%);
-    text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .header-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
   }
 
   @media (min-width: 768px) {
-    .header-cta {
+    .nf-header-cta {
       display: inline-flex;
     }
   }
 
-  .hamburger {
+  .nf-hamburger {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,77 +236,80 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
     height: 40px;
     padding: 0;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
   }
 
   @media (min-width: 1024px) {
-    .hamburger {
+    .nf-hamburger {
       display: none;
     }
   }
 
-  .hamburger:hover {
-    border-color: #22d3ee;
-  }
-
-  .hamburger span {
+  .nf-hamburger span {
     display: block;
-    width: 20px;
+    width: 24px;
     height: 2px;
-    background: #fff;
+    background: #141414;
     margin: 0 auto;
     transition: all 0.3s ease;
+    border-radius: 2px;
   }
 
-  .hamburger[aria-expanded="true"] span:nth-child(1) {
+  .nf-hamburger[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
 
-  .hamburger[aria-expanded="true"] span:nth-child(2) {
+  .nf-hamburger[aria-expanded="true"] span:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger[aria-expanded="true"] span:nth-child(3) {
+  .nf-hamburger[aria-expanded="true"] span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
   /* Mobile menu styles */
   @media (max-width: 1023px) {
-    .nav-menu {
+    .nf-nav-links {
       position: fixed;
-      top: 73px;
+      top: 70px;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(10, 10, 15, 0.98);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(20px);
       flex-direction: column;
       padding: 2rem;
       gap: 0.5rem;
       transform: translateX(100%);
       transition: transform 0.3s ease;
+      z-index: 999;
     }
 
-    .nav-menu.active {
+    .nf-nav-links.active {
       display: flex;
       transform: translateX(0);
     }
 
-    .nav-link {
+    .nf-nav-link {
       padding: 1rem;
-      font-size: 1.125rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 1.25rem;
+      color: #141414;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 0;
+    }
+
+    .nf-nav-link:hover {
+      background: rgba(229, 9, 20, 0.05);
     }
   }
 </style>
 
 <script>
   // Header scroll effect
-  const header = document.querySelector(".site-header");
+  const header = document.getElementById("header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header?.classList.add("scrolled");
@@ -342,8 +319,8 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
   });
 
   // Mobile menu toggle
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
+  const hamburger = document.querySelector(".nf-hamburger");
+  const navMenu = document.getElementById("nav-menu");
 
   hamburger?.addEventListener("click", () => {
     const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
@@ -352,7 +329,7 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
   });
 
   // Close menu on link click
-  document.querySelectorAll(".nav-link").forEach((link) => {
+  document.querySelectorAll(".nf-nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       hamburger?.setAttribute("aria-expanded", "false");
       navMenu?.classList.remove("active");
