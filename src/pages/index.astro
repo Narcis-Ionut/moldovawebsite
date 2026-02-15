@@ -2,7 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../consts";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -22,7 +21,7 @@ const jsonLd = {
       "@type": "ProfessionalService",
       name: "moldovawebsite.md",
       description:
-        "Creare site web ieftin în Moldova, web design accesibil în Chișinău: site de prezentare, magazin online, SEO on-page, mentenanță.",
+        "Creare site web în Moldova cu pachete de la 50€, web design în Chișinău: site de prezentare, magazin online, SEO on-page și mentenanță.",
       areaServed: { "@type": "Country", name: "Moldova" },
       url: "https://moldovawebsite.md/",
       email: "contact@moldovawebsite.md",
@@ -224,8 +223,8 @@ const faqs = [
 <html lang="ro">
   <head>
     <BaseHead
-      title="Creare site web ieftin în Moldova | Web design accesibil Chișinău"
-      description={SITE_DESCRIPTION}
+      title="Creare site web în Moldova | Prețuri de la 50€"
+      description="Web design în Chișinău pentru siteuri de prezentare și magazine online. SEO on-page inclus, livrare rapidă, ofertă gratuită."
       canonicalUrl="https://moldovawebsite.md/"
       hreflangRo="https://moldovawebsite.md/"
       hreflangRu="https://moldovawebsite.md/ru/"

@@ -6,43 +6,93 @@ import "../../styles/dev-ru-blog-services.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Mentenanță Site Web în Moldova | Actualizări și Suport",
-  description:
-    "Servicii profesionale de mentenanță site web în Moldova: actualizări de securitate, backup, optimizare viteză, suport tehnic și modificări de conținut. Asistență în română pentru afaceri din Chișinău și Moldova.",
-  url: "https://moldovawebsite.md/serviciiBlog/mentenanta/",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "moldovawebsite.md",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chișinău",
-      addressCountry: "MD",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Mentenanță Site Web în Moldova | Actualizări și Suport",
+      description:
+        "Servicii profesionale de mentenanță site web în Moldova: actualizări de securitate, backup, optimizare viteză, suport tehnic și modificări de conținut. Asistență în română pentru afaceri din Chișinău și Moldova.",
+      url: "https://moldovawebsite.md/serviciiBlog/mentenanta/",
+      inLanguage: "ro-MD",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Acasă",
+            item: "https://moldovawebsite.md/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servicii",
+            item: "https://moldovawebsite.md/serviciiBlog/",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Mentenanță",
+            item: "https://moldovawebsite.md/serviciiBlog/mentenanta/",
+          },
+        ],
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Acasă",
-        item: "https://moldovawebsite.md/",
+    {
+      "@type": "Service",
+      serviceType: "Mentenanță site web",
+      name: "Servicii de mentenanță site în Moldova",
+      description:
+        "Actualizări de securitate, backup, monitorizare și optimizare de performanță pentru site-uri și magazine online.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chișinău",
+          addressCountry: "MD",
+        },
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Servicii",
-        item: "https://moldovawebsite.md/serviciiBlog/",
+      areaServed: { "@type": "Country", name: "Moldova" },
+      availableLanguage: ["ro", "ru"],
+      url: "https://moldovawebsite.md/serviciiBlog/mentenanta/",
+      offers: {
+        "@type": "Offer",
+        url: "https://moldovawebsite.md/contact/",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Mentenanță",
-        item: "https://moldovawebsite.md/serviciiBlog/mentenanta/",
-      },
-    ],
-  },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Ce include mentenanța lunară a site-ului?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Serviciul include actualizări, backup, verificări de securitate și intervenții tehnice de bază.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Mentenanța ajută la viteză și stabilitate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Monitorizăm erorile și optimizăm periodic performanța pentru a menține site-ul rapid și stabil.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Puteți prelua și site-uri făcute de alte echipe?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Facem o evaluare tehnică inițială, apoi propunem un plan de mentenanță potrivit.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 

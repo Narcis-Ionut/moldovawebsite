@@ -6,43 +6,93 @@ import "../../styles/dev-ru-blog-services.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Design Web Profesional în Moldova | Interfețe Moderne",
-  description:
-    "Servicii de design web în Moldova cu focus pe experiența utilizatorului (UX), interfețe moderne și optimizare pentru conversii. Soluții pentru afaceri din Chișinău și Moldova.",
-  url: "https://moldovawebsite.md/serviciiBlog/design-web/",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "moldovawebsite.md",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chișinău",
-      addressCountry: "MD",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Design Web Profesional în Moldova | Interfețe Moderne",
+      description:
+        "Servicii de design web în Moldova cu focus pe experiența utilizatorului (UX), interfețe moderne și optimizare pentru conversii. Soluții pentru afaceri din Chișinău și Moldova.",
+      url: "https://moldovawebsite.md/serviciiBlog/design-web/",
+      inLanguage: "ro-MD",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Acasă",
+            item: "https://moldovawebsite.md/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servicii",
+            item: "https://moldovawebsite.md/serviciiBlog/",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Design Web",
+            item: "https://moldovawebsite.md/serviciiBlog/design-web/",
+          },
+        ],
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Acasă",
-        item: "https://moldovawebsite.md/",
+    {
+      "@type": "Service",
+      serviceType: "Design web",
+      name: "Servicii de design web în Moldova",
+      description:
+        "Design orientat pe conversie, UX clar și interfețe moderne pentru site-uri de prezentare și ecommerce.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chișinău",
+          addressCountry: "MD",
+        },
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Servicii",
-        item: "https://moldovawebsite.md/serviciiBlog/",
+      areaServed: { "@type": "Country", name: "Moldova" },
+      availableLanguage: ["ro", "ru"],
+      url: "https://moldovawebsite.md/serviciiBlog/design-web/",
+      offers: {
+        "@type": "Offer",
+        url: "https://moldovawebsite.md/contact/",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Design Web",
-        item: "https://moldovawebsite.md/serviciiBlog/design-web/",
-      },
-    ],
-  },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Designul este adaptat pentru mobil?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Toate proiectele sunt gândite mobile-first, cu layout adaptiv pentru telefoane, tablete și desktop.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Includeți și partea de UX, nu doar aspect vizual?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Structura paginii, ierarhia informației și traseul utilizatorului sunt optimizate pentru conversie.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Se poate continua cu dezvoltarea după design?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Putem livra atât designul, cât și implementarea completă a site-ului în aceeași echipă.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 

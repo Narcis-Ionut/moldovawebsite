@@ -6,43 +6,93 @@ import "../../styles/dev-ru-blog-services.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Dezvoltare Web Profesională în Moldova | Programare Site",
-  description:
-    "Servicii de dezvoltare web în Moldova: site-uri de prezentare, magazine online, aplicații personalizate și integrări API. Soluții tehnice pentru afaceri din Chișinău și Moldova.",
-  url: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web/",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "moldovawebsite.md",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chișinău",
-      addressCountry: "MD",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Dezvoltare Web Profesională în Moldova | Programare Site",
+      description:
+        "Servicii de dezvoltare web în Moldova: site-uri de prezentare, magazine online, aplicații personalizate și integrări API. Soluții tehnice pentru afaceri din Chișinău și Moldova.",
+      url: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web/",
+      inLanguage: "ro-MD",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Acasă",
+            item: "https://moldovawebsite.md/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servicii",
+            item: "https://moldovawebsite.md/serviciiBlog/",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Dezvoltare Web",
+            item: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web/",
+          },
+        ],
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Acasă",
-        item: "https://moldovawebsite.md/",
+    {
+      "@type": "Service",
+      serviceType: "Dezvoltare web",
+      name: "Servicii de dezvoltare web în Moldova",
+      description:
+        "Implementare site-uri rapide, sigure și scalabile pentru afaceri locale: prezentare, ecommerce și funcționalități custom.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chișinău",
+          addressCountry: "MD",
+        },
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Servicii",
-        item: "https://moldovawebsite.md/serviciiBlog/",
+      areaServed: { "@type": "Country", name: "Moldova" },
+      availableLanguage: ["ro", "ru"],
+      url: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web/",
+      offers: {
+        "@type": "Offer",
+        url: "https://moldovawebsite.md/contact/",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Dezvoltare Web",
-        item: "https://moldovawebsite.md/serviciiBlog/dezvoltare-web/",
-      },
-    ],
-  },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Ce tipuri de site-uri dezvoltați?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dezvoltăm site-uri de prezentare, magazine online și proiecte web custom, în funcție de obiectivele afacerii.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Includeți optimizare de viteză și SEO tehnic?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Implementarea include bune practici de performanță, structură clară și elemente SEO tehnic on-page.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Se poate extinde proiectul după lansare?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Arhitectura este gândită să permită extinderea cu pagini, integrări și funcții noi după lansare.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 

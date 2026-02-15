@@ -6,43 +6,93 @@ import "../../styles/dev-ru-blog-services.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Creare Magazin Online în Moldova | E-commerce Accesibil",
-  description:
-    "Servicii de creare magazin online în Moldova: platforme e-commerce accesibile, optimizare pentru conversii, integrări de plată și livrare. Soluții pentru afaceri din Chișinău și Moldova.",
-  url: "https://moldovawebsite.md/serviciiBlog/magazin-online/",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "moldovawebsite.md",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chișinău",
-      addressCountry: "MD",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Creare Magazin Online în Moldova | E-commerce Accesibil",
+      description:
+        "Servicii de creare magazin online în Moldova: platforme e-commerce accesibile, optimizare pentru conversii, integrări de plată și livrare. Soluții pentru afaceri din Chișinău și Moldova.",
+      url: "https://moldovawebsite.md/serviciiBlog/magazin-online/",
+      inLanguage: "ro-MD",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Acasă",
+            item: "https://moldovawebsite.md/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servicii",
+            item: "https://moldovawebsite.md/serviciiBlog/",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Magazin Online",
+            item: "https://moldovawebsite.md/serviciiBlog/magazin-online/",
+          },
+        ],
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Acasă",
-        item: "https://moldovawebsite.md/",
+    {
+      "@type": "Service",
+      serviceType: "Creare magazin online",
+      name: "Servicii e-commerce în Moldova",
+      description:
+        "Creare magazin online cu catalog, checkout, plăți și opțiuni de livrare pentru afaceri din Moldova.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chișinău",
+          addressCountry: "MD",
+        },
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Servicii",
-        item: "https://moldovawebsite.md/serviciiBlog/",
+      areaServed: { "@type": "Country", name: "Moldova" },
+      availableLanguage: ["ro", "ru"],
+      url: "https://moldovawebsite.md/serviciiBlog/magazin-online/",
+      offers: {
+        "@type": "Offer",
+        url: "https://moldovawebsite.md/contact/",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Magazin Online",
-        item: "https://moldovawebsite.md/serviciiBlog/magazin-online/",
-      },
-    ],
-  },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Pot începe cu un magazin online mic și să-l extind ulterior?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Structurăm proiectul astfel încât să poți adăuga produse, categorii și funcționalități noi pe măsură ce afacerea crește.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Integrați plăți și livrare pentru Moldova?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Putem integra metode de plată și opțiuni de livrare relevante pentru piața locală.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Este inclusă optimizarea pentru mobil?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Magazinele sunt optimizate pentru telefoane și tablete, cu accent pe viteză și conversie.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 

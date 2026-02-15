@@ -3,7 +3,6 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "../../styles/dev-pages.css";
-import { SITE_URL } from "../../consts";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -24,6 +23,27 @@ const jsonLd = {
           item: "https://moldovawebsite.md/ru/preturi/",
         },
       ],
+    },
+    {
+      "@type": "Service",
+      serviceType: "Создание сайта",
+      name: "Создание сайтов в Молдове",
+      description:
+        "Пакеты для лендинга, сайта-визитки и мини-магазина с ценами от 50€.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+      },
+      areaServed: { "@type": "Country", name: "Молдова" },
+      url: "https://moldovawebsite.md/ru/preturi/",
+      offers: {
+        "@type": "AggregateOffer",
+        lowPrice: "50",
+        highPrice: "300",
+        offerCount: "3",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
     },
     {
       "@type": "OfferCatalog",
@@ -280,8 +300,8 @@ const testimonials = [
 <html lang="ru">
   <head>
     <BaseHead
-      title="Цены на создание сайтов 2026 | От 50 EUR - moldovawebsite.md"
-      description="Быстро и профессионально: доступная цена на сайт-визитку или интернет-магазин. Пакеты от 50 EUR. Бесплатная консультация и персональное предложение."
+      title="Цены на создание сайта в Молдове (2026) | От 50€"
+      description="Сколько стоит сайт в Молдове? Лендинг 50€, сайт-визитка 150€, мини-магазин 300€. Срок 2-14 дней, бесплатный расчёт."
       canonicalUrl="https://moldovawebsite.md/ru/preturi/"
       lang="ru"
       ogLocale="ru_MD"
@@ -318,6 +338,46 @@ const testimonials = [
             скрытых платежей – вы точно знаете, сколько заплатите.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Estimate -->
+    <section class="dev-section dev-section-alt" id="bystraya-ocenka">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Быстрая оценка</span>
+          <h2>Выберите пакет за 30 секунд</h2>
+          <p>Ориентир по бюджету до персонального расчёта.</p>
+        </div>
+        <div class="dev-pricing-grid">
+          <article class="dev-price-card">
+            <h3>Лендинг</h3>
+            <div class="dev-price">~50€</div>
+            <p>1 страница, быстрый запуск, форма заявки.</p>
+            <a href="/ru/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
+              Выбрать Basic
+            </a>
+          </article>
+          <article class="dev-price-card featured">
+            <h3>Сайт-визитка</h3>
+            <div class="dev-price">~150€</div>
+            <p>3-5 страниц, базовое SEO и готовая структура.</p>
+            <a href="/ru/contact/" class="dev-btn dev-btn-primary dev-btn-block">
+              Выбрать Standard
+            </a>
+          </article>
+          <article class="dev-price-card">
+            <h3>Мини-магазин</h3>
+            <div class="dev-price">~300€</div>
+            <p>Каталог, корзина, доставка и старт e-commerce.</p>
+            <a href="/ru/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
+              Выбрать Pro
+            </a>
+          </article>
+        </div>
+        <p class="dev-inline-note">
+          Это ориентир. Финальная стоимость рассчитывается после брифа.
+        </p>
       </div>
     </section>
 

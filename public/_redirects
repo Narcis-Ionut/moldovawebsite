@@ -13,8 +13,24 @@
 /ru/Условия                /ru/termeni/  301
 /ru/Политика-конфиденциальности.html  /ru/politica-confidentialitate/  301
 /ru/Политика-конфиденциальности       /ru/politica-confidentialitate/  301
+/ru/prices                 /ru/preturi/  301
+/ru/prices/                /ru/preturi/  301
+
+# URL-encoded variants (for crawlers linking encoded Cyrillic paths)
+/ru/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F.html /ru/ 301
+/ru/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F /ru/ 301
+/ru/%D0%A6%D0%B5%D0%BD%D1%8B.html /ru/preturi/ 301
+/ru/%D0%A6%D0%B5%D0%BD%D1%8B /ru/preturi/ 301
+/ru/%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B.html /ru/contact/ 301
+/ru/%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B /ru/contact/ 301
+/ru/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F.html /ru/termeni/ 301
+/ru/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F /ru/termeni/ 301
+/ru/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.html /ru/politica-confidentialitate/ 301
+/ru/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8 /ru/politica-confidentialitate/ 301
 
 # Russian service blog redirects
+/serviciiBlog/дизайн-веб.html         /ru/serviciiBlog/design-web/  301
+/serviciiBlog/дизайн-веб              /ru/serviciiBlog/design-web/  301
 /serviciiBlog/дизайн-веb.html         /ru/serviciiBlog/design-web/  301
 /serviciiBlog/дизайн-веb              /ru/serviciiBlog/design-web/  301
 /serviciiBlog/веб-разработка.html     /ru/serviciiBlog/dezvoltare-web/  301
@@ -25,4 +41,16 @@
 /serviciiBlog/интернет-магазин        /ru/serviciiBlog/magazin-online/  301
 /serviciiBlog/техническая-поддержка.html  /ru/serviciiBlog/mentenanta/  301
 /serviciiBlog/техническая-поддержка       /ru/serviciiBlog/mentenanta/  301
+/serviciiBlog/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B2%D0%B5%D0%B1.html /ru/serviciiBlog/design-web/ 301
+/serviciiBlog/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B2%D0%B5%D0%B1 /ru/serviciiBlog/design-web/ 301
+/serviciiBlog/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B2%D0%B5b.html /ru/serviciiBlog/design-web/ 301
+/serviciiBlog/%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B2%D0%B5b /ru/serviciiBlog/design-web/ 301
+/serviciiBlog/%D0%B2%D0%B5%D0%B1-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0.html /ru/serviciiBlog/dezvoltare-web/ 301
+/serviciiBlog/%D0%B2%D0%B5%D0%B1-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0 /ru/serviciiBlog/dezvoltare-web/ 301
+/serviciiBlog/seo-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F.html /ru/serviciiBlog/seo-on-page/ 301
+/serviciiBlog/seo-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F /ru/serviciiBlog/seo-on-page/ 301
+/serviciiBlog/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD.html /ru/serviciiBlog/magazin-online/ 301
+/serviciiBlog/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD /ru/serviciiBlog/magazin-online/ 301
+/serviciiBlog/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0.html /ru/serviciiBlog/mentenanta/ 301
+/serviciiBlog/%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0 /ru/serviciiBlog/mentenanta/ 301
 

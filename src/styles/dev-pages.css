@@ -337,6 +337,13 @@
   margin-bottom: 0;
 }
 
+.dev-inline-note {
+  margin: 1.05rem auto 0;
+  max-width: 760px;
+  text-align: center;
+  color: var(--dev-text-muted);
+}
+
 .dev-content-text {
   max-width: 900px;
   margin: 0 auto;

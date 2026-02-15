@@ -3,7 +3,6 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/dev-pages.css";
-import { SITE_URL } from "../consts";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -24,6 +23,27 @@ const jsonLd = {
           item: "https://moldovawebsite.md/preturi/",
         },
       ],
+    },
+    {
+      "@type": "Service",
+      serviceType: "Creare site web",
+      name: "Creare site web în Moldova",
+      description:
+        "Pachete pentru landing page, site de prezentare și mini-magazin cu prețuri de la 50€.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+      },
+      areaServed: { "@type": "Country", name: "Moldova" },
+      url: "https://moldovawebsite.md/preturi/",
+      offers: {
+        "@type": "AggregateOffer",
+        lowPrice: "50",
+        highPrice: "300",
+        offerCount: "3",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
     },
     {
       "@type": "OfferCatalog",
@@ -245,8 +265,8 @@ const faqs = [
 <html lang="ro">
   <head>
     <BaseHead
-      title="Preț creare site web 2026 | De la 50 EUR - moldovawebsite.md"
-      description="Rapid și profesional: preț mic pentru site de prezentare sau magazin online. Pachete de la 50 EUR. Consultație gratuită și ofertă personalizată."
+      title="Preț creare site web în Moldova (2026) | De la 50€"
+      description="Cât costă un site în Moldova? Pachete clare: Landing 50€, Site prezentare 150€, Mini-magazin 300€. Livrare 2-14 zile. Ofertă gratuită."
       canonicalUrl="https://moldovawebsite.md/preturi/"
       hreflangRo="https://moldovawebsite.md/preturi/"
       hreflangRu="https://moldovawebsite.md/ru/preturi/"
@@ -271,6 +291,46 @@ const faqs = [
           </p>
           <p>Web design accesibil în Chișinău și toată Moldova.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Estimate -->
+    <section class="dev-section dev-section-alt" id="estimare-rapida">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Estimare rapidă</span>
+          <h2>Unde te încadrezi în 30 secunde</h2>
+          <p>Alege scenariul care se apropie cel mai mult de proiectul tău.</p>
+        </div>
+        <div class="dev-pricing-grid">
+          <article class="dev-price-card">
+            <h3>Landing simplu</h3>
+            <div class="dev-price">~50€</div>
+            <p>1 pagină, prezentare rapidă, formular de contact.</p>
+            <a href="/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
+              Vreau Basic
+            </a>
+          </article>
+          <article class="dev-price-card featured">
+            <h3>Site de prezentare</h3>
+            <div class="dev-price">~150€</div>
+            <p>3-5 pagini, structură completă, SEO on-page esențial.</p>
+            <a href="/contact/" class="dev-btn dev-btn-primary dev-btn-block">
+              Vreau Standard
+            </a>
+          </article>
+          <article class="dev-price-card">
+            <h3>Mini-magazin</h3>
+            <div class="dev-price">~300€</div>
+            <p>Catalog, coș, livrare și setări pentru vânzări online.</p>
+            <a href="/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
+              Vreau Pro
+            </a>
+          </article>
+        </div>
+        <p class="dev-inline-note">
+          Estimare orientativă. Primești oferta finală după brief-ul proiectului.
+        </p>
       </div>
     </section>
 

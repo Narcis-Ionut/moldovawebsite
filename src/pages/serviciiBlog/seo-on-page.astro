@@ -6,43 +6,93 @@ import "../../styles/dev-ru-blog-services.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "SEO On-Page în Moldova | Optimizare Site pentru Google",
-  description:
-    "Servicii profesionale de SEO on-page în Moldova: optimizare tehnică, meta taguri, conținut local, structură site și îmbunătățire viteza încărcare. Soluții pentru afaceri din Chișinău și Moldova.",
-  url: "https://moldovawebsite.md/serviciiBlog/seo-on-page/",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "moldovawebsite.md",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Chișinău",
-      addressCountry: "MD",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "SEO on-page în Moldova | Audit + Optimizare Google",
+      description:
+        "Audit tehnic, meta-taguri, structură și viteză pentru afaceri din Chișinău. Plan clar și implementare SEO on-page pentru rezultate în Google.",
+      url: "https://moldovawebsite.md/serviciiBlog/seo-on-page/",
+      inLanguage: "ro-MD",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Acasă",
+            item: "https://moldovawebsite.md/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Servicii",
+            item: "https://moldovawebsite.md/serviciiBlog/",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "SEO On-Page",
+            item: "https://moldovawebsite.md/serviciiBlog/seo-on-page/",
+          },
+        ],
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Acasă",
-        item: "https://moldovawebsite.md/",
+    {
+      "@type": "Service",
+      serviceType: "SEO on-page",
+      name: "Servicii SEO on-page în Moldova",
+      description:
+        "Optimizare tehnică, meta-taguri, structură și viteză pentru vizibilitate organică în Google.",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chișinău",
+          addressCountry: "MD",
+        },
       },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Servicii",
-        item: "https://moldovawebsite.md/serviciiBlog/",
+      areaServed: { "@type": "Country", name: "Moldova" },
+      availableLanguage: ["ro", "ru"],
+      url: "https://moldovawebsite.md/serviciiBlog/seo-on-page/",
+      offers: {
+        "@type": "Offer",
+        url: "https://moldovawebsite.md/contact/",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "SEO On-Page",
-        item: "https://moldovawebsite.md/serviciiBlog/seo-on-page/",
-      },
-    ],
-  },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "În cât timp apar rezultatele SEO on-page?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Primele semnale apar de regulă în primele săptămâni, iar creșterea stabilă depinde de concurență și starea inițială a site-ului.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Includeți audit tehnic și implementare?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Procesul include audit, prioritizare și implementarea optimizărilor on-page pe paginile relevante.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Lucrați și pe site-uri deja lansate?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Da. Putem optimiza atât site-uri noi, cât și site-uri existente care au nevoie de structură SEO mai bună.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 
@@ -50,8 +100,8 @@ const jsonLd = {
 <html lang="ro">
   <head>
     <BaseHead
-      title="SEO On-Page în Moldova"
-      description="Servicii profesionale de SEO on-page în Moldova: optimizare tehnică, meta taguri, conținut local, structură site și îmbunătățire viteza încărcare. Soluții pentru afaceri din Chișinău și toată țara."
+      title="SEO on-page în Moldova | Audit + Optimizare Google"
+      description="Audit tehnic, meta-taguri, structură și viteză pentru afaceri din Chișinău. Plan clar + implementare."
       canonicalUrl="https://moldovawebsite.md/serviciiBlog/seo-on-page/"
       hreflangRo="https://moldovawebsite.md/serviciiBlog/seo-on-page/"
       hreflangRu="https://moldovawebsite.md/ru/serviciiBlog/seo-on-page/"
