@@ -28,6 +28,26 @@ const navLinks =
       ];
 
 const homeLink = lang === "ro" ? "/" : "/ru";
+const normalizedNavLinks =
+  lang === "ro"
+    ? [
+        { href: "/", label: "Acasă" },
+        { href: "/serviciiBlog/", label: "Servicii" },
+        { href: "/about/", label: "Despre" },
+        { href: "/blog/", label: "Blog" },
+        { href: "/preturi/", label: "Prețuri" },
+        { href: "/contact/", label: "Contact" },
+      ]
+    : [
+        { href: "/ru/", label: "Главная" },
+        { href: "/ru/serviciiBlog/", label: "Услуги" },
+        { href: "/ru/about/", label: "О нас" },
+        { href: "/ru/blog/", label: "Блог" },
+        { href: "/ru/preturi/", label: "Цены" },
+        { href: "/ru/contact/", label: "Контакты" },
+      ];
+const normalizedHomeLink = lang === "ro" ? "/" : "/ru/";
+const normalizedLangToggleLink = lang === "ro" ? "/ru/" : "/";
 const ariaLabel =
   lang === "ro" ? "moldovawebsite.md - Acasă" : "moldovawebsite.md - Главная";
 const navAriaLabel =
@@ -38,7 +58,7 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
 
 <header class="nf-header" id="header">
   <div class="container nf-nav">
-    <a href={homeLink} class="nf-logo" aria-label={ariaLabel}>
+    <a href={normalizedHomeLink} class="nf-logo" aria-label={ariaLabel}>
       <div class="nf-logo-icon" aria-hidden="true">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="32" height="32" rx="8" fill="#e50914"></rect>
@@ -60,7 +80,7 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
       aria-label={navAriaLabel}
     >
       {
-        navLinks.map((link) => (
+        normalizedNavLinks.map((link) => (
           <li>
             <a href={link.href} class="nf-nav-link">
               {link.label}
@@ -73,7 +93,7 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
     <div class="nf-header-actions">
       <div class="nf-lang-toggle" aria-label={langToggleAriaLabel}>
         <a
-          href={lang === "ro" ? "/ru" : "/"}
+          href={normalizedLangToggleLink}
           class="nf-btn nf-btn-ghost nf-btn-sm nf-lang-switch"
           aria-label={lang === "ro"
             ? "Переключиться на русский"

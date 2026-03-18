@@ -1,0 +1,198 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/dev-pages.css";
+
+const services = [
+  {
+    href: "/serviciiBlog/design-web/",
+    title: "Design web",
+    description:
+      "Interfețe clare, responsive și orientate pe conversie pentru afaceri locale din Chișinău și toată Moldova.",
+  },
+  {
+    href: "/serviciiBlog/dezvoltare-web/",
+    title: "Dezvoltare web",
+    description:
+      "Implementare rapidă, structură curată și performanță bună pentru site-uri de prezentare și proiecte custom.",
+  },
+  {
+    href: "/serviciiBlog/seo-on-page/",
+    title: "SEO on-page",
+    description:
+      "Audit tehnic, meta-taguri, structură și optimizare pentru interogări comerciale locale în Google.",
+  },
+  {
+    href: "/serviciiBlog/magazin-online/",
+    title: "Magazin online",
+    description:
+      "Soluții e-commerce accesibile cu catalog, checkout, plăți și livrare pentru piața din Moldova.",
+  },
+  {
+    href: "/serviciiBlog/mentenanta/",
+    title: "Mentenanță",
+    description:
+      "Actualizări, monitorizare și suport continuu pentru a menține site-ul sigur și rapid.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Acasă",
+          item: "https://moldovawebsite.md/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Servicii",
+          item: "https://moldovawebsite.md/serviciiBlog/",
+        },
+      ],
+    },
+    {
+      "@type": "CollectionPage",
+      name: "Servicii web în Moldova",
+      description:
+        "Hub de servicii pentru design web, dezvoltare web, SEO on-page, magazine online și mentenanță în Moldova.",
+      url: "https://moldovawebsite.md/serviciiBlog/",
+      inLanguage: "ro-MD",
+    },
+    {
+      "@type": "ItemList",
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://moldovawebsite.md${service.href}`,
+        name: service.title,
+      })),
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <BaseHead
+      title="Servicii Web în Moldova | Design, Dezvoltare, SEO, Ecommerce"
+      description="Descoperă serviciile noastre web pentru Moldova: design web, dezvoltare web, SEO on-page, magazine online și mentenanță."
+      canonicalUrl="https://moldovawebsite.md/serviciiBlog/"
+      hreflangRo="https://moldovawebsite.md/serviciiBlog/"
+      hreflangRu="https://moldovawebsite.md/ru/serviciiBlog/"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body>
+    <div class="dev-grid-pattern"></div>
+    <Header lang="ro" />
+
+    <section class="dev-hero">
+      <div class="container">
+        <div class="dev-hero-content">
+          <span class="dev-section-tag">Servicii</span>
+          <h1>Servicii web pentru afaceri din Moldova</h1>
+          <p>
+            Aici este hub-ul principal pentru serviciile noastre. Fiecare pagină
+            de mai jos răspunde unei intenții diferite: design, dezvoltare,
+            SEO, ecommerce sau suport continuu.
+          </p>
+          <p>
+            Dacă vrei trafic organic mai bun, aceste pagini trebuie să fie și
+            ușor de găsit pentru utilizatori, și ușor de interpretat de Google.
+          </p>
+          <div class="dev-hero-actions">
+            <a href="/preturi/" class="dev-btn dev-btn-primary">Vezi prețuri</a>
+            <a href="/contact/" class="dev-btn dev-btn-secondary">Solicită ofertă</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Hub</span>
+          <h2>Alege serviciul potrivit</h2>
+          <p>Intră direct pe pagina relevantă pentru proiectul sau obiectivul tău.</p>
+        </div>
+        <div class="dev-info-grid">
+          {
+            services.map((service) => (
+              <a href={service.href} class="dev-info-card">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <span class="dev-link-accent">Vezi detalii</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Cum alegi</span>
+          <h2>Unde să intri prima dată</h2>
+          <p>Folosește traseul de mai jos dacă încă nu e clar ce pagină îți trebuie.</p>
+        </div>
+        <div class="dev-info-grid">
+          <div class="dev-info-card">
+            <h3>Ai nevoie de identitate vizuală</h3>
+            <p>
+              Începe cu <a href="/serviciiBlog/design-web/">Design web</a> dacă
+              vrei un site mai clar, mai modern și mai convingător.
+            </p>
+          </div>
+          <div class="dev-info-card">
+            <h3>Ai nevoie de implementare</h3>
+            <p>
+              Intră pe <a href="/serviciiBlog/dezvoltare-web/">Dezvoltare web</a>
+              pentru partea tehnică, structură și livrare.
+            </p>
+          </div>
+          <div class="dev-info-card">
+            <h3>Vrei mai mult trafic din Google</h3>
+            <p>
+              Mergi direct la <a href="/serviciiBlog/seo-on-page/">SEO on-page</a>
+              dacă problema principală este rankingul și vizibilitatea.
+            </p>
+          </div>
+          <div class="dev-info-card">
+            <h3>Vrei să vinzi online</h3>
+            <p>
+              Pentru produse și comenzi, pagina corectă este
+              <a href="/serviciiBlog/magazin-online/">Magazin online</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-cta">
+      <div class="container">
+        <div class="dev-cta-content">
+          <h2>Ai nevoie de recomandarea potrivită, nu doar de o pagină în plus?</h2>
+          <p>
+            Trimite-ne obiectivul tău principal și te direcționăm spre soluția
+            care are sens pentru buget, structură și ranking.
+          </p>
+          <a href="/contact/" class="dev-btn dev-btn-primary dev-btn-lg">
+            Contactează-ne
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ro" />
+    <script src="/script.js" defer></script>
+  </body>
+</html>

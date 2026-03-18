@@ -11,11 +11,6 @@ const jsonLd = {
       name: "moldovawebsite.md",
       url: "https://moldovawebsite.md/",
       inLanguage: "ro-MD",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://moldovawebsite.md/cauta?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "ProfessionalService",
@@ -32,7 +27,6 @@ const jsonLd = {
         addressLocality: "Chișinău",
         addressCountry: "MD",
       },
-      sameAs: ["https://www.facebook.com/", "https://www.linkedin.com/"],
     },
     {
       "@type": "FAQPage",
@@ -104,6 +98,44 @@ const services = [
     title: "Mentenanță & suport local",
     description:
       "Actualizări, securitate și asistență în română & rusă, când ai nevoie.",
+  },
+];
+
+const linkedServices = [
+  {
+    icon: "🎨",
+    title: "Design modern & UX",
+    description:
+      "Interfețe clare, ușor de folosit și orientate pe conversie pentru afaceri locale.",
+    href: "/serviciiBlog/design-web/",
+  },
+  {
+    icon: "⚡",
+    title: "Performanță & viteză",
+    description:
+      "Implementare rapidă, structură curată și bune practici pentru timpi de încărcare buni.",
+    href: "/serviciiBlog/dezvoltare-web/",
+  },
+  {
+    icon: "🔍",
+    title: "SEO on-page pentru Moldova",
+    description:
+      "Meta-taguri, structură și optimizare pentru căutări comerciale locale în Google.",
+    href: "/serviciiBlog/seo-on-page/",
+  },
+  {
+    icon: "🛒",
+    title: "Magazin online accesibil",
+    description:
+      "Soluții ecommerce cu catalog, checkout, plăți și livrare pentru piața locală.",
+    href: "/serviciiBlog/magazin-online/",
+  },
+  {
+    icon: "🛠",
+    title: "Mentenanță & suport local",
+    description:
+      "Actualizări, monitorizare și suport continuu pentru site-uri lansate deja.",
+    href: "/serviciiBlog/mentenanta/",
   },
 ];
 
@@ -284,12 +316,12 @@ const faqs = [
         </div>
         <div class="nf-services-grid">
           {
-            services.map((service) => (
-              <div class="nf-service-card">
+            linkedServices.map((service) => (
+              <a href={service.href} class="nf-service-card">
                 <div class="nf-service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-              </div>
+              </a>
             ))
           }
         </div>

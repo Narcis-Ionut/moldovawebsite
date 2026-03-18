@@ -853,9 +853,26 @@
 }
 
 .dev-service-card {
+  display: block;
+  height: 100%;
   position: relative;
   text-align: left;
   border-left: 3px solid color-mix(in srgb, var(--card-color, var(--dev-accent)) 70%, white 10%);
+}
+
+.dev-service-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dev-info-card {
+  display: block;
+  height: 100%;
+}
+
+.dev-info-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .dev-card-amber { --card-color: #f59e0b; }

@@ -1,0 +1,199 @@
+---
+import BaseHead from "../../../components/BaseHead.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import "../../../styles/dev-pages.css";
+
+const services = [
+  {
+    href: "/ru/serviciiBlog/design-web/",
+    title: "Веб-дизайн",
+    description:
+      "Современные интерфейсы, адаптивная подача и структура, которая помогает лучше конвертировать трафик.",
+  },
+  {
+    href: "/ru/serviciiBlog/dezvoltare-web/",
+    title: "Веб-разработка",
+    description:
+      "Техническая реализация, производительность и чистая структура для сайтов и кастомных проектов.",
+  },
+  {
+    href: "/ru/serviciiBlog/seo-on-page/",
+    title: "SEO on-page",
+    description:
+      "Технический аудит, мета-теги, структура и оптимизация страниц под коммерческие запросы в Google.",
+  },
+  {
+    href: "/ru/serviciiBlog/magazin-online/",
+    title: "Интернет-магазин",
+    description:
+      "E-commerce решения для каталога, заказа, оплат и доставки на рынке Молдовы.",
+  },
+  {
+    href: "/ru/serviciiBlog/mentenanta/",
+    title: "Техническая поддержка",
+    description:
+      "Обновления, мониторинг и постоянная поддержка, чтобы сайт оставался быстрым и надежным.",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Главная",
+          item: "https://moldovawebsite.md/ru/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Услуги",
+          item: "https://moldovawebsite.md/ru/serviciiBlog/",
+        },
+      ],
+    },
+    {
+      "@type": "CollectionPage",
+      name: "Веб-услуги в Молдове",
+      description:
+        "Хаб по услугам веб-дизайна, разработки, SEO on-page, интернет-магазинов и поддержки в Молдове.",
+      url: "https://moldovawebsite.md/ru/serviciiBlog/",
+      inLanguage: "ru-MD",
+    },
+    {
+      "@type": "ItemList",
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://moldovawebsite.md${service.href}`,
+        name: service.title,
+      })),
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <BaseHead
+      title="Веб-услуги в Молдове | Дизайн, Разработка, SEO, Ecommerce"
+      description="Изучите наши веб-услуги для Молдовы: веб-дизайн, разработка, SEO on-page, интернет-магазины и техническая поддержка."
+      canonicalUrl="https://moldovawebsite.md/ru/serviciiBlog/"
+      hreflangRo="https://moldovawebsite.md/serviciiBlog/"
+      hreflangRu="https://moldovawebsite.md/ru/serviciiBlog/"
+      lang="ru"
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body>
+    <div class="dev-grid-pattern"></div>
+    <Header lang="ru" />
+
+    <section class="dev-hero">
+      <div class="container">
+        <div class="dev-hero-content">
+          <span class="dev-section-tag">Услуги</span>
+          <h1>Веб-услуги для бизнеса в Молдове</h1>
+          <p>
+            Это основной хаб по нашим услугам. Каждая страница ниже отвечает за
+            отдельный интент: дизайн, разработку, SEO, ecommerce или поддержку.
+          </p>
+          <p>
+            Если задача в трафике и ранжировании, такая структура помогает и
+            пользователям, и Google быстрее находить нужную страницу.
+          </p>
+          <div class="dev-hero-actions">
+            <a href="/ru/preturi/" class="dev-btn dev-btn-primary">Посмотреть цены</a>
+            <a href="/ru/contact/" class="dev-btn dev-btn-secondary">Получить оффер</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Хаб</span>
+          <h2>Выберите нужную услугу</h2>
+          <p>Переходите сразу на релевантную страницу под ваш проект или цель.</p>
+        </div>
+        <div class="dev-info-grid">
+          {
+            services.map((service) => (
+              <a href={service.href} class="dev-info-card">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <span class="dev-link-accent">Подробнее</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Как выбрать</span>
+          <h2>С какой страницы начать</h2>
+          <p>Ниже короткий маршрут, если вы еще не определились, куда идти.</p>
+        </div>
+        <div class="dev-info-grid">
+          <div class="dev-info-card">
+            <h3>Нужен визуальный уровень выше</h3>
+            <p>
+              Начните с <a href="/ru/serviciiBlog/design-web/">Веб-дизайна</a>,
+              если хотите более сильную подачу и лучшее восприятие бренда.
+            </p>
+          </div>
+          <div class="dev-info-card">
+            <h3>Нужна техническая реализация</h3>
+            <p>
+              Переходите в
+              <a href="/ru/serviciiBlog/dezvoltare-web/">Веб-разработку</a> для
+              структуры, реализации и запуска.
+            </p>
+          </div>
+          <div class="dev-info-card">
+            <h3>Нужен рост из Google</h3>
+            <p>
+              Страница <a href="/ru/serviciiBlog/seo-on-page/">SEO on-page</a>
+              нужна, если главный вопрос в позициях и органическом трафике.
+            </p>
+          </div>
+          <div class="dev-info-card">
+            <h3>Нужны онлайн-продажи</h3>
+            <p>
+              Для каталога и заказов идите в
+              <a href="/ru/serviciiBlog/magazin-online/">Интернет-магазин</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-cta">
+      <div class="container">
+        <div class="dev-cta-content">
+          <h2>Нужна не лишняя страница, а правильное направление?</h2>
+          <p>
+            Напишите, какая цель у проекта, и мы подскажем страницу и услугу,
+            которые реально имеют смысл для бюджета, структуры и ранжирования.
+          </p>
+          <a href="/ru/contact/" class="dev-btn dev-btn-primary dev-btn-lg">
+            Связаться с нами
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang="ru" />
+    <script src="/script.js" defer></script>
+  </body>
+</html>

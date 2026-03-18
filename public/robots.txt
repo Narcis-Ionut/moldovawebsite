@@ -22,4 +22,4 @@ User-agent: GrokBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://moldovawebsite.md/sitemap.xml
+Sitemap: https://moldovawebsite.md/sitemap-index.xml

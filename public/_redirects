@@ -1,3 +1,6 @@
+# Sitemap alias
+/sitemap.xml              /sitemap-index.xml 301
+
 # HTML extension removal
 /index.html                /            301
 /*.html                    /:splat/ 301

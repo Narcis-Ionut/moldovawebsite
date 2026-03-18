@@ -12,11 +12,6 @@ const jsonLd = {
       name: "moldovawebsite.md",
       url: "https://moldovawebsite.md/ru/",
       inLanguage: "ru-MD",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://moldovawebsite.md/ru/poisk?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "ProfessionalService",
@@ -33,7 +28,6 @@ const jsonLd = {
         addressLocality: "Кишинев",
         addressCountry: "MD",
       },
-      sameAs: ["https://www.facebook.com/", "https://www.linkedin.com/"],
     },
     {
       "@type": "FAQPage",
@@ -110,6 +104,49 @@ const services = [
     description:
       "Обновления, безопасность и помощь на румынском и русском языках, когда вам необходимо.",
     cardClass: "dev-card-cyan",
+  },
+];
+
+const linkedServices = [
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.048 4.025a3 3 0 01-4.293 0l-1.172-1.172a3 3 0 010-4.242l7.586-7.586a3 3 0 014.242 0l1.172 1.172a3 3 0 010 4.242l-7.586 7.586z"/><path d="M14.25 9.75L16.5 12m0 0l2.25 2.25M16.5 12l2.25-2.25M16.5 12l-2.25 2.25"/></svg>`,
+    title: "Современный дизайн и UX",
+    description:
+      "Понятные интерфейсы и визуальная подача, которые улучшают восприятие и конверсию.",
+    cardClass: "dev-card-amber",
+    href: "/ru/serviciiBlog/design-web/",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>`,
+    title: "Производительность и скорость",
+    description:
+      "Чистая структура, хорошая загрузка и надежная техническая реализация под коммерческий сайт.",
+    cardClass: "dev-card-emerald",
+    href: "/ru/serviciiBlog/dezvoltare-web/",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>`,
+    title: "SEO on-page для Молдовы",
+    description:
+      "Мета-теги, структура страниц и оптимизация под локальные коммерческие запросы в Google.",
+    cardClass: "dev-card-violet",
+    href: "/ru/serviciiBlog/seo-on-page/",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>`,
+    title: "Доступный интернет-магазин",
+    description:
+      "Каталог, корзина, оплаты и доставка для ecommerce-проектов на рынке Молдовы.",
+    cardClass: "dev-card-pink",
+    href: "/ru/serviciiBlog/magazin-online/",
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>`,
+    title: "Поддержка и обслуживание",
+    description:
+      "Обновления, мониторинг и поддержка после запуска, чтобы сайт не терял качество.",
+    cardClass: "dev-card-cyan",
+    href: "/ru/serviciiBlog/mentenanta/",
   },
 ];
 
@@ -391,12 +428,12 @@ const faqs = [
         </div>
         <div class="dev-services-grid">
           {
-            services.map((service) => (
-              <div class={`dev-service-card ${service.cardClass}`}>
+            linkedServices.map((service) => (
+              <a href={service.href} class={`dev-service-card ${service.cardClass}`}>
                 <div class="dev-service-icon" set:html={service.icon} />
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-              </div>
+              </a>
             ))
           }
         </div>
