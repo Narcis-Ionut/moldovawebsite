@@ -47,6 +47,8 @@ const jsonLd = {
       title={title}
       description={description}
       canonicalUrl={postUrl}
+      image={heroImage}
+      ogType="article"
       jsonLd={jsonLd}
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -119,7 +121,7 @@ const jsonLd = {
         font-family: var(--font-heading);
         font-size: clamp(var(--step-4), 4vw, var(--step-5));
         font-weight: 800;
-        letter-spacing: -0.02em;
+        letter-spacing: 0;
         line-height: 1.1;
         color: var(--brand-1);
       }

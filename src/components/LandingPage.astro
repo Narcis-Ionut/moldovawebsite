@@ -1,0 +1,332 @@
+---
+import BaseHead from "./BaseHead.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import "../styles/dev-pages.css";
+import type { LandingPageData } from "../data/landingPages.types";
+
+interface Props {
+  lang: "ro" | "ru";
+  page: LandingPageData;
+}
+
+const { lang, page } = Astro.props;
+
+const ui =
+  lang === "ro"
+    ? {
+        homeLabel: "Acasa",
+        painTag: "Intentie",
+        painTitle: "De ce exista aceasta pagina",
+        painIntro:
+          "Pagina raspunde unui cluster de cautari care merita propria destinatie comerciala.",
+        deliverTag: "Livrare",
+        deliverTitle: "Ce include directia propusa",
+        deliverIntro:
+          "Obiectivul este sa legam intentia de cautare de o pagina mai clara, mai utila si mai usor de convertit.",
+        processTag: "Proces",
+        processTitle: "Cum lucram pe astfel de pagini",
+        processIntro:
+          "Nu adaugam continut de umplutura. Fiecare etapa are rol direct in ranking si conversie.",
+        faqTag: "FAQ",
+        faqTitle: "Intrebari frecvente",
+        faqIntro:
+          "Cele mai comune clarificari pentru acest tip de intentie comerciala.",
+        relatedTag: "Legaturi utile",
+        relatedTitle: "Urmatorii pasi relevanti",
+        relatedIntro:
+          "Alege pagina potrivita daca intentia utilizatorului se muta spre pret, design, SEO sau contact direct.",
+      }
+    : {
+        homeLabel: "Главная",
+        painTag: "Интент",
+        painTitle: "Почему этой странице нужен отдельный запрос",
+        painIntro:
+          "Страница закрывает коммерческий кластер, которому нужна своя понятная посадочная точка.",
+        deliverTag: "Что даем",
+        deliverTitle: "Что входит в такую страницу",
+        deliverIntro:
+          "Цель — связать поисковый интент с более ясной коммерческой подачей и лучшим следующим шагом.",
+        processTag: "Процесс",
+        processTitle: "Как мы работаем с такими страницами",
+        processIntro:
+          "Мы не добавляем пустой текст. Каждый этап нужен либо для ранжирования, либо для конверсии.",
+        faqTag: "FAQ",
+        faqTitle: "Частые вопросы",
+        faqIntro:
+          "Ключевые уточнения для этого типа коммерческого спроса.",
+        relatedTag: "Полезные переходы",
+        relatedTitle: "Следующие релевантные страницы",
+        relatedIntro:
+          "Если пользователь смещается к цене, дизайну, SEO или прямому контакту, переход должен быть очевидным.",
+      };
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: ui.homeLabel,
+          item: lang === "ro" ? "https://moldovawebsite.md/" : "https://moldovawebsite.md/ru/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: page.breadcrumbLabel,
+          item: page.canonicalUrl,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      name: page.title,
+      description: page.description,
+      url: page.canonicalUrl,
+      inLanguage: lang === "ro" ? "ro-MD" : "ru-MD",
+    },
+    {
+      "@type": "Service",
+      serviceType: page.serviceType,
+      name: page.serviceName,
+      description: page.serviceDescription,
+      provider: {
+        "@type": "ProfessionalService",
+        name: "moldovawebsite.md",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: lang === "ro" ? "Chisinau" : "Кишинев",
+          addressCountry: "MD",
+        },
+      },
+      areaServed: {
+        "@type": "Country",
+        name: lang === "ro" ? "Moldova" : "Молдова",
+      },
+      availableLanguage: ["ro", "ru"],
+      url: page.canonicalUrl,
+      offers: {
+        "@type": "Offer",
+        url: page.primaryCta.href.startsWith("http")
+          ? page.primaryCta.href
+          : `https://moldovawebsite.md${page.primaryCta.href}`,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: page.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <BaseHead
+      title={page.title}
+      description={page.description}
+      canonicalUrl={page.canonicalUrl}
+      hreflangRo={page.hreflangRo}
+      hreflangRu={page.hreflangRu}
+      lang={lang}
+      ogLocale={lang === "ro" ? "ro_MD" : "ru_MD"}
+      jsonLd={jsonLd}
+    />
+  </head>
+  <body class="dev-theme">
+    <div class="dev-grid-pattern"></div>
+    <Header lang={lang} />
+
+    <section class="dev-hero">
+      <div class="container">
+        <div class="dev-hero-grid">
+          <div class="dev-hero-content">
+            <span class="dev-hero-badge">{page.heroTag}</span>
+            <h1>{page.h1}</h1>
+            <p class="dev-hero-subtitle">{page.intro}</p>
+            <p>{page.lead}</p>
+            <div class="dev-chip-group">
+              {page.highlights.map((highlight) => (
+                <span class="dev-chip active">{highlight}</span>
+              ))}
+            </div>
+            <div class="dev-hero-actions">
+              <a href={page.primaryCta.href} class="dev-btn dev-btn-primary">
+                {page.primaryCta.title}
+              </a>
+              <a href={page.secondaryCta.href} class="dev-btn dev-btn-secondary">
+                {page.secondaryCta.title}
+              </a>
+            </div>
+            <div class="dev-hero-stats">
+              {page.stats.map((stat) => (
+                <div class="dev-stat">
+                  <div class="dev-stat-value">{stat.value}</div>
+                  <div class="dev-stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="dev-code-window">
+            <div class="dev-code-header">
+              <span class="dev-code-dot red"></span>
+              <span class="dev-code-dot yellow"></span>
+              <span class="dev-code-dot green"></span>
+              <span class="dev-terminal-title">intent-map.ts</span>
+            </div>
+            <div class="dev-code-body">
+              {page.painPoints.map((item, index) => (
+                <>
+                  <div class="dev-code-line">
+                    <span class="dev-code-num">{index + 1}</span>
+                    <span>
+                      <span class="dev-code-keyword">cluster</span>{" "}
+                      <span class="dev-code-string">"{item.title}"</span>
+                    </span>
+                  </div>
+                  <div class="dev-terminal-output">{item.description}</div>
+                </>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="dev-breadcrumbs" aria-label="breadcrumb">
+      <div class="container">
+        <ol>
+          <li>
+            <a href={lang === "ro" ? "/" : "/ru/"}>{ui.homeLabel}</a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <span aria-current="page">{page.breadcrumbLabel}</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">{ui.painTag}</span>
+          <h2>{ui.painTitle}</h2>
+          <p>{ui.painIntro}</p>
+        </div>
+        <div class="dev-info-grid">
+          {page.painPoints.map((item) => (
+            <div class="dev-info-card">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">{ui.deliverTag}</span>
+          <h2>{ui.deliverTitle}</h2>
+          <p>{ui.deliverIntro}</p>
+        </div>
+        <div class="dev-services-grid">
+          {page.deliverables.map((item) => (
+            <div class="dev-service-card">
+              <div class="dev-service-icon">{item.title.slice(0, 1)}</div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">{ui.processTag}</span>
+          <h2>{ui.processTitle}</h2>
+          <p>{ui.processIntro}</p>
+        </div>
+        <div class="dev-process-grid">
+          {page.process.map((item, index) => (
+            <div class="dev-process-step">
+              <div class="dev-process-number">{index + 1}</div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">{ui.faqTag}</span>
+          <h2>{ui.faqTitle}</h2>
+          <p>{ui.faqIntro}</p>
+        </div>
+        <div class="dev-faq-list">
+          {page.faqs.map((faq) => (
+            <details class="dev-faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">{ui.relatedTag}</span>
+          <h2>{ui.relatedTitle}</h2>
+          <p>{ui.relatedIntro}</p>
+        </div>
+        <div class="dev-info-grid">
+          {page.relatedLinks.map((link) => (
+            <a href={link.href} class="dev-info-card">
+              <h3>{link.title}</h3>
+              <p>{link.description}</p>
+              <span class="dev-link-accent">{link.href}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-cta">
+      <div class="container">
+        <div class="dev-cta-content">
+          <h2>{page.h1}</h2>
+          <p>{page.description}</p>
+          <a href={page.primaryCta.href} class="dev-btn dev-btn-primary dev-btn-lg">
+            {page.primaryCta.title}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Footer lang={lang} />
+    <script src="/script.js" defer></script>
+  </body>
+</html>

@@ -3,6 +3,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "../../styles/dev-pages.css";
+import { roLandingCards } from "../../data/landingPages.ro";
 
 const services = [
   {
@@ -173,6 +174,31 @@ const jsonLd = {
               <a href="/serviciiBlog/magazin-online/">Magazin online</a>.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Cautari populare</span>
+          <h2>Pagini construite direct din cererea din Google</h2>
+          <p>
+            Aceste landing page-uri raspund exact clusterelor cu impresii deja
+            vizibile in Search Console: site de prezentare, creare site
+            Chisinau, web design Moldova si SEO Moldova.
+          </p>
+        </div>
+        <div class="dev-info-grid">
+          {
+            roLandingCards.map((page) => (
+              <a href={page.href} class="dev-info-card">
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
+                <span class="dev-link-accent">Vezi pagina</span>
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>

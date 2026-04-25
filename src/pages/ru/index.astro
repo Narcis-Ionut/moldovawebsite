@@ -3,6 +3,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "../../styles/dev-pages.css";
+import { ruLandingCards } from "../../data/landingPages.ru";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -433,6 +434,31 @@ const faqs = [
                 <div class="dev-service-icon" set:html={service.icon} />
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section" id="popular-searches">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Популярные запросы</span>
+          <h2>Страницы, созданные под уже видимый спрос в Google</h2>
+          <p>
+            Эти landing page закрывают отдельные коммерческие кластеры, которые
+            уже получают показы в Search Console и не должны зависеть только от
+            главной страницы или страницы цен.
+          </p>
+        </div>
+        <div class="dev-services-grid">
+          {
+            ruLandingCards.map((page, index) => (
+              <a href={page.href} class={`dev-service-card ${linkedServices[index % linkedServices.length].cardClass}`}>
+                <div class="dev-service-icon">{String(index + 1).padStart(2, "0")}</div>
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
               </a>
             ))
           }

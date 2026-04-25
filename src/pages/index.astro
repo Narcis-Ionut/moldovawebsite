@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { roLandingCards } from "../data/landingPages.ro";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -321,6 +322,31 @@ const faqs = [
                 <div class="nf-service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="nf-section" id="cautari-populare">
+      <div class="container">
+        <div class="nf-section-header">
+          <span class="nf-section-tag">Cautari Populare</span>
+          <h2>Pagini create direct din cererea din Google</h2>
+          <p>
+            Aceste pagini raspund clusterelor comerciale care apar deja in GSC
+            si au nevoie de o destinatie dedicata, nu doar de homepage sau
+            preturi.
+          </p>
+        </div>
+        <div class="nf-services-grid">
+          {
+            roLandingCards.map((page, index) => (
+              <a href={page.href} class="nf-service-card">
+                <div class="nf-service-icon">{String(index + 1).padStart(2, "0")}</div>
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
               </a>
             ))
           }

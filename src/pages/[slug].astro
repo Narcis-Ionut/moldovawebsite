@@ -1,0 +1,15 @@
+---
+import LandingPage from "../components/LandingPage.astro";
+import { roLandingPages } from "../data/landingPages.ro";
+
+export function getStaticPaths() {
+  return roLandingPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<LandingPage lang="ro" page={page} />

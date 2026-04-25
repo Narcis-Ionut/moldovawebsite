@@ -1,11 +1,11 @@
 ﻿export const blogPosts = [
   {
     slug: "cat-costa-site-moldova-2025",
-    title: "Cât costă un site de prezentare în Moldova în 2025? Ghid complet de prețuri",
+    title: "Cât costă un site de prezentare în Moldova în 2026? Ghid prețuri",
     description:
-      "Ghid clar și actualizat despre costurile unui site în Moldova: prețuri pentru landing page, site de prezentare și magazin online, factori de cost și cum alegi oferta corectă.",
+      "Ghid actualizat despre costurile unui site în Moldova: landing page, site de prezentare, magazin online, factori de cost și alegerea ofertei corecte.",
     pubDate: new Date("2024-12-16"),
-    updatedDate: new Date("2026-01-31"),
+    updatedDate: new Date("2026-04-25"),
     heroImage: "/assets/cat-costa-site-moldova-2025.webp",
   },
   {

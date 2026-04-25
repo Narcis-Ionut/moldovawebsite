@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/dev-pages.css";
+import { roLandingCards } from "../data/landingPages.ro";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -265,8 +266,8 @@ const faqs = [
 <html lang="ro">
   <head>
     <BaseHead
-      title="Preț creare site web în Moldova (2026) | De la 50€"
-      description="Cât costă un site în Moldova? Pachete clare: Landing 50€, Site prezentare 150€, Mini-magazin 300€. Livrare 2-14 zile. Ofertă gratuită."
+      title="Preț creare site web Moldova 2026 | Pachete 50-300€"
+      description="Vezi cât costă realizarea unui site web în Moldova: landing page 50€, site de prezentare 150€, mini-magazin 300€. Ofertă gratuită."
       canonicalUrl="https://moldovawebsite.md/preturi/"
       hreflangRo="https://moldovawebsite.md/preturi/"
       hreflangRu="https://moldovawebsite.md/ru/preturi/"
@@ -394,6 +395,31 @@ const faqs = [
                 <h3>{f.title}</h3>
                 <p>{f.description}</p>
               </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Intentii cu volum</span>
+          <h2>Pagini dedicate pentru cautarile comerciale din GSC</h2>
+          <p>
+            URL-ul de preturi acopera bine intentia de cost. Pentru restul
+            clusterelor comerciale am adaugat pagini separate, ca sa nu fortam
+            un singur URL sa rankeze pentru toate cautarile.
+          </p>
+        </div>
+        <div class="dev-info-grid">
+          {
+            roLandingCards.map((page) => (
+              <a href={page.href} class="dev-info-card">
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
+                <span class="dev-link-accent">Mergi la pagina</span>
+              </a>
             ))
           }
         </div>

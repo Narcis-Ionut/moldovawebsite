@@ -1,15 +1,15 @@
 ﻿:root {
-  --svc-bg: var(--nf-bg, #0b0b10);
-  --svc-bg-alt: var(--nf-bg-secondary, #12121a);
-  --svc-surface: var(--nf-surface, #20202b);
-  --svc-border: var(--nf-border, #2f2f3d);
-  --svc-text: var(--nf-text, #f4f4f7);
-  --svc-muted: var(--nf-text-muted, #a2a2af);
-  --svc-soft: var(--nf-text-secondary, #d0d0d8);
-  --svc-accent: var(--nf-red, #e50914);
-  --svc-accent-2: var(--nf-red-dark, #b00610);
-  --svc-radius: 16px;
-  --svc-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+  --svc-bg: var(--nf-bg, #0e1116);
+  --svc-bg-alt: var(--nf-bg-secondary, #141922);
+  --svc-surface: var(--nf-surface, #202936);
+  --svc-border: var(--nf-border, #303947);
+  --svc-text: var(--nf-text, #f7f9fc);
+  --svc-muted: var(--nf-text-muted, #aeb8c8);
+  --svc-soft: var(--nf-text-secondary, #d8dee8);
+  --svc-accent: var(--nf-red, #4f7cac);
+  --svc-accent-2: var(--nf-red-dark, #2f695d);
+  --svc-radius: 8px;
+  --svc-shadow: 0 14px 26px rgba(0, 0, 0, 0.26);
 }
 
 body.dev-ru-theme,
@@ -35,8 +35,8 @@ body.dev-ru-theme,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(680px 340px at 10% 4%, rgba(229, 9, 20, 0.2), transparent),
-    radial-gradient(550px 260px at 93% 12%, rgba(229, 9, 20, 0.1), transparent);
+    linear-gradient(120deg, rgba(79, 124, 172, 0.18), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 58%);
   pointer-events: none;
 }
 
@@ -95,7 +95,7 @@ body.dev-ru-theme,
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0.82rem 1.3rem;
   font-weight: 700;
   border: 1px solid transparent;
@@ -111,7 +111,7 @@ body.dev-ru-theme,
 .btn-primary {
   color: #fff;
   background: linear-gradient(135deg, var(--svc-accent), var(--svc-accent-2));
-  box-shadow: 0 10px 22px rgba(229, 9, 20, 0.24);
+  box-shadow: 0 10px 22px rgba(79, 124, 172, 0.24);
 }
 
 .btn-secondary {
@@ -139,14 +139,14 @@ body.dev-ru-theme,
 .hero-bg-shape {
   position: absolute;
   inset: 6% 8%;
-  background: radial-gradient(circle at center, rgba(229, 9, 20, 0.27), transparent 70%);
-  filter: blur(10px);
+  background: linear-gradient(135deg, rgba(79, 124, 172, 0.22), rgba(47, 105, 93, 0.14));
+  filter: blur(6px);
 }
 
 .hero-device {
   position: relative;
   z-index: 1;
-  border-radius: 18px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: var(--svc-shadow);
   overflow: hidden;
@@ -252,7 +252,7 @@ body.dev-ru-theme,
 }
 
 .content-image {
-  border-radius: 14px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
@@ -307,8 +307,8 @@ body.dev-ru-theme,
   justify-content: center;
   margin-bottom: 0.6rem;
   font-weight: 800;
-  background: rgba(229, 9, 20, 0.22);
-  color: #ffe2e4;
+  background: rgba(79, 124, 172, 0.22);
+  color: #e1f0ff;
 }
 
 .service-title,
@@ -332,7 +332,7 @@ body.dev-ru-theme,
 .service-grid .card1,
 .service-grid .card2,
 .service-grid .card3 {
-  border-color: rgba(229, 9, 20, 0.34);
+  border-color: rgba(79, 124, 172, 0.34);
 }
 
 .portfolio-card {
@@ -343,7 +343,7 @@ body.dev-ru-theme,
 
 .portfolio-image,
 .blog-card-image {
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
 }
@@ -363,7 +363,7 @@ body.dev-ru-theme,
   inset: auto auto 0.7rem 0.7rem;
   display: inline-flex;
   border-radius: 999px;
-  background: rgba(229, 9, 20, 0.9);
+  background: rgba(79, 124, 172, 0.9);
   color: #fff;
   padding: 0.22rem 0.58rem;
   font-size: 0.75rem;
@@ -374,9 +374,9 @@ body.dev-ru-theme,
 .popular-tag {
   display: inline-flex;
   border-radius: 999px;
-  background: rgba(229, 9, 20, 0.26);
-  border: 1px solid rgba(229, 9, 20, 0.54);
-  color: #ffdadd;
+  background: rgba(79, 124, 172, 0.26);
+  border: 1px solid rgba(79, 124, 172, 0.54);
+  color: #dcecff;
   padding: 0.2rem 0.58rem;
   font-size: 0.74rem;
   font-weight: 700;
@@ -426,8 +426,8 @@ body.dev-ru-theme,
 
 .pricing-card.featured,
 .price-card.featured {
-  border-color: rgba(229, 9, 20, 0.58);
-  box-shadow: 0 16px 32px rgba(229, 9, 20, 0.2);
+  border-color: rgba(79, 124, 172, 0.58);
+  box-shadow: 0 16px 32px rgba(79, 124, 172, 0.2);
 }
 
 .pricing-card ul,
@@ -475,7 +475,7 @@ body.dev-ru-theme,
 
 .faq-list details,
 .faq-item {
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.04);
   overflow: hidden;
@@ -532,9 +532,9 @@ body.dev-ru-theme,
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
-  border-radius: 18px;
-  border: 1px solid rgba(229, 9, 20, 0.45);
-  background: linear-gradient(135deg, rgba(229, 9, 20, 0.2), rgba(255, 255, 255, 0.04));
+  border-radius: 8px;
+  border: 1px solid rgba(79, 124, 172, 0.45);
+  background: linear-gradient(135deg, rgba(79, 124, 172, 0.2), rgba(255, 255, 255, 0.04));
   box-shadow: var(--svc-shadow);
   padding: 1.85rem;
 }
@@ -581,7 +581,7 @@ body.dev-ru-theme,
 .related-posts,
 .pagination {
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 

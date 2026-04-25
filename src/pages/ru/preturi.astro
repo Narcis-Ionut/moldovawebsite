@@ -3,6 +3,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "../../styles/dev-pages.css";
+import { ruLandingCards } from "../../data/landingPages.ru";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -300,8 +301,8 @@ const testimonials = [
 <html lang="ru">
   <head>
     <BaseHead
-      title="Цены на создание сайта в Молдове (2026) | От 50€"
-      description="Сколько стоит сайт в Молдове? Лендинг 50€, сайт-визитка 150€, мини-магазин 300€. Срок 2-14 дней, бесплатный расчёт."
+      title="Цена создания сайта в Молдове 2026 | Пакеты 50-300€"
+      description="Узнайте стоимость разработки сайта в Молдове: лендинг 50€, сайт-визитка 150€, мини-магазин 300€. Бесплатный расчёт."
       canonicalUrl="https://moldovawebsite.md/ru/preturi/"
       lang="ru"
       ogLocale="ru_MD"
@@ -463,6 +464,31 @@ const testimonials = [
                 <h3>{f.title}</h3>
                 <p>{f.description}</p>
               </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Кластеры спроса</span>
+          <h2>Отдельные страницы для коммерческих запросов из GSC</h2>
+          <p>
+            Страница цен хорошо отвечает на запросы о стоимости. Для остальных
+            кластеров мы добавили отдельные landing page, чтобы не пытаться
+            ранжировать один URL сразу по всем намерениям.
+          </p>
+        </div>
+        <div class="dev-info-grid">
+          {
+            ruLandingCards.map((page) => (
+              <a href={page.href} class="dev-info-card">
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
+                <span class="dev-link-accent">Открыть страницу</span>
+              </a>
             ))
           }
         </div>
