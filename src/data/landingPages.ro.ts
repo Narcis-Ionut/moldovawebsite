@@ -11,7 +11,7 @@ export const roLandingPages: LandingPageData[] = [
     heroTag: "Intentie comerciala",
     h1: "Site de prezentare pentru afaceri din Moldova",
     intro:
-      "Interogarile din GSC arata interes pentru site de prezentare, site de prezentare pret si site de prezentare in Moldova. Pagina asta raspunde exact acelei intentii.",
+      "Cautarile comerciale arata interes pentru site de prezentare, site de prezentare pret si site de prezentare in Moldova. Pagina asta raspunde exact acelei intentii.",
     lead:
       "Construim site-uri de prezentare care explica rapid ce faci, pentru cine lucrezi si ce pas trebuie sa faca vizitatorul. Este formatul potrivit pentru servicii locale, clinici, saloane, firme B2B si proiecte care au nevoie de incredere, nu de un magazin complex.",
     highlights: [
@@ -83,7 +83,7 @@ export const roLandingPages: LandingPageData[] = [
       {
         title: "Lansare si iteratie",
         description:
-          "Legam pagina de Search Console, verificam indexarea si folosim datele pentru urmatoarele pagini comerciale.",
+          "Verificam indexarea, urmarim performanta si folosim datele pentru urmatoarele pagini comerciale.",
       },
     ],
     faqs: [
@@ -229,7 +229,7 @@ export const roLandingPages: LandingPageData[] = [
       {
         title: "Optimizare continua",
         description:
-          "Dupa lansare, datele din GSC si Analytics ne spun ce pagina merita extinsa in urmatoarea iteratie.",
+          "Dupa lansare, datele din cautare si Analytics ne spun ce pagina merita extinsa in urmatoarea iteratie.",
       },
     ],
     faqs: [
@@ -370,7 +370,7 @@ export const roLandingPages: LandingPageData[] = [
       {
         title: "Design aplicat pe pagini cheie",
         description:
-          "Prioritizam homepage-ul si landing page-urile cu impresii in GSC, nu doar pagini secundare.",
+          "Prioritizam homepage-ul si landing page-urile cu cerere organica, nu doar pagini secundare.",
       },
       {
         title: "Iteratie dupa date",
@@ -445,13 +445,13 @@ export const roLandingPages: LandingPageData[] = [
     breadcrumbLabel: "SEO Moldova",
     title: "SEO Moldova | Optimizare on-page pentru Google",
     description:
-      "Servicii SEO in Moldova pentru pagini comerciale si site-uri locale. Audit on-page, structura, meta-taguri si imbunatatirea paginilor cu impresii in GSC.",
+      "Servicii SEO in Moldova pentru pagini comerciale si site-uri locale. Audit on-page, structura, meta-taguri si imbunatatirea paginilor cu cerere organica.",
     heroTag: "Intentie SEO",
     h1: "SEO in Moldova pentru pagini care deja au impresii, dar nu aduc trafic suficient",
     intro:
       "Interogarile precum SEO Moldova, SEO Chisinau si servicii SEO profesionale au nevoie de o pagina dedicata. Intentia este diferita de simplul serviciu tehnic de optimizare.",
     lead:
-      "Aici pozitionam oferta in jurul rezultatului cautat de client: mai mult trafic relevant, CTR mai bun si pagini comerciale mai usor de inteles de Google. Accentul este pe on-page si pe paginile care deja apar in Search Console.",
+      "Aici pozitionam oferta in jurul rezultatului cautat de client: trafic relevant, CTR mai bun si pagini comerciale mai usor de inteles de Google. Accentul este pe on-page si pe paginile care au deja semnale organice.",
     highlights: [
       "Audit pe paginile cu impresii, nu doar pe homepage",
       "Prioritizare dupa impact comercial",
@@ -459,7 +459,7 @@ export const roLandingPages: LandingPageData[] = [
       "Recomandari clare pentru continut nou",
     ],
     stats: [
-      { value: "GSC", label: "bazat pe date reale" },
+      { value: "Date", label: "bazat pe cautari reale" },
       { value: "On-page", label: "prioritate initiala" },
       { value: "CTR", label: "urmarit explicit" },
     ],
@@ -504,7 +504,7 @@ export const roLandingPages: LandingPageData[] = [
     ],
     process: [
       {
-        title: "Citire GSC si mapping",
+        title: "Analiza datelor si mapping",
         description:
           "Grupam interogarile care deja au volum de impresii si le mapam la paginile corecte sau la pagini noi.",
       },
@@ -580,7 +580,7 @@ export const roLandingPages: LandingPageData[] = [
     serviceType: "SEO",
     serviceName: "Servicii SEO in Moldova",
     serviceDescription:
-      "Audit on-page, optimizare structurala si prioritizare pe paginile comerciale care au deja semnale in Google Search Console.",
+      "Audit on-page, optimizare structurala si prioritizare pe paginile comerciale care au deja semnale organice.",
     canonicalUrl: "https://moldovawebsite.md/seo-moldova/",
     hreflangRo: "https://moldovawebsite.md/seo-moldova/",
     hreflangRu: "https://moldovawebsite.md/ru/seo-moldova/",

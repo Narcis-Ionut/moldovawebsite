@@ -6,20 +6,45 @@ import "../../../styles/dev-ru-blog-services.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "SEO On-Page в Молдове",
-  description:
-    "Профессиональные услуги SEO on-page в Молдове: техническая оптимизация, мета-теги, локальный контент, структура сайта и улучшение скорости загрузки. Решения для бизнеса из Кишинёва и всей страны.",
-  provider: {
-    "@type": "Organization",
-    name: "moldovawebsite.md",
-    url: "https://moldovawebsite.md",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "Moldova",
-  },
-  serviceType: "SEO On-Page Optimization",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "SEO Молдова | On-page оптимизация для Google",
+      description:
+        "SEO аудит, мета-теги, структура, скорость и on-page оптимизация для бизнеса в Молдове и Кишиневе.",
+      provider: {
+        "@type": "Organization",
+        name: "moldovawebsite.md",
+        url: "https://moldovawebsite.md",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Moldova",
+      },
+      serviceType: "SEO On-Page Optimization",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Когда будут видны результаты SEO on-page?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Первые технические улучшения могут быть заметны после повторного обхода страниц. Стабильный рост зависит от конкуренции, контента и состояния сайта.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Вы работаете с уже запущенными сайтами?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Да. Можно оптимизировать как новые сайты, так и существующие страницы, которым нужна лучшая структура SEO.",
+          },
+        },
+      ],
+    },
+  ],
 };
 ---
 
@@ -27,8 +52,8 @@ const jsonLd = {
 <html lang="ru">
   <head>
     <BaseHead
-      title="SEO On-Page в Молдове — Оптимизация сайта для Google"
-      description="SEO on-page в Молдове: технический аудит, мета-теги, локальный контент, структура сайта и улучшение скорости загрузки."
+      title="SEO Молдова | On-page оптимизация для Google"
+      description="SEO аудит, мета-теги, структура, скорость и on-page оптимизация для бизнеса в Молдове и Кишиневе. Четкий план роста."
       canonicalUrl="https://moldovawebsite.md/ru/serviciiBlog/seo-on-page/"
       lang="ru"
       hreflangRo="https://moldovawebsite.md/serviciiBlog/seo-on-page/"
@@ -45,12 +70,12 @@ const jsonLd = {
       <div class="container grid">
         <div class="hero-content">
           <h1>
-            SEO On-Page в Молдове — Оптимизация сайта для видимости в Google
+            SEO Молдова: on-page оптимизация для Google
           </h1>
           <p class="subheading">
-            Профессиональные услуги on-page оптимизации для веб-сайтов в
-            Молдове, адаптированные для <strong>локальных запросов</strong> и увеличения
-            органического трафика из Кишинёва и всей страны.
+            On-page оптимизация для сайтов в Молдове: структура, мета-теги,
+            скорость, локальный контент и релевантность для запросов из
+            Кишинева и всей страны.
           </p>
           <div class="hero-actions">
             <a href="/ru/contact/" class="btn btn-primary"
@@ -65,7 +90,7 @@ const jsonLd = {
     <section class="content-section">
       <div class="container">
         <div class="section-title">
-          <h2>Почему SEO on-page необходим для вашего бизнеса</h2>
+          <h2>Почему SEO on-page важно для вашего бизнеса</h2>
           <p>
             Оптимизация on-page улучшает видимость вашего сайта для
             потенциальных клиентов.
@@ -76,25 +101,19 @@ const jsonLd = {
           <div class="content-block">
             <h3>Видимость в локальных поисковых запросах Молдовы</h3>
             <p>
-              Большинство клиентов ищут компании и услуги онлайн перед
-              совершением покупки:
+              Клиенты сравнивают компании и услуги в Google перед тем, как
+              отправить заявку. Поэтому страница должна быть ясной, быстрой и
+              понятной для поисковой системы:
             </p>
             <ul>
-              <li>
-                Более 80% потребителей в Молдове используют Google для поиска
-                местных компаний
-              </li>
-              <li>93% онлайн-опыта начинаются с поисковой системы</li>
-              <li>
-                75% пользователей никогда не переходят на вторую страницу
-                результатов
-              </li>
-              <li>Первые 3 результата получают более 60% всех кликов</li>
+              <li>Title и description под реальное намерение запроса</li>
+              <li>Заголовки, которые быстро объясняют услугу и регион</li>
+              <li>Контент под важные коммерческие вопросы</li>
+              <li>Внутренние ссылки на приоритетные страницы</li>
             </ul>
             <p>
-              Оптимизация SEO on-page необходима для того, чтобы появиться в
-              этих ценных результатах для релевантных запросов в Молдове и
-              Кишинёве.
+              SEO on-page помогает странице лучше отвечать на релевантные
+              запросы в Молдове и Кишиневе.
             </p>
           </div>
           <div class="content-image">
@@ -129,8 +148,9 @@ const jsonLd = {
               </li>
             </ul>
             <p>
-              Инвестиции в SEO on-page имеют одну из лучших окупаемостей в
-              цифровом маркетинге, с эффектами, которые длятся долгое время.
+              SEO on-page создает более устойчивую основу для органического
+              трафика и заявок, особенно когда работа продолжается после
+              первых данных.
             </p>
           </div>
           <div class="content-image">
