@@ -32,7 +32,7 @@
 
 .post-costa .block-title {
   margin: 0;
-  font-size: clamp(1.65rem, 2vw, 2.2rem);
+  font-size: 2.2rem;
   color: var(--brand-1);
 }
 
@@ -283,7 +283,7 @@
 
 .post-top5 .block-title {
   margin: 0;
-  font-size: clamp(1.65rem, 2vw, 2.2rem);
+  font-size: 2.2rem;
   color: var(--brand-1);
 }
 
@@ -409,7 +409,7 @@
 
 .post-top5 .company-id h2 {
   margin: 0;
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-size: 1.8rem;
   color: var(--brand-1);
 }
 
@@ -540,4 +540,163 @@
   .post-top5 .company-card {
     padding: 1.5rem;
   }
+}
+
+/* ============================================
+   PREMIUM STUDIO REVAMP
+   Long-form commercial blog posts
+   ============================================ */
+
+.post-costa,
+.post-top5 {
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.post-costa .content-block,
+.post-top5 .content-block,
+.post-costa .text-card,
+.post-top5 .text-card,
+.post-costa .stat-card,
+.post-top5 .stat-card,
+.post-costa .table-card,
+.post-costa .callout-card,
+.post-top5 .company-card,
+.post-top5 .company-panel,
+.post-top5 .quick-choice li {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.032)),
+    rgba(7, 9, 17, 0.54);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+}
+
+.post-costa .content-block,
+.post-top5 .content-block,
+.post-top5 .company-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.post-costa .content-block::before,
+.post-top5 .content-block::before,
+.post-top5 .company-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(139, 211, 255, 0.14), transparent 35%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 32%);
+}
+
+.post-costa .content-block > *,
+.post-top5 .content-block > *,
+.post-top5 .company-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.post-costa .block-kicker,
+.post-top5 .block-kicker {
+  letter-spacing: 0;
+  color: #8bd3ff;
+}
+
+.post-costa .block-title,
+.post-top5 .block-title,
+.post-top5 .company-id h2,
+.post-top5 .company-panel h3,
+.post-costa .stat-card strong,
+.post-top5 .stat-card strong,
+.post-top5 .quick-choice strong {
+  color: #fff;
+}
+
+.post-costa p,
+.post-costa li,
+.post-costa td,
+.post-top5 p,
+.post-top5 li {
+  color: rgba(214, 222, 236, 0.88);
+}
+
+.post-costa a,
+.post-top5 a {
+  color: #8bd3ff;
+  border-bottom-color: rgba(139, 211, 255, 0.34);
+}
+
+.post-costa a:hover,
+.post-top5 a:hover {
+  color: #fff;
+  border-bottom-color: #8bd3ff;
+}
+
+.post-costa .text-card.is-lead,
+.post-top5 .text-card.is-lead,
+.post-costa .why-note,
+.post-top5 .choice-note,
+.post-costa .costa-cta {
+  border-left: 1px solid rgba(139, 211, 255, 0.38);
+  background:
+    radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.18), transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.034));
+}
+
+.post-costa .table-card thead {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.post-costa .table-card th,
+.post-costa .table-card td {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.post-costa .table-card th {
+  letter-spacing: 0;
+  color: #dff3ff;
+}
+
+.post-costa .checklist {
+  padding-left: 0;
+}
+
+.post-costa .checklist li {
+  border-left: 1px solid rgba(139, 211, 255, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.post-top5 .company-rank {
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(109, 93, 252, 0.86));
+  box-shadow: 0 14px 34px rgba(59, 130, 246, 0.26);
+}
+
+.post-top5 .company-link,
+.post-top5 .pill {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(214, 222, 236, 0.88);
+}
+
+.post-costa .cta-action a {
+  border-radius: 999px;
+  border-color: rgba(139, 211, 255, 0.28);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 42%),
+    linear-gradient(135deg, #2f7ff7 0%, #7468ff 58%, #28d2c5 100%);
+  color: #fff;
+  box-shadow: 0 18px 48px rgba(59, 130, 246, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.post-costa .cta-action a:hover {
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 42%),
+    linear-gradient(135deg, #4392ff 0%, #806fff 58%, #2de6d5 100%);
 }
