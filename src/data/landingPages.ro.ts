@@ -585,6 +585,152 @@ export const roLandingPages: LandingPageData[] = [
     hreflangRo: "https://moldovawebsite.md/seo-moldova/",
     hreflangRu: "https://moldovawebsite.md/ru/seo-moldova/",
   },
+  {
+    slug: "site-la-comanda",
+    navTitle: "Site la comanda",
+    breadcrumbLabel: "Site la comanda",
+    title: "Site la comanda Moldova | Site la cheie pentru afaceri",
+    description:
+      "Site la comanda in Moldova pentru afaceri locale: strategie, design, dezvoltare, SEO on-page si lansare la cheie.",
+    heroTag: "Intentie comerciala directa",
+    h1: "Site la comanda in Moldova, construit pentru cereri reale",
+    intro:
+      "Cautarile site la comanda, site la cheie Moldova si creare site la comanda arata intentie clara de cumparare. Utilizatorul nu cauta teorie, ci un executant care poate livra complet.",
+    lead:
+      "Pagina aceasta raspunde exact clientului care vrea un website facut pentru afacerea lui, nu un sablon aruncat online. Lucram structura, mesajul, designul, implementarea si SEO-ul initial astfel incat site-ul sa poata fi lansat rapid si sa conduca vizitatorul spre contact.",
+    highlights: [
+      "Site la cheie: structura, design, implementare si lansare",
+      "Potrivit pentru servicii locale, B2B, saloane, clinici si magazine mici",
+      "Pret orientativ clar si recomandare dupa brief",
+      "Conectat cu paginile de preturi, portofoliu si contact",
+    ],
+    stats: [
+      { value: "50-300", label: "EUR pachete orientative" },
+      { value: "7-14", label: "zile lucratoare uzuale" },
+      { value: "RO/RU", label: "optional multi-language" },
+    ],
+    painPoints: [
+      {
+        title: "Vrei un site complet, nu doar design",
+        description:
+          "Un site la comanda trebuie sa includa structura, texte, design, implementare, SEO de baza si lansare, nu doar o macheta frumoasa.",
+      },
+      {
+        title: "Ai nevoie de un executant local",
+        description:
+          "Pentru Moldova conteaza contextul local: limba, pretul, viteza de raspuns, exemplele de proiecte si intelegerea afacerilor mici.",
+      },
+      {
+        title: "Vrei sa compari oferta si urmatorul pas",
+        description:
+          "Utilizatorul care cauta site la comanda vrea repede raspuns la trei intrebari: ce include, cat costa orientativ si cum incepe proiectul.",
+      },
+    ],
+    deliverables: [
+      {
+        title: "Brief si recomandare de structura",
+        description:
+          "Stabilim daca ai nevoie de landing page, site de prezentare, mini-magazin sau o structura mixta pentru lead-uri.",
+      },
+      {
+        title: "Design si continut orientat pe conversie",
+        description:
+          "Construim sectiuni care explica oferta, creeaza incredere si duc natural spre formular, telefon sau WhatsApp.",
+      },
+      {
+        title: "Dezvoltare si lansare",
+        description:
+          "Implementam site-ul, verificam responsive, viteza, formularele, meta-tagurile si configurarea de baza pentru indexare.",
+      },
+      {
+        title: "SEO on-page initial",
+        description:
+          "Adaugam title, description, heading-uri, linkuri interne, schema si continut local pentru Moldova si Chisinau.",
+      },
+    ],
+    process: [
+      {
+        title: "Discutie scurta",
+        description:
+          "In 15-20 de minute clarificam tipul de site, publicul, bugetul si ce trebuie sa se intample dupa ce omul intra pe pagina.",
+      },
+      {
+        title: "Oferta si plan",
+        description:
+          "Primesti o structura recomandata, un cost orientativ si pasii de lucru, ca sa stii exact ce cumperi.",
+      },
+      {
+        title: "Constructie",
+        description:
+          "Scriem si aranjam continutul, construim pagina/site-ul si legam CTA-urile de formular, telefon sau email.",
+      },
+      {
+        title: "Lansare si verificare",
+        description:
+          "Publicam site-ul, testam paginile principale si pregatim urmatoarele optimizari dupa datele din Google Search Console.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Ce inseamna site la comanda?",
+        answer:
+          "Inseamna un website construit pentru obiectivul si continutul afacerii tale: structura, design, implementare, SEO de baza si lansare. Nu este doar instalarea unui template.",
+      },
+      {
+        question: "Care este diferenta dintre site la comanda si site de prezentare?",
+        answer:
+          "Site de prezentare este un format concret, de obicei 3-5 pagini. Site la comanda este abordarea completa: alegem formatul potrivit si il adaptam la business.",
+      },
+      {
+        question: "Cat costa un site la comanda in Moldova?",
+        answer:
+          "Pentru proiecte mici, pachetele orientative pornesc de la 50 EUR pentru landing page, 150 EUR pentru site de prezentare si 300 EUR pentru mini-magazin. Oferta exacta depinde de brief.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/preturi/",
+        title: "Preturi site la comanda",
+        description:
+          "Vezi pachetele orientative si ce intra in cost pentru landing, site de prezentare sau mini-magazin.",
+      },
+      {
+        href: "/creare-site-chisinau/",
+        title: "Creare site Chisinau",
+        description:
+          "Pagina pentru intentia locala de furnizor in Chisinau si Moldova.",
+      },
+      {
+        href: "/site-de-prezentare/",
+        title: "Site de prezentare",
+        description:
+          "Formatul recomandat pentru servicii locale, B2B si afaceri care vand prin cereri de oferta.",
+      },
+      {
+        href: "/contact/",
+        title: "Solicita oferta",
+        description:
+          "Trimite brief-ul si primesti recomandarea potrivita pentru primul pas.",
+      },
+    ],
+    primaryCta: {
+      href: "/contact/",
+      title: "Solicita oferta pentru site la comanda",
+      description: "Cerere de oferta pentru un site construit la cheie.",
+    },
+    secondaryCta: {
+      href: "/preturi/",
+      title: "Vezi preturile orientative",
+      description: "Compara rapid pachetele de pornire.",
+    },
+    serviceType: "Site la comanda",
+    serviceName: "Site la comanda in Moldova",
+    serviceDescription:
+      "Website la cheie pentru afaceri locale: structura, design, dezvoltare, SEO on-page si lansare.",
+    canonicalUrl: "https://moldovawebsite.md/site-la-comanda/",
+    hreflangRo: "https://moldovawebsite.md/site-la-comanda/",
+    hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
+  },
 ];
 
 export const roLandingCards = roLandingPages.map((page) => ({
