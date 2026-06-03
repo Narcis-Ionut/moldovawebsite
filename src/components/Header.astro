@@ -137,8 +137,9 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
 
   hamburger?.addEventListener("click", () => {
     const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
-    hamburger.setAttribute("aria-expanded", String(!isExpanded));
-    navMenu?.classList.toggle("active");
+    const nextState = !isExpanded;
+    hamburger.setAttribute("aria-expanded", String(nextState));
+    navMenu?.classList.toggle("active", nextState);
   });
 
   // Close menu on link click
@@ -147,5 +148,26 @@ const hamburgerAriaLabel = lang === "ro" ? "Deschide meniul" : "Открыть �
       hamburger?.setAttribute("aria-expanded", "false");
       navMenu?.classList.remove("active");
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (
+      !(target instanceof Node) ||
+      hamburger?.contains(target) ||
+      navMenu?.contains(target)
+    ) {
+      return;
+    }
+
+    hamburger?.setAttribute("aria-expanded", "false");
+    navMenu?.classList.remove("active");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    hamburger?.setAttribute("aria-expanded", "false");
+    navMenu?.classList.remove("active");
   });
 </script>

@@ -2,6 +2,10 @@
 /index.html                /            301
 /*.html                    /:splat/ 301
 
+# Updated pricing guide URL
+/blog/cat-costa-site-moldova-2025  /blog/cat-costa-site-moldova-2026/  301
+/blog/cat-costa-site-moldova-2025/ /blog/cat-costa-site-moldova-2026/  301
+
 # Russian static URLs to Astro routes
 /ru/Главная.html /ru/ 301
 /ru/Главная /ru/ 301
