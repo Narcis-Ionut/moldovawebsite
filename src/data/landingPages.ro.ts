@@ -151,24 +151,25 @@ export const roLandingPages: LandingPageData[] = [
     slug: "creare-site-chisinau",
     navTitle: "Creare site Chisinau",
     breadcrumbLabel: "Creare site Chisinau",
-    title: "Creare site Chisinau si Moldova | Website pentru afaceri locale",
+    title: "Creare site Chisinau | Website local de la 150 EUR",
     description:
-      "Servicii de creare site in Chisinau si Moldova pentru afaceri locale. Website rapid, clar si construit pentru lead-uri reale.",
+      "Creare site in Chisinau si Moldova pentru afaceri locale: site de prezentare de la 150 EUR, mini-magazin de la 300 EUR si lansare rapida.",
     heroTag: "Cautare locala",
     h1: "Creare site in Chisinau pentru afaceri care au nevoie de clienti",
     intro:
       "Interogarile precum creare site Chisinau, creare website Chisinau si creare site Moldova au nevoie de o pagina comerciala locala, nu doar de un homepage generic.",
     lead:
-      "Pagina aceasta este construita pentru intentia in care cineva cauta un furnizor local de creare site. Vor sa stie daca lucrezi in Chisinau, daca ai experienta pe proiecte locale, cum livrezi si cat de repede raspunzi.",
+      "Pagina aceasta este construita pentru intentia in care cineva cauta un furnizor local de creare site. Vor sa stie daca lucrezi in Chisinau, cat costa, ce tip de site primesc si cat de repede pot trimite brief-ul.",
     highlights: [
       "Potrivit pentru servicii, clinici, saloane si firme B2B",
       "Accent pe Chisinau, dar valabil pentru toata Moldova",
-      "Oferta clara si proces simplu de pornire",
+      "Site de prezentare de la 150 EUR",
+      "Mini-magazin online de la 300 EUR",
       "Conectat direct cu paginile de preturi si servicii",
     ],
     stats: [
+      { value: "150", label: "EUR site de prezentare" },
       { value: "24h", label: "raspuns initial" },
-      { value: "1", label: "brief scurt pentru pornire" },
       { value: "MD", label: "target local principal" },
     ],
     painPoints: [
@@ -202,7 +203,7 @@ export const roLandingPages: LandingPageData[] = [
       {
         title: "Linkuri spre paginile critice",
         description:
-          "Pagina trimite direct spre preturi, site de prezentare, design web si contact pentru a consolida traseul comercial.",
+          "Pagina trimite direct spre preturi, site de prezentare, magazin online si contact pentru a consolida traseul comercial.",
       },
       {
         title: "Schema si semnale locale",
@@ -246,7 +247,12 @@ export const roLandingPages: LandingPageData[] = [
       {
         question: "Daca vreau si pret, unde merg?",
         answer:
-          "Pe pagina de preturi. Intentia de locatie si intentia de pret trebuie conectate, dar tratate clar ca sa nu amestecam mesajul principal.",
+          "Pe pagina de preturi pentru creare site Chisinau. Site-ul de prezentare porneste de la 150 EUR, iar mini-magazinul online de la 300 EUR.",
+      },
+      {
+        question: "Pot face si magazin online pentru Chisinau?",
+        answer:
+          "Da. Daca vrei ecommerce, pagina potrivita este creare magazin online Chisinau, cu pret de pornire de 300 EUR pentru mini-magazin.",
       },
     ],
     relatedLinks: [
@@ -263,10 +269,10 @@ export const roLandingPages: LandingPageData[] = [
           "Daca proiectul tau este orientat pe servicii, asta este de regula pagina urmatoare.",
       },
       {
-        href: "/serviciiBlog/dezvoltare-web/",
-        title: "Dezvoltare web",
+        href: "/creare-magazin-online-chisinau/",
+        title: "Creare magazin online Chisinau",
         description:
-          "Pagina tehnica pentru proiectele care cer explicatii despre implementare si structura.",
+          "Pentru afaceri locale care vor catalog, comenzi, livrare si plati online.",
       },
       {
         href: "/contact/",
@@ -288,7 +294,7 @@ export const roLandingPages: LandingPageData[] = [
     serviceType: "Creare site",
     serviceName: "Creare site in Chisinau si Moldova",
     serviceDescription:
-      "Website-uri pentru afaceri locale, cu structura comerciala clara, performanta buna si proces simplu de pornire.",
+      "Website-uri pentru afaceri locale din Chisinau, cu pret orientativ de la 150 EUR, structura comerciala clara si proces simplu de pornire.",
     canonicalUrl: "https://moldovawebsite.md/creare-site-chisinau/",
     hreflangRo: "https://moldovawebsite.md/creare-site-chisinau/",
     hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
@@ -297,7 +303,7 @@ export const roLandingPages: LandingPageData[] = [
     slug: "web-design-moldova",
     navTitle: "Web design Moldova",
     breadcrumbLabel: "Web design Moldova",
-    title: "Web Design Moldova | Design web modern pentru conversii",
+    title: "Web design in Moldova | UX pentru conversii",
     description:
       "Servicii de web design in Moldova pentru site-uri de prezentare si pagini comerciale. UX clar, structura curata si design orientat pe conversie.",
     heroTag: "Intentie de design",
@@ -443,7 +449,7 @@ export const roLandingPages: LandingPageData[] = [
     slug: "seo-moldova",
     navTitle: "SEO Moldova",
     breadcrumbLabel: "SEO Moldova",
-    title: "SEO Moldova | Optimizare on-page pentru Google",
+    title: "Servicii SEO Moldova | Audit on-page si CTR",
     description:
       "Servicii SEO in Moldova pentru pagini comerciale si site-uri locale. Audit on-page, structura, meta-taguri si imbunatatirea paginilor cu cerere organica.",
     heroTag: "Intentie SEO",
@@ -589,7 +595,7 @@ export const roLandingPages: LandingPageData[] = [
     slug: "site-la-comanda",
     navTitle: "Site la comanda",
     breadcrumbLabel: "Site la comanda",
-    title: "Site la comanda Moldova | Site la cheie pentru afaceri",
+    title: "Website la comanda Moldova | Solutie la cheie",
     description:
       "Site la comanda in Moldova pentru afaceri locale: strategie, design, dezvoltare, SEO on-page si lansare la cheie.",
     heroTag: "Intentie comerciala directa",
@@ -730,6 +736,298 @@ export const roLandingPages: LandingPageData[] = [
     canonicalUrl: "https://moldovawebsite.md/site-la-comanda/",
     hreflangRo: "https://moldovawebsite.md/site-la-comanda/",
     hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
+  },
+  {
+    slug: "preturi-magazin-online",
+    navTitle: "Pret magazin online",
+    breadcrumbLabel: "Pret magazin online",
+    title: "Pret magazin online Moldova | Mini-magazin de la 300 EUR",
+    description:
+      "Pret creare site magazin online in Moldova: mini-magazin de la 300 EUR cu catalog, cos, livrare, comenzi si baza SEO pentru produse.",
+    heroTag: "Intentie de pret",
+    h1: "Cat costa un magazin online in Moldova?",
+    intro:
+      "Cautarile pret creare site magazin online, cat costa un site magazin online si pret realizare magazin online arata intentie comerciala directa.",
+    lead:
+      "Pagina aceasta separa pretul de ecommerce de pretul general pentru site-uri. Daca vrei sa vinzi produse online in Moldova, ai nevoie de un raspuns rapid: ce intra in mini-magazin, ce costa de la 300 EUR si ce trebuie estimat separat.",
+    highlights: [
+      "Mini-magazin online de la 300 EUR",
+      "Catalog, cos, comenzi si livrare",
+      "Potrivit pentru produse locale si testare rapida",
+      "Extensibil cu plati, curieri si automatizari",
+    ],
+    stats: [
+      { value: "300", label: "EUR pret de pornire" },
+      { value: "10+", label: "produse in prima versiune" },
+      { value: "MD", label: "plati si livrare locale" },
+    ],
+    painPoints: [
+      {
+        title: "Pretul unui magazin online este diferit de un site simplu",
+        description:
+          "Ecommerce inseamna catalog, stoc, comanda, livrare si plata. De aceea are nevoie de o estimare separata fata de un site de prezentare.",
+      },
+      {
+        title: "Ai nevoie de cost clar inainte sa incepi",
+        description:
+          "Un mini-magazin poate incepe de la 300 EUR, dar integrari precum plati online, curieri, facturare sau importuri de produse schimba bugetul.",
+      },
+      {
+        title: "Trebuie sa lansezi fara sa blochezi bani inutil",
+        description:
+          "Pentru multe afaceri mici, prima versiune trebuie sa valideze produsele si comenzile, apoi se extinde dupa ce apar vanzari reale.",
+      },
+    ],
+    deliverables: [
+      {
+        title: "Structura de catalog",
+        description:
+          "Categorii, produse, imagini, preturi, descrieri si traseu simplu de la produs la comanda.",
+      },
+      {
+        title: "Cos si comenzi",
+        description:
+          "Flux clar pentru adaugare in cos, date client, livrare si confirmare de comanda.",
+      },
+      {
+        title: "Setari locale",
+        description:
+          "Optiuni pentru plata la livrare, transfer, card, curier, pickup sau livrare in Chisinau si Moldova.",
+      },
+      {
+        title: "SEO initial",
+        description:
+          "Title, description, categorii, schema si linkuri interne pentru ca magazinul sa fie inteles corect de Google.",
+      },
+    ],
+    process: [
+      {
+        title: "Lista de produse",
+        description:
+          "Clarificam cate produse sunt la start, ce categorii exista si ce informatii trebuie sa vada clientul.",
+      },
+      {
+        title: "Flux de comanda",
+        description:
+          "Alegem varianta potrivita: formular simplu, cos complet, plata online sau comanda prin WhatsApp/email.",
+      },
+      {
+        title: "Implementare",
+        description:
+          "Construim magazinul, testam mobilul, cosul, emailurile si informatiile obligatorii pentru client.",
+      },
+      {
+        title: "Extindere",
+        description:
+          "Dupa lansare adaugam produse, categorii, SEO, automatizari sau integrari in functie de vanzari.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Cat costa un magazin online simplu?",
+        answer:
+          "Un mini-magazin porneste de la 300 EUR. Include structura de baza pentru catalog, cos, comenzi, livrare si SEO initial.",
+      },
+      {
+        question: "Pretul include plati online?",
+        answer:
+          "Platile simple sau setarile de comanda pot intra in prima versiune. Integrarea cu procesatori, facturare sau sisteme externe se estimeaza separat.",
+      },
+      {
+        question: "Pot incepe cu putine produse?",
+        answer:
+          "Da. Pentru afaceri mici este recomandat sa incepi cu produsele principale si sa extinzi catalogul dupa ce vezi ce se vinde.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/serviciiBlog/magazin-online/",
+        title: "Creare magazin online Moldova",
+        description:
+          "Pagina principala despre serviciul ecommerce si ce include dezvoltarea magazinului.",
+      },
+      {
+        href: "/creare-magazin-online-chisinau/",
+        title: "Creare magazin online Chisinau",
+        description:
+          "Pagina locala pentru afaceri din Chisinau care vor sa vanda online.",
+      },
+      {
+        href: "/preturi/",
+        title: "Preturi creare site",
+        description:
+          "Compara preturile pentru landing page, site de prezentare si mini-magazin.",
+      },
+      {
+        href: "/contact/",
+        title: "Solicita estimare ecommerce",
+        description:
+          "Trimite lista de produse si primesti o estimare concreta.",
+      },
+    ],
+    primaryCta: {
+      href: "/contact/",
+      title: "Solicita pret pentru magazin online",
+      description: "Cerere pentru estimare ecommerce.",
+    },
+    secondaryCta: {
+      href: "/serviciiBlog/magazin-online/",
+      title: "Vezi serviciul de magazin online",
+      description: "Detalii despre functii si proces.",
+    },
+    serviceType: "Creare magazin online",
+    serviceName: "Pret creare magazin online in Moldova",
+    serviceDescription:
+      "Mini-magazin online de la 300 EUR cu catalog, cos, comenzi, livrare si SEO initial pentru afaceri locale.",
+    canonicalUrl: "https://moldovawebsite.md/preturi-magazin-online/",
+    hreflangRo: "https://moldovawebsite.md/preturi-magazin-online/",
+    hreflangRu: "https://moldovawebsite.md/ru/serviciiBlog/magazin-online/",
+  },
+  {
+    slug: "creare-magazin-online-chisinau",
+    navTitle: "Magazin online Chisinau",
+    breadcrumbLabel: "Magazin online Chisinau",
+    title: "Creare magazin online Chisinau | Mini-magazin de la 300 EUR",
+    description:
+      "Creare magazin online in Chisinau pentru afaceri locale: catalog, comenzi, livrare, plati si SEO de baza pentru Moldova.",
+    heroTag: "Ecommerce local",
+    h1: "Creare magazin online in Chisinau pentru vanzari locale",
+    intro:
+      "Cautarea creare magazin online Chisinau cere o pagina locala, cu pret, livrare, plati si proces clar pentru afacerile care vand in Moldova.",
+    lead:
+      "Daca vinzi produse in Chisinau, magazinul trebuie sa fie usor de administrat, rapid pe mobil si pregatit pentru metodele locale de comanda, livrare si plata. Prima versiune poate porni ca mini-magazin de la 300 EUR.",
+    highlights: [
+      "Mini-magazin pentru Chisinau si Moldova",
+      "Catalog si comenzi pe mobil",
+      "Livrare locala, pickup sau curier",
+      "SEO pentru produse si categorii",
+    ],
+    stats: [
+      { value: "300", label: "EUR start ecommerce" },
+      { value: "7-14", label: "zile pentru prima versiune" },
+      { value: "MD", label: "context local" },
+    ],
+    painPoints: [
+      {
+        title: "Clientii cumpara de pe telefon",
+        description:
+          "Un magazin pentru Chisinau trebuie sa incarce repede, sa explice livrarea si sa faca simpla plasarea comenzii.",
+      },
+      {
+        title: "Ai nevoie de metode locale",
+        description:
+          "Plata la livrare, transfer, pickup, curier sau livrare locala trebuie gandite inainte de design, nu adaugate la final.",
+      },
+      {
+        title: "Pagina generala nu acopera cautarea locala",
+        description:
+          "Pentru query-uri locale, Google prefera pagini care mentioneaza clar Chisinau, aria de livrare si oferta concreta.",
+      },
+    ],
+    deliverables: [
+      {
+        title: "Catalog pregatit pentru comenzi",
+        description:
+          "Produse, categorii, descrieri, imagini, preturi si CTA-uri clare spre cos sau formular.",
+      },
+      {
+        title: "Checkout si contact",
+        description:
+          "Flux simplu pentru date client, telefon, email, adresa, livrare si confirmarea comenzii.",
+      },
+      {
+        title: "Context de Chisinau",
+        description:
+          "Texte si setari care explica livrarea locala, pickup-ul, curierul si vanzarea in toata Moldova.",
+      },
+      {
+        title: "SEO ecommerce",
+        description:
+          "Structura pentru categorii si produse, meta-taguri si linkuri interne catre preturi si contact.",
+      },
+    ],
+    process: [
+      {
+        title: "Brief de produse",
+        description:
+          "Stabilim ce vinzi, cate produse intra in prima versiune si ce informatii sunt obligatorii.",
+      },
+      {
+        title: "Reguli de comanda",
+        description:
+          "Clarificam livrarea, plata, confirmarea, returul si ce primeste clientul dupa comanda.",
+      },
+      {
+        title: "Constructie si test",
+        description:
+          "Implementam magazinul si testam traseul complet pe mobil, desktop si email.",
+      },
+      {
+        title: "Lansare si optimizare",
+        description:
+          "Dupa lansare urmarim comenzile, cautarile si paginile care merita extinse.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Lucrati cu magazine online din Chisinau?",
+        answer:
+          "Da. Lucram cu afaceri din Chisinau si din toata Moldova, inclusiv proiecte care incep cu un catalog mic.",
+      },
+      {
+        question: "Cat costa un magazin online in Chisinau?",
+        answer:
+          "Un mini-magazin porneste de la 300 EUR. Costul final depinde de numarul de produse, plati, livrare si integrari.",
+      },
+      {
+        question: "Pot vinde in toata Moldova?",
+        answer:
+          "Da. Putem seta livrare pentru Chisinau, regiuni, pickup, curier sau alte variante potrivite modelului tau.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/preturi-magazin-online/",
+        title: "Pret magazin online",
+        description:
+          "Pagina dedicata costului pentru mini-magazin si ecommerce in Moldova.",
+      },
+      {
+        href: "/serviciiBlog/magazin-online/",
+        title: "Creare magazin online Moldova",
+        description:
+          "Pagina principala despre serviciul ecommerce.",
+      },
+      {
+        href: "/creare-site-chisinau/",
+        title: "Creare site Chisinau",
+        description:
+          "Pentru afaceri locale care au nevoie de site de prezentare sau landing.",
+      },
+      {
+        href: "/contact/",
+        title: "Solicita oferta",
+        description:
+          "Trimite produsele si obiectivul pentru o estimare rapida.",
+      },
+    ],
+    primaryCta: {
+      href: "/contact/",
+      title: "Solicita magazin online in Chisinau",
+      description: "Cerere pentru ecommerce local.",
+    },
+    secondaryCta: {
+      href: "/preturi-magazin-online/",
+      title: "Vezi pretul pentru magazin online",
+      description: "Pagina de pret ecommerce.",
+    },
+    serviceType: "Creare magazin online",
+    serviceName: "Creare magazin online in Chisinau",
+    serviceDescription:
+      "Mini-magazin online pentru afaceri din Chisinau si Moldova, cu catalog, comenzi, livrare, plati si SEO initial.",
+    canonicalUrl: "https://moldovawebsite.md/creare-magazin-online-chisinau/",
+    hreflangRo: "https://moldovawebsite.md/creare-magazin-online-chisinau/",
+    hreflangRu: "https://moldovawebsite.md/ru/sozdanie-internet-magazina-kishinev/",
   },
 ];
 

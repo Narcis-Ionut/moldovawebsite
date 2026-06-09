@@ -109,6 +109,16 @@ const jsonLd = {
             Если задача в трафике и ранжировании, такая структура помогает и
             пользователям, и Google быстрее находить нужную страницу.
           </p>
+          <p>
+            Веб-услуги для бизнеса в Молдове начинаются с выбора правильного
+            направления: сайт-визитка для заявок, интернет-магазин для продаж,
+            UX-дизайн для доверия или SEO on-page для роста видимости.
+          </p>
+          <p>
+            Поэтому этот раздел работает как карта сайта для коммерческих
+            услуг: каждая карточка ведет к отдельной странице с понятным
+            сценарием, ценой, процессом и следующим шагом к заявке.
+          </p>
           <div class="dev-hero-actions">
             <a href="/ru/preturi/" class="dev-btn dev-btn-primary">Посмотреть цены</a>
             <a href="/ru/contact/" class="dev-btn dev-btn-secondary">Получить оффер</a>
@@ -192,11 +202,11 @@ const jsonLd = {
         <div class="dev-info-grid">
           {
             ruLandingCards.map((page) => (
-              <a href={page.href} class="dev-info-card">
+              <article class="dev-info-card">
                 <h3>{page.title}</h3>
                 <p>{page.description}</p>
-                <span class="dev-link-accent">Открыть страницу</span>
-              </a>
+                <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
+              </article>
             ))
           }
         </div>

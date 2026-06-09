@@ -36,6 +36,10 @@ const ui =
         relatedTitle: "Urmatorii pasi relevanti",
         relatedIntro:
           "Alege pagina potrivita daca intentia utilizatorului se muta spre pret, design, SEO sau contact direct.",
+        ctaTitle: "Pregatit sa transformi cautarea in cerere?",
+        ctaIntro:
+          "Trimite-ne obiectivul proiectului si iti spunem ce pagina, structura si pachet merita prioritizate.",
+        relatedLinkLabel: "Vezi pagina",
       }
     : {
         homeLabel: "Главная",
@@ -59,6 +63,10 @@ const ui =
         relatedTitle: "Следующие релевантные страницы",
         relatedIntro:
           "Если пользователь смещается к цене, дизайну, SEO или прямому контакту, переход должен быть очевидным.",
+        ctaTitle: "Готовы превратить поиск в заявку?",
+        ctaIntro:
+          "Опишите цель проекта, и мы подскажем, какую страницу, структуру и услугу стоит запустить первой.",
+        relatedLinkLabel: "Открыть страницу",
       };
 
 const jsonLd = {
@@ -198,7 +206,6 @@ const jsonLd = {
                       <span class="dev-code-string">"{item.title}"</span>
                     </span>
                   </div>
-                  <div class="dev-terminal-output">{item.description}</div>
                 </>
               ))}
             </div>
@@ -304,11 +311,11 @@ const jsonLd = {
         </div>
         <div class="dev-info-grid">
           {page.relatedLinks.map((link) => (
-            <a href={link.href} class="dev-info-card">
+            <article class="dev-info-card">
               <h3>{link.title}</h3>
               <p>{link.description}</p>
-              <span class="dev-link-accent">{link.href}</span>
-            </a>
+              <a href={link.href} class="dev-link-accent">{ui.relatedLinkLabel}</a>
+            </article>
           ))}
         </div>
       </div>
@@ -317,8 +324,8 @@ const jsonLd = {
     <section class="dev-cta">
       <div class="container">
         <div class="dev-cta-content">
-          <h2>{page.h1}</h2>
-          <p>{page.description}</p>
+          <h2>{ui.ctaTitle}</h2>
+          <p>{ui.ctaIntro}</p>
           <a href={page.primaryCta.href} class="dev-btn dev-btn-primary dev-btn-lg">
             {page.primaryCta.title}
           </a>

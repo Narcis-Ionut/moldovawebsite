@@ -216,7 +216,7 @@ const portfolio = [
       "PWA веб-приложение",
       "Современный адаптивный дизайн",
     ],
-    link: "https://r-ro.com",
+    link: "https://rezolvro.ro/",
   },
 ];
 
@@ -324,6 +324,9 @@ const faqs = [
                   ></path>
                 </svg>
                 Запросить бесплатное предложение
+              </a>
+              <a href="/ru/preturi/" class="dev-btn dev-btn-secondary">
+                Цены на создание сайта
               </a>
               <a href="#portofoliu" class="dev-btn dev-btn-secondary">
                 <svg
@@ -455,11 +458,12 @@ const faqs = [
         <div class="dev-services-grid">
           {
             ruLandingCards.map((page, index) => (
-              <a href={page.href} class={`dev-service-card ${linkedServices[index % linkedServices.length].cardClass}`}>
+              <article class={`dev-service-card ${linkedServices[index % linkedServices.length].cardClass}`}>
                 <div class="dev-service-icon">{String(index + 1).padStart(2, "0")}</div>
                 <h3>{page.title}</h3>
                 <p>{page.description}</p>
-              </a>
+                <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
+              </article>
             ))
           }
         </div>

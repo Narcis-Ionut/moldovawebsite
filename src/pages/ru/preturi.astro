@@ -135,6 +135,22 @@ const jsonLd = {
             text: "Да, пакеты Standard/Pro включают CMS (управление контентом). Мы также предоставляем небольшое руководство + обучение (в Pro).",
           },
         },
+        {
+          "@type": "Question",
+          name: "Что означает запрос сайт цены?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Обычно пользователь хочет быстро понять диапазон бюджета. У нас лендинг стоит от 50€, сайт-визитка от 150€, а мини-магазин от 300€.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Какая цена создания сайта или разработки сайта?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Цена создания сайта зависит от количества страниц, дизайна, контента и интеграций. Для малого бизнеса в Молдове чаще всего подходят пакеты 50€, 150€ или 300€.",
+          },
+        },
       ],
     },
   ],
@@ -260,6 +276,16 @@ const faqs = [
     answer:
       "Да, пакеты Standard/Pro включают CMS (управление контентом). Мы также предоставляем небольшое руководство + обучение (в Pro).",
   },
+  {
+    question: "Что означает запрос сайт цены?",
+    answer:
+      "Обычно пользователь хочет быстро понять диапазон бюджета. У нас лендинг стоит от 50€, сайт-визитка от 150€, а мини-магазин от 300€.",
+  },
+  {
+    question: "Какая цена создания сайта или разработки сайта?",
+    answer:
+      "Цена создания сайта зависит от количества страниц, дизайна, контента и интеграций. Для малого бизнеса в Молдове чаще всего подходят пакеты 50€, 150€ или 300€.",
+  },
 ];
 
 const whyChooseUs = [
@@ -301,8 +327,8 @@ const testimonials = [
 <html lang="ru">
   <head>
     <BaseHead
-      title="Сколько стоит сайт в Молдове? Цены 50-300€"
-      description="Прозрачные цены на сайт в Молдове: лендинг 50€, сайт-визитка 150€, мини-магазин 300€. Быстрая оценка и бесплатный расчёт."
+      title="Сколько стоит сайт в Молдове? Цены от 50 EUR"
+      description="Сайт цены в Молдове: лендинг от 50 EUR, сайт-визитка от 150 EUR, мини-магазин от 300 EUR. Быстрая оценка и бесплатный расчёт."
       canonicalUrl="https://moldovawebsite.md/ru/preturi/"
       lang="ru"
       ogLocale="ru_MD"
@@ -325,6 +351,14 @@ const testimonials = [
           <h1>Сколько стоит сайт в Молдове? Цены и пакеты 2026</h1>
           <p>Сравните стоимость лендинга, сайта-визитки и мини-магазина: Basic 50€, Standard 150€, Pro 300€.</p>
           <p>Ориентиры для веб-дизайна в Кишиневе и по всей Молдове.</p>
+          <div class="dev-hero-actions">
+            <a href="/ru/contact/" class="dev-btn dev-btn-primary">
+              Получить точную цену
+            </a>
+            <a href="/ru/serviciiBlog/magazin-online/" class="dev-btn dev-btn-secondary">
+              Интернет-магазин от 300 EUR
+            </a>
+          </div>
         </div>
         <div class="dev-hero-intro">
           <p>
@@ -379,6 +413,38 @@ const testimonials = [
         <p class="dev-inline-note">
           Это ориентир. Финальная стоимость рассчитывается после брифа.
         </p>
+      </div>
+    </section>
+
+    <section class="dev-section" id="sait-ceny">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Сайт цены</span>
+          <h2>Разработка сайтов: цена для бизнеса в Молдове</h2>
+          <p>
+            Для запросов сайт цены, разработка сайтов цена и цена создания сайта
+            важен прямой ответ: лендинг от 50 EUR, сайт-визитка от 150 EUR,
+            мини-магазин от 300 EUR. Финальная стоимость зависит от структуры,
+            количества страниц, контента и нужных интеграций.
+          </p>
+        </div>
+        <div class="dev-info-grid">
+          <a href="/ru/sait-vizitka/" class="dev-info-card">
+            <h3>Сайт-визитка от 150 EUR</h3>
+            <p>3-5 страниц, понятная структура услуг, форма заявки, базовое SEO и подготовка к локальному поиску.</p>
+            <span class="dev-link-accent">сайт-визитка</span>
+          </a>
+          <a href="/ru/serviciiBlog/magazin-online/" class="dev-info-card">
+            <h3>Интернет-магазин от 300 EUR</h3>
+            <p>Каталог, корзина, доставка, способы оплаты и стартовая e-commerce структура для Молдовы.</p>
+            <span class="dev-link-accent">мини-магазин от 300 EUR</span>
+          </a>
+          <a href="/ru/sozdanie-saitov-kishinev/" class="dev-info-card">
+            <h3>Создание сайтов в Кишиневе</h3>
+            <p>Локальная страница для бизнеса, которому нужен исполнитель, понятный процесс и быстрый путь к заявке.</p>
+            <span class="dev-link-accent">создание сайтов в Кишиневе</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -484,11 +550,11 @@ const testimonials = [
         <div class="dev-info-grid">
           {
             ruLandingCards.map((page) => (
-              <a href={page.href} class="dev-info-card">
+              <article class="dev-info-card">
                 <h3>{page.title}</h3>
                 <p>{page.description}</p>
-                <span class="dev-link-accent">Открыть страницу</span>
-              </a>
+                <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
+              </article>
             ))
           }
         </div>

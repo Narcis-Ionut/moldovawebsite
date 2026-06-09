@@ -110,6 +110,12 @@ const jsonLd = {
             Google, pornește de la serviciul care se potrivește obiectivului
             tău.
           </p>
+          <p>
+            Servicii web pentru afaceri din Moldova înseamnă mai mult decât o
+            listă de tehnologii: alegem pagina potrivită pentru lead-uri,
+            magazin online, redesign sau creștere organică, apoi legăm fiecare
+            direcție de prețuri și contact.
+          </p>
           <div class="dev-hero-actions">
             <a href="/preturi/" class="dev-btn dev-btn-primary">Vezi prețuri</a>
             <a href="/contact/" class="dev-btn dev-btn-secondary">Solicită ofertă</a>
@@ -193,11 +199,11 @@ const jsonLd = {
         <div class="dev-info-grid">
           {
             roLandingCards.map((page) => (
-              <a href={page.href} class="dev-info-card">
+              <article class="dev-info-card">
                 <h3>{page.title}</h3>
                 <p>{page.description}</p>
-                <span class="dev-link-accent">Vezi pagina</span>
-              </a>
+                <a href={page.href} class="dev-link-accent">Vezi {page.title}</a>
+              </article>
             ))
           }
         </div>
