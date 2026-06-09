@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseHead from "../../../components/BaseHead.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
@@ -161,7 +161,7 @@ const faqs = [
             привлекают и конвертируют
           </h1>
           <p class="subheading">
-            Профессиональный веб-дизайн в Молдове от нашей команды: мы создаём
+            UX-дизайн сайта, интерфейс и конверсии работают вместе: мы создаём
             привлекательные и функциональные дизайны для пользователей из
             Молдовы, с фокусом на конверсии и комфорт на всех устройствах.
           </p>
@@ -211,7 +211,7 @@ const faqs = [
 
         <div class="content-grid">
           <div class="content-block">
-            <h3>Первое впечатление решает</h3>
+            <p class="service-card-title">Первое впечатление решает</p>
             <p>
               Знаете ли вы, что посетители формируют мнение о сайте за первые 50
               миллисекунд? Современный и профессиональный дизайн вселяет доверие
@@ -238,7 +238,7 @@ const faqs = [
 
         <div class="content-grid reverse">
           <div class="content-block">
-            <h3>Пользовательский опыт (UX) — в приоритете</h3>
+            <p class="service-card-title">Пользовательский опыт (UX) — в приоритете</p>
             <p>
               Красивый, но неудобный сайт не принесёт результата. Мы делаем упор
               на:
@@ -268,7 +268,7 @@ const faqs = [
 
         <div class="content-grid">
           <div class="content-block">
-            <h3>Адаптивный дизайн для всех устройств (Responsive)</h3>
+            <p class="service-card-title">Адаптивный дизайн для всех устройств (Responsive)</p>
             <p>
               В Молдове более 65% веб-трафика идёт с мобильных устройств. Каждый
               наш дизайн оптимизирован под любые экраны:
@@ -310,7 +310,7 @@ const faqs = [
             features.map((feature) => (
               <div class="service-card">
                 <div class="service-icon">{feature.icon}</div>
-                <h3 class="service-title">{feature.title}</h3>
+                <p class="service-title">{feature.title}</p>
                 <p class="service-desc">{feature.description}</p>
               </div>
             ))
@@ -335,7 +335,7 @@ const faqs = [
             process.map((p) => (
               <div class="step">
                 <div class="step-number">{p.step}</div>
-                <h3 class="step-title">{p.title}</h3>
+                <p class="step-title">{p.title}</p>
                 <p class="step-desc">{p.description}</p>
               </div>
             ))
@@ -355,7 +355,7 @@ const faqs = [
           {
             benefits.map((benefit) => (
               <div class="content-block content-block-plain">
-                <h3>{benefit.title}</h3>
+                <p class="service-card-title">{benefit.title}</p>
                 <p>{benefit.description}</p>
               </div>
             ))

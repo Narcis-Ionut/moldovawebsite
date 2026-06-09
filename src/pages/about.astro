@@ -164,7 +164,7 @@ const teamInfo = {
 <html lang="ro">
   <head>
     <BaseHead
-      title="Despre moldovawebsite.md | Web design in Moldova"
+      title="Despre echipa | Web design in Moldova"
       description="Află cine suntem și cum oferim web design accesibil în Chișinău: site de prezentare, magazin online, SEO on-page și mentenanță."
       canonicalUrl="https://moldovawebsite.md/about/"
       hreflangRo="https://moldovawebsite.md/about/"
@@ -400,7 +400,7 @@ const teamInfo = {
           {
             benefits.map((b) => (
               <div class="dev-benefit-card">
-                <h3>{b.title}</h3>
+                <span class="dev-card-title">{b.title}</span>
                 <p>{b.description}</p>
               </div>
             ))
@@ -422,7 +422,7 @@ const teamInfo = {
             whyChooseUs.map((w) => (
               <div class="dev-why-card">
                 <div class="dev-why-icon">🎯</div>
-                <h3>{w.title}</h3>
+                <span class="dev-card-title">{w.title}</span>
                 <p>{w.description}</p>
               </div>
             ))
@@ -447,7 +447,7 @@ const teamInfo = {
             values.map((v) => (
               <div class="dev-value-card">
                 <div class="dev-value-num">{v.number}</div>
-                <h3>{v.title}</h3>
+                <span class="dev-card-title">{v.title}</span>
                 <p>{v.description}</p>
               </div>
             ))
@@ -469,7 +469,7 @@ const teamInfo = {
             process.map((p) => (
               <div class="dev-process-step">
                 <div class="dev-process-num">{p.number}</div>
-                <h3>{p.title}</h3>
+                <span class="dev-card-title">{p.title}</span>
                 <p>{p.description}</p>
               </div>
             ))

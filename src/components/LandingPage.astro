@@ -69,6 +69,22 @@ const ui =
         relatedLinkLabel: "Открыть страницу",
       };
 
+const painIntro = `${page.breadcrumbLabel}: ${ui.painIntro}`;
+const deliverIntro = page.serviceDescription;
+const processIntro = `${page.breadcrumbLabel}: ${ui.processIntro}`;
+const relatedIntro =
+  lang === "ro"
+    ? `Pentru ${page.breadcrumbLabel}, continua spre pagina care clarifica pretul, designul, SEO-ul sau contactul.`
+    : `Для ${page.breadcrumbLabel} следующий переход ведет к цене, дизайну, SEO или прямому контакту.`;
+const getRelatedAnchorText = (link: LandingPageData["relatedLinks"][number]) => {
+  const isService = link.href.includes("/serviciiBlog/");
+  if (lang === "ro") {
+    return `${isService ? "Vezi serviciul" : "Vezi pagina"}: ${link.title}`;
+  }
+
+  return `${isService ? "Открыть услугу" : "Открыть страницу"}: ${link.title}`;
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -233,12 +249,12 @@ const jsonLd = {
         <div class="dev-section-header">
           <span class="dev-section-tag">{ui.painTag}</span>
           <h2>{ui.painTitle}</h2>
-          <p>{ui.painIntro}</p>
+          <p>{painIntro}</p>
         </div>
         <div class="dev-info-grid">
           {page.painPoints.map((item) => (
             <div class="dev-info-card">
-              <h3>{item.title}</h3>
+              <span class="dev-card-title">{item.title}</span>
               <p>{item.description}</p>
             </div>
           ))}
@@ -251,13 +267,13 @@ const jsonLd = {
         <div class="dev-section-header">
           <span class="dev-section-tag">{ui.deliverTag}</span>
           <h2>{ui.deliverTitle}</h2>
-          <p>{ui.deliverIntro}</p>
+          <p>{deliverIntro}</p>
         </div>
         <div class="dev-services-grid">
           {page.deliverables.map((item) => (
             <div class="dev-service-card">
               <div class="dev-service-icon">{item.title.slice(0, 1)}</div>
-              <h3>{item.title}</h3>
+              <span class="dev-card-title">{item.title}</span>
               <p>{item.description}</p>
             </div>
           ))}
@@ -270,13 +286,13 @@ const jsonLd = {
         <div class="dev-section-header">
           <span class="dev-section-tag">{ui.processTag}</span>
           <h2>{ui.processTitle}</h2>
-          <p>{ui.processIntro}</p>
+          <p>{processIntro}</p>
         </div>
         <div class="dev-process-grid">
           {page.process.map((item, index) => (
             <div class="dev-process-step">
               <div class="dev-process-number">{index + 1}</div>
-              <h3>{item.title}</h3>
+              <span class="dev-card-title">{item.title}</span>
               <p>{item.description}</p>
             </div>
           ))}
@@ -307,14 +323,16 @@ const jsonLd = {
         <div class="dev-section-header">
           <span class="dev-section-tag">{ui.relatedTag}</span>
           <h2>{ui.relatedTitle}</h2>
-          <p>{ui.relatedIntro}</p>
+          <p>{relatedIntro}</p>
         </div>
         <div class="dev-info-grid">
           {page.relatedLinks.map((link) => (
             <article class="dev-info-card">
-              <h3>{link.title}</h3>
+              <span class="dev-card-title">{link.title}</span>
               <p>{link.description}</p>
-              <a href={link.href} class="dev-link-accent">{ui.relatedLinkLabel}</a>
+              <a href={link.href} class="dev-link-accent">
+                {getRelatedAnchorText(link)}
+              </a>
             </article>
           ))}
         </div>

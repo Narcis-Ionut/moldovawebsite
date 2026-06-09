@@ -235,7 +235,8 @@ body.dev-ru-theme,
   padding: 1.5rem;
 }
 
-.content-block h3 {
+.content-block h3,
+.service-card-title {
   margin-bottom: 0.7rem;
 }
 
@@ -313,10 +314,16 @@ body.dev-ru-theme,
 
 .service-title,
 .step-title,
+.service-card-title,
 .service-card h3,
 .pricing-card h3,
 .price-card h3,
 .portfolio-card h3 {
+  display: block;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
   margin-bottom: 0.55rem;
 }
 
@@ -995,6 +1002,7 @@ body.dev-ru-theme,
 .content-block h3,
 .service-title,
 .step-title,
+.service-card-title,
 .service-card h3,
 .pricing-card h3,
 .price-card h3,

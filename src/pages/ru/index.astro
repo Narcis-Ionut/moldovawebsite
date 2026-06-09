@@ -127,7 +127,7 @@ const linkedServices = [
   },
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>`,
-    title: "SEO on-page для Молдовы",
+    title: "SEO-оптимизация для Молдовы",
     description:
       "Мета-теги, структура страниц и оптимизация под локальные коммерческие запросы в Google.",
     cardClass: "dev-card-violet",
@@ -275,7 +275,7 @@ const faqs = [
   <head>
     <BaseHead
       title="Создание сайтов в Молдове | Быстро, SEO, от 50€"
-      description="Быстрые сайты для бизнеса в Молдове: сайт-визитка, интернет-магазин, SEO on-page и адаптивный дизайн. Прозрачные цены."
+      description="Быстрые сайты для бизнеса в Молдове: сайт-визитка, интернет-магазин, SEO-оптимизация и адаптивный дизайн. Прозрачные цены."
       canonicalUrl="https://moldovawebsite.md/ru/"
       lang="ru"
       ogLocale="ru_MD"
@@ -295,15 +295,10 @@ const faqs = [
         <div class="dev-hero-grid">
           <div class="dev-hero-content">
             <div class="dev-hero-badge">Открыты для новых проектов</div>
-            <h1>
-              Создание сайтов в Молдове для локального бизнеса
-              <span
-                >Быстрые, понятные и SEO-friendly сайты для Кишинева и всей
-                Молдовы</span
-              >
-            </h1>
+            <h1>Создание сайтов в Молдове для локального бизнеса</h1>
             <p class="dev-hero-subtitle">
-              Современные сайты помогают бизнесу выглядеть профессионально,
+              Быстрые, понятные и SEO-friendly сайты для Кишинева и всей
+              Молдовы помогают бизнесу выглядеть профессионально,
               вызывать доверие и получать заявки. Локальные услуги: <strong>сайт-визитка</strong>, <strong
                 >интернет-магазин</strong
               >,
@@ -352,7 +347,7 @@ const faqs = [
               </div>
               <div class="dev-stat">
                 <div class="dev-stat-value">SEO</div>
-                <div class="dev-stat-label">On-page структура</div>
+                <div class="dev-stat-label">SEO-структура</div>
               </div>
               <div class="dev-stat">
                 <div class="dev-stat-value">24h</div>
@@ -434,11 +429,12 @@ const faqs = [
         <div class="dev-services-grid">
           {
             linkedServices.map((service) => (
-              <a href={service.href} class={`dev-service-card ${service.cardClass}`}>
+              <article class={`dev-service-card ${service.cardClass}`}>
                 <div class="dev-service-icon" set:html={service.icon} />
-                <h3>{service.title}</h3>
+                <span class="dev-card-title">{service.title}</span>
                 <p>{service.description}</p>
-              </a>
+                <a href={service.href} class="dev-link-accent">{service.title}</a>
+              </article>
             ))
           }
         </div>
@@ -460,8 +456,8 @@ const faqs = [
             ruLandingCards.map((page, index) => (
               <article class={`dev-service-card ${linkedServices[index % linkedServices.length].cardClass}`}>
                 <div class="dev-service-icon">{String(index + 1).padStart(2, "0")}</div>
-                <h3>{page.title}</h3>
-                <p>{page.description}</p>
+                <span class="dev-card-title">{page.title}</span>
+                <p>{`Быстрый вход в тему ${page.title}: локальный контекст, цена или заявка без лишних переходов.`}</p>
                 <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
               </article>
             ))
@@ -545,7 +541,7 @@ const faqs = [
                   </div>
                 </div>
                 <div class="dev-portfolio-content">
-                  <h3>{item.title}</h3>
+                  <span class="dev-card-title">{item.title}</span>
                   <p>{item.description}</p>
                   <ul class="dev-portfolio-features">
                     {item.features.map((feature) => (
@@ -559,7 +555,7 @@ const faqs = [
                       rel="noopener"
                       class="dev-portfolio-link"
                     >
-                      Посетить сайт →
+                      Посетить {item.title}
                     </a>
                   )}
                 </div>
@@ -587,7 +583,7 @@ const faqs = [
         </div>
         <div class="dev-pricing-grid">
           <div class="dev-pricing-card">
-            <h3>Сайт-визитка</h3>
+            <span class="dev-card-title">Сайт-визитка</span>
             <p>
               Идеально для бизнеса, которому нужен профессиональный онлайн‑образ
             </p>
@@ -604,7 +600,7 @@ const faqs = [
             >
           </div>
           <div class="dev-pricing-card featured">
-            <h3>Интернет-магазин</h3>
+            <span class="dev-card-title">Интернет-магазин</span>
             <p>Полное ecommerce‑решение для онлайн‑продаж</p>
             <ul class="dev-pricing-features">
               <li>Каталог товаров + корзина</li>
@@ -620,7 +616,7 @@ const faqs = [
             >
           </div>
           <div class="dev-pricing-card">
-            <h3>SEO и обслуживание</h3>
+            <span class="dev-card-title">SEO и обслуживание</span>
             <p>Поддерживайте сайт актуальным и оптимизированным</p>
             <ul class="dev-pricing-features">
               <li>Обновления и безопасность</li>
@@ -657,7 +653,7 @@ const faqs = [
             process.map((step) => (
               <div class="dev-process-step">
                 <div class="dev-process-number">{step.number}</div>
-                <h3>{step.title}</h3>
+                <span class="dev-card-title">{step.title}</span>
                 <p>{step.description}</p>
               </div>
             ))

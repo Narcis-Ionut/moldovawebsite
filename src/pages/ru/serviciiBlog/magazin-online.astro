@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseHead from "../../../components/BaseHead.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
@@ -236,7 +236,7 @@ const faqs = [
         <div class="service-grid">
           <div class="service-card">
             <div class="service-icon">300</div>
-            <h3 class="service-title">Стартовая цена</h3>
+            <p class="service-title">Стартовая цена</p>
             <p class="service-desc">
               Мини-магазин от 300 EUR: каталог, корзина, оформление заказа,
               базовые настройки доставки и контактный путь к покупке.
@@ -244,7 +244,7 @@ const faqs = [
           </div>
           <div class="service-card">
             <div class="service-icon">MD</div>
-            <h3 class="service-title">Оплата и доставка</h3>
+            <p class="service-title">Оплата и доставка</p>
             <p class="service-desc">
               Подготовим варианты карты, перевода, оплаты при получении,
               курьера, самовывоза или локальной доставки по Кишиневу.
@@ -252,7 +252,7 @@ const faqs = [
           </div>
           <div class="service-card">
             <div class="service-icon">SEO</div>
-            <h3 class="service-title">Структура для Google</h3>
+            <p class="service-title">Структура для Google</p>
             <p class="service-desc">
               Категории, товары, title/meta, скорость и внутренние ссылки, чтобы
               магазин был понятен и пользователям, и поиску.
@@ -298,7 +298,7 @@ const faqs = [
 
         <div class="content-grid">
           <div class="content-block">
-            <h3>Продажи 24/7 без географических ограничений</h3>
+            <p class="service-card-title">Продажи 24/7 без географических ограничений</p>
             <p>Интернет-магазин позволяет продавать товары и услуги:</p>
             <ul>
               <li>Круглосуточно, 24 часа в сутки, 7 дней в неделю</li>
@@ -326,7 +326,7 @@ const faqs = [
 
         <div class="content-grid reverse">
           <div class="content-block">
-            <h3>Простой и профессиональный опыт покупки</h3>
+            <p class="service-card-title">Простой и профессиональный опыт покупки</p>
             <p>
               Интернет-магазины, которые мы создаем, разработаны для конверсии:
             </p>
@@ -355,7 +355,7 @@ const faqs = [
 
         <div class="content-grid">
           <div class="content-block">
-            <h3>Простое администрирование и автономность</h3>
+            <p class="service-card-title">Простое администрирование и автономность</p>
             <p>Наши интернет-магазины созданы для простого управления:</p>
             <ul>
               <li>
@@ -397,7 +397,7 @@ const faqs = [
             features.map((feature) => (
               <div class="service-card">
                 <div class="service-icon">{feature.icon}</div>
-                <h3 class="service-title">{feature.title}</h3>
+                <p class="service-title">{feature.title}</p>
                 <p class="service-desc">{feature.description}</p>
               </div>
             ))
@@ -421,7 +421,7 @@ const faqs = [
             process.map((p) => (
               <div class="step">
                 <div class="step-number">{p.step}</div>
-                <h3 class="step-title">{p.title}</h3>
+                <p class="step-title">{p.title}</p>
                 <p class="step-desc">{p.description}</p>
               </div>
             ))
@@ -441,7 +441,7 @@ const faqs = [
           {
             benefits.map((benefit) => (
               <div class="content-block content-block-plain">
-                <h3>{benefit.title}</h3>
+                <p class="service-card-title">{benefit.title}</p>
                 <p>{benefit.description}</p>
               </div>
             ))

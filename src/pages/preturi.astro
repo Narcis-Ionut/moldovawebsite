@@ -339,7 +339,7 @@ const faqs = [
         </div>
         <div class="dev-pricing-grid">
           <article class="dev-price-card">
-            <h3>Landing simplu</h3>
+            <span class="dev-card-title">Landing simplu</span>
             <div class="dev-price">~50€</div>
             <p>1 pagină, prezentare rapidă, formular de contact.</p>
             <a href="/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
@@ -347,7 +347,7 @@ const faqs = [
             </a>
           </article>
           <article class="dev-price-card featured">
-            <h3>Site de prezentare</h3>
+            <span class="dev-card-title">Site de prezentare</span>
             <div class="dev-price">~150€</div>
             <p>3-5 pagini, structură completă, SEO on-page esențial.</p>
             <a href="/contact/" class="dev-btn dev-btn-primary dev-btn-block">
@@ -355,7 +355,7 @@ const faqs = [
             </a>
           </article>
           <article class="dev-price-card">
-            <h3>Mini-magazin</h3>
+            <span class="dev-card-title">Mini-magazin</span>
             <div class="dev-price">~300€</div>
             <p>Catalog, coș, livrare și setări pentru vânzări online.</p>
             <a href="/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
@@ -365,7 +365,7 @@ const faqs = [
         </div>
         <p class="dev-inline-note">
           Estimare orientativă. Pentru detalii, citește și ghidul despre
-          <a href="/blog/cat-costa-site-moldova-2026/">preț creare site în Moldova</a>.
+          <a href="/blog/cat-costa-site-moldova-2026/">ghidul complet de costuri</a>.
         </p>
       </div>
     </section>
@@ -383,30 +383,30 @@ const faqs = [
           </p>
         </div>
         <div class="dev-info-grid">
-          <a href="/site-de-prezentare/" class="dev-info-card">
-            <h3>Preț site de prezentare</h3>
+          <article class="dev-info-card">
+            <span class="dev-card-title">Preț site de prezentare</span>
             <p>
               De la 150 EUR pentru 3-5 pagini, structură de servicii, formular,
               SEO on-page și pregătire pentru căutări locale în Moldova.
             </p>
-            <span class="dev-link-accent">site de prezentare de la 150 EUR</span>
-          </a>
-          <a href="/serviciiBlog/magazin-online/" class="dev-info-card">
-            <h3>Preț magazin online</h3>
+            <a href="/site-de-prezentare/" class="dev-link-accent">site de prezentare</a>
+          </article>
+          <article class="dev-info-card">
+            <span class="dev-card-title">Preț magazin online</span>
             <p>
               De la 300 EUR pentru mini-magazin cu catalog, coș, livrare,
               setări de comandă și bază SEO pentru produse.
             </p>
-            <span class="dev-link-accent">mini-magazin online de la 300 EUR</span>
-          </a>
-          <a href="/creare-site-chisinau/" class="dev-info-card">
-            <h3>Preț creare site Chișinău</h3>
+            <a href="/serviciiBlog/magazin-online/" class="dev-link-accent">magazin online</a>
+          </article>
+          <article class="dev-info-card">
+            <span class="dev-card-title">Preț creare site Chișinău</span>
             <p>
               Pentru afaceri locale, estimarea include structură comercială,
               CTA-uri clare, optimizare mobilă și context pentru Chișinău/Moldova.
             </p>
-            <span class="dev-link-accent">creare site Chișinău</span>
-          </a>
+            <a href="/creare-site-chisinau/" class="dev-link-accent">creare site Chișinău</a>
+          </article>
         </div>
       </div>
     </section>
@@ -425,15 +425,15 @@ const faqs = [
         </div>
         <div class="dev-info-grid">
           <div class="dev-info-card">
-            <h3>Când ajunge Basic</h3>
+            <span class="dev-card-title">Când ajunge Basic</span>
             <p>Ai nevoie de o pagină rapidă pentru ofertă, contact, reclamă sau validare de idee.</p>
           </div>
           <div class="dev-info-card">
-            <h3>Când alegi Standard</h3>
+            <span class="dev-card-title">Când alegi Standard</span>
             <p>Vrei un site de prezentare cu servicii, despre, contact și bază SEO pentru Google.</p>
           </div>
           <div class="dev-info-card">
-            <h3>Când alegi Pro</h3>
+            <span class="dev-card-title">Când alegi Pro</span>
             <p>Ai nevoie de mini-magazin, mai multe pagini, traduceri RO/RU sau funcții custom.</p>
           </div>
         </div>
@@ -466,7 +466,7 @@ const faqs = [
                 class={`dev-price-card ${pkg.featured ? "featured" : ""}`}
                 id={pkg.id}
               >
-                <h3>{pkg.name}</h3>
+                <span class="dev-card-title">{pkg.name}</span>
                 <div class="dev-price">{pkg.price}</div>
                 <p>{pkg.description}</p>
                 <ul class="dev-price-features">
@@ -497,7 +497,7 @@ const faqs = [
           {
             factors.map((f) => (
               <div class="dev-info-card">
-                <h3>{f.title}</h3>
+                <span class="dev-card-title">{f.title}</span>
                 <p>{f.description}</p>
               </div>
             ))
@@ -521,8 +521,8 @@ const faqs = [
           {
             roLandingCards.map((page) => (
               <article class="dev-info-card">
-                <h3>{page.title}</h3>
-                <p>{page.description}</p>
+                <span class="dev-card-title">{page.title}</span>
+                <p>{`Pagina dedicata pentru ${page.title}, cu intentie comerciala si pas clar spre oferta.`}</p>
                 <a href={page.href} class="dev-link-accent">Mergi la {page.title}</a>
               </article>
             ))
@@ -543,7 +543,7 @@ const faqs = [
           {
             addons.map((a) => (
               <div class="dev-info-card">
-                <h3>{a.title}</h3>
+                <span class="dev-card-title">{a.title}</span>
                 <p>{a.description}</p>
               </div>
             ))

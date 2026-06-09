@@ -20,7 +20,7 @@ const services = [
   },
   {
     href: "/ru/serviciiBlog/seo-on-page/",
-    title: "SEO on-page",
+    title: "SEO-аудит",
     description:
       "Технический аудит, мета-теги, структура и оптимизация страниц под коммерческие запросы в Google.",
   },
@@ -62,7 +62,7 @@ const jsonLd = {
       "@type": "CollectionPage",
       name: "Веб-услуги в Молдове",
       description:
-        "Хаб по услугам веб-дизайна, разработки, SEO on-page, интернет-магазинов и поддержки в Молдове.",
+        "Хаб по услугам веб-дизайна, разработки, SEO-аудита, интернет-магазинов и поддержки в Молдове.",
       url: "https://moldovawebsite.md/ru/serviciiBlog/",
       inLanguage: "ru-MD",
     },
@@ -84,7 +84,7 @@ const jsonLd = {
   <head>
     <BaseHead
       title="Веб-услуги в Молдове | Дизайн, разработка, SEO"
-      description="Веб-услуги для бизнеса в Молдове: создание сайта, веб-дизайн, разработка, SEO on-page, интернет-магазин и поддержка."
+      description="Веб-услуги для бизнеса в Молдове: создание сайта, веб-дизайн, разработка, SEO-аудит, интернет-магазин и поддержка."
       canonicalUrl="https://moldovawebsite.md/ru/serviciiBlog/"
       hreflangRo="https://moldovawebsite.md/serviciiBlog/"
       hreflangRu="https://moldovawebsite.md/ru/serviciiBlog/"
@@ -112,12 +112,19 @@ const jsonLd = {
           <p>
             Веб-услуги для бизнеса в Молдове начинаются с выбора правильного
             направления: сайт-визитка для заявок, интернет-магазин для продаж,
-            UX-дизайн для доверия или SEO on-page для роста видимости.
+            UX-дизайн для доверия или техническая SEO-оптимизация для роста видимости.
           </p>
           <p>
             Поэтому этот раздел работает как карта сайта для коммерческих
             услуг: каждая карточка ведет к отдельной странице с понятным
             сценарием, ценой, процессом и следующим шагом к заявке.
+          </p>
+          <p>
+            Если у бизнеса уже есть сайт, этот хаб помогает понять, что
+            исправлять первым: визуальную подачу, техническую реализацию,
+            структуру SEO, путь покупки или регулярную поддержку. Такой подход
+            экономит бюджет, потому что работа начинается с страницы, которая
+            ближе всего к реальной заявке.
           </p>
           <div class="dev-hero-actions">
             <a href="/ru/preturi/" class="dev-btn dev-btn-primary">Посмотреть цены</a>
@@ -137,11 +144,11 @@ const jsonLd = {
         <div class="dev-info-grid">
           {
             services.map((service) => (
-              <a href={service.href} class="dev-info-card">
-                <h3>{service.title}</h3>
+              <article class="dev-info-card">
+                <span class="dev-card-title">{service.title}</span>
                 <p>{service.description}</p>
-                <span class="dev-link-accent">Подробнее</span>
-              </a>
+                <a href={service.href} class="dev-link-accent">{service.title}</a>
+              </article>
             ))
           }
         </div>
@@ -157,14 +164,14 @@ const jsonLd = {
         </div>
         <div class="dev-info-grid">
           <div class="dev-info-card">
-            <h3>Нужен визуальный уровень выше</h3>
+            <span class="dev-card-title">Нужен визуальный уровень выше</span>
             <p>
               Начните с <a href="/ru/serviciiBlog/design-web/">Веб-дизайна</a>,
               если хотите более сильную подачу и лучшее восприятие бренда.
             </p>
           </div>
           <div class="dev-info-card">
-            <h3>Нужна техническая реализация</h3>
+            <span class="dev-card-title">Нужна техническая реализация</span>
             <p>
               Переходите в
               <a href="/ru/serviciiBlog/dezvoltare-web/">Веб-разработку</a> для
@@ -172,14 +179,14 @@ const jsonLd = {
             </p>
           </div>
           <div class="dev-info-card">
-            <h3>Нужен рост из Google</h3>
+            <span class="dev-card-title">Нужен рост из Google</span>
             <p>
-              Страница <a href="/ru/serviciiBlog/seo-on-page/">SEO on-page</a>
+              Страница <a href="/ru/serviciiBlog/seo-on-page/">SEO-аудит</a>
               нужна, если главный вопрос в позициях и органическом трафике.
             </p>
           </div>
           <div class="dev-info-card">
-            <h3>Нужны онлайн-продажи</h3>
+            <span class="dev-card-title">Нужны онлайн-продажи</span>
             <p>
               Для каталога и заказов идите в
               <a href="/ru/serviciiBlog/magazin-online/">Интернет-магазин</a>.
@@ -203,8 +210,8 @@ const jsonLd = {
           {
             ruLandingCards.map((page) => (
               <article class="dev-info-card">
-                <h3>{page.title}</h3>
-                <p>{page.description}</p>
+                <span class="dev-card-title">{page.title}</span>
+                <p>{`Маршрут для запроса ${page.title}: отдельный контекст, коммерческий сценарий и следующий шаг.`}</p>
                 <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
               </article>
             ))

@@ -386,7 +386,7 @@ const testimonials = [
         </div>
         <div class="dev-pricing-grid">
           <article class="dev-price-card">
-            <h3>Лендинг</h3>
+            <span class="dev-card-title">Лендинг</span>
             <div class="dev-price">~50€</div>
             <p>1 страница, быстрый запуск, форма заявки.</p>
             <a href="/ru/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
@@ -394,7 +394,7 @@ const testimonials = [
             </a>
           </article>
           <article class="dev-price-card featured">
-            <h3>Сайт-визитка</h3>
+            <span class="dev-card-title">Сайт-визитка</span>
             <div class="dev-price">~150€</div>
             <p>3-5 страниц, базовое SEO и готовая структура.</p>
             <a href="/ru/contact/" class="dev-btn dev-btn-primary dev-btn-block">
@@ -402,7 +402,7 @@ const testimonials = [
             </a>
           </article>
           <article class="dev-price-card">
-            <h3>Мини-магазин</h3>
+            <span class="dev-card-title">Мини-магазин</span>
             <div class="dev-price">~300€</div>
             <p>Каталог, корзина, доставка и старт e-commerce.</p>
             <a href="/ru/contact/" class="dev-btn dev-btn-secondary dev-btn-block">
@@ -429,21 +429,21 @@ const testimonials = [
           </p>
         </div>
         <div class="dev-info-grid">
-          <a href="/ru/sait-vizitka/" class="dev-info-card">
-            <h3>Сайт-визитка от 150 EUR</h3>
+          <article class="dev-info-card">
+            <span class="dev-card-title">Сайт-визитка от 150 EUR</span>
             <p>3-5 страниц, понятная структура услуг, форма заявки, базовое SEO и подготовка к локальному поиску.</p>
-            <span class="dev-link-accent">сайт-визитка</span>
-          </a>
-          <a href="/ru/serviciiBlog/magazin-online/" class="dev-info-card">
-            <h3>Интернет-магазин от 300 EUR</h3>
+            <a href="/ru/sait-vizitka/" class="dev-link-accent">сайт-визитка</a>
+          </article>
+          <article class="dev-info-card">
+            <span class="dev-card-title">Интернет-магазин от 300 EUR</span>
             <p>Каталог, корзина, доставка, способы оплаты и стартовая e-commerce структура для Молдовы.</p>
-            <span class="dev-link-accent">мини-магазин от 300 EUR</span>
-          </a>
-          <a href="/ru/sozdanie-saitov-kishinev/" class="dev-info-card">
-            <h3>Создание сайтов в Кишиневе</h3>
+            <a href="/ru/serviciiBlog/magazin-online/" class="dev-link-accent">интернет-магазин</a>
+          </article>
+          <article class="dev-info-card">
+            <span class="dev-card-title">Создание сайтов в Кишиневе</span>
             <p>Локальная страница для бизнеса, которому нужен исполнитель, понятный процесс и быстрый путь к заявке.</p>
-            <span class="dev-link-accent">создание сайтов в Кишиневе</span>
-          </a>
+            <a href="/ru/sozdanie-saitov-kishinev/" class="dev-link-accent">создание сайтов</a>
+          </article>
         </div>
       </div>
     </section>
@@ -474,7 +474,7 @@ const testimonials = [
                 class={`dev-price-card ${pkg.featured ? "featured" : ""}`}
                 id={pkg.id}
               >
-                <h3>{pkg.name}</h3>
+                <span class="dev-card-title">{pkg.name}</span>
                 <div class="dev-price">{pkg.price}</div>
                 <p>{pkg.description}</p>
                 <ul class="dev-price-features">
@@ -506,7 +506,7 @@ const testimonials = [
             whyChooseUs.map((w) => (
               <div class="dev-why-card">
                 <div class="dev-why-icon">{w.icon}</div>
-                <h3>{w.title}</h3>
+                <span class="dev-card-title">{w.title}</span>
                 <p>{w.description}</p>
               </div>
             ))
@@ -527,7 +527,7 @@ const testimonials = [
           {
             factors.map((f) => (
               <div class="dev-info-card">
-                <h3>{f.title}</h3>
+                <span class="dev-card-title">{f.title}</span>
                 <p>{f.description}</p>
               </div>
             ))
@@ -551,8 +551,8 @@ const testimonials = [
           {
             ruLandingCards.map((page) => (
               <article class="dev-info-card">
-                <h3>{page.title}</h3>
-                <p>{page.description}</p>
+                <span class="dev-card-title">{page.title}</span>
+                <p>{`Отдельная страница для запроса ${page.title}: коммерческий сценарий, контекст и следующий шаг.`}</p>
                 <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
               </article>
             ))
@@ -573,7 +573,7 @@ const testimonials = [
           {
             addons.map((a) => (
               <div class="dev-info-card">
-                <h3>{a.title}</h3>
+                <span class="dev-card-title">{a.title}</span>
                 <p>{a.description}</p>
               </div>
             ))

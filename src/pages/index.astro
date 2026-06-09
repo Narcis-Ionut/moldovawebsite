@@ -326,11 +326,12 @@ const faqs = [
         <div class="nf-services-grid">
           {
             linkedServices.map((service) => (
-              <a href={service.href} class="nf-service-card">
+              <article class="nf-service-card">
                 <div class="nf-service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
+                <span class="nf-card-title">{service.title}</span>
                 <p>{service.description}</p>
-              </a>
+                <a href={service.href} class="nf-portfolio-link">{service.title}</a>
+              </article>
             ))
           }
         </div>
@@ -354,8 +355,8 @@ const faqs = [
             roLandingCards.map((page, index) => (
               <article class="nf-service-card">
                 <div class="nf-service-icon">{String(index + 1).padStart(2, "0")}</div>
-                <h3>{page.title}</h3>
-                <p>{page.description}</p>
+                <span class="nf-card-title">{page.title}</span>
+                <p>{`Cauta rapid informatia pentru ${page.title}: oferta, context local si urmatorul pas.`}</p>
                 <a href={page.href} class="nf-portfolio-link">Vezi {page.title}</a>
               </article>
             ))
@@ -389,7 +390,7 @@ const faqs = [
                   </div>
                 </div>
                 <div class="nf-card-content">
-                  <h3>{item.title}</h3>
+                  <span class="nf-card-title">{item.title}</span>
                   <p>{item.description}</p>
                   <ul class="nf-portfolio-features">
                     {item.features.map((feature) => (
@@ -403,7 +404,7 @@ const faqs = [
                       rel="noopener"
                       class="nf-portfolio-link"
                     >
-                      Vizitează site-ul →
+                      Vizitează {item.title}
                     </a>
                   )}
                 </div>
@@ -458,7 +459,7 @@ const faqs = [
         </div>
         <div class="nf-pricing-grid">
           <div class="nf-pricing-card">
-            <h3>Site de Prezentare</h3>
+            <span class="nf-card-title">Site de Prezentare</span>
             <p>Perfect pentru afaceri care doresc prezență online profesională</p>
             <ul class="nf-pricing-features">
               <li>Design modern + 5 pagini</li>
@@ -472,7 +473,7 @@ const faqs = [
             </a>
           </div>
           <div class="nf-pricing-card nf-pricing-featured">
-            <h3>Magazin Online</h3>
+            <span class="nf-card-title">Magazin Online</span>
             <p>Soluție ecommerce completă pentru vânzări online</p>
             <ul class="nf-pricing-features">
               <li>Catalog produse + coș</li>
@@ -487,7 +488,7 @@ const faqs = [
             </a>
           </div>
           <div class="nf-pricing-card">
-            <h3>SEO & Mentenanță</h3>
+            <span class="nf-card-title">SEO & Mentenanță</span>
             <p>Menține site-ul tău actualizat și optimizat</p>
             <ul class="nf-pricing-features">
               <li>Actualizări & securitate</li>
@@ -517,7 +518,7 @@ const faqs = [
             process.map((step) => (
               <div class="nf-process-step">
                 <div class="nf-process-number">{step.number}</div>
-                <h3>{step.title}</h3>
+                <span class="nf-card-title">{step.title}</span>
                 <p>{step.description}</p>
               </div>
             ))

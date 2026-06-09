@@ -110,6 +110,12 @@
   font-size: 1.05rem;
 }
 
+.post-costa .text-strong {
+  font-family: var(--font-heading);
+  color: var(--brand-1);
+  font-weight: 700;
+}
+
 .post-costa .pricing-grid {
   display: grid;
   gap: 1.5rem;
@@ -461,6 +467,13 @@
 .post-top5 .company-panel h3 {
   margin: 0;
   color: var(--brand-1);
+}
+
+.post-top5 .company-fit-title {
+  color: var(--brand-1);
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0;
 }
 
 .post-top5 .choice-grid {
