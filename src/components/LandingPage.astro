@@ -49,6 +49,9 @@ const ui =
         ctaIntro:
           "Primești o recomandare clară pentru structură, termen și buget, fără obligații.",
         visitProject: "Vezi proiectul",
+        scopeEyebrow: "Planul proiectului",
+        scopeCount: "obiective prioritare",
+        scopeFooter: "Fiecare obiectiv este legat de un rezultat măsurabil pentru afacere.",
       }
     : {
         homeLabel: "Главная",
@@ -84,6 +87,9 @@ const ui =
         ctaIntro:
           "Вы получите понятную рекомендацию по структуре, срокам и бюджету без обязательств.",
         visitProject: "Открыть проект",
+        scopeEyebrow: "План проекта",
+        scopeCount: "приоритетные задачи",
+        scopeFooter: "Каждая задача связана с измеримым результатом для бизнеса.",
       };
 
 const painIntro = `${page.breadcrumbLabel}: ${ui.painIntro}`;
@@ -215,11 +221,6 @@ const jsonLd = {
             <h1>{page.h1}</h1>
             <p class="dev-hero-subtitle">{page.intro}</p>
             <p>{page.lead}</p>
-            <div class="dev-chip-group">
-              {page.highlights.map((highlight) => (
-                <span class="dev-chip active">{highlight}</span>
-              ))}
-            </div>
             <div class="dev-hero-actions">
               <a href={page.primaryCta.href} class="dev-btn dev-btn-primary">
                 {page.primaryCta.title}
@@ -227,6 +228,11 @@ const jsonLd = {
               <a href={page.secondaryCta.href} class="dev-btn dev-btn-secondary">
                 {page.secondaryCta.title}
               </a>
+            </div>
+            <div class="dev-chip-group">
+              {page.highlights.map((highlight) => (
+                <span class="dev-chip active">{highlight}</span>
+              ))}
             </div>
             <div class="dev-hero-stats">
               {page.stats.map((stat) => (
@@ -238,27 +244,25 @@ const jsonLd = {
             </div>
           </div>
 
-          <div class="dev-code-window">
-            <div class="dev-code-header">
-              <span class="dev-code-dot red"></span>
-              <span class="dev-code-dot yellow"></span>
-              <span class="dev-code-dot green"></span>
-              <span class="dev-terminal-title">project-scope.ts</span>
+          <aside class="dev-scope-card" aria-label={ui.scopeEyebrow}>
+            <div class="dev-scope-header">
+              <span class="dev-scope-eyebrow">{ui.scopeEyebrow}</span>
+              <span class="dev-scope-count">
+                {page.painPoints.length} {ui.scopeCount}
+              </span>
             </div>
-            <div class="dev-code-body">
+            <div class="dev-scope-body">
               {page.painPoints.map((item, index) => (
-                <>
-                  <div class="dev-code-line">
-                    <span class="dev-code-num">{index + 1}</span>
-                    <span>
-                      <span class="dev-code-keyword">need</span>{" "}
-                      <span class="dev-code-string">"{item.title}"</span>
-                    </span>
-                  </div>
-                </>
+                <div class="dev-scope-item">
+                  <span class="dev-scope-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <strong>{item.title}</strong>
+                </div>
               ))}
             </div>
-          </div>
+            <p class="dev-scope-footer">{ui.scopeFooter}</p>
+          </aside>
         </div>
       </div>
     </section>
