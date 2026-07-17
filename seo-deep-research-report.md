@@ -86,6 +86,7 @@ The external-link profile is the biggest off-site weakness: 35 links total, all 
 7. Rewrote the SEO service titles/H1s around the exact Moldova commercial intent and added the starting-price signal to descriptions.
 8. Redirected the obsolete `/blog/using-mdx/` 404 to the blog hub.
 9. Stabilized the browser title so the chat widget cannot replace the page title with an unread-message label.
+10. Added selective Worker-first routing for the retired URLs so permanent redirects take precedence over any previously cached static asset, while all normal assets keep the faster asset-first path.
 
 ### 90-day route to the top
 
