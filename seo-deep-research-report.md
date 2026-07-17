@@ -87,12 +87,14 @@ The external-link profile is the biggest off-site weakness: 35 links total, all 
 8. Redirected the obsolete `/blog/using-mdx/` 404 to the blog hub.
 9. Stabilized the browser title so the chat widget cannot replace the page title with an unread-message label.
 10. Added selective Worker-first routing for the retired URLs so permanent redirects take precedence over any previously cached static asset, while all normal assets keep the faster asset-first path.
+11. Added Cloudflare Single Redirect rules for both exact and trailing-slash variants of the retired Romanian SEO page, Russian SEO page, and obsolete MDX article. This enforces the 301s ahead of the static-asset cache.
+12. Submitted the seven highest-priority commercial URLs through Google Search Console URL Inspection. All seven live tests passed and were accepted into Google's priority crawl queue.
 
 ### 90-day route to the top
 
 #### Days 0-14: recrawl and CTR recovery
 
-- Request indexing for the two Chișinău pages, both ecommerce service/local pages, both consolidated SEO service pages, and `/preturi/`.
+- Completed on 2026-07-17: requested indexing for the two Chișinău pages, both ecommerce service/local pages, both consolidated SEO service pages, and `/preturi/`.
 - Confirm the SEO legacy URLs return 301 and disappear from the sitemap.
 - Watch query/page CTR weekly, not daily. First target: recover site CTR above 0.8% while impressions continue growing.
 - Track `/preturi/` separately because GSC flagged its impressions as recently down 54%.
