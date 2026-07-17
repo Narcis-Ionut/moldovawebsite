@@ -1,5 +1,148 @@
 # SEO Deep Research Report - moldovawebsite.md
 
+## Live research update - 2026-07-17
+
+This update combines live Google Search Console, Mangools SERP/KD research, direct competitor-page audits, backlink review, sitemap/indexing review, and the repository implementation completed on 2026-07-17. The June report remains below as the historical baseline.
+
+### Current position
+
+Live GSC period: 2026-04-16 to 2026-07-15.
+
+| Metric | June baseline | Live July view | Direction |
+|---|---:|---:|---|
+| Clicks | 31 | 23 | Down |
+| Impressions | 4,180 | 5,010 | Up |
+| CTR | 0.74% | 0.50% | Down |
+| Average position | mixed, main pages 23-48 | 40.5 site-wide | Weak |
+
+Google is showing the site more often, but the additional visibility is not turning into clicks. This is primarily a relevance, snippet, proof, and authority problem—not a lack of keyword demand.
+
+The strongest commercial signals are:
+
+| Query | Impressions | Clicks | Position | Action |
+|---|---:|---:|---:|---|
+| `creare site` | 163 | 0 | 47.5 | Build authority around exact commercial pages |
+| `seo moldova` | 145 | 0 | 47.2 | Consolidate duplicate SEO pages |
+| `creare site web` | 143 | 0 | 44.7 | Strengthen homepage/local page proof |
+| `creare site web pret` | 132 | 0 | 28.2 | Keep `/preturi/` as the pricing authority |
+| `pret creare site` | 130 | 0 | 21.8 | Improve snippet and internal links to pricing |
+| `создание сайтов кишинев` | 103 | 0 | 43.9 | Strengthen RU local page |
+| `creare site chisinau` | 83 | 0 | 38.4 | Strengthen RO local page |
+| `pret creare website` | 78 | 0 | 16.5 | Push pricing page into top 10 |
+| `seo chisinau` | 58 | 0 | 43.5 | Use consolidated SEO service page |
+| `creare magazin online Chișinău` | 55 | 0 | 25.1 | Strengthen ecommerce/local relevance |
+| `creare magazin online Moldova` | 46 | 0 | 27.5 | Strengthen ecommerce proof and links |
+
+Several long-tail pricing phrases are already on page one, including `site prezentare pret` around position 2.8, `creare site preturi` around 3.1, `pret site magazin online` around 4.0, `pret creare site magazin online` around 4.3, and `creare website pret` around 6.3. The fastest short-term gain is therefore moving the broader price phrases from positions 16-28 into the top 10 while preserving the existing exact-price relevance.
+
+### Mangools opportunity and competitor map
+
+The local SERPs are realistically winnable. Mangools reports low keyword difficulty for the main commercial clusters:
+
+| Keyword | Moldova volume | KD | Current leaders |
+|---|---:|---:|---|
+| `creare site` | 420 | 13 | codex.md, crearesiteuri.md, websty.md |
+| `creare site chisinau` | 90 | 13 | crearesiteuri.md, webit.md, digitaltech.md |
+| `seo moldova` | 50 | 14 | rocketseo.md, semseo.md, webmaster.md |
+| `pret creare site` | 10 | 15 | websty.md, guides/articles, codex.md |
+| `web design chisinau` | 10 | 15 | directories/jobs plus a few agencies |
+| `creare magazin online` | 20 | 20 | prowebdesign.md, webecom.md, webus.md |
+| `создание сайтов кишинев` | about 80 | local commercial cluster | mixed local agencies |
+
+What the ranking competitors do better:
+
+| Competitor | Winning elements | Gap to exploit |
+|---|---|---|
+| codex.md | Exact title, visible price from 350 EUR, calculator, portfolio, testimonials, FAQ, deep 2,000+ word page | Higher starting price; opportunity to win value/speed segment |
+| crearesiteuri.md | Exact local title, prices, recent work, tools/calculator, many internal articles | Thin main-page copy and modest authority |
+| websty.md | Price-led title, 189/439/749/1249 packages, 14-day delivery, warranty, reviews | Compete with simpler entry packages and clearer local process |
+| rocketseo.md | Client proof, testimonials, local service positioning | No transparent price; win with productized SEO packages |
+| prowebdesign.md | Ecommerce-specific page, package comparisons, project examples | High starting prices; win smaller local merchants at 300 EUR entry |
+
+The consistent winning pattern is exact intent + visible price + proof + specific deliverables + FAQ + internal depth. Domain strength is not prohibitive, so disciplined page quality and a small number of relevant links can move these clusters.
+
+### Technical/indexing findings
+
+GSC reports 35 indexed and 29 not indexed URLs:
+
+- 7 not found (404), mainly obsolete legacy URLs.
+- 5 redirecting URLs, mostly slashless or old paths.
+- 11 crawled but not indexed, mostly stale slashless variants and feeds.
+- 2 discovered but not indexed: the RU local ecommerce page and one blog article.
+- 4 blocked by 403, all old Russian legacy paths; validation was already started in GSC.
+
+Sitemaps are healthy: `sitemap-index.xml` and `sitemap-0.xml` are successful, with 38 discovered URLs before this release. The sitemap itself is not the limiting factor.
+
+The external-link profile is the biggest off-site weakness: 35 links total, all effectively pointing to the homepage. Top linking domains are rezolvro.ro, mieremoldova.md, tencuitor.md, roweb-dev.ro, and arcadie-systems.com. Deep commercial pages receive no meaningful external authority.
+
+### Implemented in this release
+
+1. Rebuilt the shared commercial landing template around customer needs, deliverables, process, packages, portfolio, FAQs, and next actions. Removed visible copy that talked to visitors about search clusters, ranking, and why an SEO page exists.
+2. Added transparent 50/150/300 EUR package cards to the Romanian and Russian Chișinău site-creation pages.
+3. Added real portfolio proof to both local pages using Tencuitor.md, Arcadie Systems, and Beauty Studio Centru.
+4. Strengthened the RU ecommerce landing with a 300 EUR entry package and two clear growth/custom paths without inventing fixed prices.
+5. Added structured `Offer` data for packages and expanded the service provider schema with URL, email, and phone.
+6. Consolidated `/seo-moldova/` into `/serviciiBlog/seo-on-page/` and the Russian equivalent via permanent redirects. The established service pages had substantially more impressions and better positions, so splitting relevance was counterproductive.
+7. Rewrote the SEO service titles/H1s around the exact Moldova commercial intent and added the starting-price signal to descriptions.
+8. Redirected the obsolete `/blog/using-mdx/` 404 to the blog hub.
+9. Stabilized the browser title so the chat widget cannot replace the page title with an unread-message label.
+
+### 90-day route to the top
+
+#### Days 0-14: recrawl and CTR recovery
+
+- Request indexing for the two Chișinău pages, both ecommerce service/local pages, both consolidated SEO service pages, and `/preturi/`.
+- Confirm the SEO legacy URLs return 301 and disappear from the sitemap.
+- Watch query/page CTR weekly, not daily. First target: recover site CTR above 0.8% while impressions continue growing.
+- Track `/preturi/` separately because GSC flagged its impressions as recently down 54%.
+
+#### Days 15-45: topical and internal authority
+
+- Add 3 evidence-led commercial guides, each linked prominently to a service page:
+  - `Cat costa un magazin online in Moldova in 2026?`
+  - `Creare site in Chisinau: pret, proces si exemple`
+  - `SEO Moldova: ce include un audit si cat costa`
+- Link every new guide to one primary commercial URL and add reciprocal contextual links from the service page.
+- Add a compact price calculator only after real lead data shows which inputs materially change price. Competitors use calculators successfully, but a fake-complex calculator would reduce trust.
+- Improve `/preturi/` title/description only if its broad-query CTR remains below 1% after recrawl; protect the long-tail terms already ranking in the top 3-7.
+
+#### Days 30-75: deep-link authority
+
+- Secure 8-12 relevant Moldovan/Romanian referring domains, prioritizing links directly to `/preturi/`, `/creare-site-chisinau/`, ecommerce, and SEO—not only the homepage.
+- First sources: client case-study pages, local business directories with editorial descriptions, Moldova startup/agency listings, partner pages, and guest examples on business/marketing sites.
+- Replace generic footer-only anchors such as `made by moldovawebsite` with contextual case-study links where client permission exists.
+- Do not buy bulk links. The SERPs are low-KD enough that a small relevant profile is more valuable than volume.
+
+#### Days 60-90: iterate from GSC evidence
+
+- Promote pages that reach positions 8-20 with title/description tests and stronger internal anchors.
+- Expand pages that gain impressions but remain below position 20 with proof, comparison tables, and specific local FAQs.
+- Merge or redirect any new duplicate pages that compete for the same query family.
+- Target outcomes by day 90:
+  - broad price queries in positions 5-10;
+  - `creare site chisinau` and Russian equivalent in positions 10-20, with a path toward top 10;
+  - ecommerce local terms in positions 10-20;
+  - `seo moldova` served by one canonical page and moving above position 30;
+  - site CTR above 1.0%.
+
+### Measurement dashboard
+
+Review every Monday in GSC:
+
+| KPI | Baseline | 30-day target | 90-day target |
+|---|---:|---:|---:|
+| Site CTR | 0.50% | 0.80% | 1.00%+ |
+| Clicks / 3 months | 23 | 35+ run-rate | 70+ |
+| `pret creare site` position | 21.8 | under 15 | top 10 |
+| `creare site chisinau` position | 38.4 | under 25 | 10-20 |
+| `создание сайтов кишинев` position | 43.9 | under 30 | 10-20 |
+| `creare magazin online Chișinău` position | 25.1 | under 20 | 10-15 |
+| Relevant deep-linking domains | near 0 | 3 | 8-12 |
+
+Ranking first is not guaranteed and should not be promised. The evidence does show a credible path: low local keyword difficulty, existing impressions, page-one pricing long tails, and competitors that can be matched on page quality. The decisive constraint after this release is relevant off-site authority and consistent GSC-led iteration.
+
+---
+
 Date of analysis: 2026-06-10  
 GSC export used: `moldovawebsite.md-Performance-on-Search-2026-06-10`  
 GSC period: 2026-03-08 to 2026-06-07, Search type: Web

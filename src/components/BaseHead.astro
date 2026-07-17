@@ -147,6 +147,17 @@ window.Tawk_LoadStart = new Date();
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
+<script is:inline define:vars={{ title }}>
+  // Tawk can replace the tab title with an unread-message count. Keep the
+  // canonical page title stable for visitors and browser history.
+  const canonicalTitle = title;
+  const titleElement = document.querySelector("title");
+  if (titleElement) {
+    new MutationObserver(() => {
+      if (document.title !== canonicalTitle) document.title = canonicalTitle;
+    }).observe(titleElement, { childList: true, subtree: true, characterData: true });
+  }
+</script>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 

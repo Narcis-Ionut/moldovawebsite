@@ -19,6 +19,25 @@ export interface LandingLink {
   description: string;
 }
 
+export interface LandingPackage {
+  name: string;
+  price: string;
+  priceValue?: number;
+  description: string;
+  features: string[];
+  note?: string;
+  featured?: boolean;
+}
+
+export interface LandingCaseStudy {
+  image: string;
+  title: string;
+  category: string;
+  description: string;
+  features: string[];
+  href?: string;
+}
+
 export interface LandingPageData {
   slug: string;
   navTitle: string;
@@ -31,6 +50,8 @@ export interface LandingPageData {
   lead: string;
   highlights: string[];
   stats: LandingStat[];
+  packages?: LandingPackage[];
+  caseStudies?: LandingCaseStudy[];
   painPoints: LandingCard[];
   deliverables: LandingCard[];
   process: LandingCard[];

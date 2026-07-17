@@ -5,6 +5,14 @@
 # Updated pricing guide URL
 /blog/cat-costa-site-moldova-2025  /blog/cat-costa-site-moldova-2026/  301
 /blog/cat-costa-site-moldova-2025/ /blog/cat-costa-site-moldova-2026/  301
+/blog/using-mdx                 /blog/  301
+/blog/using-mdx/                /blog/  301
+
+# Consolidate duplicate SEO landing pages into the established service URLs
+/seo-moldova                    /serviciiBlog/seo-on-page/  301
+/seo-moldova/                   /serviciiBlog/seo-on-page/  301
+/ru/seo-moldova                 /ru/serviciiBlog/seo-on-page/  301
+/ru/seo-moldova/                /ru/serviciiBlog/seo-on-page/  301
 
 # Russian static URLs to Astro routes
 /ru/Главная.html /ru/ 301

@@ -157,9 +157,9 @@ export const roLandingPages: LandingPageData[] = [
     heroTag: "Cautare locala",
     h1: "Creare site in Chisinau pentru afaceri care au nevoie de clienti",
     intro:
-      "Interogarile precum creare site Chisinau, creare website Chisinau si creare site Moldova au nevoie de o pagina comerciala locala, nu doar de un homepage generic.",
+      "Website rapid, clar si optimizat pentru mobil, creat pentru firme din Chisinau si din toata Moldova.",
     lead:
-      "Creare site in Chisinau pentru afaceri care au nevoie de clienti inseamna o pagina construita pentru intentia in care cineva cauta un furnizor local. Vor sa stie daca lucrezi in Chisinau, cat costa, ce tip de site primesc si cat de repede pot trimite brief-ul.",
+      "Pornim cu structura potrivita afacerii tale, afisam costul orientativ de la inceput si livram un site pregatit pentru cereri, programari sau comenzi. Primesti design responsive, SEO on-page de baza si un proces simplu, cu raspuns initial in maximum 24 de ore.",
     highlights: [
       "Potrivit pentru servicii, clinici, saloane si firme B2B",
       "Accent pe Chisinau, dar valabil pentru toata Moldova",
@@ -172,16 +172,86 @@ export const roLandingPages: LandingPageData[] = [
       { value: "24h", label: "raspuns initial" },
       { value: "MD", label: "target local principal" },
     ],
+    packages: [
+      {
+        name: "Landing page",
+        price: "50 EUR",
+        priceValue: 50,
+        description:
+          "O pagina concentrata pe o singura oferta, campanie sau serviciu.",
+        features: [
+          "Structura completa pe o pagina",
+          "Design responsive",
+          "Formular sau CTA de contact",
+          "SEO on-page de baza",
+        ],
+      },
+      {
+        name: "Site de prezentare",
+        price: "150 EUR",
+        priceValue: 150,
+        description:
+          "Varianta recomandata pentru servicii locale si afaceri care vand prin cereri de oferta.",
+        features: [
+          "Pagini pentru servicii, despre si contact",
+          "Design adaptat brandului",
+          "Formular, telefon si email",
+          "Structura pregatita pentru Google",
+        ],
+        featured: true,
+      },
+      {
+        name: "Mini-magazin online",
+        price: "300 EUR",
+        priceValue: 300,
+        description:
+          "Start ecommerce pentru un catalog restrans si comenzi locale.",
+        features: [
+          "Catalog si pagini de produs",
+          "Cos sau cerere simplificata",
+          "Optiuni de plata si livrare",
+          "SEO pentru categorii si produse",
+        ],
+      },
+    ],
+    caseStudies: [
+      {
+        image: "/assets/tencuitor-md.webp",
+        title: "Tencuitor.md",
+        category: "Catalog utilaje",
+        description:
+          "Catalog si site de lead generation pentru vanzare, service si chirie de utilaje in Moldova.",
+        features: ["Catalog produse", "WhatsApp lead gen", "SEO local"],
+        href: "https://tencuitor.md",
+      },
+      {
+        image: "/assets/arcadie-systems.webp",
+        title: "Arcadie Systems",
+        category: "Aplicatie SaaS",
+        description:
+          "Aplicatie de vanzari cu import CSV, AI research, coada de apeluri si follow-up-uri.",
+        features: ["Import CSV", "AI sales research", "Call queue"],
+        href: "https://arcadie-systems.com",
+      },
+      {
+        image: "/assets/salon-beauty.webp",
+        title: "Beauty Studio Centru",
+        category: "Salon din Chisinau",
+        description:
+          "Site pentru un salon local, cu galerie, preturi si traseu simplu spre programare.",
+        features: ["Galerie foto", "Rezervari online", "Design premium"],
+      },
+    ],
     painPoints: [
       {
         title: "Homepage-ul nu raspunde suficient de local",
         description:
-          "Cand utilizatorul cauta explicit Chisinau sau Moldova, Google prefera pagini care au context local mai clar si intentie comerciala mai bine definita.",
+          "Clientii locali vor sa vada imediat ca lucrezi in Chisinau, ce servicii oferi si cum te pot contacta.",
       },
       {
         title: "Ai nevoie de o pagina pentru cautari de furnizor",
         description:
-          "Cine cauta creare site Chisinau vrea sa compare executanti, nu sa citeasca doar beneficii generale despre web design.",
+          "Un site bun trebuie sa explice rapid oferta, pretul orientativ, procesul si motivele pentru care meriti contactat.",
       },
       {
         title: "Trebuie sa legi intentia de actiune",
@@ -415,7 +485,7 @@ export const roLandingPages: LandingPageData[] = [
           "Pagina comerciala pentru cautarile locale de furnizor si executie.",
       },
       {
-        href: "/seo-moldova/",
+        href: "/serviciiBlog/seo-on-page/",
         title: "SEO Moldova",
         description:
           "Urmatorul pas daca problema nu este doar designul, ci si vizibilitatea in cautare.",
@@ -737,7 +807,7 @@ export const roLandingPages: LandingPageData[] = [
     hreflangRo: "https://moldovawebsite.md/site-la-comanda/",
     hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
   },
-];
+].filter((page) => page.slug !== "seo-moldova");
 
 export const roLandingCards = roLandingPages.map((page) => ({
   href: `/${page.slug}/`,

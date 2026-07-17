@@ -4,6 +4,7 @@ import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import "../styles/dev-pages.css";
 import type { LandingPageData } from "../data/landingPages.types";
+import { CONTACT_EMAIL, CONTACT_PHONE, SITE_URL } from "../consts";
 
 interface Props {
   lang: "ro" | "ru";
@@ -15,67 +16,80 @@ const { lang, page } = Astro.props;
 const ui =
   lang === "ro"
     ? {
-        homeLabel: "Acasa",
-        painTag: "Intentie",
-        painTitle: "De ce exista aceasta pagina",
+        homeLabel: "Acasă",
+        painTag: "Obiectiv",
+        painTitle: "Ce trebuie să rezolve website-ul",
         painIntro:
-          "Pagina raspunde unui cluster de cautari care merita propria destinatie comerciala.",
-        deliverTag: "Livrare",
-        deliverTitle: "Ce include directia propusa",
+          "Pornim de la problemele reale ale afacerii și construim un traseu clar spre contact, programare sau comandă.",
+        deliverTag: "Inclus",
+        deliverTitle: "Ce primești în proiect",
         deliverIntro:
-          "Obiectivul este sa legam intentia de cautare de o pagina mai clara, mai utila si mai usor de convertit.",
+          "Structura, designul și partea tehnică sunt livrate ca un singur proiect coerent, gata de lansare.",
         processTag: "Proces",
-        processTitle: "Cum lucram pe astfel de pagini",
+        processTitle: "Cum lansăm proiectul",
         processIntro:
-          "Nu adaugam continut de umplutura. Fiecare etapa are rol direct in ranking si conversie.",
+          "Păstrăm procesul simplu: clarificăm, construim, verificăm și lansăm.",
+        packagesTag: "Pachete",
+        packagesTitle: "Alege punctul potrivit de pornire",
+        packagesIntro:
+          "Prețuri orientative, cu scop și livrabile clare înainte să înceapă lucrul.",
+        proofTag: "Portofoliu",
+        proofTitle: "Proiecte construite pentru afaceri reale",
+        proofIntro:
+          "Exemple de site-uri și aplicații livrate pentru proiecte locale și internaționale.",
         faqTag: "FAQ",
-        faqTitle: "Intrebari frecvente",
+        faqTitle: "Întrebări frecvente",
         faqIntro:
-          "Cele mai comune clarificari pentru acest tip de intentie comerciala.",
-        relatedTag: "Legaturi utile",
-        relatedTitle: "Urmatorii pasi relevanti",
+          "Răspunsuri directe despre cost, proces, funcționalități și lansare.",
+        relatedTag: "Legături utile",
+        relatedTitle: "Servicii și pagini utile",
         relatedIntro:
-          "Alege pagina potrivita daca intentia utilizatorului se muta spre pret, design, SEO sau contact direct.",
-        ctaTitle: "Pregatit sa transformi cautarea in cerere?",
+          "Compară pachetele, vezi serviciile conexe sau trimite direct brief-ul proiectului.",
+        ctaTitle: "Spune-ne ce vrei să construiești",
         ctaIntro:
-          "Trimite-ne obiectivul proiectului si iti spunem ce pagina, structura si pachet merita prioritizate.",
-        relatedLinkLabel: "Vezi pagina",
+          "Primești o recomandare clară pentru structură, termen și buget, fără obligații.",
+        visitProject: "Vezi proiectul",
       }
     : {
         homeLabel: "Главная",
-        painTag: "Интент",
-        painTitle: "Почему этой странице нужен отдельный запрос",
+        painTag: "Задача",
+        painTitle: "Какие задачи должен решить сайт",
         painIntro:
-          "Страница закрывает коммерческий кластер, которому нужна своя понятная посадочная точка.",
-        deliverTag: "Что даем",
-        deliverTitle: "Что входит в такую страницу",
+          "Отталкиваемся от реальных задач бизнеса и строим понятный путь к заявке, записи или заказу.",
+        deliverTag: "Результат",
+        deliverTitle: "Что входит в проект",
         deliverIntro:
-          "Цель — связать поисковый интент с более ясной коммерческой подачей и лучшим следующим шагом.",
+          "Структура, дизайн и техническая часть работают как единый проект, готовый к запуску.",
         processTag: "Процесс",
-        processTitle: "Как мы работаем с такими страницами",
+        processTitle: "Как мы запускаем проект",
         processIntro:
-          "Мы не добавляем пустой текст. Каждый этап нужен либо для ранжирования, либо для конверсии.",
+          "Процесс остается простым: уточняем задачу, создаем, проверяем и запускаем.",
+        packagesTag: "Пакеты",
+        packagesTitle: "Выберите подходящий старт",
+        packagesIntro:
+          "Ориентиры по цене с понятным объемом работ до начала проекта.",
+        proofTag: "Портфолио",
+        proofTitle: "Проекты для реального бизнеса",
+        proofIntro:
+          "Примеры сайтов и приложений, созданных для локальных и международных проектов.",
         faqTag: "FAQ",
         faqTitle: "Частые вопросы",
         faqIntro:
-          "Ключевые уточнения для этого типа коммерческого спроса.",
+          "Прямые ответы о цене, процессе, функциях и запуске.",
         relatedTag: "Полезные переходы",
-        relatedTitle: "Следующие релевантные страницы",
+        relatedTitle: "Услуги и полезные страницы",
         relatedIntro:
-          "Если пользователь смещается к цене, дизайну, SEO или прямому контакту, переход должен быть очевидным.",
-        ctaTitle: "Готовы превратить поиск в заявку?",
+          "Сравните пакеты, посмотрите связанные услуги или сразу отправьте бриф.",
+        ctaTitle: "Расскажите, что хотите создать",
         ctaIntro:
-          "Опишите цель проекта, и мы подскажем, какую страницу, структуру и услугу стоит запустить первой.",
-        relatedLinkLabel: "Открыть страницу",
+          "Вы получите понятную рекомендацию по структуре, срокам и бюджету без обязательств.",
+        visitProject: "Открыть проект",
       };
 
 const painIntro = `${page.breadcrumbLabel}: ${ui.painIntro}`;
-const deliverIntro = page.serviceDescription;
+const deliverIntro = `${page.serviceDescription} ${ui.deliverIntro}`;
 const processIntro = `${page.breadcrumbLabel}: ${ui.processIntro}`;
-const relatedIntro =
-  lang === "ro"
-    ? `Pentru ${page.breadcrumbLabel}, continua spre pagina care clarifica pretul, designul, SEO-ul sau contactul.`
-    : `Для ${page.breadcrumbLabel} следующий переход ведет к цене, дизайну, SEO или прямому контакту.`;
+const relatedIntro = `${page.breadcrumbLabel}: ${ui.relatedIntro}`;
 const getRelatedAnchorText = (link: LandingPageData["relatedLinks"][number]) => {
   const isService = link.href.includes("/serviciiBlog/");
   if (lang === "ro") {
@@ -84,6 +98,21 @@ const getRelatedAnchorText = (link: LandingPageData["relatedLinks"][number]) => 
 
   return `${isService ? "Открыть услугу" : "Открыть страницу"}: ${link.title}`;
 };
+
+const offerUrl = page.primaryCta.href.startsWith("http")
+  ? page.primaryCta.href
+  : `${SITE_URL}${page.primaryCta.href}`;
+const pricedOffers = (page.packages ?? [])
+  .filter((pkg) => typeof pkg.priceValue === "number")
+  .map((pkg) => ({
+    "@type": "Offer",
+    name: pkg.name,
+    description: pkg.description,
+    price: pkg.priceValue,
+    priceCurrency: "EUR",
+    url: offerUrl,
+    availability: "https://schema.org/InStock",
+  }));
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -120,6 +149,9 @@ const jsonLd = {
       provider: {
         "@type": "ProfessionalService",
         name: "moldovawebsite.md",
+        url: SITE_URL,
+        email: CONTACT_EMAIL,
+        telephone: CONTACT_PHONE,
         address: {
           "@type": "PostalAddress",
           addressLocality: lang === "ro" ? "Chisinau" : "Кишинев",
@@ -132,14 +164,15 @@ const jsonLd = {
       },
       availableLanguage: ["ro", "ru"],
       url: page.canonicalUrl,
-      offers: {
-        "@type": "Offer",
-        url: page.primaryCta.href.startsWith("http")
-          ? page.primaryCta.href
-          : `https://moldovawebsite.md${page.primaryCta.href}`,
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-      },
+      offers:
+        pricedOffers.length > 0
+          ? pricedOffers
+          : {
+              "@type": "Offer",
+              url: offerUrl,
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+            },
     },
     {
       "@type": "FAQPage",
@@ -210,7 +243,7 @@ const jsonLd = {
               <span class="dev-code-dot red"></span>
               <span class="dev-code-dot yellow"></span>
               <span class="dev-code-dot green"></span>
-              <span class="dev-terminal-title">intent-map.ts</span>
+              <span class="dev-terminal-title">project-scope.ts</span>
             </div>
             <div class="dev-code-body">
               {page.painPoints.map((item, index) => (
@@ -218,7 +251,7 @@ const jsonLd = {
                   <div class="dev-code-line">
                     <span class="dev-code-num">{index + 1}</span>
                     <span>
-                      <span class="dev-code-keyword">cluster</span>{" "}
+                      <span class="dev-code-keyword">need</span>{" "}
                       <span class="dev-code-string">"{item.title}"</span>
                     </span>
                   </div>
@@ -244,6 +277,34 @@ const jsonLd = {
       </div>
     </nav>
 
+    {page.packages && page.packages.length > 0 && (
+      <section class="dev-section dev-section-alt" id="pachete">
+        <div class="container">
+          <div class="dev-section-header">
+            <span class="dev-section-tag">{ui.packagesTag}</span>
+            <h2>{ui.packagesTitle}</h2>
+            <p>{ui.packagesIntro}</p>
+          </div>
+          <div class="dev-pricing-grid">
+            {page.packages.map((pkg) => (
+              <article class={`dev-price-card ${pkg.featured ? "featured" : ""}`}>
+                <span class="dev-card-title">{pkg.name}</span>
+                <div class="dev-price">{pkg.price}</div>
+                <p>{pkg.description}</p>
+                <ul class="dev-price-features">
+                  {pkg.features.map((feature) => <li>{feature}</li>)}
+                </ul>
+                {pkg.note && <p class="dev-price-note">{pkg.note}</p>}
+                <a href={page.primaryCta.href} class="dev-btn dev-btn-primary">
+                  {page.primaryCta.title}
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <section class="dev-section">
       <div class="container">
         <div class="dev-section-header">
@@ -261,6 +322,53 @@ const jsonLd = {
         </div>
       </div>
     </section>
+
+    {page.caseStudies && page.caseStudies.length > 0 && (
+      <section class="dev-section dev-section-alt" id="portofoliu">
+        <div class="container">
+          <div class="dev-section-header">
+            <span class="dev-section-tag">{ui.proofTag}</span>
+            <h2>{ui.proofTitle}</h2>
+            <p>{ui.proofIntro}</p>
+          </div>
+          <div class="dev-portfolio-grid">
+            {page.caseStudies.map((item) => (
+              <article class="dev-portfolio-card">
+                <div class="dev-portfolio-image">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                  />
+                  <div class="dev-portfolio-overlay">
+                    <span class="dev-portfolio-category">{item.category}</span>
+                  </div>
+                </div>
+                <div class="dev-portfolio-content">
+                  <span class="dev-card-title">{item.title}</span>
+                  <p>{item.description}</p>
+                  <ul class="dev-portfolio-features">
+                    {item.features.map((feature) => <li>{feature}</li>)}
+                  </ul>
+                  {item.href && (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="dev-portfolio-link"
+                    >
+                      {ui.visitProject}: {item.title}
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <section class="dev-section dev-section-alt">
       <div class="container">

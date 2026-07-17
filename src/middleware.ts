@@ -2,6 +2,9 @@ import { defineMiddleware } from "astro:middleware";
 
 const legacyRedirects = new Map<string, string>([
   ["/blog/cat-costa-site-moldova-2025", "/blog/cat-costa-site-moldova-2026/"],
+  ["/blog/using-mdx", "/blog/"],
+  ["/seo-moldova", "/serviciiBlog/seo-on-page/"],
+  ["/ru/seo-moldova", "/ru/serviciiBlog/seo-on-page/"],
   ["/ru/главная", "/ru/"],
   ["/ru/главная.html", "/ru/"],
   ["/ru/цены", "/ru/preturi/"],
