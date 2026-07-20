@@ -1,4 +1,4 @@
-# robots.txt for moldovawebsite.md
+# robots.txt for ChisinauWeb.com
 # Allow all search engines and AI tools to index content
 
 User-agent: *
@@ -22,4 +22,4 @@ User-agent: GrokBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://moldovawebsite.md/sitemap-index.xml
+Sitemap: https://chisinauweb.com/sitemap-index.xml

@@ -17,18 +17,24 @@
   },
   "routes": [
     {
-      "pattern": "moldovawebsite.md",
-      "zone_name": "moldovawebsite.md",
+      "pattern": "chisinauweb.com",
+      "zone_name": "chisinauweb.com",
       "custom_domain": true
     }
   ],
   "workers_dev": false,
   "preview_urls": false,
   "vars": {
-    "RESEND_FROM": "moldovawebsite.md <noreply@mail.moldovawebsite.md>",
-    "RESEND_TO": "narcis.gusa@gmail.com",
-    "REPLY_TO": "contact@moldovawebsite.md"
+    "CONTACT_FROM": "ChisinauWeb.com <noreply@chisinauweb.com>",
+    "CONTACT_TO": "narcis.gusa@gmail.com",
+    "REPLY_TO": "contact@chisinauweb.com"
   },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": ["noreply@chisinauweb.com"]
+    }
+  ],
   "observability": {
     "enabled": true
   },

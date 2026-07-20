@@ -11,11 +11,11 @@ const jsonLd = {
     {
       "@type": "ContactPage",
       name: "Контакты",
-      url: "https://moldovawebsite.md/ru/contact/",
+      url: "https://chisinauweb.com/ru/contact/",
       inLanguage: "ru-MD",
       about: {
         "@type": "ProfessionalService",
-        name: "moldovawebsite.md",
+        name: "ChisinauWeb.com",
       },
     },
   ],
@@ -125,8 +125,8 @@ const contactMethods = [
   {
     icon: "📧",
     title: "Email",
-    value: "contact@moldovawebsite.md",
-    link: "mailto:contact@moldovawebsite.md",
+    value: "contact@chisinauweb.com",
+    link: "mailto:contact@chisinauweb.com",
     description: "Отвечаем максимум за 24 часа",
   },
   {
@@ -152,11 +152,11 @@ const contactMethods = [
     <BaseHead
       title="Контакты – Создание недорогих сайтов в Молдове"
       description="Свяжитесь с нами для бесплатного предложения: доступный веб-дизайн в Кишиневе и по всей Молдове. Быстро отвечаем на русском или румынском языках."
-      canonicalUrl="https://moldovawebsite.md/ru/contact/"
+      canonicalUrl="https://chisinauweb.com/ru/contact/"
       lang="ru"
       ogLocale="ru_MD"
-      hreflangRo="https://moldovawebsite.md/contact/"
-      hreflangRu="https://moldovawebsite.md/ru/contact/"
+      hreflangRo="https://chisinauweb.com/contact/"
+      hreflangRu="https://chisinauweb.com/ru/contact/"
       image="/assets/og-image-contact.webp"
       jsonLd={jsonLd}
     />
@@ -237,12 +237,14 @@ const contactMethods = [
             action="/api/contact"
             novalidate
           >
+            <input type="hidden" name="lang" value="ru" />
             <div class="dev-form-field">
               <label for="name">Имя и фамилия *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                maxlength="120"
                 placeholder="Например: Иван Попеску"
                 required
               />
@@ -254,6 +256,7 @@ const contactMethods = [
                 type="email"
                 id="email"
                 name="email"
+                maxlength="254"
                 placeholder="nume@domeniu.md"
                 required
               />
@@ -268,6 +271,7 @@ const contactMethods = [
                 type="tel"
                 id="phone"
                 name="phone"
+                maxlength="60"
                 placeholder="+373 6xx xxx xx"
                 inputmode="tel"
               />
@@ -279,6 +283,7 @@ const contactMethods = [
                 type="text"
                 id="subject"
                 name="subject"
+                maxlength="180"
                 placeholder="Сайт для кафе в Кишиневе"
                 required
               />
@@ -341,6 +346,7 @@ const contactMethods = [
               <textarea
                 id="message"
                 name="message"
+                maxlength="6000"
                 placeholder="Детали о вашем проекте..."
                 required></textarea>
               <div class="dev-form-help">
@@ -372,6 +378,8 @@ const contactMethods = [
             <span
               class="dev-form-help dev-form-status"
               id="formStatus"
+              role="status"
+              aria-live="polite"
             ></span>
           </form>
 
@@ -416,8 +424,8 @@ const contactMethods = [
                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   ></path>
                 </svg>
-                <a href="mailto:contact@moldovawebsite.md"
-                  >contact@moldovawebsite.md</a
+                <a href="mailto:contact@chisinauweb.com"
+                  >contact@chisinauweb.com</a
                 >
               </li>
               <li>
@@ -467,7 +475,7 @@ const contactMethods = [
         <div class="dev-section-header">
           <span class="dev-section-tag">Почему мы?</span>
           <h2>Ваши преимущества</h2>
-          <p>Что вы получаете, работая с moldovawebsite.md</p>
+          <p>Что вы получаете, работая с ChisinauWeb.com</p>
         </div>
         <div class="dev-features-grid">
           {

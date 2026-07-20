@@ -143,9 +143,9 @@ export const ruLandingPages: LandingPageData[] = [
     serviceName: "Создание сайта-визитки в Молдове",
     serviceDescription:
       "Четкая структура, SEO-настройки и коммерческая подача для локального бизнеса в Кишиневе и по всей Молдове.",
-    canonicalUrl: "https://moldovawebsite.md/ru/sait-vizitka/",
-    hreflangRo: "https://moldovawebsite.md/site-de-prezentare/",
-    hreflangRu: "https://moldovawebsite.md/ru/sait-vizitka/",
+    canonicalUrl: "https://chisinauweb.com/ru/sait-vizitka/",
+    hreflangRo: "https://chisinauweb.com/site-de-prezentare/",
+    hreflangRu: "https://chisinauweb.com/ru/sait-vizitka/",
   },
   {
     slug: "sozdanie-saitov-kishinev",
@@ -365,9 +365,9 @@ export const ruLandingPages: LandingPageData[] = [
     serviceName: "Создание сайтов в Кишиневе и Молдове",
     serviceDescription:
       "Коммерческие сайты для локального бизнеса в Кишиневе, со стартовой ценой от 150 EUR, быстрой реализацией и сильной связкой с ценами и услугами.",
-    canonicalUrl: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
-    hreflangRo: "https://moldovawebsite.md/creare-site-chisinau/",
-    hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
+    canonicalUrl: "https://chisinauweb.com/ru/sozdanie-saitov-kishinev/",
+    hreflangRo: "https://chisinauweb.com/creare-site-chisinau/",
+    hreflangRu: "https://chisinauweb.com/ru/sozdanie-saitov-kishinev/",
   },
   {
     slug: "web-design-kishinev",
@@ -511,9 +511,9 @@ export const ruLandingPages: LandingPageData[] = [
     serviceName: "Веб-дизайн в Молдове",
     serviceDescription:
       "UX и визуальная структура для коммерческих страниц, сайтов-визиток и локального бизнеса в Кишиневе и Молдове.",
-    canonicalUrl: "https://moldovawebsite.md/ru/web-design-kishinev/",
-    hreflangRo: "https://moldovawebsite.md/web-design-moldova/",
-    hreflangRu: "https://moldovawebsite.md/ru/web-design-kishinev/",
+    canonicalUrl: "https://chisinauweb.com/ru/web-design-kishinev/",
+    hreflangRo: "https://chisinauweb.com/web-design-moldova/",
+    hreflangRu: "https://chisinauweb.com/ru/web-design-kishinev/",
   },
   {
     slug: "seo-moldova",
@@ -657,9 +657,9 @@ export const ruLandingPages: LandingPageData[] = [
     serviceName: "SEO услуги в Молдове",
     serviceDescription:
       "Техническая оптимизация, внутренняя архитектура и приоритеты по страницам, которые уже имеют органические сигналы.",
-    canonicalUrl: "https://moldovawebsite.md/ru/seo-moldova/",
-    hreflangRo: "https://moldovawebsite.md/seo-moldova/",
-    hreflangRu: "https://moldovawebsite.md/ru/seo-moldova/",
+    canonicalUrl: "https://chisinauweb.com/ru/seo-moldova/",
+    hreflangRo: "https://chisinauweb.com/seo-moldova/",
+    hreflangRu: "https://chisinauweb.com/ru/seo-moldova/",
   },
   {
     slug: "sozdanie-internet-magazina-kishinev",
@@ -843,9 +843,9 @@ export const ruLandingPages: LandingPageData[] = [
     serviceName: "Создание интернет-магазина в Кишиневе",
     serviceDescription:
       "Мини-магазин для бизнеса в Кишиневе и Молдове: каталог, заказы, доставка, оплата и базовое SEO.",
-    canonicalUrl: "https://moldovawebsite.md/ru/sozdanie-internet-magazina-kishinev/",
-    hreflangRo: "https://moldovawebsite.md/serviciiBlog/magazin-online/",
-    hreflangRu: "https://moldovawebsite.md/ru/sozdanie-internet-magazina-kishinev/",
+    canonicalUrl: "https://chisinauweb.com/ru/sozdanie-internet-magazina-kishinev/",
+    hreflangRo: "https://chisinauweb.com/serviciiBlog/magazin-online/",
+    hreflangRu: "https://chisinauweb.com/ru/sozdanie-internet-magazina-kishinev/",
   },
 ].filter((page) => page.slug !== "seo-moldova");
 

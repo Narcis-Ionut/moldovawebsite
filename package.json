@@ -1,5 +1,5 @@
 {
-	"name": "moldovawebsitefull",
+	"name": "chisinauweb",
 	"description": "Build a personal website, blog, or portfolio with Astro.",
 	"cloudflare": {
 		"label": "Astro Framework Starter",
@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"sharp": "^0.34.5",
-		"wrangler": "4.51.0"
+		"wrangler": "4.112.0"
 	},
 	"private": true,
 	"scripts": {

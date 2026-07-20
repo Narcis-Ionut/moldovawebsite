@@ -186,128 +186,138 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 })();
 
-// Chips (project type)
-const chipGroup = document.querySelector(".chip-group");
+// Contact form enhancements
+const contactForm = document.getElementById("contactForm");
+const chipGroup = document.querySelector(".dev-chip-group, .chip-group");
 const projectTypeInput = document.getElementById("project_type");
+const budget = document.getElementById("budget");
+const badge = document.getElementById("budgetBadge");
+
 if (chipGroup && projectTypeInput) {
-  chipGroup.addEventListener("click", (e) => {
-    const btn = e.target.closest(".chip");
-    if (!btn) return;
-    chipGroup
-      .querySelectorAll(".chip")
-      .forEach((c) => c.setAttribute("aria-checked", "false"));
-    btn.setAttribute("aria-checked", "true");
-    projectTypeInput.value = btn.dataset.value;
+  const chips = [...chipGroup.querySelectorAll(".dev-chip, .chip")];
+
+  chips.forEach((chip, index) => {
+    chip.setAttribute(
+      "aria-checked",
+      chip.classList.contains("active") || index === 0 ? "true" : "false"
+    );
+  });
+
+  chipGroup.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const button = target.closest(".dev-chip, .chip");
+    if (!button || !chipGroup.contains(button)) return;
+
+    chips.forEach((chip) => {
+      chip.classList.remove("active");
+      chip.setAttribute("aria-checked", "false");
+    });
+    button.classList.add("active");
+    button.setAttribute("aria-checked", "true");
+    projectTypeInput.value = button.dataset.value || "";
   });
 }
 
-// Budget slider badge
-const budget = document.getElementById("budget");
-const badge = document.getElementById("budgetBadge");
-if (budget && badge) {
-  const update = () => {
-    badge.textContent = "€" + budget.value;
-  };
-  budget.addEventListener("input", update);
-  update();
+function updateBudgetBadge() {
+  if (budget && badge) badge.textContent = `€${budget.value}`;
 }
 
-// Progressive enhancement: AJAX submit with fallback
-const form = document.getElementById("contactForm");
-const submitBtn = document.getElementById("submitBtn");
-const statusEl = document.getElementById("formStatus");
+budget?.addEventListener("input", updateBudgetBadge);
+updateBudgetBadge();
 
-// Helper: serialize form to x-www-form-urlencoded
-function serialize(formEl) {
-  const pairs = [];
-  const formData = new FormData(formEl);
-  for (const [name, value] of formData.entries()) {
-    pairs.push(encodeURIComponent(name) + "=" + encodeURIComponent(value));
+if (contactForm instanceof HTMLFormElement) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const statusElement = document.getElementById("formStatus");
+  const locale =
+    contactForm.querySelector('input[name="lang"]')?.value === "ru"
+      ? "ru"
+      : "ro";
+  const initialProjectType = projectTypeInput?.value || "";
+
+  const copy =
+    locale === "ru"
+      ? {
+          pending: "Отправляем...",
+          captcha: "Подтвердите, пожалуйста, что вы не робот.",
+          success:
+            "Спасибо! Сообщение отправлено. Мы ответим в ближайшее время.",
+          error:
+            "Не удалось отправить сообщение. Попробуйте ещё раз или напишите на contact@chisinauweb.com.",
+        }
+      : {
+          pending: "Se trimite...",
+          captcha: "Te rugăm să confirmi verificarea anti-spam.",
+          success:
+            "Mulțumim! Mesajul a fost trimis. Îți răspundem în scurt timp.",
+          error:
+            "Nu am putut trimite mesajul. Încearcă din nou sau scrie la contact@chisinauweb.com.",
+        };
+
+  function setStatus(state, message) {
+    if (!statusElement) return;
+    statusElement.className = `dev-form-help dev-form-status is-${state}`;
+    statusElement.textContent = message;
   }
-  return pairs.join("&");
-}
 
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    // Basic HTML5 validity first
-    if (!form.checkValidity()) {
-      // let the browser show native messages
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+    if (!(submitButton instanceof HTMLButtonElement)) return;
+
+    const tokenInput = contactForm.querySelector(
+      'input[name="cf-turnstile-response"]'
+    );
+    if (!(tokenInput instanceof HTMLInputElement) || !tokenInput.value) {
+      setStatus("error", copy.captcha);
       return;
     }
 
-    // Try AJAX; if it fails, let normal submit happen
-    e.preventDefault();
-
-    // Add loading state
-    submitBtn.disabled = true;
-    const existing = submitBtn.querySelector(".spinner");
-    if (!existing) {
-      const sp = document.createElement("span");
-      sp.className = "spinner";
-      sp.setAttribute("aria-hidden", "true");
-      submitBtn.prepend(sp);
-    }
-    statusEl.className = "status";
-    statusEl.textContent = "Se trimite...";
+    submitButton.disabled = true;
+    submitButton.setAttribute("aria-busy", "true");
+    setStatus("pending", copy.pending);
 
     try {
-      // Ensure Turnstile token is present (Cloudflare injects cf-turnstile-response)
-      const tokenInput = form.querySelector(
-        'input[name="cf-turnstile-response"]'
-      );
-      if (!tokenInput || !tokenInput.value) {
-        statusEl.className = "status error";
-        statusEl.textContent = "Te rugăm să confirmi verificarea anti-spam.";
-        submitBtn.disabled = false;
-        submitBtn.querySelector(".spinner")?.remove();
-        return;
-      }
-
-      const res = await fetch(form.action, {
+      const response = await fetch(contactForm.action, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        },
-        body: serialize(form),
+        body: new FormData(contactForm),
       });
+      const data = await response.json().catch(() => ({}));
 
-      if (!res.ok) throw new Error("Eroare la trimitere: " + res.status);
-
-      // Try to parse JSON; if not JSON, still show success
-      let ok = true;
-      try {
-        const data = await res.json();
-        ok = data && (data.ok === true || data.status === "ok");
-      } catch (_) {}
-
-      if (ok) {
-        statusEl.className = "status success";
-        statusEl.textContent =
-          "Mulțumim! Mesajul a fost trimis. Îți răspundem în scurt timp.";
-        form.reset();
-        // Reset chips to default
-        chipGroup
-          ?.querySelectorAll(".chip")
-          .forEach((c, i) =>
-            c.setAttribute("aria-checked", i === 0 ? "true" : "false")
-          );
-        if (projectTypeInput) projectTypeInput.value = "Site de prezentare";
-        // Reset Turnstile
-        if (window.turnstile && typeof turnstile.reset === "function") {
-          const widget = document.querySelector(".cf-turnstile");
-          widget && turnstile.reset(widget);
-        }
-      } else {
-        throw new Error("Răspuns neașteptat de la server.");
+      if (!response.ok || data.ok !== true) {
+        throw new Error(`Contact request failed: ${response.status}`);
       }
-    } catch (err) {
-      statusEl.className = "status error";
-      statusEl.textContent =
-        "Ne pare rău, nu am putut trimite mesajul. Încearcă din nou sau scrie la contact@moldovawebsite.md.";
-      // As fallback, allow normal submit if user tries din nou
+
+      setStatus("success", copy.success);
+      contactForm.reset();
+
+      if (chipGroup && projectTypeInput) {
+        const chips = [...chipGroup.querySelectorAll(".dev-chip, .chip")];
+        chips.forEach((chip, index) => {
+          chip.classList.toggle("active", index === 0);
+          chip.setAttribute("aria-checked", index === 0 ? "true" : "false");
+        });
+        projectTypeInput.value = initialProjectType;
+      }
+
+      updateBudgetBadge();
+      if (window.turnstile && typeof window.turnstile.reset === "function") {
+        window.turnstile.reset();
+      }
+    } catch (error) {
+      console.error("Contact form submission failed", error);
+      setStatus("error", copy.error);
+      if (window.turnstile && typeof window.turnstile.reset === "function") {
+        window.turnstile.reset();
+      }
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.querySelector(".spinner")?.remove();
+      submitButton.disabled = false;
+      submitButton.removeAttribute("aria-busy");
     }
   });
 }

@@ -11,11 +11,11 @@ const jsonLd = {
     {
       "@type": "ContactPage",
       name: "Contact",
-      url: "https://moldovawebsite.md/contact/",
+      url: "https://chisinauweb.com/contact/",
       inLanguage: "ro-MD",
       about: {
         "@type": "ProfessionalService",
-        name: "moldovawebsite.md",
+        name: "ChisinauWeb.com",
       },
     },
   ],
@@ -125,8 +125,8 @@ const contactMethods = [
   {
     icon: "📧",
     title: "Email",
-    value: "contact@moldovawebsite.md",
-    link: "mailto:contact@moldovawebsite.md",
+    value: "contact@chisinauweb.com",
+    link: "mailto:contact@chisinauweb.com",
     description: "Răspundem în maxim 24 de ore",
   },
   {
@@ -152,9 +152,9 @@ const contactMethods = [
     <BaseHead
       title="Contact – Creare site web ieftin în Moldova"
       description="Contactează-ne pentru o ofertă gratuită: web design accesibil în Chișinău și toată Moldova. Răspundem rapid, în română sau rusă."
-      canonicalUrl="https://moldovawebsite.md/contact/"
-      hreflangRo="https://moldovawebsite.md/contact/"
-      hreflangRu="https://moldovawebsite.md/ru/contact/"
+      canonicalUrl="https://chisinauweb.com/contact/"
+      hreflangRo="https://chisinauweb.com/contact/"
+      hreflangRu="https://chisinauweb.com/ru/contact/"
       image="/assets/og-image-contact.webp"
       jsonLd={jsonLd}
     />
@@ -235,12 +235,14 @@ const contactMethods = [
             action="/api/contact"
             novalidate
           >
+            <input type="hidden" name="lang" value="ro" />
             <div class="dev-form-field">
               <label for="name">Nume și prenume *</label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                maxlength="120"
                 placeholder="Ex: Ion Popescu"
                 required
               />
@@ -252,6 +254,7 @@ const contactMethods = [
                 type="email"
                 id="email"
                 name="email"
+                maxlength="254"
                 placeholder="nume@domeniu.md"
                 required
               />
@@ -264,6 +267,7 @@ const contactMethods = [
                 type="tel"
                 id="phone"
                 name="phone"
+                maxlength="60"
                 placeholder="+373 6xx xxx xx"
                 inputmode="tel"
               />
@@ -275,6 +279,7 @@ const contactMethods = [
                 type="text"
                 id="subject"
                 name="subject"
+                maxlength="180"
                 placeholder="Site de prezentare pentru cafenea în Chișinău"
                 required
               />
@@ -337,6 +342,7 @@ const contactMethods = [
               <textarea
                 id="message"
                 name="message"
+                maxlength="6000"
                 placeholder="Detalii despre proiectul tău..."
                 required></textarea>
               <div class="dev-form-help">
@@ -367,6 +373,8 @@ const contactMethods = [
             <span
               class="dev-form-help dev-form-status"
               id="formStatus"
+              role="status"
+              aria-live="polite"
             ></span>
           </form>
 
@@ -411,8 +419,8 @@ const contactMethods = [
                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   ></path>
                 </svg>
-                <a href="mailto:contact@moldovawebsite.md"
-                  >contact@moldovawebsite.md</a
+                <a href="mailto:contact@chisinauweb.com"
+                  >contact@chisinauweb.com</a
                 >
               </li>
               <li>
@@ -460,7 +468,7 @@ const contactMethods = [
         <div class="dev-section-header">
           <span class="dev-section-tag">De ce noi?</span>
           <h2>Avantajele tale</h2>
-          <p>Ce primești când lucrezi cu moldovawebsite.md</p>
+          <p>Ce primești când lucrezi cu ChisinauWeb.com</p>
         </div>
         <div class="dev-features-grid">
           {
@@ -542,76 +550,5 @@ const contactMethods = [
 
     <Footer lang="ro" />
     <script src="/script.js" defer></script>
-    <script>
-      // @ts-nocheck
-      // Chip selection
-      document.querySelectorAll(".dev-chip").forEach((chip) => {
-        chip.addEventListener("click", () => {
-          document
-            .querySelectorAll(".dev-chip")
-            .forEach((c) => c.classList.remove("active"));
-          chip.classList.add("active");
-          const projectType = document.getElementById("project_type");
-          if (projectType) {
-            projectType.value = chip.dataset.value || "";
-          }
-        });
-      });
-
-      // Budget range
-      const budgetRange = document.getElementById("budget");
-      const budgetBadge = document.getElementById("budgetBadge");
-      budgetRange?.addEventListener("input", (e) => {
-        const target = /** @type {HTMLInputElement} */ (e.target);
-        if (budgetBadge) {
-          budgetBadge.textContent = `€${target.value}`;
-        }
-      });
-
-      // Form submission
-      const form = /** @type {HTMLFormElement|null} */ (
-        document.getElementById("contactForm")
-      );
-      const formStatus = document.getElementById("formStatus");
-
-      form?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const submitBtn = /** @type {HTMLButtonElement|null} */ (
-          form.querySelector(".dev-submit")
-        );
-        if (!submitBtn) return;
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Se trimite...";
-
-        try {
-          const formData = new FormData(form);
-          const response = await fetch("/api/contact", {
-            method: "POST",
-            body: formData,
-          });
-
-          if (response.ok) {
-            if (formStatus) {
-              formStatus.textContent =
-                "Mesaj trimis cu succes! Te contactăm curând.";
-              formStatus.style.color = "#34d399";
-            }
-            form.reset();
-          } else {
-            throw new Error("Eroare la trimitere");
-          }
-        } catch (error) {
-          if (formStatus) {
-            formStatus.textContent =
-              "A apărut o eroare. Încearcă din nou sau contactează-ne direct.";
-            formStatus.style.color = "#ef4444";
-          }
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Trimite mesajul";
-        }
-      });
-    </script>
   </body>
 </html>

@@ -143,9 +143,9 @@ export const roLandingPages: LandingPageData[] = [
     serviceName: "Creare site de prezentare in Moldova",
     serviceDescription:
       "Structura clara, copy orientat pe conversie si SEO on-page pentru afaceri locale din Chisinau si Moldova.",
-    canonicalUrl: "https://moldovawebsite.md/site-de-prezentare/",
-    hreflangRo: "https://moldovawebsite.md/site-de-prezentare/",
-    hreflangRu: "https://moldovawebsite.md/ru/sait-vizitka/",
+    canonicalUrl: "https://chisinauweb.com/site-de-prezentare/",
+    hreflangRo: "https://chisinauweb.com/site-de-prezentare/",
+    hreflangRu: "https://chisinauweb.com/ru/sait-vizitka/",
   },
   {
     slug: "creare-site-chisinau",
@@ -365,9 +365,9 @@ export const roLandingPages: LandingPageData[] = [
     serviceName: "Creare site in Chisinau si Moldova",
     serviceDescription:
       "Website-uri pentru afaceri locale din Chisinau, cu pret orientativ de la 150 EUR, structura comerciala clara si proces simplu de pornire.",
-    canonicalUrl: "https://moldovawebsite.md/creare-site-chisinau/",
-    hreflangRo: "https://moldovawebsite.md/creare-site-chisinau/",
-    hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
+    canonicalUrl: "https://chisinauweb.com/creare-site-chisinau/",
+    hreflangRo: "https://chisinauweb.com/creare-site-chisinau/",
+    hreflangRu: "https://chisinauweb.com/ru/sozdanie-saitov-kishinev/",
   },
   {
     slug: "web-design-moldova",
@@ -511,9 +511,9 @@ export const roLandingPages: LandingPageData[] = [
     serviceName: "Web design in Moldova",
     serviceDescription:
       "Design orientat pe conversie, UX clar si sectiuni comerciale pentru afaceri locale din Chisinau si Moldova.",
-    canonicalUrl: "https://moldovawebsite.md/web-design-moldova/",
-    hreflangRo: "https://moldovawebsite.md/web-design-moldova/",
-    hreflangRu: "https://moldovawebsite.md/ru/web-design-kishinev/",
+    canonicalUrl: "https://chisinauweb.com/web-design-moldova/",
+    hreflangRo: "https://chisinauweb.com/web-design-moldova/",
+    hreflangRu: "https://chisinauweb.com/ru/web-design-kishinev/",
   },
   {
     slug: "seo-moldova",
@@ -657,9 +657,9 @@ export const roLandingPages: LandingPageData[] = [
     serviceName: "Servicii SEO in Moldova",
     serviceDescription:
       "Audit on-page, optimizare structurala si prioritizare pe paginile comerciale care au deja semnale organice.",
-    canonicalUrl: "https://moldovawebsite.md/seo-moldova/",
-    hreflangRo: "https://moldovawebsite.md/seo-moldova/",
-    hreflangRu: "https://moldovawebsite.md/ru/seo-moldova/",
+    canonicalUrl: "https://chisinauweb.com/seo-moldova/",
+    hreflangRo: "https://chisinauweb.com/seo-moldova/",
+    hreflangRu: "https://chisinauweb.com/ru/seo-moldova/",
   },
   {
     slug: "site-la-comanda",
@@ -803,9 +803,9 @@ export const roLandingPages: LandingPageData[] = [
     serviceName: "Site la comanda in Moldova",
     serviceDescription:
       "Website la cheie pentru afaceri locale: structura, design, dezvoltare, SEO on-page si lansare.",
-    canonicalUrl: "https://moldovawebsite.md/site-la-comanda/",
-    hreflangRo: "https://moldovawebsite.md/site-la-comanda/",
-    hreflangRu: "https://moldovawebsite.md/ru/sozdanie-saitov-kishinev/",
+    canonicalUrl: "https://chisinauweb.com/site-la-comanda/",
+    hreflangRo: "https://chisinauweb.com/site-la-comanda/",
+    hreflangRu: "https://chisinauweb.com/ru/sozdanie-saitov-kishinev/",
   },
 ].filter((page) => page.slug !== "seo-moldova");
 

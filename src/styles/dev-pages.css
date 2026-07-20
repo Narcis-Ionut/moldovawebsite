@@ -723,6 +723,18 @@
   margin-top: 1rem;
 }
 
+.dev-form-status.is-pending {
+  color: #93c5fd;
+}
+
+.dev-form-status.is-success {
+  color: #4bd6ba;
+}
+
+.dev-form-status.is-error {
+  color: #fca5a5;
+}
+
 .dev-chip-group {
   display: flex;
   flex-wrap: wrap;
