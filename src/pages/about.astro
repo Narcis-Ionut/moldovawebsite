@@ -4,159 +4,90 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/dev-pages.css";
 
+const directCards = [
+  {
+    title: "Comunicare directă",
+    description:
+      "Discuți direct cu persoana care lucrează la proiect, fără account manager și fără informație pierdută între mai multe persoane.",
+  },
+  {
+    title: "Decizii practice",
+    description:
+      "Încep de la ce trebuie să facă site-ul pentru afacere, nu de la o listă inutilă de efecte sau tehnologii.",
+  },
+  {
+    title: "AI folosit cu responsabilitate",
+    description:
+      "Folosesc instrumente moderne pentru a lucra mai eficient, dar verificarea și responsabilitatea rezultatului nu sunt delegate unui model AI.",
+  },
+  {
+    title: "Proiecte reale",
+    description:
+      "Portofoliul conține produse și website-uri care există, nu machete cumpărate sau rezultate inventate.",
+  },
+];
+
+const collaborationSteps = [
+  {
+    title: "Îmi explici afacerea și obiectivul",
+    description:
+      "Îmi explici ce face afacerea ta și ce trebuie să realizeze site-ul.",
+  },
+  {
+    title: "Clarific soluția și limitele",
+    description:
+      "Analizez cerințele și îți spun direct ce merită construit, ce poate fi simplificat și care sunt limitele.",
+  },
+  {
+    title: "Construiesc și verific",
+    description:
+      "Construiesc proiectul, verific funcțiile și îți arăt progresul pe parcurs.",
+  },
+  {
+    title: "Publicăm și predau accesul",
+    description:
+      "După verificare, publicăm site-ul și primești acces la lucrurile care țin de proiectul tău.",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  name: "Despre noi: creare site web ieftin in Moldova | ChisinauWeb.com",
-  description:
-    "Afla cine suntem si cum oferim web design accesibil in Chisinau: site de prezentare, magazin online, SEO on-page si mentenanta.",
-  url: "https://chisinauweb.com/about/",
-  inLanguage: "ro-MD",
-  about: {
-    "@type": "Organization",
-    name: "ChisinauWeb.com",
-    url: "https://chisinauweb.com/",
-  },
-};
-
-const values = [
-  {
-    number: "01",
-    title: "Misiunea noastră",
-    description:
-      "Să oferim creare site web ieftin în Moldova fără compromis la calitate, design și SEO on-page.",
-  },
-  {
-    number: "02",
-    title: "Focus pe rezultate",
-    description:
-      "Construim pagini rapide care convertesc și care pot fi ușor promovate în Google.",
-  },
-  {
-    number: "03",
-    title: "Tehnologie modernă",
-    description:
-      "Astro + Cloudflare înseamnă timp de încărcare mic și costuri optimizate pentru afaceri locale.",
-  },
-  {
-    number: "04",
-    title: "Suport și mentenanță",
-    description:
-      "Oferim mentenanță, actualizări și ajutor continuu după lansare.",
-  },
-];
-
-const process = [
-  {
-    number: "01",
-    title: "Brief & obiective",
-    description:
-      "Stabilim ce tip de site ai nevoie: prezentare, magazin online sau landing page.",
-  },
-  {
-    number: "02",
-    title: "Design & structură",
-    description:
-      "Creăm un design accesibil și intuitiv, orientat pe conversie.",
-  },
-  {
-    number: "03",
-    title: "Dezvoltare & SEO",
-    description: "Implementăm rapid, optimizăm viteza și setăm SEO on-page.",
-  },
-  {
-    number: "04",
-    title: "Lansare & suport",
-    description:
-      "Publicăm site-ul și oferim suport, mentenanță și recomandări pentru creștere.",
-  },
-];
-
-const testimonials = [
-  {
-    content:
-      "Am primit un site rapid, optimizat SEO și ușor de administrat. Prețul a fost corect pentru piața din Moldova.",
-    author: "Client local",
-    location: "Chișinău",
-  },
-  {
-    content:
-      "Echipa a explicat clar ce include fiecare pachet și ne-a ajutat să alegem varianta potrivită pentru bugetul nostru.",
-    author: "Afacere mică",
-    location: "Moldova",
-  },
-  {
-    content:
-      "Ne-au plăcut viteza de livrare, comunicarea și suportul după lansare. Site-ul arată profesionist pe mobil și desktop.",
-    author: "Servicii locale",
-    location: "Chișinău",
-  },
-];
-
-const faqs = [
-  {
-    question: "Lucrați doar în Chișinău?",
-    answer:
-      "Nu. Oferim servicii în Chișinău și în toată Moldova, inclusiv online, pentru proiecte locale și internaționale.",
-  },
-  {
-    question: "Includeți SEO on-page în pachete?",
-    answer:
-      "Da. Setăm meta-taguri, structură corectă și optimizare de bază pentru vizibilitate mai bună în Google.",
-  },
-  {
-    question: "Pot primi un site de prezentare cu buget mic?",
-    answer:
-      "Da. Avem pachete accesibile și recomandăm soluția optimă pentru afaceri mici.",
-  },
-  {
-    question: "Oferiți mentenanță după lansare?",
-    answer:
-      "Da. Putem continua cu mentenanță lunară, actualizări și suport tehnic.",
-  },
-];
-
-const benefits = [
-  {
-    title: "Prețuri accesibile",
-    description:
-      "Oferim creare site web ieftin în Moldova fără a compromite calitatea. Fiecare proiect primește aceeași atenție la detalii, indiferent de buget.",
-  },
-  {
-    title: "Timp de livrare rapid",
-    description:
-      "Un site de prezentare simplu este gata în 7-14 zile. Respectăm termenele promise și comunicăm transparent pe parcursul dezvoltării.",
-  },
-  {
-    title: "Design modern și responsive",
-    description:
-      "Toate site-urile noastre arată perfect pe orice dispozitiv: smartphone, tabletă sau calculator. Design-ul se adaptează automat pentru cea mai bună experiență.",
-  },
-];
-
-const whyChooseUs = [
-  {
-    title: "Experiență locală",
-    description:
-      "Conștientizăm nevoile specifice ale pieței din Moldova și adaptăm soluțiile pentru afaceri locale din Chișinău și toată țara.",
-  },
-  {
-    title: "Tehnologie modernă",
-    description:
-      "Folosim Astro și Cloudflare pentru viteză maximă și costuri reduse. Site-urile noastre încarcă în mai puțin de 2 secunde.",
-  },
-  {
-    title: "SEO inclus",
-    description:
-      "Optimizarea pentru motoarele de căutare este inclusă în fiecare pachet. Structură corectă, meta-taguri și date structurate.",
-  },
-];
-
-const teamInfo = {
-  experience: "3+ ani",
-  projects: "50+",
-  satisfaction: "95%",
-  support: "24/7",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      name: "Despre Narcis — dezvoltator web independent în Chișinău",
+      description:
+        "Cum lucrează Narcis, dezvoltator web independent în Chișinău, și cum folosește responsabil JavaScript, TypeScript, React, Astro, Cloudflare și instrumente AI.",
+      url: "https://chisinauweb.com/about/",
+      inLanguage: "ro-MD",
+      mainEntity: { "@id": "https://chisinauweb.com/about/#narcis" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chisinauweb.com/about/#narcis",
+      name: "Narcis",
+      jobTitle: "Dezvoltator web independent",
+      description:
+        "Dezvoltator web independent în Chișinău care construiește site-uri și aplicații web.",
+      url: "https://chisinauweb.com/about/",
+      email: "contact@chisinauweb.com",
+      telephone: "+37361211739",
+      knowsAbout: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Astro",
+        "Cloudflare Workers",
+        "Baze de date",
+        "Integrări de plată",
+      ],
+      worksFor: {
+        "@type": "Organization",
+        name: "ChisinauWeb.com",
+        url: "https://chisinauweb.com/",
+      },
+    },
+  ],
 };
 ---
 
@@ -164,356 +95,210 @@ const teamInfo = {
 <html lang="ro">
   <head>
     <BaseHead
-      title="Despre echipa | Web design in Moldova"
-      description="Află cine suntem și cum oferim web design accesibil în Chișinău: site de prezentare, magazin online, SEO on-page și mentenanță."
+      title="Despre Narcis | Dezvoltator web în Chișinău"
+      description="Sunt Narcis, dezvoltator web independent în Chișinău. Construiesc site-uri și aplicații web și folosesc transparent instrumente AI, cu verificare și responsabilitate."
       canonicalUrl="https://chisinauweb.com/about/"
       hreflangRo="https://chisinauweb.com/about/"
       hreflangRu="https://chisinauweb.com/ru/about/"
       image="/assets/og-image.webp"
       jsonLd={jsonLd}
     />
-    
   </head>
   <body>
     <div class="dev-grid-pattern"></div>
     <Header lang="ro" />
 
-    <!-- Hero Section -->
     <section class="dev-hero" id="acasa">
       <div class="container">
         <div class="dev-hero-grid">
           <div class="dev-hero-content">
-            <span class="dev-section-tag">Despre noi</span>
-            <h1>Creare site web ieftin în Moldova</h1>
-            <p>
-              ChisinauWeb.com oferă web design accesibil în Chișinău și
-              toată Moldova pentru afaceri mici: site de prezentare, magazin
-              online, SEO on-page și mentenanță.
+            <span class="dev-section-tag">Despre ChisinauWeb</span>
+            <h1>Sunt Narcis, dezvoltator web independent în Chișinău.</h1>
+            <p class="dev-hero-subtitle">
+              Construiesc site-uri și aplicații web pentru afaceri și proiecte
+              care au nevoie de ceva clar, rapid și utilizabil.
             </p>
             <p>
-              Dacă vrei creare site web ieftin în Moldova, îți arătăm clar ce
-              primești, cât durează și cum obții rezultate rapide.
+              Nu sunt o agenție mare și nu pretind că în spatele acestui site
+              există o echipă de zeci de persoane. Când îmi scrii, vorbești
+              direct cu omul care analizează, construiește, verifică și publică
+              proiectul.
             </p>
             <div class="dev-hero-actions">
-              <a href="/contact/" class="dev-btn dev-btn-primary"
-                >Cere ofertă gratuită</a
-              >
-              <a href="/preturi/" class="dev-btn dev-btn-secondary"
-                >Vezi prețuri</a
-              >
+              <a href="/contact/" class="dev-btn dev-btn-primary">
+                Descrie proiectul
+              </a>
+              <a href="/#portofoliu" class="dev-btn dev-btn-secondary">
+                Vezi proiectele
+              </a>
             </div>
           </div>
 
-          <div class="dev-hero-visual">
-            <div class="dev-code-window">
-              <div class="dev-code-header">
-                <span class="dev-code-dot red"></span>
-                <span class="dev-code-dot yellow"></span>
-                <span class="dev-code-dot green"></span>
-              </div>
-              <div class="dev-code-body">
-                <div class="dev-code-line">
-                  <span class="dev-code-num">1</span>
-                  <span
-                    ><span class="dev-code-keyword">const</span>
-                    <span class="dev-code-func">misiuneaNoastra</span> = {
-                      `{`
-                    }</span
-                  >
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">2</span>
-                  <span>
-                    <span class="dev-code-keyword">target</span>: <span
-                      class="dev-code-string">"afaceri_mici"</span
-                    >,</span
-                  >
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">3</span>
-                  <span>
-                    <span class="dev-code-keyword">locatie</span>: <span
-                      class="dev-code-string">"Moldova"</span
-                    >,</span
-                  >
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">4</span>
-                  <span>
-                    <span class="dev-code-keyword">servicii</span>: [<span
-                      class="dev-code-string">"web"</span
-                    >, <span class="dev-code-string">"seo"</span>],</span
-                  >
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">5</span>
-                  <span>
-                    <span class="dev-code-keyword">preturi</span>: <span
-                      class="dev-code-string">"accesibile"</span
-                    ></span
-                  >
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">6</span>
-                  <span>{`}`};</span>
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">7</span>
-                  <span></span>
-                </div>
-                <div class="dev-code-line">
-                  <span class="dev-code-num">8</span>
-                  <span
-                    ><span class="dev-code-comment"
-                      >// Livrăm calitate, mereu</span
-                    ></span
-                  >
-                </div>
-              </div>
+          <aside class="dev-scope-card" aria-label="Tehnologii și mod de lucru">
+            <div class="dev-scope-header">
+              <span class="dev-scope-eyebrow">Lucrez cu</span>
+              <span class="dev-scope-count">doar când au sens</span>
             </div>
-          </div>
+            <div class="dev-scope-body">
+              {["JavaScript și TypeScript", "React și Astro", "Cloudflare Workers", "Baze de date și plăți"].map((item, index) => (
+                <div class="dev-scope-item">
+                  <span class="dev-scope-number">{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item}</strong>
+                </div>
+              ))}
+            </div>
+            <p class="dev-scope-footer">
+              Tehnologia este o unealtă; proiectul și utilizatorul decid ce merită folosit.
+            </p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="dev-section dev-section-alt">
-      <div class="container">
-        <div class="dev-section-header">
-          <span class="dev-section-tag">Rezultate</span>
-          <h2>Cifrele noastre</h2>
-          <p>Experiență și dedicare în fiecare proiect</p>
-        </div>
-        <div class="dev-stats-grid">
-          <div class="dev-stat">
-            <div class="dev-stat-value">{teamInfo.experience}</div>
-            <div class="dev-stat-label">Ani de experiență</div>
-          </div>
-          <div class="dev-stat">
-            <div class="dev-stat-value">{teamInfo.projects}</div>
-            <div class="dev-stat-label">Proiecte finalizate</div>
-          </div>
-          <div class="dev-stat">
-            <div class="dev-stat-value">{teamInfo.satisfaction}</div>
-            <div class="dev-stat-label">Clienți mulțumiți</div>
-          </div>
-          <div class="dev-stat">
-            <div class="dev-stat-value">{teamInfo.support}</div>
-            <div class="dev-stat-label">Suport disponibil</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Content Section -->
     <section class="dev-section">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Cine suntem</span>
-          <h2>Web design pentru afacerile mici din Moldova</h2>
+          <span class="dev-section-tag">Parcurs</span>
+          <h2>Cum am ajuns să fac asta</h2>
         </div>
         <div class="dev-content-text">
           <p>
-            <strong>ChisinauWeb.com</strong> este o echipă tânără și pasionată de
-            profesioniști din domeniul web design și dezvoltare web, cu sediul în
-            Chișinău, Republica Moldova. Am început această călătorie cu un scop clar:
-            să democratizăm accesul la servicii web profesionale pentru afacerile
-            mici și mijlocii din Moldova.
+            Am început să învăț serios dezvoltare web în 2019, prin parcursuri
+            structurate, cursuri și multă practică. Am studiat JavaScript, React
+            și dezvoltare full-stack, apoi am continuat în principal construind
+            proiecte reale și rezolvând problemele care apar atunci când un
+            produs trebuie să funcționeze în afara unui tutorial.
           </p>
           <p>
-            Credem că fiecare afacere merită o prezență online de calitate,
-            indiferent de buget. De aceea, ne-am specializat în <strong
-              >creare site web ieftin în Moldova</strong
-            >, oferind soluții accesibile fără a compromite calitatea. Înțelegem
-            provocările cu care se confruntă antreprenorii locali și ne-am
-            adaptat serviciile pentru a răspunde nevoilor reale ale pieței din
-            Chișinău și din întreaga țară.
-          </p>
-          <p>
-            Portofoliul nostru include site-uri de prezentare pentru diverse
-            industrii: restaurante și cafenele, clinici medicale, saloane de
-            înfrumusețare, firme de construcții, servicii de consultanță și
-            multe altele. Fiecare proiect este tratat cu aceeași atenție și
-            dedicare, pentru că succesul clienților noștri este și succesul
-            nostru.
-          </p>
-          <p>
-            Folosim tehnologii moderne precum <strong>Astro</strong>, <strong
-              >React</strong
-            > și
-            <strong>Cloudflare</strong> pentru a crea site-uri rapide, sigure și optimizate
-            pentru motoarele de căutare. Abordarea noastră este transparentă și orientată
-            spre rezultate: îți explicăm fiecare etapă, îți oferim opțiuni clare și
-            livrăm ceea ce promitem.
+            În prezent lucrez cu JavaScript, TypeScript, React, Astro,
+            Cloudflare Workers, baze de date, formulare, autentificare,
+            integrări de plată și procese de publicare. Nu folosesc toate aceste
+            tehnologii în fiecare proiect. Aleg doar ceea ce are sens pentru
+            problema respectivă.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="dev-section dev-section-alt" id="de-ce-noi">
-      <div class="container">
-        <div class="dev-section-header">
-          <span class="dev-section-tag">Testimoniale</span>
-          <h2>De ce clienții aleg ChisinauWeb.com</h2>
-          <p>
-            Combinăm creare site web ieftin cu un proces clar și un design
-            modern.
-          </p>
-        </div>
-        <div class="dev-testimonials-grid">
-          {
-            testimonials.map((t) => (
-              <div class="dev-testimonial">
-                <p class="dev-testimonial-content">{t.content}</p>
-                <div class="dev-testimonial-author">
-                  <div class="dev-testimonial-avatar">
-                    {t.author
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <div class="dev-testimonial-info">
-                    <strong>{t.author}</strong>
-                    <span>{t.location}</span>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="dev-section">
-      <div class="container">
-        <div class="dev-section-header">
-          <span class="dev-section-tag">Beneficii</span>
-          <h2>De ce să alegi serviciile noastre?</h2>
-          <p>
-            Descoperă avantajele care ne diferențiază pe piața de web design din
-            Moldova.
-          </p>
-        </div>
-        <div class="dev-benefits-grid">
-          {
-            benefits.map((b) => (
-              <div class="dev-benefit-card">
-                <span class="dev-card-title">{b.title}</span>
-                <p>{b.description}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
     <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Avantaje</span>
-          <h2>De ce să lucrezi cu noi?</h2>
-          <p>Iată câteva motive pentru care clienții ne recomandă</p>
+          <span class="dev-section-tag">Transparență</span>
+          <h2>Folosesc AI și spun asta deschis</h2>
         </div>
-        <div class="dev-why-grid">
-          {
-            whyChooseUs.map((w) => (
-              <div class="dev-why-card">
-                <div class="dev-why-icon">🎯</div>
-                <span class="dev-card-title">{w.title}</span>
-                <p>{w.description}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="dev-section" id="despre">
-      <div class="container">
-        <div class="dev-section-header">
-          <span class="dev-section-tag">Valorile noastre</span>
-          <h2>Cine suntem și cum lucrăm</h2>
+        <div class="dev-content-text">
           <p>
-            Suntem o echipă locală care livrează creare site web rapidă și web
-            design accesibil pentru Moldova.
+            Folosesc instrumente AI în fiecare zi pentru dezvoltare. Nu pretind
+            că scriu fiecare linie fără ajutor și nici nu cred că aceasta este
+            singura măsură a unui produs bun. AI mă ajută să analizez mai
+            repede, să explorez soluții, să reduc munca repetitivă și să verific
+            mai multe variante.
+          </p>
+          <p>
+            Totuși, un instrument AI nu înțelege singur afacerea clientului și
+            nu își asumă responsabilitatea pentru rezultat. Rolul meu este să
+            înțeleg ce trebuie construit, să transform cerințele într-un plan
+            clar, să ghidez implementarea, să verific modificările, să testez
+            funcțiile și să repar ceea ce nu merge. AI îmi oferă mai multă
+            putere de lucru; responsabilitatea pentru produs rămâne la mine.
+          </p>
+          <p>
+            Nu folosesc AI pentru a livra orbește primul rezultat generat. Îl
+            folosesc ca pe un set de unelte puternice pe care trebuie să le
+            conduc, să le verific și să le corectez.
           </p>
         </div>
-        <div class="dev-values-grid">
+      </div>
+    </section>
+
+    <section class="dev-section">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Practic</span>
+          <h2>Cum lucrez</h2>
+        </div>
+        <div class="dev-content-text">
+          <p>
+            Punctul meu forte este că pot lua o idee încă neclară, cu multe
+            părți în mișcare, și o pot duce către un produs care poate fi
+            folosit în realitate. Îmi place să găsesc traseul practic dintre
+            „ar fi bine să avem asta” și o versiune care funcționează pe
+            telefon, pe desktop și în producție.
+          </p>
+          <p>
+            Lucrez direct și explic lucrurile fără să ascund problemele în
+            spatele jargonului. Dacă o funcție nu merită costul, spun asta. Dacă
+            o soluție are o limită, o explic. Dacă proiectul trebuie simplificat
+            pentru a putea fi lansat, propun varianta realistă.
+          </p>
+          <p>
+            Nu public cifre despre clienți, satisfacție sau rezultate pe care nu
+            le pot demonstra. Prefer să arăt proiectele reale, să explic ce am
+            construit și să spun clar ce este finalizat și ce se află încă în
+            dezvoltare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-section dev-section-alt">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Colaborare</span>
+          <h2>Ce înseamnă să lucrezi direct cu mine</h2>
+        </div>
+        <div class="dev-info-grid">
           {
-            values.map((v) => (
-              <div class="dev-value-card">
-                <div class="dev-value-num">{v.number}</div>
-                <span class="dev-card-title">{v.title}</span>
-                <p>{v.description}</p>
-              </div>
+            directCards.map((card) => (
+              <article class="dev-info-card">
+                <span class="dev-card-title">{card.title}</span>
+                <p>{card.description}</p>
+              </article>
             ))
           }
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="dev-section dev-section-alt" id="proces">
+    <section class="dev-section" id="proces">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Proces</span>
-          <h2>Cum livrăm un site web rapid și eficient</h2>
-          <p>Proces clar, comunicare simplă și livrare la timp.</p>
+          <h2>Cum lucrăm împreună</h2>
+          <p>Discuție directă, progres vizibil și verificare înainte de publicare.</p>
         </div>
         <div class="dev-process-grid">
           {
-            process.map((p) => (
-              <div class="dev-process-step">
-                <div class="dev-process-num">{p.number}</div>
-                <span class="dev-card-title">{p.title}</span>
-                <p>{p.description}</p>
-              </div>
+            collaborationSteps.map((step, index) => (
+              <article class="dev-process-step">
+                <div class="dev-process-number">{index + 1}</div>
+                <span class="dev-card-title">{step.title}</span>
+                <p>{step.description}</p>
+              </article>
             ))
           }
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="dev-section" id="faq">
-      <div class="container">
-        <div class="dev-section-header">
-          <span class="dev-section-tag">FAQ</span>
-          <h2>Întrebări frecvente despre noi</h2>
-          <p>Claritate înainte de a începe proiectul.</p>
-        </div>
-        <div class="dev-faq-list">
-          {
-            faqs.map((faq) => (
-              <details class="dev-faq-item">
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
     <section class="dev-cta" id="contact">
       <div class="container">
         <div class="dev-cta-content">
-          <h2>Vrei să lucrăm împreună?</h2>
+          <h2>Spune-mi ce încerci să construiești</h2>
           <p>
-            Spune-ne despre proiectul tău și îți trimitem o ofertă personalizată
-            pentru creare site web în Moldova.
+            Nu trebuie să pregătești un document tehnic. Explică-mi afacerea,
+            problema și ce ai vrea să poată face site-ul. Îți voi răspunde
+            direct cu o variantă realistă, ce presupune și ce ar trebui făcut
+            mai întâi.
           </p>
-          <a
-            href="/contact/"
-            class="dev-btn dev-btn-primary dev-btn-lg"
-          >
-            Contactează-ne
-          </a>
+          <div class="dev-hero-actions">
+            <a href="/contact/" class="dev-btn dev-btn-primary dev-btn-lg">
+              Descrie proiectul
+            </a>
+            <a href="/#portofoliu" class="dev-btn dev-btn-secondary dev-btn-lg">
+              Vezi proiectele
+            </a>
+          </div>
         </div>
       </div>
     </section>

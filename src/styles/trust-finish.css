@@ -502,7 +502,6 @@ body.dev-ru-theme .section-title p {
 
 .nf-services-grid,
 .nf-portfolio-grid,
-.nf-testimonials-grid,
 .nf-pricing-grid,
 .nf-process-grid,
 body .dev-values-grid,
@@ -537,7 +536,6 @@ body.dev-ru-theme .blog-grid {
 
 .nf-card,
 .nf-service-card,
-.nf-testimonial,
 .nf-pricing-card,
 .nf-process-step,
 body .dev-value-card,
@@ -562,7 +560,6 @@ body.dev-ru-theme .blog-card {
 }
 
 .nf-service-card,
-.nf-testimonial,
 .nf-pricing-card,
 .nf-process-step,
 body .dev-value-card,
@@ -599,7 +596,6 @@ body.dev-ru-theme .blog-card:hover {
 
 .nf-service-icon,
 .nf-process-number,
-.nf-testimonial-avatar,
 body .dev-value-num,
 body .dev-process-number,
 body .dev-service-icon,

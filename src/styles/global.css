@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    CHISINAUWEB - PROFESSIONAL BRAND SYSTEM
    ============================================ */
 
@@ -854,59 +854,6 @@ b {
   position: relative;
 }
 
-.nf-testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-6);
-}
-
-.nf-testimonial {
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--nf-border);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  padding: var(--space-6);
-  box-shadow: var(--nf-shadow-sm);
-}
-
-.nf-testimonial-content {
-  color: var(--nf-text-secondary);
-  margin-bottom: var(--space-5);
-}
-
-.nf-testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.nf-testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  background: var(--nf-red-gradient);
-}
-
-.nf-testimonial-info {
-  display: grid;
-  gap: 0.1rem;
-}
-
-.nf-testimonial-name {
-  color: #fff;
-  font-size: var(--text-sm);
-  font-weight: 700;
-}
-
-.nf-testimonial-role {
-  color: var(--nf-text-muted);
-  font-size: var(--text-xs);
-}
-
 .nf-pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1098,7 +1045,6 @@ b {
   .nf-hero-stats,
   .nf-services-grid,
   .nf-portfolio-grid,
-  .nf-testimonials-grid,
   .nf-pricing-grid,
   .nf-process-grid {
     grid-template-columns: 1fr;
@@ -1600,7 +1546,6 @@ a {
 
 .nf-card,
 .nf-service-card,
-.nf-testimonial,
 .nf-pricing-card,
 .nf-process-step,
 .nf-faq-item,
@@ -1618,7 +1563,6 @@ a {
 
 .nf-card::before,
 .nf-service-card::before,
-.nf-testimonial::before,
 .nf-pricing-card::before,
 .nf-process-step::before,
 .cta-content::before {
@@ -1635,7 +1579,6 @@ a {
 
 .nf-card:hover,
 .nf-service-card:hover,
-.nf-testimonial:hover,
 .nf-pricing-card:hover,
 .nf-process-step:hover {
   transform: translateY(-5px);
@@ -1645,7 +1588,6 @@ a {
 
 .nf-card:hover::before,
 .nf-service-card:hover::before,
-.nf-testimonial:hover::before,
 .nf-pricing-card:hover::before,
 .nf-process-step:hover::before,
 .cta-content:hover::before {
@@ -1653,7 +1595,6 @@ a {
 }
 
 .nf-service-card,
-.nf-testimonial,
 .nf-pricing-card,
 .nf-process-step {
   padding: clamp(1.35rem, 2.4vw, 2rem);
@@ -1661,14 +1602,12 @@ a {
 
 .nf-services-grid,
 .nf-portfolio-grid,
-.nf-testimonials-grid,
 .nf-pricing-grid,
 .nf-process-grid {
   gap: clamp(1rem, 2.2vw, 1.35rem);
 }
 
 .nf-service-icon,
-.nf-testimonial-avatar,
 .nf-process-number {
   border-radius: var(--radius-sm);
   background:

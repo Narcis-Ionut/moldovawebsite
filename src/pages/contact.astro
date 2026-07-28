@@ -14,8 +14,15 @@ const jsonLd = {
       url: "https://chisinauweb.com/contact/",
       inLanguage: "ro-MD",
       about: {
-        "@type": "ProfessionalService",
-        name: "ChisinauWeb.com",
+        "@type": "Person",
+        name: "Narcis",
+        jobTitle: "Dezvoltator web independent",
+        url: "https://chisinauweb.com/about/",
+        worksFor: {
+          "@type": "Organization",
+          name: "ChisinauWeb.com",
+          url: "https://chisinauweb.com/",
+        },
       },
     },
   ],
@@ -23,55 +30,55 @@ const jsonLd = {
 
 const features = [
   {
-    icon: "💰",
-    title: "Prețuri Accesibile",
+    icon: "💬",
+    title: "Comunicare directă",
     description:
-      "Oferim soluții web de calitate la prețuri care se potrivesc bugetului oricărei afaceri mici din Moldova. Site-uri profesionale începând de la 150 EUR.",
+      "Discuți direct cu mine, persoana care analizează și construiește proiectul. Nu există un account manager între cerința ta și implementare.",
   },
   {
-    icon: "⚡",
-    title: "Livrare Rapidă",
+    icon: "🧭",
+    title: "Estimare după cerințe",
     description:
-      "Un site de prezentare standard este gata în 7-14 zile lucrătoare, iar pentru proiecte urgente oferim și opțiuni de fast-track.",
+      "Îți explic ce merită construit, ce poate fi simplificat și de ce depind costul și termenul înainte să începem.",
   },
   {
     icon: "🔍",
-    title: "SEO Inclus",
+    title: "Bază tehnică SEO",
     description:
-      "Toate site-urile includ optimizare SEO on-page: meta tag-uri corecte, structură semantică, viteză optimizată și date structurate JSON-LD.",
+      "Pentru site-urile publice configurez elementele tehnice de bază: structură semantică, metadate, sitemap, accesibilitate și performanță.",
   },
   {
-    icon: "🛡️",
-    title: "Garanție și Suport",
+    icon: "🔑",
+    title: "Predare clară",
     description:
-      "Oferim garanție de 30 de zile pentru orice remediere necesară după lansare. Suport continuu prin abonament de mentenanță.",
+      "După verificare primești acces la domeniu, hosting și celelalte servicii care țin de proiectul tău. Mentenanța ulterioară se stabilește separat.",
   },
 ];
 
 const process = [
   {
     number: "01",
-    title: "Discuție inițială",
+    title: "Îmi explici proiectul",
     description:
-      "Ne spui ce ai nevoie, ce buget ai și în ce termen. Îți răspundem cu o estimare gratuită în aceeași zi lucrătoare.",
+      "Îmi explici ce face afacerea ta și ce trebuie să realizeze site-ul.",
   },
   {
     number: "02",
-    title: "Propunere și contract",
+    title: "Analizez cerințele",
     description:
-      "Primești o ofertă detaliată cu scope, termene și preț. După acceptare, semnăm un contract simplu și începem lucrul.",
+      "Analizez cerințele și îți spun direct ce merită construit, ce poate fi simplificat și care sunt limitele.",
   },
   {
     number: "03",
-    title: "Dezvoltare",
+    title: "Construiesc și verific",
     description:
-      "Construim site-ul conform specificațiilor, cu actualizări regulate despre progres. Poți vedea versiunea de lucru oricând.",
+      "Construiesc proiectul, verific funcțiile și îți arăt progresul pe parcurs.",
   },
   {
     number: "04",
-    title: "Lansare",
+    title: "Publicăm și predau accesul",
     description:
-      "După testare și aprobarea ta finală, publicăm site-ul, configurăm domeniul și hosting-ul, și te instruim cum să-l administrezi.",
+      "După verificare, publicăm site-ul și primești acces la lucrurile care țin de proiectul tău.",
   },
 ];
 
@@ -79,22 +86,22 @@ const services = [
   {
     title: "Site de prezentare",
     description:
-      "Site-uri profesionale pentru afaceri mici și mijlocii. Include pagini precum Acasă, Despre noi, Servicii, Portofoliu, Contact și Blog opțional.",
+      "Un website clar pentru servicii, companie sau activitate independentă, cu paginile și formularele necesare publicului tău.",
   },
   {
     title: "Magazin online",
     description:
-      "Soluții e-commerce complete cu catalog de produse, coș de cumpărături, integrare plăți online, gestiune stocuri și comenzi.",
+      "Catalog, coș, comenzi și plăți atunci când modelul afacerii le cere. Integrările exacte se aleg după modul real de lucru.",
   },
   {
     title: "Landing page",
     description:
-      "Pagini de destinație optimizate pentru campanii de marketing, cu focus pe conversie și call-to-action clare.",
+      "O pagină concentrată pe o ofertă sau campanie, cu informație scurtă, acțiuni clare și măsurare configurată unde este necesar.",
   },
   {
     title: "Redesign site existent",
     description:
-      "Reîmprospătăm site-ul tău actual cu un design modern, viteză îmbunătățită și optimizare SEO.",
+      "Refac structura, interfața sau partea tehnică a unui site existent după ce verific ce poate fi păstrat și ce trebuie schimbat.",
   },
 ];
 
@@ -102,22 +109,22 @@ const faqs = [
   {
     question: "Cât durează realizarea unui site?",
     answer:
-      "Un site de prezentare simplu este gata în 7-14 zile. Proiectele complexe pot dura 2-4 săptămâni, în funcție de funcționalități.",
+      "Depinde de numărul de pagini, conținut, funcții și integrări. După ce văd cerințele pot propune un termen realist și pot explica ce îl poate influența.",
   },
   {
-    question: "Ce informații trebuie să vă ofer?",
+    question: "Ce informații trebuie să îți ofer?",
     answer:
-      "Ne sunt utile: descrierea afacerii, exemple de site-uri care îți plac, conținutul text (dacă ai), logo și imagini. Te ghidăm pas cu pas.",
+      "Sunt utile descrierea afacerii, ce trebuie să facă site-ul, conținutul disponibil, logo-ul, imaginile și câteva exemple relevante. Putem stabili împreună ce lipsește.",
   },
   {
-    question: "Oferiți servicii și în afara Chișinăului?",
+    question: "Lucrezi și în afara Chișinăului?",
     answer:
-      "Da, lucrăm cu clienți din toată Moldova și chiar internațional. Comunicăm online și livrăm la fel de eficient.",
+      "Da. Comunicarea și verificarea proiectului pot avea loc online, așa că pot lucra cu afaceri din toată Moldova și din alte țări.",
   },
   {
     question: "Pot plăti în rate?",
     answer:
-      "Da, pentru proiecte mai mari oferim posibilitatea de plată în două tranșe: 50% la început și 50% la finalizare.",
+      "Pentru proiectele standard și profesionale, termenii publicați prevăd de regulă două tranșe: 50% la început și 50% la predare. Condițiile exacte apar în oferta proiectului.",
   },
 ];
 
@@ -127,21 +134,21 @@ const contactMethods = [
     title: "Email",
     value: "contact@chisinauweb.com",
     link: "mailto:contact@chisinauweb.com",
-    description: "Răspundem în maxim 24 de ore",
+    description: "Potrivit pentru brief și materiale",
   },
   {
     icon: "📱",
     title: "Telefon / WhatsApp",
     value: "+373 61 211 739",
     link: "tel:+37361211739",
-    description: "Disponibil L-V 09:00-18:00",
+    description: "Pentru o discuție scurtă",
   },
   {
     icon: "💬",
     title: "Formular online",
     value: "Completează formularul",
     link: "#formular",
-    description: "Primești răspuns în aceeași zi",
+    description: "Îmi oferă contextul necesar",
   },
 ];
 ---
@@ -150,8 +157,8 @@ const contactMethods = [
 <html lang="ro">
   <head>
     <BaseHead
-      title="Contact – Creare site web ieftin în Moldova"
-      description="Contactează-ne pentru o ofertă gratuită: web design accesibil în Chișinău și toată Moldova. Răspundem rapid, în română sau rusă."
+      title="Contact Narcis | Creare site web în Moldova"
+      description="Descrie proiectul tău de creare site web sau aplicație. Discuți direct cu Narcis, dezvoltator web independent în Chișinău."
       canonicalUrl="https://chisinauweb.com/contact/"
       hreflangRo="https://chisinauweb.com/contact/"
       hreflangRu="https://chisinauweb.com/ru/contact/"
@@ -172,30 +179,26 @@ const contactMethods = [
       <div class="container">
         <div class="dev-hero-content">
           <span class="dev-section-tag">Contact</span>
-          <h1>Contactează-ne – răspundem rapid</h1>
+          <h1>Spune-mi ce încerci să construiești</h1>
           <p>
-            Contactează-ne – răspundem rapid pentru creare site web ieftin în
-            Moldova. Spune pe scurt ce ai nevoie și revenim în aceeași zi
-            lucrătoare.
+            Nu trebuie să pregătești un document tehnic. Explică-mi afacerea,
+            problema și ce ai vrea să poată face site-ul.
           </p>
         </div>
         <div class="dev-hero-intro">
           <p>
-            Suntem aici pentru a te ajuta să-ți construiești prezența online.
-            Fie că ai nevoie de un
+            Construiesc site-uri și aplicații web pentru afaceri și proiecte
+            din Chișinău, din restul Moldovei sau de oriunde putem comunica
+            online. Fie că ai nevoie de un
             <strong>site de prezentare simplu</strong>, un <strong
               >magazin online</strong
-            > sau doar dorești să discuți despre opțiuni, suntem g să te ascultăm.
-            Echipa noastră din
-            <strong>Chișinău</strong> servește clienți din toată <strong
-              >Moldova</strong
-            > și oferă suport atât în română, cât și în rusă.
+            > sau de un produs web mai complex, îți spun direct ce presupune și
+            ce ar trebui făcut mai întâi.
           </p>
           <p>
-            Completează formularul de mai jos, sună-ne sau trimite-ne un email.
-            Promitem să răspundem rapid și să-ți oferim toate informațiile
-            necesare pentru a lua cea mai bună decizie pentru afacerea ta.
-            Fiecare proiect începe cu o conversație – haide să vorbim!
+            Completează formularul, sună-mă sau trimite-mi un email. Cu cât
+            descrii mai clar problema și rezultatul dorit, cu atât pot evalua
+            mai util varianta realistă.
           </p>
         </div>
       </div>
@@ -205,9 +208,9 @@ const contactMethods = [
     <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Cum ne contactezi</span>
+          <span class="dev-section-tag">Cum mă contactezi</span>
           <h2>Alege metoda preferată</h2>
-          <p>Suntem disponibili pe multiple canale pentru confortul tău</p>
+          <p>Alege canalul care îți este mai comod</p>
         </div>
         <div class="dev-contact-methods">
           {
@@ -243,7 +246,7 @@ const contactMethods = [
                 id="name"
                 name="name"
                 maxlength="120"
-                placeholder="Ex: Ion Popescu"
+                placeholder="Numele tău"
                 required
               />
             </div>
@@ -393,7 +396,7 @@ const contactMethods = [
                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                   ></path>
                 </svg>
-                <span>str. Ioana Radu 27/2, Chișinău, MD</span>
+                <span>Chișinău, Moldova</span>
               </li>
               <li>
                 <svg
@@ -438,11 +441,11 @@ const contactMethods = [
             </ul>
 
             <div class="dev-info-divider"></div>
-            <p>Preferi WhatsApp? Scrie-ne direct – răspundem rapid.</p>
+            <p>Preferi WhatsApp? Scrie-mi direct și descrie pe scurt proiectul.</p>
             <a
               href="https://api.whatsapp.com/send?phone=37361211739"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               class="dev-btn-secondary"
             >
               <svg
@@ -466,9 +469,9 @@ const contactMethods = [
     <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">De ce noi?</span>
+          <span class="dev-section-tag">Lucru direct</span>
           <h2>Avantajele tale</h2>
-          <p>Ce primești când lucrezi cu ChisinauWeb.com</p>
+          <p>Ce poți aștepta când lucrezi direct cu mine</p>
         </div>
         <div class="dev-features-grid">
           {
@@ -489,8 +492,8 @@ const contactMethods = [
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Proces</span>
-          <h2>Cum funcționează?</h2>
-          <p>Pași simpli de la idee la site live</p>
+          <h2>Cum lucrăm împreună</h2>
+          <p>Patru pași de la contextul inițial la predarea proiectului</p>
         </div>
         <div class="dev-process-grid">
           {
@@ -511,8 +514,8 @@ const contactMethods = [
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Servicii</span>
-          <h2>Ce servicii oferim?</h2>
-          <p>Soluții complete pentru prezență online</p>
+          <h2>Ce pot construi?</h2>
+          <p>Servicii web adaptate problemei și conținutului disponibil</p>
         </div>
         <div class="dev-services-list">
           {

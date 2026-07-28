@@ -28,7 +28,7 @@ export interface ContactEmails {
 const BRAND_NAME = "ChisinauWeb.com";
 const BRAND_URL = "https://chisinauweb.com";
 const BRAND_PHONE = "+373 61 211 739";
-const BRAND_ADDRESS = "Chișinău, str. Ioana Radu 27/2";
+const BRAND_ADDRESS = "Chișinău, Moldova";
 
 function escapeHtml(value: string) {
   return value
@@ -288,24 +288,24 @@ function buildCustomerEmail(data: ContactEmailData): RenderedEmail {
 
   const copy = isRu
     ? {
-        subject: `Мы получили вашу заявку · ${BRAND_NAME}`,
+        subject: `Заявка получена · ${BRAND_NAME}`,
         preheader:
-          "Заявка получена. Мы изучим детали и ответим в течение одного рабочего дня.",
+          "Заявка получена. Нарцис изучит детали и ответит лично.",
         eyebrow: "Заявка получена",
-        title: "Спасибо — сообщение уже у нас",
+        title: "Спасибо — сообщение уже у Нарциса",
         intro:
-          "Мы изучим детали проекта и ответим лично в течение одного рабочего дня.",
+          "Нарцис изучит детали проекта и ответит лично, когда сможет дать полезный и конкретный ответ.",
         greeting: `Здравствуйте, ${data.name}!`,
         body:
           "Ваша заявка успешно зарегистрирована. Ниже — копия деталей, которые вы отправили.",
         nextTitle: "Что дальше",
         nextBody:
-          "Мы проверим задачу, бюджет и сроки, а затем предложим понятный следующий шаг без лишних обязательств.",
+          "Нарцис проверит задачу, бюджет и сроки, а затем предложит понятный следующий шаг без лишних обязательств.",
         subjectLabel: "Тема",
         projectLabel: "Тип проекта",
         budgetLabel: "Бюджет",
         messageLabel: "Ваше сообщение",
-        cta: "Ответить команде",
+        cta: "Ответить Нарцису",
         reference: "Номер обращения",
         footer:
           "Это автоматическое подтверждение заявки, отправленной через ChisinauWeb.com.",
@@ -313,22 +313,22 @@ function buildCustomerEmail(data: ContactEmailData): RenderedEmail {
     : {
         subject: `Am primit solicitarea ta · ${BRAND_NAME}`,
         preheader:
-          "Solicitarea a fost primită. Analizăm detaliile și răspundem în maximum o zi lucrătoare.",
+          "Solicitarea a fost primită. Narcis va analiza detaliile și îți va răspunde personal.",
         eyebrow: "Solicitare primită",
-        title: "Mulțumim — mesajul tău este la noi",
+        title: "Mulțumesc — mesajul tău a ajuns la Narcis",
         intro:
-          "Analizăm detaliile proiectului și îți răspundem personal în maximum o zi lucrătoare.",
+          "Voi analiza detaliile proiectului și îți voi răspunde când pot oferi un răspuns util și concret.",
         greeting: `Salut, ${data.name}!`,
         body:
           "Solicitarea ta a fost înregistrată cu succes. Mai jos găsești o copie a detaliilor trimise.",
         nextTitle: "Ce urmează",
         nextBody:
-          "Verificăm obiectivul, bugetul și termenul, apoi revenim cu un pas următor clar, fără obligații.",
+          "Verific obiectivul, bugetul și termenul, apoi revin cu un pas următor clar, fără obligații.",
         subjectLabel: "Subiect",
         projectLabel: "Tip proiect",
         budgetLabel: "Buget",
         messageLabel: "Mesajul tău",
-        cta: "Răspunde echipei",
+        cta: "Răspunde-i lui Narcis",
         reference: "Referință solicitare",
         footer:
           "Acesta este un mesaj automat de confirmare pentru solicitarea trimisă pe ChisinauWeb.com.",

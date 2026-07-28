@@ -32,8 +32,15 @@ const jsonLd = {
       description:
         "Preț creare site în Moldova: landing page, site de prezentare și mini-magazin, cu pachete orientative de la 50€.",
       provider: {
-        "@type": "ProfessionalService",
-        name: "ChisinauWeb.com",
+        "@type": "Person",
+        name: "Narcis",
+        jobTitle: "Dezvoltator web independent",
+        url: "https://chisinauweb.com/about/",
+        worksFor: {
+          "@type": "Organization",
+          name: "ChisinauWeb.com",
+          url: "https://chisinauweb.com/",
+        },
       },
       areaServed: { "@type": "Country", name: "Moldova" },
       url: "https://chisinauweb.com/preturi/",
@@ -108,7 +115,7 @@ const jsonLd = {
           name: "Pot plăti în MDL sau în două tranșe?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru pachetele Standard/Pro acceptăm și plata în două tranșe (50% avans, 50% la livrare).",
+            text: "Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru pachetele Standard și Pro accept plata în două tranșe: 50% avans și 50% la predare.",
           },
         },
         {
@@ -124,7 +131,7 @@ const jsonLd = {
           name: "Domeniul și găzduirea sunt incluse?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Nu. Îți recomandăm opțiuni potrivite bugetului și te ajutăm cu configurarea (DNS, SSL, e-mailuri).",
+            text: "Nu. Îți recomand opțiuni potrivite proiectului și te ajut cu configurarea DNS, SSL și a adreselor de e-mail, dacă sunt necesare.",
           },
         },
         {
@@ -132,7 +139,7 @@ const jsonLd = {
           name: "După lansare, pot modifica singur conținutul?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Da, pachetele Standard/Pro includ CMS. Oferim și ghid + training (în Pro).",
+            text: "Pachetele Standard și Pro includ un sistem de administrare a conținutului atunci când acesta este potrivit proiectului. Pachetul Pro include și o sesiune de predare.",
           },
         },
         {
@@ -140,7 +147,7 @@ const jsonLd = {
           name: "Care este diferența dintre preț creare website și cost creare site?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "În practică este aceeași intenție de căutare: vrei să știi cât costă un website complet. Noi separăm costul pe tipuri de proiect: landing page de la 50€, site de prezentare de la 150€ și mini-magazin online de la 300€.",
+            text: "Ambele formulări se referă la costul construirii unui website. Estimarea depinde de tipul proiectului: landing page de la 50€, site de prezentare de la 150€ și mini-magazin online de la 300€.",
           },
         },
         {
@@ -168,7 +175,7 @@ const packages = [
       "SSL, optimizare viteză de bază",
       "SEO on-page de bază (Titlu, Meta, H1-H3)",
       "1 revizuire inclusă",
-      "Livrare: 2–3 zile lucrătoare",
+      "Termen stabilit după primirea conținutului",
     ],
     note: "Domeniu & găzduire nu sunt incluse. Te putem ajuta cu setarea.",
     featured: false,
@@ -184,7 +191,7 @@ const packages = [
       "SEO on-page extins + schema JSON-LD",
       "Configurare GA4 & Search Console",
       "2–3 revizuiri incluse",
-      "Livrare: 7–10 zile lucrătoare",
+      "Termen stabilit în oferta proiectului",
     ],
     note: "Ideal pentru afaceri locale care vor vizibilitate în căutări.",
     featured: true,
@@ -195,12 +202,12 @@ const packages = [
     price: "300€",
     description: "Site avansat (până la 12 pagini) sau mini-magazin",
     features: [
-      "Design personalizat + componente premium",
+      "Design personalizat + componente adaptate proiectului",
       "Mini-magazin (până la 10 produse), coș, livrare & plăți",
       "SEO avansat (structură, viteză, rich results)",
       "RO + RU (multi-language) – opțional",
       "5 revizuiri incluse + training 1 oră",
-      "Livrare: 10–14 zile lucrătoare",
+      "Termen stabilit după definirea integrărilor",
     ],
     note: "Include 1 lună mentenanță de bază post-lansare.",
     featured: false,
@@ -258,7 +265,7 @@ const faqs = [
   {
     question: "Pot plăti în MDL sau în două tranșe?",
     answer:
-      "Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru pachetele Standard/Pro acceptăm și plata în două tranșe (50% avans, 50% la livrare).",
+      "Da. Facturarea se poate face în EUR sau echivalent MDL. Pentru pachetele Standard și Pro accept plata în două tranșe: 50% avans și 50% la predare.",
   },
   {
     question: "Ce include SEO on-page?",
@@ -268,17 +275,17 @@ const faqs = [
   {
     question: "Domeniul și găzduirea sunt incluse?",
     answer:
-      "Nu. Îți recomandăm opțiuni potrivite bugetului și te ajutăm la configurare (DNS, SSL, e-mailuri).",
+      "Nu. Îți recomand opțiuni potrivite proiectului și te ajut la configurare (DNS, SSL și e-mailuri, dacă sunt necesare).",
   },
   {
     question: "După lansare, pot modifica singur conținutul?",
     answer:
-      "Da, pachetele Standard/Pro includ CMS (administrare conținut). Oferim și un mic ghid + training (în Pro).",
+      "Pachetele Standard și Pro includ un sistem de administrare a conținutului atunci când acesta este potrivit proiectului. Pachetul Pro include și o sesiune de predare.",
   },
   {
     question: "Care este diferența dintre preț creare website și cost creare site?",
     answer:
-      "În practică este aceeași intenție de căutare: vrei să știi cât costă un website complet. Noi separăm costul pe tipuri de proiect: landing page de la 50€, site de prezentare de la 150€ și mini-magazin online de la 300€.",
+      "Ambele formulări se referă la costul construirii unui website. Estimarea depinde de tipul proiectului: landing page de la 50€, site de prezentare de la 150€ și mini-magazin online de la 300€.",
   },
   {
     question: "Cât costă un site magazin online?",
@@ -376,10 +383,9 @@ const faqs = [
           <span class="dev-section-tag">Preț creare site web</span>
           <h2>Cât costă un site web în Moldova?</h2>
           <p>
-            Pentru căutări precum pret creare site, creare site web pret,
-            realizare site web preturi sau cost creare site, răspunsul rapid este:
-            începi de la 50 EUR pentru o pagină simplă, 150 EUR pentru un site
-            de prezentare și 300 EUR pentru un mini-magazin online.
+            Prețul pentru creare site web depinde de conținut și funcții. Ca
+            reper, o pagină simplă pornește de la 50 EUR, un site de prezentare
+            de la 150 EUR, iar un mini-magazin online de la 300 EUR.
           </p>
         </div>
         <div class="dev-info-grid">
@@ -418,9 +424,10 @@ const faqs = [
           <h2>De ce unele agenții pornesc de la 290-990 EUR?</h2>
           <p>
             Diferența vine de obicei din mărimea echipei, procesele interne,
-            brandingul agenției și nivelul de customizare. Noi păstrăm pachetele
-            mici pentru afaceri care au nevoie de o lansare rapidă, clară și
-            măsurabilă, apoi extindem site-ul după ce începe să aducă cereri.
+            brandingul agenției și nivelul de personalizare. Eu lucrez direct,
+            fără straturi de account management, și păstrez aceste pachete
+            orientative pentru proiecte cu un domeniu clar. Cerințele care ies
+            din pachet sunt estimate separat înainte de lucru.
           </p>
         </div>
         <div class="dev-info-grid">
@@ -509,12 +516,12 @@ const faqs = [
     <section class="dev-section dev-section-alt">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Intenții comerciale</span>
-          <h2>Pagini dedicate pentru fiecare nevoie importantă</h2>
+          <span class="dev-section-tag">Tipuri de proiecte</span>
+          <h2>Detalii pentru fiecare nevoie importantă</h2>
           <p>
-            Pagina de prețuri acoperă intenția de cost. Pentru căutări precum
-            site la comanda, site de prezentare, creare site Chișinău, web design
-            Moldova sau SEO Moldova, folosește pagina dedicată.
+            Vezi ce include un site la comandă, un site de prezentare, serviciul
+            de creare site în Chișinău sau un proiect de web design în Moldova.
+            Fiecare pagină explică limitele și pașii practici ai serviciului.
           </p>
         </div>
         <div class="dev-info-grid">
@@ -522,8 +529,8 @@ const faqs = [
             roLandingCards.map((page) => (
               <article class="dev-info-card">
                 <span class="dev-card-title">{page.title}</span>
-                <p>{`Pagina dedicata pentru ${page.title}, cu intentie comerciala si pas clar spre oferta.`}</p>
-                <a href={page.href} class="dev-link-accent">Mergi la {page.title}</a>
+                <p>{page.description}</p>
+                <a href={page.href} class="dev-link-accent">Detalii despre {page.title}</a>
               </article>
             ))
           }
@@ -579,14 +586,14 @@ const faqs = [
         <div class="dev-cta-content">
           <h2>Ai nevoie de un preț exact pentru site-ul tău?</h2>
           <p>
-            Trimite-ne pe scurt obiectivele, tipul de site și numărul de pagini.
-            Îți răspundem cu o ofertă personalizată și realistă.
+            Trimite-mi pe scurt obiectivele, tipul de site și numărul de pagini.
+            După ce analizez cerințele îți propun o estimare realistă.
           </p>
           <a
             href="/contact/"
             class="dev-btn dev-btn-primary dev-btn-lg"
           >
-            Contactează-ne
+            Descrie proiectul
           </a>
         </div>
       </div>

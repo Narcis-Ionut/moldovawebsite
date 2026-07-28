@@ -4,6 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "../../styles/dev-pages.css";
 import { ruLandingCards } from "../../data/landingPages.ru";
+import { portfolioRu } from "../../data/portfolio";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -16,19 +17,35 @@ const jsonLd = {
     },
     {
       "@type": "ProfessionalService",
+      "@id": "https://chisinauweb.com/#business",
       name: "ChisinauWeb.com",
       description:
-        "Создание сайтов в Молдове с пакетами от 50€: сайт-визитка, интернет-магазин, SEO на странице и обслуживание.",
+        "Создание сайтов и веб-приложений в Молдове напрямую с независимым разработчиком из Кишинёва.",
       areaServed: { "@type": "Country", name: "Молдова" },
       url: "https://chisinauweb.com/ru/",
       email: "contact@chisinauweb.com",
       telephone: "+37361211739",
+      founder: { "@id": "https://chisinauweb.com/about/#narcis" },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "ул. Иоана Раду 27/2",
-        addressLocality: "Кишинев",
+        addressLocality: "Кишинёв",
         addressCountry: "MD",
       },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chisinauweb.com/about/#narcis",
+      name: "Narcis",
+      jobTitle: "Независимый веб-разработчик",
+      url: "https://chisinauweb.com/ru/about/",
+      worksFor: { "@id": "https://chisinauweb.com/#business" },
+      knowsAbout: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Astro",
+        "Cloudflare Workers",
+      ],
     },
     {
       "@type": "FAQPage",
@@ -46,7 +63,7 @@ const jsonLd = {
           name: "Вы работаете в Кишиневе и по всей Молдове?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Да. Мы предлагаем локальные услуги в Кишиневе и сотрудничаем онлайн с клиентами по всей Молдове.",
+            text: "Да. Я работаю из Кишинёва и могу вести проекты онлайн для клиентов по всей Молдове.",
           },
         },
         {
@@ -54,7 +71,7 @@ const jsonLd = {
           name: "Вы включаете SEO на странице?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Да. Мы настраиваем мета-теги, правильную структуру, скорость страниц и схему JSON-LD для лучшей видимости в поисковых системах.",
+            text: "Да. Я настраиваю мета-теги, структуру страниц, технические условия для быстрой загрузки и JSON-LD там, где это уместно.",
           },
         },
         {
@@ -62,7 +79,7 @@ const jsonLd = {
           name: "Вы создаете интернет-магазины?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Да. Мы разрабатываем интернет-магазины с каталогом, корзиной, платежами и доставкой, оптимизированные для конверсии.",
+            text: "Да. Я создаю интернет-магазины с каталогом, корзиной, оплатой и доставкой в объёме, согласованном для конкретного проекта.",
           },
         },
       ],
@@ -70,50 +87,12 @@ const jsonLd = {
   ],
 };
 
-const services = [
-  {
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.048 4.025a3 3 0 01-4.293 0l-1.172-1.172a3 3 0 010-4.242l7.586-7.586a3 3 0 014.242 0l1.172 1.172a3 3 0 010 4.242l-7.586 7.586z"/><path d="M14.25 9.75L16.5 12m0 0l2.25 2.25M16.5 12l2.25-2.25M16.5 12l-2.25 2.25"/></svg>`,
-    title: "Современный дизайн и UX",
-    description:
-      "Чистые, удобные интерфейсы, которые повышают конверсию и доверие.",
-    cardClass: "dev-card-amber",
-  },
-  {
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>`,
-    title: "Производительность и скорость",
-    description:
-      "Техническая оптимизация (LCP/CLS), кэширование и лучшие практики для быстрой загрузки.",
-    cardClass: "dev-card-emerald",
-  },
-  {
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>`,
-    title: "SEO на странице для Молдовы",
-    description:
-      "Правильная структура, мета-теги, схемы JSON-LD и локализованный контент (Кишинев, MD).",
-    cardClass: "dev-card-violet",
-  },
-  {
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>`,
-    title: "Доступный интернет-магазин",
-    description:
-      "Внедрение электронной коммерции с платежами, доставкой и каталогом — без завышенных затрат.",
-    cardClass: "dev-card-pink",
-  },
-  {
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>`,
-    title: "Обслуживание и локальная поддержка",
-    description:
-      "Обновления, безопасность и помощь на румынском и русском языках, когда вам необходимо.",
-    cardClass: "dev-card-cyan",
-  },
-];
-
 const linkedServices = [
   {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.048 4.025a3 3 0 01-4.293 0l-1.172-1.172a3 3 0 010-4.242l7.586-7.586a3 3 0 014.242 0l1.172 1.172a3 3 0 010 4.242l-7.586 7.586z"/><path d="M14.25 9.75L16.5 12m0 0l2.25 2.25M16.5 12l2.25-2.25M16.5 12l-2.25 2.25"/></svg>`,
     title: "Современный дизайн и UX",
     description:
-      "Понятные интерфейсы и визуальная подача, которые улучшают восприятие и конверсию.",
+      "Понятные интерфейсы, в которых важная информация и действия удобно находить на телефоне и компьютере.",
     cardClass: "dev-card-amber",
     href: "/ru/serviciiBlog/design-web/",
   },
@@ -145,104 +124,36 @@ const linkedServices = [
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>`,
     title: "Поддержка и обслуживание",
     description:
-      "Обновления, мониторинг и поддержка после запуска, чтобы сайт не терял качество.",
+      "Обновления, мониторинг и технические работы после запуска можно согласовать отдельно.",
     cardClass: "dev-card-cyan",
     href: "/ru/serviciiBlog/mentenanta/",
   },
 ];
 
-const testimonials = [
-  {
-    content:
-      "После запуска нового сайта заявки стали понятнее, а команда работала быстро, четко и по доступной цене.",
-    author: "Иван Попеску",
-    role: "Владелец местного бизнеса",
-  },
-  {
-    content:
-      "Интернет-магазином удобно управлять, а клиентам проще оформить заказ с телефона.",
-    author: "Мария Кожокару",
-    role: "Менеджер интернет-магазина",
-  },
-  {
-    content:
-      "Очень ценю внедренные SEO-оптимизации. Теперь мы находимся в первых результатах для локальных поисковых запросов в Кишиневе.",
-    author: "Андрей Русу",
-    role: "Директор по маркетингу",
-  },
-  {
-    content:
-      "Ключевым аспектом для нас была адаптация сайта для мобильных устройств. Сейчас 70% наших клиентов заходят с телефонов, и опыт использования безупречен. Рекомендую!",
-    author: "Елена Мунтяну",
-    role: "Предприниматель",
-  },
-];
-
-const portfolio = [
-  {
-    image: "/assets/tencuitor-md.webp",
-    title: "Tencuitor.md",
-    category: "Каталог оборудования",
-    description:
-      "Каталог и lead-generation сайт для оборудования под механизированную штукатурку, шпаклевку, airless-покраску, сервис и аренду в Молдове.",
-    features: ["Каталог товаров", "Заявки через WhatsApp", "Локальное SEO"],
-    link: "https://tencuitor.md",
-  },
-  {
-    image: "/assets/arcadie-systems.webp",
-    title: "Arcadie Systems",
-    category: "SaaS для продаж",
-    description:
-      "SaaS-приложение для outbound sales: импорт CSV, очередь Daily 50, AI research, результаты звонков в один клик и умные follow-up.",
-    features: ["Импорт CSV", "AI research", "Call queue"],
-    link: "https://arcadie-systems.com",
-  },
-  {
-    image: "/assets/salon-beauty.webp",
-    title: "Beauty Studio Центр",
-    category: "Салон красоты",
-    description:
-      "Элегантный сайт для салона красоты в центре Кишинева. Включает фотогалерею, прайс-лист и формы бронирования.",
-    features: ["Фотогалерея", "Онлайн-бронирование", "Премиум-дизайн"],
-  },
-  {
-    image: "/assets/r-ro-ai.webp",
-    title: "R-RO AI – Юридический ассистент",
-    category: "AI Веб-приложение",
-    description:
-      "AI платформа для румын в диаспоре. Генерирует жалобы ANPC, заявления на компенсацию за рейс (до 600€), расторжение контрактов и полные юридические руководства на румынском языке.",
-    features: [
-      "Продвинутая AI интеграция",
-      "PWA веб-приложение",
-      "Современный адаптивный дизайн",
-    ],
-    link: "https://rezolvro.ro/",
-  },
-];
-
-const process = [
+const collaborationSteps = [
   {
     number: "01",
-    title: "Бесплатная консультация",
+    title: "Задача",
     description:
-      "Определяем цели, бюджет и тип сайта (визитка, интернет-магазин).",
+      "Вы объясняете мне, чем занимается ваш бизнес и чего должен достичь сайт.",
   },
   {
     number: "02",
-    title: "Дизайн",
+    title: "Разбор",
     description:
-      "Визуальные предложения и прототипы, ориентированные на конверсию.",
+      "Я анализирую требования и прямо говорю, что стоит создавать, что можно упростить и где есть ограничения.",
   },
   {
     number: "03",
-    title: "Разработка",
+    title: "Создание проекта",
     description:
-      "Быстрая реализация с лучшими практиками производительности и безопасности.",
+      "Я создаю проект, проверяю функции и показываю вам прогресс по ходу работы.",
   },
   {
     number: "04",
-    title: "Запуск и SEO",
-    description: "Публикуем сайт, настраиваем SEO на странице и обеспечиваем поддержку.",
+    title: "Проверка и публикация",
+    description:
+      "После проверки мы публикуем сайт, а вы получаете доступ ко всему, что относится к вашему проекту.",
   },
 ];
 
@@ -255,17 +166,17 @@ const faqs = [
   {
     question: "Вы работаете в Кишиневе и по всей Молдове?",
     answer:
-      "Да. Мы предлагаем локальные услуги в Кишиневе и сотрудничаем онлайн с клиентами по всей Молдове.",
+      "Да. Я работаю из Кишинёва и могу вести проекты онлайн для клиентов по всей Молдове.",
   },
   {
     question: "Вы включаете SEO на странице?",
     answer:
-      "Да. Мы настраиваем мета-теги, правильную структуру, скорость страниц и схему JSON-LD для лучшей видимости в поисковых системах.",
+      "Да. Я настраиваю мета-теги, структуру страниц, технические условия для быстрой загрузки и JSON-LD там, где это уместно.",
   },
   {
     question: "Вы создаете интернет-магазины?",
     answer:
-      "Да. Мы разрабатываем интернет-магазины с каталогом, корзиной, платежами и доставкой, оптимизированные для конверсии.",
+      "Да. Я создаю интернет-магазины с каталогом, корзиной, оплатой и доставкой в объёме, согласованном для конкретного проекта.",
   },
 ];
 ---
@@ -274,8 +185,8 @@ const faqs = [
 <html lang="ru">
   <head>
     <BaseHead
-      title="Создание сайтов в Молдове | Быстро, SEO, от 50€"
-      description="Быстрые сайты для бизнеса в Молдове: сайт-визитка, интернет-магазин, SEO-оптимизация и адаптивный дизайн. Прозрачные цены."
+      title="Создание сайтов в Молдове | Нарцис, веб-разработчик"
+      description="Создание сайтов и веб-приложений в Молдове напрямую с независимым разработчиком из Кишинёва: сайт-визитка, интернет-магазин, SEO и веб-дизайн."
       canonicalUrl="https://chisinauweb.com/ru/"
       lang="ru"
       ogLocale="ru_MD"
@@ -294,15 +205,20 @@ const faqs = [
       <div class="container">
         <div class="dev-hero-grid">
           <div class="dev-hero-content">
-            <div class="dev-hero-badge">Открыты для новых проектов</div>
-            <h1>Создание сайтов в Молдове для локального бизнеса</h1>
+            <div class="dev-hero-badge">Независимый веб-разработчик в Кишинёве</div>
+            <h1>Создание сайтов в Молдове напрямую с разработчиком</h1>
             <p class="dev-hero-subtitle">
-              Быстрые, понятные и SEO-friendly сайты для Кишинева и всей
-              Молдовы помогают бизнесу выглядеть профессионально,
-              вызывать доверие и получать заявки. Локальные услуги: <strong>сайт-визитка</strong>, <strong
+              Я — Нарцис. Создаю понятные сайты и веб-приложения для бизнеса в
+              Кишинёве и по всей Молдове: <strong>сайт-визитка</strong>, <strong
                 >интернет-магазин</strong
               >,
-              <strong>SEO на странице</strong> и <strong>обслуживание</strong>.
+              <strong>сайт на заказ</strong> и более сложные веб-продукты.
+              Вы общаетесь напрямую с человеком, который анализирует,
+              разрабатывает и проверяет проект.
+            </p>
+            <p class="dev-hero-subtitle">
+              Современная веб-разработка, включая инструменты AI, которые я
+              использую открыто и проверяю перед публикацией.
             </p>
             <div class="dev-hero-actions">
               <a href="/ru/contact/" class="dev-btn dev-btn-primary">
@@ -318,7 +234,7 @@ const faqs = [
                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   ></path>
                 </svg>
-                Запросить бесплатное предложение
+                Описать проект
               </a>
               <a href="/ru/preturi/" class="dev-btn dev-btn-secondary">
                 Цены на создание сайта
@@ -342,16 +258,16 @@ const faqs = [
             </div>
             <div class="dev-hero-stats">
               <div class="dev-stat">
-                <div class="dev-stat-value">Быстро</div>
-                <div class="dev-stat-label">Оптимизация загрузки</div>
+                <div class="dev-stat-value">Нарцис</div>
+                <div class="dev-stat-label">Независимый разработчик</div>
               </div>
               <div class="dev-stat">
-                <div class="dev-stat-value">SEO</div>
-                <div class="dev-stat-label">SEO-структура</div>
+                <div class="dev-stat-value">Напрямую</div>
+                <div class="dev-stat-label">Без посредников</div>
               </div>
               <div class="dev-stat">
-                <div class="dev-stat-value">24h</div>
-                <div class="dev-stat-label">Время ответа</div>
+                <div class="dev-stat-value">RO / RU</div>
+                <div class="dev-stat-label">Контекст рынка Молдовы</div>
               </div>
             </div>
           </div>
@@ -422,8 +338,8 @@ const faqs = [
           <span class="dev-section-tag">Услуги</span>
           <h2>Комплексные решения для малого бизнеса</h2>
           <p>
-            От идеи до запуска — превращаем вашу концепцию в цифровую
-            реальность
+            Проектирую и создаю сайты, приложения и необходимые технические
+            интеграции
           </p>
         </div>
         <div class="dev-services-grid">
@@ -444,11 +360,11 @@ const faqs = [
     <section class="dev-section" id="popular-searches">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Популярные запросы</span>
-          <h2>Страницы под реальные коммерческие запросы</h2>
+          <span class="dev-section-tag">Форматы проектов</span>
+          <h2>Какой сайт вам нужен?</h2>
           <p>
-            Эти landing page закрывают отдельные намерения: сайт-визитка,
-            создание сайта в Кишиневе, веб-дизайн и SEO в Молдове.
+            Выберите близкий формат, чтобы увидеть, что входит в работу, для
+            каких задач он подходит и что нужно подготовить.
           </p>
         </div>
         <div class="dev-services-grid">
@@ -457,8 +373,8 @@ const faqs = [
               <article class={`dev-service-card ${linkedServices[index % linkedServices.length].cardClass}`}>
                 <div class="dev-service-icon">{String(index + 1).padStart(2, "0")}</div>
                 <span class="dev-card-title">{page.title}</span>
-                <p>{`Быстрый вход в тему ${page.title}: локальный контекст, цена или заявка без лишних переходов.`}</p>
-                <a href={page.href} class="dev-link-accent">Открыть {page.title}</a>
+                <p>Практическая информация о составе проекта, процессе и ограничениях.</p>
+                <a href={page.href} class="dev-link-accent">Подробнее: {page.title}</a>
               </article>
             ))
           }
@@ -466,46 +382,21 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="dev-section" id="testimoniale">
+    <!-- Collaboration Section -->
+    <section class="dev-section" id="sovmestnaya-rabota">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Отзывы</span>
-          <h2>Нам доверяют местные бизнесы</h2>
-          <p>
-            Реальные рекомендации от клиентов, которые выбрали доступные, а не
-            случайно дешевые решения
-          </p>
+          <span class="dev-section-tag">Процесс</span>
+          <h2>Как мы работаем вместе</h2>
+          <p>Четыре понятных шага от задачи до опубликованного проекта.</p>
         </div>
-        <div class="dev-testimonials-grid">
+        <div class="dev-process-grid">
           {
-            testimonials.map((t, i) => (
-              <div class="dev-testimonial">
-                <div class="dev-testimonial-header">
-                  <div class="dev-testimonial-dots">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <span class="dev-testimonial-filename">
-                    review_{i + 1}.md
-                  </span>
-                </div>
-                <div class="dev-testimonial-body">
-                  <div class="dev-testimonial-content">"{t.content}"</div>
-                  <div class="dev-testimonial-author">
-                    <div class="dev-testimonial-avatar">
-                      {t.author
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <div class="dev-testimonial-info">
-                      <span class="dev-testimonial-name">{t.author}</span>
-                      <span class="dev-testimonial-role">{t.role}</span>
-                    </div>
-                  </div>
-                </div>
+            collaborationSteps.map((step) => (
+              <div class="dev-process-step">
+                <div class="dev-process-number">{step.number}</div>
+                <span class="dev-card-title">{step.title}</span>
+                <p>{step.description}</p>
               </div>
             ))
           }
@@ -518,20 +409,20 @@ const faqs = [
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Портфолио</span>
-          <h2>Примеры созданных сайтов</h2>
+          <h2>Реальные веб-проекты</h2>
           <p>
-            Вот несколько примеров сайтов, которые мы создали для местного бизнеса
-            в Молдове
+            Здесь только существующие сайты и продукты без выдуманных результатов
+            и шаблонных проектов.
           </p>
         </div>
         <div class="dev-portfolio-grid">
           {
-            portfolio.map((item) => (
+            portfolioRu.map((item) => (
               <article class="dev-portfolio-card">
                 <div class="dev-portfolio-image">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.imageAlt}
                     loading="lazy"
                     width="400"
                     height="220"
@@ -548,16 +439,14 @@ const faqs = [
                       <li>{feature}</li>
                     ))}
                   </ul>
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener"
-                      class="dev-portfolio-link"
-                    >
-                      Посетить {item.title}
-                    </a>
-                  )}
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="dev-portfolio-link"
+                  >
+                    Открыть {item.title}
+                  </a>
                 </div>
               </article>
             ))
@@ -565,7 +454,7 @@ const faqs = [
         </div>
         <div class="dev-center-cta">
           <a href="/ru/contact/" class="dev-btn dev-btn-primary"
-            >Запросить бесплатное предложение</a
+            >Описать похожую задачу</a
           >
         </div>
       </div>
@@ -592,7 +481,7 @@ const faqs = [
               <li>SEO на странице</li>
               <li>Контактная форма и карты</li>
               <li>Адаптивный дизайн</li>
-              <li>Поддержка 30 дней включена</li>
+              <li>Передача согласованных доступов</li>
             </ul>
             <a
               href="/ru/contact/"
@@ -608,7 +497,7 @@ const faqs = [
               <li>Техническое SEO и структура</li>
               <li>Удобная панель управления</li>
               <li>Интеграция курьерских служб</li>
-              <li>Поддержка 60 дней включена</li>
+              <li>Проверка ключевых сценариев заказа</li>
             </ul>
             <a
               href="/ru/contact/"
@@ -640,28 +529,6 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="dev-section dev-section-alt" id="proces">
-      <div class="container">
-        <div class="dev-section-header">
-          <span class="dev-section-tag">Процесс</span>
-          <h2>Как мы работаем — просто и прозрачно</h2>
-          <p>Понятный процесс от бесплатной консультации до запуска + SEO на странице</p>
-        </div>
-        <div class="dev-process-grid">
-          {
-            process.map((step) => (
-              <div class="dev-process-step">
-                <div class="dev-process-number">{step.number}</div>
-                <span class="dev-card-title">{step.title}</span>
-                <p>{step.description}</p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ Section -->
     <section class="dev-section" id="faq">
       <div class="container">
@@ -689,8 +556,8 @@ const faqs = [
         <div class="dev-cta-content">
           <h2>Хотите сайт по доступной цене в Молдове?</h2>
           <p>
-            Расскажите, что вам нужно, и мы подготовим бесплатное предложение,
-            адаптированное под ваши задачи.
+            Расскажите, чем занимается ваш бизнес и что должен делать сайт. Я
+            отвечу с реалистичным вариантом и первым шагом.
           </p>
           <a
             href="/ru/contact/"
@@ -708,7 +575,7 @@ const faqs = [
                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
               ></path>
             </svg>
-            Запросить бесплатное предложение
+            Описать проект
           </a>
         </div>
       </div>

@@ -31,6 +31,7 @@ export interface LandingPackage {
 
 export interface LandingCaseStudy {
   image: string;
+  imageAlt?: string;
   title: string;
   category: string;
   description: string;

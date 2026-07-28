@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --dev-bg: var(--nf-bg, #0e1116);
   --dev-bg-alt: var(--nf-bg-secondary, #141922);
   --dev-surface: var(--nf-surface, #202936);
@@ -356,7 +356,6 @@
 
 .dev-values-grid,
 .dev-process-grid,
-.dev-testimonials-grid,
 .dev-benefits-grid,
 .dev-why-grid,
 .dev-features-grid,
@@ -379,7 +378,6 @@
 
 .dev-value-card,
 .dev-process-step,
-.dev-testimonial,
 .dev-benefit-card,
 .dev-why-card,
 .dev-feature-card,
@@ -405,7 +403,6 @@
 
 .dev-value-card h3,
 .dev-process-step h3,
-.dev-testimonial h3,
 .dev-benefit-card h3,
 .dev-why-card h3,
 .dev-feature-card h3,
@@ -422,7 +419,6 @@
 
 .dev-value-card p,
 .dev-process-step p,
-.dev-testimonial p,
 .dev-benefit-card p,
 .dev-why-card p,
 .dev-feature-card p,
@@ -467,47 +463,6 @@
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.1rem;
-}
-
-.dev-testimonial-content {
-  margin-bottom: 1rem;
-  color: var(--dev-text-soft);
-}
-
-.dev-testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
-.dev-testimonial-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, var(--dev-accent), var(--dev-accent-2));
-}
-
-.dev-testimonial-info {
-  display: grid;
-  gap: 0.12rem;
-}
-
-.dev-testimonial-info strong,
-.dev-testimonial-name {
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-.dev-testimonial-info span,
-.dev-testimonial-role {
-  color: var(--dev-text-muted);
-  font-size: 0.83rem;
 }
 
 .dev-faq-list {
@@ -914,37 +869,6 @@
   margin-bottom: 0.7rem;
 }
 
-.dev-testimonial-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--dev-border-soft);
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.8rem;
-}
-
-.dev-testimonial-body {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.dev-testimonial-dots {
-  display: inline-flex;
-  gap: 0.22rem;
-}
-
-.dev-testimonial-dots span {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: #8d94a7;
-}
-
-.dev-testimonial-filename {
-  color: var(--dev-text-muted);
-  font-size: 0.78rem;
-}
-
 .dev-cta {
   padding: 4.8rem 0;
 }
@@ -999,7 +923,6 @@
 @media (max-width: 760px) {
   .dev-values-grid,
   .dev-process-grid,
-  .dev-testimonials-grid,
   .dev-benefits-grid,
   .dev-why-grid,
   .dev-features-grid,
@@ -1303,7 +1226,6 @@
 
 .dev-values-grid,
 .dev-process-grid,
-.dev-testimonials-grid,
 .dev-benefits-grid,
 .dev-why-grid,
 .dev-features-grid,
@@ -1318,7 +1240,6 @@
 
 .dev-value-card,
 .dev-process-step,
-.dev-testimonial,
 .dev-benefit-card,
 .dev-why-card,
 .dev-feature-card,
@@ -1348,7 +1269,6 @@
 
 .dev-value-card::before,
 .dev-process-step::before,
-.dev-testimonial::before,
 .dev-benefit-card::before,
 .dev-why-card::before,
 .dev-feature-card::before,
@@ -1373,7 +1293,6 @@
 
 .dev-value-card:hover,
 .dev-process-step:hover,
-.dev-testimonial:hover,
 .dev-benefit-card:hover,
 .dev-why-card:hover,
 .dev-feature-card:hover,
@@ -1391,7 +1310,6 @@
 
 .dev-value-card:hover::before,
 .dev-process-step:hover::before,
-.dev-testimonial:hover::before,
 .dev-benefit-card:hover::before,
 .dev-why-card:hover::before,
 .dev-feature-card:hover::before,
@@ -1407,7 +1325,6 @@
 
 .dev-value-card h3,
 .dev-process-step h3,
-.dev-testimonial h3,
 .dev-benefit-card h3,
 .dev-why-card h3,
 .dev-feature-card h3,
@@ -1425,7 +1342,6 @@
 
 .dev-value-card p,
 .dev-process-step p,
-.dev-testimonial p,
 .dev-benefit-card p,
 .dev-why-card p,
 .dev-feature-card p,

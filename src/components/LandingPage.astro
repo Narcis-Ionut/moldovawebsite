@@ -20,23 +20,23 @@ const ui =
         painTag: "Obiectiv",
         painTitle: "Ce trebuie să rezolve website-ul",
         painIntro:
-          "Pornim de la problemele reale ale afacerii și construim un traseu clar spre contact, programare sau comandă.",
+          "Pornesc de la problemele reale ale afacerii și construiesc un traseu clar spre contact, programare sau comandă.",
         deliverTag: "Inclus",
         deliverTitle: "Ce primești în proiect",
         deliverIntro:
-          "Structura, designul și partea tehnică sunt livrate ca un singur proiect coerent, gata de lansare.",
+          "Livrez structura, designul și partea tehnică drept un singur proiect coerent, pregătit pentru verificare și lansare.",
         processTag: "Proces",
-        processTitle: "Cum lansăm proiectul",
+        processTitle: "Cum lucrăm împreună",
         processIntro:
-          "Păstrăm procesul simplu: clarificăm, construim, verificăm și lansăm.",
+          "Păstrez procesul simplu: clarificăm, construiesc, verificăm și publicăm.",
         packagesTag: "Pachete",
         packagesTitle: "Alege punctul potrivit de pornire",
         packagesIntro:
           "Prețuri orientative, cu scop și livrabile clare înainte să înceapă lucrul.",
         proofTag: "Portofoliu",
-        proofTitle: "Proiecte construite pentru afaceri reale",
+        proofTitle: "Proiecte reale, prezentate fără rezultate inventate",
         proofIntro:
-          "Exemple de site-uri și aplicații livrate pentru proiecte locale și internaționale.",
+          "Site-uri și aplicații care pot fi deschise și verificate direct.",
         faqTag: "FAQ",
         faqTitle: "Întrebări frecvente",
         faqIntro:
@@ -45,36 +45,36 @@ const ui =
         relatedTitle: "Servicii și pagini utile",
         relatedIntro:
           "Compară pachetele, vezi serviciile conexe sau trimite direct brief-ul proiectului.",
-        ctaTitle: "Spune-ne ce vrei să construiești",
+        ctaTitle: "Spune-mi ce vrei să construiești",
         ctaIntro:
-          "Primești o recomandare clară pentru structură, termen și buget, fără obligații.",
+          "Îți răspund cu o variantă realistă, ce presupune și ce merită făcut mai întâi.",
         visitProject: "Vezi proiectul",
         scopeEyebrow: "Planul proiectului",
         scopeCount: "obiective prioritare",
-        scopeFooter: "Fiecare obiectiv este legat de un rezultat măsurabil pentru afacere.",
+        scopeFooter: "Fiecare obiectiv are o funcție clară în proiect.",
       }
     : {
         homeLabel: "Главная",
         painTag: "Задача",
         painTitle: "Какие задачи должен решить сайт",
         painIntro:
-          "Отталкиваемся от реальных задач бизнеса и строим понятный путь к заявке, записи или заказу.",
+          "Я отталкиваюсь от реальных задач бизнеса и строю понятный путь к заявке, записи или заказу.",
         deliverTag: "Результат",
         deliverTitle: "Что входит в проект",
         deliverIntro:
-          "Структура, дизайн и техническая часть работают как единый проект, готовый к запуску.",
+          "Я объединяю структуру, дизайн и техническую часть в один проект, готовый к проверке и запуску.",
         processTag: "Процесс",
-        processTitle: "Как мы запускаем проект",
+        processTitle: "Как мы работаем вместе",
         processIntro:
-          "Процесс остается простым: уточняем задачу, создаем, проверяем и запускаем.",
+          "Процесс остаётся простым: уточняем задачу, я собираю проект, мы проверяем и публикуем.",
         packagesTag: "Пакеты",
         packagesTitle: "Выберите подходящий старт",
         packagesIntro:
           "Ориентиры по цене с понятным объемом работ до начала проекта.",
         proofTag: "Портфолио",
-        proofTitle: "Проекты для реального бизнеса",
+        proofTitle: "Реальные проекты без выдуманных результатов",
         proofIntro:
-          "Примеры сайтов и приложений, созданных для локальных и международных проектов.",
+          "Сайты и приложения, которые можно открыть и проверить.",
         faqTag: "FAQ",
         faqTitle: "Частые вопросы",
         faqIntro:
@@ -83,13 +83,13 @@ const ui =
         relatedTitle: "Услуги и полезные страницы",
         relatedIntro:
           "Сравните пакеты, посмотрите связанные услуги или сразу отправьте бриф.",
-        ctaTitle: "Расскажите, что хотите создать",
+        ctaTitle: "Расскажите мне, что хотите создать",
         ctaIntro:
-          "Вы получите понятную рекомендацию по структуре, срокам и бюджету без обязательств.",
+          "Я отвечу реалистичным вариантом, объясню объём работы и с чего стоит начать.",
         visitProject: "Открыть проект",
         scopeEyebrow: "План проекта",
         scopeCount: "приоритетные задачи",
-        scopeFooter: "Каждая задача связана с измеримым результатом для бизнеса.",
+        scopeFooter: "У каждой задачи есть понятная роль в проекте.",
       };
 
 const painIntro = `${page.breadcrumbLabel}: ${ui.painIntro}`;
@@ -153,15 +153,20 @@ const jsonLd = {
       name: page.serviceName,
       description: page.serviceDescription,
       provider: {
-        "@type": "ProfessionalService",
-        name: "ChisinauWeb.com",
-        url: SITE_URL,
+        "@type": "Person",
+        "@id": `${SITE_URL}/about/#narcis`,
+        name: "Narcis",
+        url: lang === "ro" ? `${SITE_URL}/about/` : `${SITE_URL}/ru/about/`,
+        jobTitle:
+          lang === "ro"
+            ? "Dezvoltator web independent"
+            : "Независимый веб-разработчик",
         email: CONTACT_EMAIL,
         telephone: CONTACT_PHONE,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: lang === "ro" ? "Chisinau" : "Кишинев",
-          addressCountry: "MD",
+        worksFor: {
+          "@type": "Organization",
+          name: "ChisinauWeb.com",
+          url: SITE_URL,
         },
       },
       areaServed: {
@@ -341,7 +346,7 @@ const jsonLd = {
                 <div class="dev-portfolio-image">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.imageAlt ?? item.title}
                     loading="lazy"
                     width="400"
                     height="250"

@@ -6,114 +6,95 @@ import "../../styles/dev-pages.css";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  name: "О нас: создание недорогих сайтов в Молдове | ChisinauWeb.com",
-  description:
-    "Узнайте, кто мы и как делаем доступный веб-дизайн в Кишиневе: сайт-визитка, интернет-магазин, SEO-оптимизация и поддержка.",
-  url: "https://chisinauweb.com/ru/about/",
-  inLanguage: "ru-MD",
-  about: {
-    "@type": "Organization",
-    name: "ChisinauWeb.com",
-    url: "https://chisinauweb.com/",
-  },
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      name: "Нарцис — независимый веб-разработчик в Кишинёве",
+      description:
+        "О Нарцисе, независимом веб-разработчике из Кишинёва: практический опыт, технологии, ответственное использование AI и прямой процесс работы.",
+      url: "https://chisinauweb.com/ru/about/",
+      inLanguage: "ru-MD",
+      about: { "@id": "https://chisinauweb.com/about/#narcis" },
+      mainEntity: { "@id": "https://chisinauweb.com/about/#narcis" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chisinauweb.com/about/#narcis",
+      name: "Narcis",
+      jobTitle: "Независимый веб-разработчик",
+      url: "https://chisinauweb.com/ru/about/",
+      worksFor: { "@id": "https://chisinauweb.com/#business" },
+      knowsAbout: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Astro",
+        "Cloudflare Workers",
+        "Веб-приложения",
+      ],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://chisinauweb.com/#business",
+      name: "ChisinauWeb.com",
+      founder: { "@id": "https://chisinauweb.com/about/#narcis" },
+      areaServed: { "@type": "Country", name: "Молдова" },
+      url: "https://chisinauweb.com/ru/",
+    },
+  ],
 };
 
-const values = [
+const collaborationCards = [
   {
     number: "01",
-    title: "Наша миссия",
+    title: "Прямая коммуникация",
     description:
-      "Предлагать создание сайтов недорого в Молдове без компромиссов по дизайну, скорости и SEO-оптимизация.",
+      "Вы общаетесь напрямую с человеком, который работает над проектом: без аккаунт-менеджера и без потери информации между несколькими людьми.",
   },
   {
     number: "02",
-    title: "Фокус на результат",
+    title: "Практические решения",
     description:
-      "Мы строим страницы, которые конвертируют и помогают привлекать клиентов из Google.",
+      "Я начинаю с того, что сайт должен делать для бизнеса, а не со списка ненужных эффектов или технологий.",
   },
   {
     number: "03",
-    title: "Современные технологии",
+    title: "Ответственное использование AI",
     description:
-      "Быстрая загрузка, чистый код и стабильность — основа наших решений.",
+      "Я использую современные инструменты, чтобы работать эффективнее, но не передаю AI проверку и ответственность за результат.",
   },
   {
     number: "04",
-    title: "Поддержка и обслуживание",
+    title: "Реальные проекты",
     description:
-      "После запуска помогаем с обновлениями, безопасностью и развитием сайта.",
+      "В портфолио показаны существующие продукты и сайты, а не купленные макеты или придуманные результаты.",
   },
 ];
 
-const process = [
+const collaborationSteps = [
   {
     number: "01",
-    title: "Бриф и цели",
+    title: "Задача",
     description:
-      "Определяем формат проекта: сайт-визитка, интернет-магазин или landing page.",
+      "Вы объясняете мне, чем занимается ваш бизнес и чего должен достичь сайт.",
   },
   {
     number: "02",
-    title: "Дизайн и структура",
+    title: "Разбор",
     description:
-      "Создаем понятный интерфейс и структуру, ориентированную на конверсию.",
+      "Я анализирую требования и прямо говорю, что стоит создавать, что можно упростить и где есть ограничения.",
   },
   {
     number: "03",
-    title: "Разработка и SEO",
+    title: "Создание проекта",
     description:
-      "Внедряем сайт, оптимизируем скорость и настраиваем SEO-оптимизация.",
+      "Я создаю проект, проверяю функции и показываю вам прогресс по ходу работы.",
   },
   {
     number: "04",
-    title: "Запуск и поддержка",
+    title: "Проверка и публикация",
     description:
-      "Запускаем проект, передаем доступы и помогаем с поддержкой.",
-  },
-];
-
-const testimonials = [
-  {
-    content:
-      "Получили быстрый сайт с SEO и удобной админкой. Цена была справедливой для рынка Молдовы.",
-    author: "Локальный клиент",
-    location: "Кишинев",
-  },
-  {
-    content:
-      "Все объяснили простыми словами и помогли выбрать пакет под наш бюджет. Результат понравился.",
-    author: "Малый бизнес",
-    location: "Молдова",
-  },
-  {
-    content:
-      "Быстрое внедрение, четкая коммуникация и поддержка после запуска. Сайт выглядит профессионально на всех устройствах.",
-    author: "Сфера услуг",
-    location: "Кишинев",
-  },
-];
-
-const faqs = [
-  {
-    question: "Вы работаете только в Кишиневе?",
-    answer:
-      "Нет. Мы обслуживаем клиентов по всей Молдове и также работаем онлайн с другими регионами.",
-  },
-  {
-    question: "SEO-оптимизация входит в пакет?",
-    answer:
-      "Да. Мы настраиваем мета-теги, структуру и базовую оптимизацию для видимости в Google.",
-  },
-  {
-    question: "Можно ли сделать сайт с небольшим бюджетом?",
-    answer:
-      "Да. Подберем оптимальный пакет и дадим рекомендации по экономии без потери качества.",
-  },
-  {
-    question: "Вы обеспечиваете поддержку после запуска?",
-    answer:
-      "Да. Мы предлагаем обслуживание, обновления и помощь в развитии сайта.",
+      "После проверки мы публикуем сайт, а вы получаете доступ ко всему, что относится к вашему проекту.",
   },
 ];
 ---
@@ -122,8 +103,8 @@ const faqs = [
 <html lang="ru">
   <head>
     <BaseHead
-      title="О нас | сайты для бизнеса в Молдове"
-      description="Узнайте, кто мы и как делаем доступный веб-дизайн в Кишиневе: сайт-визитка, интернет-магазин, SEO-оптимизация и поддержка."
+      title="Нарцис — веб-разработчик в Кишинёве | ChisinauWeb"
+      description="Я Нарцис, независимый веб-разработчик в Кишинёве. Создаю сайты и веб-приложения, открыто использую AI-инструменты и отвечаю за итоговый результат."
       canonicalUrl="https://chisinauweb.com/ru/about/"
       lang="ru"
       hreflangRo="https://chisinauweb.com/about/"
@@ -142,43 +123,22 @@ const faqs = [
       <div class="container">
         <div class="dev-hero-grid">
           <div class="dev-hero-content">
-            <span class="dev-section-tag">О нас</span>
-            <h1>Создание недорогих сайтов в Молдове</h1>
+            <span class="dev-section-tag">О ChisinauWeb</span>
+            <h1>Я Нарцис, независимый веб-разработчик в Кишинёве.</h1>
             <p>
-              ChisinauWeb.com предлагает доступный веб-дизайн в Кишиневе и
-              по всей Молдове для малого бизнеса: сайт-визитка,
-              интернет-магазин, SEO-оптимизация и обслуживание.
-            </p>
-            <p>
-              Если вам нужно создание недорогих сайтов в Молдове, мы
-              показываем, что входит в работу, сколько занимает процесс и как
-              получить быстрый результат без лишних затрат.
-            </p>
-            <p>
-              Мы работаем с предпринимателями, которым важно быстро запустить
-              понятную страницу, проверить спрос и не тратить бюджет на лишние
-              функции. Поэтому сначала определяем цель сайта: заявки, звонки,
-              продажи товаров или доверие к услуге.
-            </p>
-            <p>
-              В стартовую версию обычно входят структура страницы, адаптивный
-              дизайн, базовые SEO-настройки, форма контакта и понятные CTA.
-              После запуска можно расширять проект: добавлять новые страницы,
-              русский или румынский язык, каталог товаров и аналитику.
-            </p>
-            <p>
-              Для малого бизнеса это важно практически: сайт должен быстро
-              объяснить услугу, показать цену или следующий шаг и не требовать
-              сложного обслуживания. Мы заранее обсуждаем, какие блоки нужны
-              для доверия, какие страницы можно отложить и какие действия
-              должны привести к звонку, заявке или заказу.
+              Создаю сайты и веб-приложения для бизнеса и проектов, которым
+              нужен понятный, быстрый и удобный в использовании продукт. Я не
+              представляю большое агентство и не делаю вид, что за этим сайтом
+              стоит команда из десятков людей. Когда вы мне пишете, вы говорите напрямую с
+              человеком, который анализирует, создаёт, проверяет и публикует
+              проект.
             </p>
             <div class="dev-hero-actions">
               <a href="/ru/contact/" class="dev-btn dev-btn-primary"
-                >Запросить бесплатное предложение</a
+                >Описать проект</a
               >
-              <a href="/ru/preturi/" class="dev-btn dev-btn-secondary"
-                >Посмотреть цены</a
+              <a href="/ru/#portofoliu" class="dev-btn dev-btn-secondary"
+                >Посмотреть проекты</a
               >
             </div>
           </div>
@@ -195,7 +155,7 @@ const faqs = [
                   <span class="dev-code-num">1</span>
                   <span
                     ><span class="dev-code-keyword">const</span>
-                    <span class="dev-code-func">mission</span> = {
+                    <span class="dev-code-func">developer</span> = {
                       `{`
                     }</span
                   >
@@ -203,32 +163,33 @@ const faqs = [
                 <div class="dev-code-line">
                   <span class="dev-code-num">2</span>
                   <span>
-                    <span class="dev-code-keyword">target</span>: <span
-                      class="dev-code-string">"small_business"</span
+                    <span class="dev-code-keyword">name</span>: <span
+                      class="dev-code-string">"Narcis"</span
                     >,</span
                   >
                 </div>
                 <div class="dev-code-line">
                   <span class="dev-code-num">3</span>
                   <span>
-                    <span class="dev-code-keyword">location</span>: <span
-                      class="dev-code-string">"Moldova"</span
+                    <span class="dev-code-keyword">learningSince</span>: <span
+                      class="dev-code-string">2019</span
                     >,</span
                   >
                 </div>
                 <div class="dev-code-line">
                   <span class="dev-code-num">4</span>
                   <span>
-                    <span class="dev-code-keyword">services</span>: [<span
-                      class="dev-code-string">"web"</span
-                    >, <span class="dev-code-string">"seo"</span>],</span
+                    <span class="dev-code-keyword">stack</span>: [<span
+                      class="dev-code-string">"JS"</span
+                    >, <span class="dev-code-string">"React"</span>, <span
+                      class="dev-code-string">"Astro"</span>],</span
                   >
                 </div>
                 <div class="dev-code-line">
                   <span class="dev-code-num">5</span>
                   <span>
-                    <span class="dev-code-keyword">prices</span>: <span
-                      class="dev-code-string">"доступные"</span
+                    <span class="dev-code-keyword">workflow</span>: <span
+                      class="dev-code-string">"AI + проверка"</span
                     ></span
                   >
                 </div>
@@ -244,7 +205,7 @@ const faqs = [
                   <span class="dev-code-num">8</span>
                   <span
                     ><span class="dev-code-comment"
-                      >// Качество всегда</span
+                      >// ответственность остаётся у меня</span
                     ></span
                   >
                 </div>
@@ -255,81 +216,115 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="dev-section dev-section-alt" id="de-ce-noi">
+    <section class="dev-section dev-section-alt" id="despre">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Отзывы</span>
-          <h2>Почему выбирают ChisinauWeb.com</h2>
-          <p>
-            Мы объединяем создание сайтов недорого с понятным процессом и современным
-            дизайном.
-          </p>
+          <span class="dev-section-tag">Опыт</span>
+          <h2>Как я пришёл к веб-разработке</h2>
         </div>
-        <div class="dev-testimonials-grid">
-          {
-            testimonials.map((t) => (
-              <div class="dev-testimonial">
-                <p class="dev-testimonial-content">{t.content}</p>
-                <div class="dev-testimonial-author">
-                  <div class="dev-testimonial-avatar">
-                    {t.author
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <div class="dev-testimonial-info">
-                    <strong>{t.author}</strong>
-                    <span>{t.location}</span>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
+        <div class="dev-content-text">
+          <p>
+            Я начал серьёзно изучать веб-разработку в 2019 году: проходил
+            структурированные учебные программы, практические курсы и много
+            работал самостоятельно. Сначала я изучил JavaScript, React и
+            full-stack разработку — ещё до того, как современные AI-инструменты
+            стали центральной частью моего рабочего процесса. Затем я продолжил
+            учиться главным образом на реальных проектах и задачах, которые
+            появляются, когда продукт должен работать за пределами учебного
+            примера.
+          </p>
+          <p>
+            Сейчас я работаю с JavaScript, TypeScript, React, Astro, Cloudflare
+            Workers, базами данных, формами, аутентификацией, платёжными
+            интеграциями, хостингом и процессами публикации. Я не использую весь
+            этот набор в каждом проекте — выбираю только то, что действительно
+            подходит конкретной задаче.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="dev-section" id="despre">
+    <section class="dev-section" id="ai">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">Наши ценности</span>
-          <h2>Кто мы и как работаем</h2>
-          <p>
-            Мы локальная команда, которая делает создание сайтов быстрым и доступным
-            для Молдовы.
-          </p>
+          <span class="dev-section-tag">Инструменты</span>
+          <h2>Я использую AI и говорю об этом открыто</h2>
         </div>
-        <div class="dev-values-grid">
-          {
-            values.map((v) => (
-              <div class="dev-value-card">
-                <div class="dev-value-num">{v.number}</div>
-                <span class="dev-card-title">{v.title}</span>
-                <p>{v.description}</p>
-              </div>
-            ))
-          }
+        <div class="dev-content-text">
+          <p>
+            Я ежедневно использую AI-инструменты в разработке. Не утверждаю, что
+            пишу каждую строку без помощи, и не считаю это единственной мерой
+            качества продукта. AI помогает быстрее анализировать задачи,
+            исследовать решения, сокращать повторяющуюся работу и проверять
+            больше вариантов.
+          </p>
+          <p>
+            Но AI-инструмент сам по себе не понимает бизнес клиента и не отвечает
+            за результат. Моя роль — понять, что нужно создать, превратить
+            требования в понятный план, направлять реализацию, проверять
+            изменения, тестировать функции и исправлять то, что не работает. AI
+            даёт мне больше рабочих возможностей; ответственность за продукт
+            остаётся у меня.
+          </p>
+          <p>
+            Я не использую AI, чтобы вслепую отдать первый сгенерированный
+            результат. Это набор сильных инструментов, которыми нужно управлять,
+            а их работу — проверять и корректировать.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="dev-section dev-section-alt" id="proces">
+    <section class="dev-section dev-section-alt" id="cum-lucrez">
+      <div class="container">
+        <div class="dev-section-header">
+          <span class="dev-section-tag">Подход</span>
+          <h2>Как я работаю</h2>
+        </div>
+        <div class="dev-content-text">
+          <p>
+            Моя сильная практическая сторона — взять ещё не до конца ясную идею,
+            в которой много движущихся частей, и довести её до продукта,
+            пригодного для реального использования. Мне нравится находить
+            практический путь между «хорошо бы иметь это» и версией, которая
+            работает на телефоне, компьютере и после публикации.
+          </p>
+          <p>
+            Я работаю напрямую и объясняю решения без лишнего технического
+            жаргона. Если функция не оправдывает затраты, я так и говорю. Если у
+            решения есть ограничение, объясняю его. Если проект нужно упростить,
+            чтобы его можно было запустить, предлагаю реалистичный вариант.
+          </p>
+          <p>
+            Мне близок быстрый и экспериментальный способ работы, но моя
+            публичная ответственность — проверять результат и исправлять
+            ошибки, а не обещать скорость любой ценой.
+          </p>
+          <p>
+            Я не публикую цифры о клиентах, удовлетворённости или результатах,
+            которые не могу подтвердить. Предпочитаю показывать реальные
+            проекты, объяснять, что именно создано, и ясно отмечать, что уже
+            закончено, а что ещё находится в разработке.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="dev-section" id="proces">
       <div class="container">
         <div class="dev-section-header">
           <span class="dev-section-tag">Процесс</span>
-          <h2>Как мы создаем сайт быстро и эффективно</h2>
-          <p>Четкий процесс, простая коммуникация и своевременная сдача.</p>
+          <h2>Как мы работаем вместе</h2>
+          <p>Четыре понятных шага от задачи до опубликованного проекта.</p>
         </div>
         <div class="dev-process-grid">
           {
-            process.map((p) => (
+            collaborationSteps.map((step) => (
               <div class="dev-process-step">
-                <div class="dev-process-num">{p.number}</div>
-                <span class="dev-card-title">{p.title}</span>
-                <p>{p.description}</p>
+                <div class="dev-process-num">{step.number}</div>
+                <span class="dev-card-title">{step.title}</span>
+                <p>{step.description}</p>
               </div>
             ))
           }
@@ -337,21 +332,20 @@ const faqs = [
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="dev-section" id="faq">
+    <section class="dev-section dev-section-alt" id="de-ce-noi">
       <div class="container">
         <div class="dev-section-header">
-          <span class="dev-section-tag">FAQ</span>
-          <h2>Часто задаваемые вопросы о нас</h2>
-          <p>Краткие ответы перед стартом проекта.</p>
+          <span class="dev-section-tag">Прямое сотрудничество</span>
+          <h2>Что значит работать напрямую со мной</h2>
         </div>
-        <div class="dev-faq-list">
+        <div class="dev-values-grid">
           {
-            faqs.map((faq) => (
-              <details class="dev-faq-item">
-                <summary>{faq.question}</summary>
-                <p>{faq.answer}</p>
-              </details>
+            collaborationCards.map((card) => (
+              <div class="dev-value-card">
+                <div class="dev-value-num">{card.number}</div>
+                <span class="dev-card-title">{card.title}</span>
+                <p>{card.description}</p>
+              </div>
             ))
           }
         </div>
@@ -362,17 +356,21 @@ const faqs = [
     <section class="dev-cta" id="contact">
       <div class="container">
         <div class="dev-cta-content">
-          <h2>Хотите работать вместе?</h2>
+          <h2>Расскажите, что вы хотите создать</h2>
           <p>
-            Расскажите о вашем проекте, и мы отправим персональное предложение по
-            созданию сайта в Молдове.
+            Вам не нужно готовить техническое задание. Объясните, чем занимается
+            бизнес, в чём проблема и что должен уметь сайт. Я отвечу с
+            реалистичным вариантом, объясню, что для него потребуется и с чего
+            лучше начать.
           </p>
-          <a
-            href="/ru/contact/"
-            class="dev-btn dev-btn-primary dev-btn-lg"
-          >
-            Связаться с нами
-          </a>
+          <div class="dev-hero-actions">
+            <a href="/ru/contact/" class="dev-btn dev-btn-primary dev-btn-lg">
+              Описать проект
+            </a>
+            <a href="/ru/#portofoliu" class="dev-btn dev-btn-secondary dev-btn-lg">
+              Посмотреть проекты
+            </a>
+          </div>
         </div>
       </div>
     </section>

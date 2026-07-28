@@ -40,7 +40,7 @@ const companieLinks =
         },
       ]
     : [
-        { href: "/ru/about/", label: "О нас" },
+        { href: "/ru/about/", label: "О Нарцисе" },
         { href: "/ru/blog/", label: "Блог" },
         { href: "/ru/preturi/", label: "Цены на сайт" },
         { href: "/ru/contact/", label: "Контакты" },
@@ -55,18 +55,18 @@ const texts =
   lang === "ro"
     ? {
         brand:
-          "Creăm site-uri moderne și rapide pentru afaceri mici – Chișinău & toată Moldova.",
+          "Construiesc site-uri și aplicații web pentru afaceri din Chișinău și toată Moldova.",
         servicii: "Servicii",
-        companie: "Companie",
+        companie: "Despre",
         contact: "Contact",
         copyright: "ChisinauWeb.com. Toate drepturile rezervate.",
         backToTop: "Înapoi sus",
       }
     : {
         brand:
-          "Создаём современные и быстрые сайты для малого бизнеса – Кишинёв и вся Молдова.",
+          "Создаю сайты и веб-приложения для бизнеса в Кишинёве и по всей Молдове.",
         servicii: "Услуги",
-        companie: "Компания",
+        companie: "О проекте",
         contact: "Контакты",
         copyright: "ChisinauWeb.com. Все права защищены.",
         backToTop: "Наверх",
@@ -138,7 +138,7 @@ const texts =
                 d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
               ></path>
             </svg>
-            <span>Chișinău, str. Ioana Radu 27/2</span>
+            <span>Chișinău, Moldova</span>
           </p>
           <p>
             <svg
@@ -178,7 +178,7 @@ const texts =
         &copy; {today.getFullYear()}
         {texts.copyright}
       </p>
-      <a href="#acasa" class="nf-footer-top" aria-label={texts.backToTop}>
+      <a href="#header" class="nf-footer-top" aria-label={texts.backToTop}>
         <svg
           viewBox="0 0 24 24"
           fill="none"

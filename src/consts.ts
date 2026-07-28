@@ -3,9 +3,9 @@
 
 export const SITE_TITLE = "ChisinauWeb.com";
 export const SITE_DESCRIPTION =
-  "Creăm site-uri web ieftine și rapide pentru afaceri mici și persoane fizice în Chișinău și toată Moldova: site de prezentare, magazin online, SEO on-page, mentenanță.";
+  "Construiesc site-uri și aplicații web pentru afaceri din Chișinău și toată Moldova: site de prezentare, magazin online, SEO on-page și mentenanță.";
 export const SITE_URL = "https://chisinauweb.com";
 export const GA_TRACKING_ID = "G-VYXXGXSS5K";
 export const CONTACT_EMAIL = "contact@chisinauweb.com";
 export const CONTACT_PHONE = "+373 61 211 739";
-export const ADDRESS = "str. Ioana Radu 27/2, Chișinău, Moldova";
+export const ADDRESS = "Chișinău, Moldova";

@@ -3,253 +3,142 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { roLandingCards } from "../data/landingPages.ro";
+import { portfolioRo } from "../data/portfolio";
+
+const faqs = [
+  {
+    question: "Cât costă crearea unui site web în Moldova?",
+    answer:
+      "Un landing page pornește de la 50 EUR, un site de prezentare de la 150 EUR, iar un mini-magazin online de la 300 EUR. Oferta finală depinde de structură, conținut și funcționalități.",
+  },
+  {
+    question: "Lucrezi în Chișinău și în toată Moldova?",
+    answer:
+      "Da. Sunt dezvoltator web independent în Chișinău și pot colabora online cu afaceri din toată Moldova sau din alte piețe.",
+  },
+  {
+    question: "Site-ul include optimizare pentru mobil și Google?",
+    answer:
+      "Includ design responsive și elementele tehnice SEO de bază: structură semantică, meta-taguri, canonical și performanță verificată. Acestea nu garantează o anumită poziție în Google.",
+  },
+  {
+    question: "Construiești și magazine online sau aplicații web?",
+    answer:
+      "Da. Pot construi cataloage, fluxuri de comandă, conturi, plăți, baze de date și alte funcții atunci când sunt definite și verificate în proiect.",
+  },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": "https://chisinauweb.com/#website",
       name: "ChisinauWeb.com",
       url: "https://chisinauweb.com/",
       inLanguage: "ro-MD",
+      publisher: { "@id": "https://chisinauweb.com/#business" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chisinauweb.com/about/#narcis",
+      name: "Narcis",
+      jobTitle: "Dezvoltator web independent",
+      description:
+        "Dezvoltator web independent în Chișinău, operatorul ChisinauWeb.com.",
+      url: "https://chisinauweb.com/about/",
+      email: "contact@chisinauweb.com",
+      telephone: "+37361211739",
+      worksFor: { "@id": "https://chisinauweb.com/#business" },
     },
     {
       "@type": "ProfessionalService",
+      "@id": "https://chisinauweb.com/#business",
       name: "ChisinauWeb.com",
       description:
-        "Creare site web in Moldova pentru afaceri locale: site la comanda, site de prezentare, magazin online, web design, SEO on-page si mentenanta.",
-      areaServed: { "@type": "Country", name: "Moldova" },
+        "Serviciu de dezvoltare web operat de Narcis, dezvoltator web independent în Chișinău: site la comandă, site de prezentare, magazin online, web design, SEO on-page și mentenanță.",
+      areaServed: [
+        { "@type": "City", name: "Chișinău" },
+        { "@type": "Country", name: "Moldova" },
+      ],
       url: "https://chisinauweb.com/",
       email: "contact@chisinauweb.com",
       telephone: "+37361211739",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "str. Ioana Radu 27/2",
-        addressLocality: "Chișinău",
-        addressCountry: "MD",
-      },
+      founder: { "@id": "https://chisinauweb.com/about/#narcis" },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Cât costă crearea unui site web în Moldova?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Un landing page pornește de la 50 EUR, un site de prezentare de la 150 EUR, iar un mini-magazin de la 300 EUR. Oferta finală depinde de structură, conținut și funcționalități.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Lucrați în Chișinău și în toată Moldova?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Da. Oferim servicii locale în Chișinău și colaborăm online cu clienți din toată Moldova.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Site-ul este optimizat pentru Google și mobil?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Da. Fiecare proiect include structură semantică, meta-taguri, viteză bună, responsive design și bază SEO on-page pentru indexare corectă.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Faceți și magazine online?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Da. Implementăm magazine online cu catalog, coș, plăți și livrare, optimizate pentru conversie.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
     },
   ],
 };
 
-const services = [
-  {
-    icon: `🎨`,
-    title: "Design modern & UX",
-    description:
-      "Interfețe curate, ușor de folosit, care cresc conversiile și încrederea.",
-  },
-  {
-    icon: `⚡`,
-    title: "Performanță & viteză",
-    description:
-      "Optimizare tehnică (LCP/CLS), caching și bune practici pentru timpi de încărcare rapidi.",
-  },
-  {
-    icon: `🔍`,
-    title: "SEO on-page pentru Moldova",
-    description:
-      "Structură corectă, meta-taguri, scheme JSON-LD și conținut localizat (Chișinău, MD).",
-  },
-  {
-    icon: `🛒`,
-    title: "Magazin online accesibil",
-    description:
-      "Implementare ecommerce cu plăți, livrare și catalog – fără costuri exagerate.",
-  },
-  {
-    icon: `🛠️`,
-    title: "Mentenanță & suport local",
-    description:
-      "Actualizări, securitate și asistență în română & rusă, când ai nevoie.",
-  },
-];
-
 const linkedServices = [
   {
-    icon: "🎨",
-    title: "Design modern & UX",
+    icon: "D",
+    title: "Web design Moldova",
     description:
-      "Interfețe clare, ușor de folosit și orientate pe conversie pentru afaceri locale.",
+      "Structură vizuală, UX și interfețe responsive pentru site-uri și produse web.",
     href: "/serviciiBlog/design-web/",
   },
   {
-    icon: "⚡",
-    title: "Performanță & viteză",
+    icon: "W",
+    title: "Dezvoltare web",
     description:
-      "Implementare rapidă, structură curată și bune practici pentru timpi de încărcare buni.",
+      "Site-uri și aplicații construite cu tehnologii potrivite funcțiilor reale ale proiectului.",
     href: "/serviciiBlog/dezvoltare-web/",
   },
   {
-    icon: "🔍",
-    title: "SEO on-page pentru Moldova",
+    icon: "S",
+    title: "SEO on-page Moldova",
     description:
-      "Meta-taguri, structură și optimizare pentru căutări comerciale locale în Google.",
+      "Meta-taguri, structură, date tehnice și conținut organizat pentru indexare și utilizare clară.",
     href: "/serviciiBlog/seo-on-page/",
   },
   {
-    icon: "🛒",
-    title: "Magazin online accesibil",
+    icon: "M",
+    title: "Creare magazin online Moldova",
     description:
-      "Soluții ecommerce cu catalog, checkout, plăți și livrare pentru piața locală.",
+      "Catalog, comandă, plăți și livrare stabilite după produsele și procesul afacerii.",
     href: "/serviciiBlog/magazin-online/",
   },
   {
-    icon: "🛠",
-    title: "Mentenanță & suport local",
+    icon: "Î",
+    title: "Mentenanță website",
     description:
-      "Actualizări, monitorizare și suport continuu pentru site-uri lansate deja.",
+      "Evaluare, actualizări și intervenții tehnice cu un scop agreat, fără promisiuni de suport nelimitat.",
     href: "/serviciiBlog/mentenanta/",
   },
 ];
 
-const testimonials = [
-  {
-    content:
-      "După lansarea noului site, cererile sunt mai clare și mai ușor de gestionat. Echipa a lucrat rapid, structurat și la un preț accesibil.",
-    author: "Ion Popescu",
-    role: "Proprietar afacere locală",
-  },
-  {
-    content:
-      "Magazinul online este simplu de administrat, iar clienții pot comanda mai ușor de pe telefon.",
-    author: "Maria Cojocaru",
-    role: "Manager magazin online",
-  },
-  {
-    content:
-      "Apreciez foarte mult optimizările SEO implementate. Acum apărem în primele rezultate pentru căutări locale în Chișinău.",
-    author: "Andrei Rusu",
-    role: "Director marketing",
-  },
-  {
-    content:
-      "Un aspect esențial pentru noi a fost adaptarea site-ului pentru dispozitive mobile. Experiența este impecabilă!",
-    author: "Elena Munteanu",
-    role: "Antreprenor",
-  },
-];
-
-const portfolio = [
-  {
-    image: "/assets/tencuitor-md.webp",
-    title: "Tencuitor.md",
-    category: "Catalog utilaje",
-    description:
-      "Catalog și site de lead generation pentru utilaje de tencuială mecanizată, glet, zugrăveală airless, service și chirie în Moldova.",
-    features: ["Catalog produse", "WhatsApp lead gen", "SEO local"],
-    link: "https://tencuitor.md",
-  },
-  {
-    image: "/assets/arcadie-systems.webp",
-    title: "Arcadie Systems",
-    category: "SaaS vânzări",
-    description:
-      "Aplicație SaaS pentru workflow de vânzări: import CSV, coadă Daily 50, AI research, rezultate dintr-o atingere și follow-up-uri inteligente.",
-    features: ["Import CSV", "AI sales research", "Call queue"],
-    link: "https://arcadie-systems.com",
-  },
-  {
-    image: "/assets/salon-beauty.webp",
-    title: "Beauty Studio Centru",
-    category: "Salon Beauty",
-    description:
-      "Site elegant pentru un salon de înfrumusețare din centrul Chișinăului. Include galerie foto și rezervări online.",
-    features: ["Galerie foto", "Rezervări online", "Design premium"],
-  },
-  {
-    image: "/assets/r-ro-ai.webp",
-    title: "R-RO AI – Asistent Juridic",
-    category: "Aplicație Web AI",
-    description:
-      "Platformă AI pentru românii din diaspora. Generează reclamații ANPC, cereri despăgubire și ghiduri juridice.",
-    features: ["Integrare AI", "Aplicație web PWA", "Design modern"],
-    link: "https://rezolvro.ro/",
-  },
-];
-
-const process = [
+const collaborationSteps = [
   {
     number: "01",
-    title: "Consultație gratuită",
+    title: "Înțeleg afacerea și obiectivul",
     description:
-      "Stabilim obiectivele, bugetul și tipul de site (prezentare, magazin online).",
+      "Îmi explici ce face afacerea ta și ce trebuie să realizeze site-ul.",
   },
   {
     number: "02",
-    title: "Design",
-    description: "Propuneri vizuale & wireframe-uri centrate pe conversie.",
+    title: "Clarific soluția și limitele",
+    description:
+      "Analizez cerințele și îți spun direct ce merită construit, ce poate fi simplificat și care sunt limitele.",
   },
   {
     number: "03",
-    title: "Dezvoltare",
+    title: "Construiesc și verific",
     description:
-      "Implementăm rapid, cu bune practici de performanță & securitate.",
+      "Construiesc proiectul, verific funcțiile și îți arăt progresul pe parcurs.",
   },
   {
     number: "04",
-    title: "Lansare & SEO",
-    description: "Publicăm site-ul, configurăm SEO on-page și oferim suport.",
-  },
-];
-
-const faqs = [
-  {
-    question: "Cât costă crearea unui site web în Moldova?",
-    answer:
-      "Un landing page pornește de la 50 EUR, un site de prezentare de la 150 EUR, iar un mini-magazin de la 300 EUR. Oferta finală depinde de structură, conținut și funcționalități.",
-  },
-  {
-    question: "Lucrați în Chișinău și în toată Moldova?",
-    answer:
-      "Da. Oferim servicii locale în Chișinău și colaborăm online cu clienți din toată Moldova.",
-  },
-  {
-    question: "Site-ul este optimizat pentru Google și mobil?",
-    answer:
-      "Da. Fiecare proiect include structură semantică, meta-taguri, viteză bună, responsive design și bază SEO on-page pentru indexare corectă.",
-  },
-  {
-    question: "Faceți și magazine online?",
-    answer:
-      "Da. Implementăm magazine online cu catalog, coș, plăți și livrare, optimizate pentru conversie.",
+    title: "Publicăm și predau accesul",
+    description:
+      "După verificare, publicăm site-ul și primești acces la lucrurile care țin de proiectul tău.",
   },
 ];
 ---
@@ -258,8 +147,8 @@ const faqs = [
 <html lang="ro">
   <head>
     <BaseHead
-      title="Creare website Moldova | Site rapid de la 50 EUR"
-      description="Site-uri la comanda pentru afaceri din Moldova: prezentare, magazin online, SEO on-page si design responsive. Preturi clare si oferta gratuita."
+      title="Creare website Moldova | Site web de la 50 EUR"
+      description="Creare site web în Moldova direct cu un dezvoltator independent din Chișinău: site de prezentare, magazin online, aplicații web și SEO on-page."
       canonicalUrl="https://chisinauweb.com/"
       hreflangRo="https://chisinauweb.com/"
       hreflangRu="https://chisinauweb.com/ru/"
@@ -269,76 +158,79 @@ const faqs = [
   <body>
     <Header lang="ro" />
 
-    <!-- Hero Section -->
     <section class="nf-hero" id="acasa">
       <div class="container">
         <div class="nf-hero-grid">
           <div class="nf-hero-content">
-            <div class="nf-hero-badge">Disponibil pentru proiecte noi</div>
+            <div class="nf-hero-badge">Dezvoltator web independent în Chișinău</div>
             <h1>
-              Creare site web in Moldova si
-              <span class="trust-accent">site la comanda</span>
-              pentru afaceri locale
+              Creare site web în Moldova și
+              <span class="trust-accent">site la comandă</span>
+              pentru afaceri reale
             </h1>
             <p class="nf-hero-subtitle">
-              Site-uri moderne, rapide si SEO-friendly pentru afaceri care vor sa
-              arate profesionist, sa castige incredere si sa transforme
-              vizitatorii in clienti. Servicii locale: <strong>site la comanda</strong>,
-              <strong>site de prezentare</strong>,
-              <strong>magazin online</strong>, <strong>SEO on-page</strong> și
-              <strong>mentenanță</strong>.
+              Sunt Narcis. Construiesc site-uri de prezentare, magazine online
+              și aplicații web pentru proiecte care au nevoie de structură
+              clară, funcții utile și o experiență bună pe telefon și desktop.
+              Lucrezi direct cu dezvoltatorul care analizează, construiește și
+              verifică proiectul.
+            </p>
+            <p>
+              Dezvoltare web modernă, inclusiv instrumente AI folosite
+              transparent și verificate înainte de publicare.
             </p>
             <div class="nf-hero-actions">
               <a href="/contact/" class="nf-btn nf-btn-primary nf-btn-lg">
-                Solicită ofertă gratuită
+                Descrie proiectul
               </a>
               <a href="/preturi/" class="nf-btn nf-btn-ghost nf-btn-lg">
                 Preț creare site în Moldova
               </a>
               <a href="#portofoliu" class="nf-btn nf-btn-ghost nf-btn-lg">
-                Vezi portofoliu
+                Vezi proiectele
               </a>
             </div>
             <div class="nf-hero-stats">
               <div class="nf-stat">
-                <div class="nf-stat-value">50 EUR</div>
-                <div class="nf-stat-label">Punct de pornire</div>
+                <div class="nf-stat-value">Independent</div>
+                <div class="nf-stat-label">dezvoltator în Chișinău</div>
               </div>
               <div class="nf-stat">
-                <div class="nf-stat-value">24h</div>
-                <div class="nf-stat-label">Răspuns inițial</div>
+                <div class="nf-stat-value">Direct</div>
+                <div class="nf-stat-label">fără account manager</div>
               </div>
               <div class="nf-stat">
                 <div class="nf-stat-value">RO + RU</div>
-                <div class="nf-stat-label">Comunicare locală</div>
+                <div class="nf-stat-label">comunicare locală</div>
               </div>
             </div>
           </div>
 
           <aside class="nf-proof-panel" aria-label="Exemplu de pachet pentru un proiect web">
             <div class="nf-proof-top">
-              <span class="nf-proof-status">Plan clar</span>
+              <span class="nf-proof-status">Punct de pornire</span>
               <span>Chișinău · Moldova</span>
             </div>
             <div class="nf-proof-card">
-              <span class="nf-proof-label">Pachet recomandat</span>
-              <h2>Site de prezentare</h2>
+              <span class="nf-proof-label">Site de prezentare</span>
+              <h2>Pentru servicii și afaceri locale</h2>
               <div class="nf-proof-price">de la 150 EUR</div>
               <ul class="nf-proof-list">
-                <li>Structură și design responsive</li>
-                <li>SEO on-page și performanță</li>
-                <li>Formular, hartă și contact direct</li>
-                <li>Lansare și suport inclus</li>
+                <li>Structură adaptată afacerii</li>
+                <li>Design responsive</li>
+                <li>Formular și contact direct</li>
+                <li>SEO tehnic de bază</li>
+                <li>Publicare și acces la proiect</li>
               </ul>
             </div>
             <div class="nf-proof-bottom">
               <div class="nf-proof-metric">
                 <strong>Preț explicat</strong>
-                <span>înainte de dezvoltare</span>
+                <span>după cerințele reale</span>
               </div>
               <div class="nf-proof-metric">
-                <strong>Proces simplu</strong>
-                <span>brief → design → lansare</span>
+                <strong>Proces direct</strong>
+                <span>brief → lucru → verificare</span>
               </div>
             </div>
           </aside>
@@ -346,15 +238,14 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Services Section -->
     <section class="nf-section nf-section-alt" id="servicii">
       <div class="container">
         <div class="nf-section-header">
           <span class="nf-section-tag">Servicii</span>
-          <h2>Servicii web pentru site-uri rapide și convingătoare</h2>
+          <h2>Site-uri și aplicații web construite pentru utilizare reală</h2>
           <p>
-            De la creare site de prezentare la magazin online și SEO on-page,
-            construim pagini clare pentru piața din Moldova.
+            Aleg structura și tehnologia după ceea ce trebuie să facă proiectul,
+            nu după o listă de efecte sau promisiuni generale.
           </p>
         </div>
         <div class="nf-services-grid">
@@ -364,7 +255,9 @@ const faqs = [
                 <div class="nf-service-icon">{service.icon}</div>
                 <span class="nf-card-title">{service.title}</span>
                 <p>{service.description}</p>
-                <a href={service.href} class="nf-portfolio-link">{service.title}</a>
+                <a href={service.href} class="nf-portfolio-link">
+                  Vezi {service.title}
+                </a>
               </article>
             ))
           }
@@ -372,16 +265,15 @@ const faqs = [
       </div>
     </section>
 
-    <section class="nf-section" id="cautari-populare">
+    <section class="nf-section" id="tipuri-site">
       <div class="container">
         <div class="nf-section-header">
-          <span class="nf-section-tag">Căutări populare</span>
-          <h2>Pagini pentru căutări comerciale reale</h2>
+          <span class="nf-section-tag">Alege formatul</span>
+          <h2>Ce fel de website se potrivește proiectului tău</h2>
           <p>
-            Am separat intentiile importante: site la comanda, site de prezentare,
-            pret creare site, creare site Chisinau, creare magazin online Moldova,
-            web design Moldova si SEO Moldova, ca fiecare cautare sa
-            ajungă pe pagina potrivită.
+            Poți porni de la o pagină simplă, un site de prezentare sau o
+            soluție la comandă. Fiecare pagină explică livrabilele și limitele
+            practice.
           </p>
         </div>
         <div class="nf-services-grid">
@@ -390,7 +282,7 @@ const faqs = [
               <article class="nf-service-card">
                 <div class="nf-service-icon">{String(index + 1).padStart(2, "0")}</div>
                 <span class="nf-card-title">{page.title}</span>
-                <p>{`Cauta rapid informatia pentru ${page.title}: oferta, context local si urmatorul pas.`}</p>
+                <p>{page.description}</p>
                 <a href={page.href} class="nf-portfolio-link">Vezi {page.title}</a>
               </article>
             ))
@@ -399,22 +291,24 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Portfolio Section - Netflix Card Style -->
     <section class="nf-section" id="portofoliu">
       <div class="container">
         <div class="nf-section-header">
           <span class="nf-section-tag">Portofoliu</span>
-          <h2>Exemple de site-uri create pentru afaceri</h2>
-          <p>Proiecte de prezentare, lead generation, ecommerce și aplicații web cu structură clară, viteză bună și CTA-uri vizibile.</p>
+          <h2>Proiecte reale, fără rezultate inventate</h2>
+          <p>
+            Produse și website-uri care există și pot fi deschise direct.
+            Descrierile de mai jos se limitează la funcțiile implementate.
+          </p>
         </div>
         <div class="nf-portfolio-grid">
           {
-            portfolio.map((item) => (
+            portfolioRo.map((item) => (
               <article class="nf-card">
                 <div class="nf-card-image">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.imageAlt}
                     loading="lazy"
                     width="400"
                     height="220"
@@ -427,20 +321,16 @@ const faqs = [
                   <span class="nf-card-title">{item.title}</span>
                   <p>{item.description}</p>
                   <ul class="nf-portfolio-features">
-                    {item.features.map((feature) => (
-                      <li>{feature}</li>
-                    ))}
+                    {item.features.map((feature) => <li>{feature}</li>)}
                   </ul>
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener"
-                      class="nf-portfolio-link"
-                    >
-                      Vizitează {item.title}
-                    </a>
-                  )}
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="nf-portfolio-link"
+                  >
+                    Vizitează {item.title}
+                  </a>
                 </div>
               </article>
             ))
@@ -448,126 +338,99 @@ const faqs = [
         </div>
         <div class="nf-center-cta">
           <a href="/contact/" class="nf-btn nf-btn-primary nf-btn-lg">
-            Solicită ofertă gratuită
+            Descrie proiectul
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="nf-section nf-section-alt" id="testimoniale">
-      <div class="container">
-        <div class="nf-section-header">
-          <span class="nf-section-tag">Testimoniale</span>
-          <h2>De încredere pentru afaceri locale</h2>
-          <p>Recomandări reale de la clienți mulțumiți</p>
-        </div>
-        <div class="nf-testimonials-grid">
-          {
-            testimonials.map((t) => (
-              <div class="nf-testimonial">
-                <div class="nf-testimonial-content">"{t.content}"</div>
-                <div class="nf-testimonial-author">
-                  <div class="nf-testimonial-avatar">
-                    {t.author.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div class="nf-testimonial-info">
-                    <span class="nf-testimonial-name">{t.author}</span>
-                    <span class="nf-testimonial-role">{t.role}</span>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="nf-section" id="preturi">
-      <div class="container">
-        <div class="nf-section-header">
-          <span class="nf-section-tag">Prețuri</span>
-          <h2>Prețuri transparente pentru creare site web</h2>
-          <p>Alege soluția potrivită: landing page, site de prezentare, magazin online sau SEO și mentenanță.</p>
-        </div>
-        <div class="nf-pricing-grid">
-          <div class="nf-pricing-card">
-            <span class="nf-card-title">Site de Prezentare</span>
-            <p>Perfect pentru afaceri care doresc prezență online profesională</p>
-            <ul class="nf-pricing-features">
-              <li>Design modern + 5 pagini</li>
-              <li>Optimizare SEO on-page</li>
-              <li>Formular de contact & hărți</li>
-              <li>Responsive design</li>
-              <li>Suport 30 zile inclus</li>
-            </ul>
-            <a href="/contact/" class="nf-btn nf-btn-outline nf-btn-block">
-              Solicită ofertă
-            </a>
-          </div>
-          <div class="nf-pricing-card nf-pricing-featured">
-            <span class="nf-card-title">Magazin Online</span>
-            <p>Soluție ecommerce completă pentru vânzări online</p>
-            <ul class="nf-pricing-features">
-              <li>Catalog produse + coș</li>
-              <li>Metode de plată & livrare</li>
-              <li>SEO tehnic & structură</li>
-              <li>Panou administrare intuitiv</li>
-              <li>Integrare curieri</li>
-              <li>Suport 60 zile inclus</li>
-            </ul>
-            <a href="/contact/" class="nf-btn nf-btn-primary nf-btn-block">
-              Solicită ofertă
-            </a>
-          </div>
-          <div class="nf-pricing-card">
-            <span class="nf-card-title">SEO & Mentenanță</span>
-            <p>Menține site-ul tău actualizat și optimizat</p>
-            <ul class="nf-pricing-features">
-              <li>Actualizări & securitate</li>
-              <li>Optimizări conținut & viteză</li>
-              <li>Raportare lunară</li>
-              <li>Backup automat zilnic</li>
-              <li>Monitorizare uptime</li>
-            </ul>
-            <a href="/contact/" class="nf-btn nf-btn-outline nf-btn-block">
-              Solicită ofertă
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process Section -->
     <section class="nf-section nf-section-alt" id="proces">
       <div class="container">
         <div class="nf-section-header">
           <span class="nf-section-tag">Proces</span>
-          <h2>Cum lucrăm — clar, rapid și orientat pe conversie</h2>
-          <p>Proces simplu de la brief și ofertă până la design, dezvoltare, lansare și SEO on-page.</p>
+          <h2>Cum lucrăm împreună</h2>
+          <p>
+            Patru pași simpli, cu discuție directă și limite explicate înainte
+            de publicare.
+          </p>
         </div>
         <div class="nf-process-grid">
           {
-            process.map((step) => (
-              <div class="nf-process-step">
+            collaborationSteps.map((step) => (
+              <article class="nf-process-step">
                 <div class="nf-process-number">{step.number}</div>
                 <span class="nf-card-title">{step.title}</span>
                 <p>{step.description}</p>
-              </div>
+              </article>
             ))
           }
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="nf-section" id="faq">
+    <section class="nf-section" id="preturi">
+      <div class="container">
+        <div class="nf-section-header">
+          <span class="nf-section-tag">Prețuri</span>
+          <h2>Prețuri de pornire pentru creare site web</h2>
+          <p>
+            Prețul final depinde de conținut, funcții, limbi și integrări. Nu
+            adaug funcții care nu ajută proiectul doar pentru a mări pachetul.
+          </p>
+        </div>
+        <div class="nf-pricing-grid">
+          <div class="nf-pricing-card">
+            <span class="nf-card-title">Site de prezentare · de la 150 EUR</span>
+            <p>Pentru servicii, companii și profesioniști care au nevoie de o prezență clară.</p>
+            <ul class="nf-pricing-features">
+              <li>Structură cu paginile necesare</li>
+              <li>Design responsive</li>
+              <li>Formular și date de contact</li>
+              <li>SEO on-page de bază</li>
+              <li>Publicare și acces</li>
+            </ul>
+            <a href="/site-de-prezentare/" class="nf-btn nf-btn-outline nf-btn-block">
+              Vezi site de prezentare
+            </a>
+          </div>
+          <div class="nf-pricing-card nf-pricing-featured">
+            <span class="nf-card-title">Mini-magazin online · de la 300 EUR</span>
+            <p>Pentru un catalog mic și un flux de comandă definit clar.</p>
+            <ul class="nf-pricing-features">
+              <li>Catalog și pagini de produs</li>
+              <li>Coș sau formular de comandă</li>
+              <li>Plăți și livrare stabilite în brief</li>
+              <li>Interfață pentru mobil</li>
+              <li>Testarea fluxului de comandă</li>
+            </ul>
+            <a href="/serviciiBlog/magazin-online/" class="nf-btn nf-btn-primary nf-btn-block">
+              Vezi magazin online
+            </a>
+          </div>
+          <div class="nf-pricing-card">
+            <span class="nf-card-title">SEO și mentenanță</span>
+            <p>SEO on-page de la 50 EUR; mentenanță de la 25 EUR/lună.</p>
+            <ul class="nf-pricing-features">
+              <li>Audit și priorități tehnice</li>
+              <li>Meta-taguri și structură</li>
+              <li>Corecții de performanță agreate</li>
+              <li>Mentenanță ofertată după evaluare</li>
+              <li>Fără garanții de poziționare</li>
+            </ul>
+            <a href="/preturi/" class="nf-btn nf-btn-outline nf-btn-block">
+              Vezi toate prețurile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nf-section nf-section-alt" id="faq">
       <div class="container">
         <div class="nf-section-header">
           <span class="nf-section-tag">FAQ</span>
           <h2>Întrebări frecvente</h2>
-          <p>Răspunsuri rapide pentru alegeri informate</p>
+          <p>Răspunsuri directe despre preț, proces și limite.</p>
         </div>
         <div class="nf-faq-list">
           {
@@ -582,26 +445,22 @@ const faqs = [
       </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2>Vrei un site web profesional la preț clar?</h2>
+          <h2>Spune-mi ce încerci să construiești</h2>
           <p>
-            Spune-ne ce tip de site ai nevoie și îți recomandăm structura potrivită,
-            costul orientativ și următorul pas realist.
+            Nu trebuie să pregătești un document tehnic. Explică afacerea,
+            problema și ce ai vrea să poată face site-ul.
           </p>
           <a href="/contact/" class="nf-btn nf-btn-primary nf-btn-xl">
-            Solicită ofertă gratuită
+            Descrie proiectul
           </a>
         </div>
       </div>
     </section>
 
     <Footer lang="ro" />
-
     <script src="/script.js" defer></script>
   </body>
 </html>
-
-

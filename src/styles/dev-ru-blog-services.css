@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --svc-bg: var(--nf-bg, #0e1116);
   --svc-bg-alt: var(--nf-bg-secondary, #141922);
   --svc-surface: var(--nf-surface, #202936);
@@ -287,7 +287,6 @@ body.dev-ru-theme,
 .price-card,
 .service-pricing-card,
 .blog-card,
-.testimonial,
 .author-box {
   border-radius: var(--svc-radius);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -927,7 +926,6 @@ body.dev-ru-theme,
 .price-card,
 .service-pricing-card,
 .blog-card,
-.testimonial,
 .author-box,
 .toc,
 .related-posts,
@@ -956,7 +954,6 @@ body.dev-ru-theme,
 .price-card::before,
 .service-pricing-card::before,
 .blog-card::before,
-.testimonial::before,
 .author-box::before {
   content: "";
   position: absolute;
@@ -978,7 +975,6 @@ body.dev-ru-theme,
 .price-card:hover,
 .service-pricing-card:hover,
 .blog-card:hover,
-.testimonial:hover,
 .author-box:hover {
   transform: translateY(-5px);
   border-color: rgba(139, 211, 255, 0.36);
@@ -994,7 +990,6 @@ body.dev-ru-theme,
 .price-card:hover::before,
 .service-pricing-card:hover::before,
 .blog-card:hover::before,
-.testimonial:hover::before,
 .author-box:hover::before {
   opacity: 1;
 }

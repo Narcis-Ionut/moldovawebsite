@@ -1,370 +1,322 @@
-import type { LandingPageData } from "./landingPages.types";
+import type { LandingPageData, LandingPackage } from "./landingPages.types";
+import { portfolioRo } from "./portfolio";
+
+const trustStats = [
+  { value: "Independent", label: "dezvoltator web în Chișinău" },
+  { value: "Direct", label: "comunicare fără intermediari" },
+  { value: "Verificat", label: "funcții testate înainte de publicare" },
+];
+
+const websitePackages: LandingPackage[] = [
+  {
+    name: "Landing page",
+    price: "de la 50 EUR",
+    priceValue: 50,
+    description:
+      "O pagină concentrată pe o ofertă, un serviciu sau o campanie clară.",
+    features: [
+      "Structură pentru o singură ofertă",
+      "Design responsive",
+      "Formular sau contact direct",
+      "Meta-taguri și structură semantică",
+      "Publicare pe domeniul proiectului",
+    ],
+    note: "Conținutul, integrările și eventualele costuri externe se stabilesc înainte de lucru.",
+  },
+  {
+    name: "Site de prezentare",
+    price: "de la 150 EUR",
+    priceValue: 150,
+    description:
+      "Pentru o afacere care trebuie să-și explice serviciile, diferențele și datele de contact.",
+    features: [
+      "Structură cu paginile necesare",
+      "Design adaptat pentru mobil și desktop",
+      "Formular de contact",
+      "SEO on-page de bază",
+      "Publicare și acces la proiect",
+    ],
+    note: "Numărul de pagini și funcțiile suplimentare influențează oferta finală.",
+    featured: true,
+  },
+  {
+    name: "Mini-magazin online",
+    price: "de la 300 EUR",
+    priceValue: 300,
+    description:
+      "Punct de pornire pentru un catalog mic și un flux simplu de comandă.",
+    features: [
+      "Catalog și pagini de produs",
+      "Coș sau formular de comandă",
+      "Opțiuni de plată și livrare stabilite în brief",
+      "Interfață adaptată pentru mobil",
+      "Testarea fluxului de comandă",
+    ],
+    note: "Integrările, administrarea avansată și cataloagele mari se estimează separat.",
+  },
+];
+
+const collaborationProcess = [
+  {
+    title: "Îmi explici afacerea și obiectivul",
+    description:
+      "Îmi spui ce face afacerea ta, cine folosește site-ul și ce trebuie să poată realiza vizitatorul.",
+  },
+  {
+    title: "Clarific ce merită construit",
+    description:
+      "Analizez cerințele și îți spun direct ce are sens, ce poate fi simplificat și care sunt limitele.",
+  },
+  {
+    title: "Construiesc și verific",
+    description:
+      "Implementez proiectul, verific funcțiile și îți arăt progresul pe parcurs.",
+  },
+  {
+    title: "Publicăm și predau accesul",
+    description:
+      "După verificare, publicăm site-ul și primești acces la lucrurile care țin de proiectul tău.",
+  },
+];
 
 export const roLandingPages: LandingPageData[] = [
   {
     slug: "site-de-prezentare",
     navTitle: "Site de prezentare",
     breadcrumbLabel: "Site de prezentare",
-    title: "Site de prezentare in Moldova | Structura clara si pret corect",
+    title: "Site de prezentare în Moldova | Structură și preț clar",
     description:
-      "Cream site-uri de prezentare pentru afaceri din Chisinau si Moldova. Structura clara, SEO on-page si oferta potrivita pentru business local.",
-    heroTag: "Intentie comerciala",
+      "Site de prezentare pentru afaceri din Moldova, cu structură clară, design responsive, formular de contact și SEO tehnic de bază. Preț de la 150 EUR.",
+    heroTag: "Site de prezentare · Moldova",
     h1: "Site de prezentare pentru afaceri din Moldova",
     intro:
-      "Cautarile comerciale arata interes pentru site de prezentare, site de prezentare pret si site de prezentare in Moldova. Pagina asta raspunde exact acelei intentii.",
+      "Construiesc site-uri de prezentare care explică simplu ce oferă afacerea, pentru cine este serviciul și cum poate fi contactată.",
     lead:
-      "Construim site-uri de prezentare care explica rapid ce faci, pentru cine lucrezi si ce pas trebuie sa faca vizitatorul. Este formatul potrivit pentru servicii locale, clinici, saloane, firme B2B si proiecte care au nevoie de incredere, nu de un magazin complex.",
+      "Un proiect bun pornește de la informațiile reale ale afacerii. Îmi trimiți serviciile, datele de contact, materialele disponibile și exemplele relevante; eu le organizez într-un website ușor de folosit pe telefon și desktop.",
     highlights: [
-      "Structura home + servicii + despre + contact",
-      "CTA clar si formular gata de conversie",
-      "Baza buna pentru cautari locale in Google",
-      "Usor de extins ulterior in RO si RU",
+      "Structură adaptată afacerii",
+      "Design responsive",
+      "Formular și contact direct",
+      "SEO on-page de bază",
     ],
-    stats: [
-      { value: "3-5", label: "pagini principale" },
-      { value: "7-10", label: "zile lucratoare" },
-      { value: "RO/RU", label: "pregatit pentru extindere" },
-    ],
+    stats: trustStats,
+    packages: [websitePackages[1]],
+    caseStudies: portfolioRo,
     painPoints: [
       {
-        title: "Ai nevoie de incredere rapida",
+        title: "Oferta trebuie înțeleasă repede",
         description:
-          "Un site de prezentare bun explica imediat cine esti, ce livrezi si de ce meriti contactat. Fara asta, traficul nu converteste.",
+          "Vizitatorul trebuie să vadă fără efort ce vinzi, cui te adresezi și care este pasul următor.",
       },
       {
-        title: "Vrei ceva mai clar decat o pagina generica",
+        title: "Informația trebuie să fie credibilă",
         description:
-          "Multi cauta exact site de prezentare, nu doar creare site. Asta inseamna intentie pentru o structura simpla, profesionala si usor de evaluat.",
+          "Folosesc servicii, imagini, date de contact și exemple reale, fără cifre sau promisiuni inventate.",
       },
       {
-        title: "Ai nevoie de pret si scop realist",
+        title: "Contactul trebuie să funcționeze",
         description:
-          "Pagina trebuie sa lege intentia informationala de pasul comercial: ce include proiectul, ce nu include si ce urmeaza dupa cererea de oferta.",
+          "Formularul, telefonul, emailul și legăturile relevante sunt verificate înainte de publicare.",
       },
     ],
     deliverables: [
       {
-        title: "Arhitectura de continut",
+        title: "Arhitectură de conținut",
         description:
-          "Stabilim sectiunile si paginile care raspund intrebarilor de baza: servicii, dovezi, contact si actiunea principala.",
+          "Stabilesc paginile și ordinea informației în funcție de serviciile și întrebările clienților tăi.",
       },
       {
-        title: "Copy orientat pe intentie",
+        title: "Interfață responsive",
         description:
-          "Texte clare pentru cautari precum site de prezentare, site de prezentare pret si creare site de prezentare.",
+          "Construiesc o experiență coerentă pentru telefoane, tablete și ecrane desktop.",
       },
       {
-        title: "SEO on-page de baza",
+        title: "Formulare și contact",
         description:
-          "Titluri, meta descrieri, heading-uri, linkuri interne si schema care ajuta Google sa inteleaga tipul paginii.",
+          "Implementez traseele prin care oamenii pot cere o ofertă, suna sau trimite un mesaj.",
       },
       {
-        title: "CTA si masurare",
+        title: "Bază tehnică SEO",
         description:
-          "Formular, telefon, email si evenimente simple pentru a vedea daca pagina aduce cereri reale, nu doar impresii.",
+          "Configurez titluri, descrieri, structură semantică, canonical și date structurate acolo unde sunt potrivite.",
       },
     ],
-    process: [
-      {
-        title: "Brief si obiectiv",
-        description:
-          "Clarificam ce vinzi, cine cauta serviciul si ce pagini sunt suficiente pentru prima versiune.",
-      },
-      {
-        title: "Structura si continut",
-        description:
-          "Scriem si ordonam informatia in jurul intrebarilor reale pe care le are clientul local.",
-      },
-      {
-        title: "Design si implementare",
-        description:
-          "Construim pagina astfel incat sa fie rapida, clara pe mobil si usor de actualizat dupa lansare.",
-      },
-      {
-        title: "Lansare si iteratie",
-        description:
-          "Verificam indexarea, urmarim performanta si folosim datele pentru urmatoarele pagini comerciale.",
-      },
-    ],
+    process: collaborationProcess,
     faqs: [
       {
-        question: "Cand are sens un site de prezentare si nu un magazin online?",
+        question: "Cât costă un site de prezentare în Moldova?",
         answer:
-          "Atunci cand principalul scop este generarea de lead-uri, programari sau cereri de oferta. Pentru servicii locale, site-ul de prezentare este de regula primul pas corect.",
+          "Prețul pornește de la 150 EUR. Oferta finală depinde de numărul de pagini, conținut, formulare, limbi și integrările necesare.",
       },
       {
-        question: "Se poate porni cu 3-5 pagini si extinde mai tarziu?",
+        question: "Cât durează realizarea?",
         answer:
-          "Da. Este varianta recomandata pentru majoritatea afacerilor mici. Lansezi rapid, validezi ce cauta oamenii si apoi adaugi pagini dedicate.",
+          "Termenul se stabilește după ce văd structura și materialele disponibile. Conținutul incomplet, integrările și rundele de feedback pot prelungi proiectul.",
       },
       {
-        question: "Pagina aceasta ma ajuta si pentru cautari de pret?",
+        question: "Trebuie să pregătesc textele și imaginile?",
         answer:
-          "Da, daca este legata corect de pagina de preturi si explica ce include proiectul. Intentia de pret trebuie tratata separat, dar conectat.",
+          "Poți veni cu materialele existente. Dacă lipsesc, îți spun ce trebuie pregătit și pot ajuta la structurarea textelor, fără să inventez informații despre afacere.",
+      },
+      {
+        question: "Primesc acces la site după lansare?",
+        answer:
+          "Da. După publicare primești acces la domeniu, hosting, conturile și fișierele care fac parte din proiect, conform ofertei agreate.",
       },
     ],
     relatedLinks: [
       {
         href: "/preturi/",
-        title: "Preturi creare site",
+        title: "Preț creare site",
         description:
-          "Pagina potrivita pentru interogarile cu pret, oferta si comparatie rapida intre pachete.",
+          "Compară punctele de pornire pentru landing page, site de prezentare și mini-magazin online.",
       },
       {
         href: "/creare-site-chisinau/",
-        title: "Creare site Chisinau",
+        title: "Creare site în Chișinău",
         description:
-          "Pentru cautari comerciale locale legate direct de Chisinau si Moldova.",
+          "Detalii despre colaborarea directă pentru afaceri din Chișinău și Moldova.",
       },
       {
-        href: "/serviciiBlog/design-web/",
-        title: "Design web",
+        href: "/web-design-moldova/",
+        title: "Web design Moldova",
         description:
-          "Daca proiectul are nevoie de o identitate vizuala mai puternica si un UX mai clar.",
-      },
-      {
-        href: "/contact/",
-        title: "Solicita o oferta",
-        description:
-          "Treci direct la brief daca stii deja ce tip de site de prezentare vrei.",
+          "Pentru proiecte care au nevoie în primul rând de structură vizuală și UX.",
       },
     ],
     primaryCta: {
       href: "/contact/",
-      title: "Solicita oferta pentru site de prezentare",
-      description: "Contact direct pentru proiecte de prezentare.",
+      title: "Descrie proiectul",
+      description: "Trimite informațiile de bază despre afacere și site.",
     },
     secondaryCta: {
       href: "/preturi/",
-      title: "Vezi pachetele si preturile",
-      description: "Compara rapid pachetele disponibile.",
+      title: "Vezi prețurile",
+      description: "Compară pachetele de pornire.",
     },
     serviceType: "Site de prezentare",
-    serviceName: "Creare site de prezentare in Moldova",
+    serviceName: "Creare site de prezentare în Moldova",
     serviceDescription:
-      "Structura clara, copy orientat pe conversie si SEO on-page pentru afaceri locale din Chisinau si Moldova.",
+      "Site de prezentare responsive, cu structură de conținut, formular de contact și bază tehnică SEO pentru afaceri din Moldova.",
     canonicalUrl: "https://chisinauweb.com/site-de-prezentare/",
     hreflangRo: "https://chisinauweb.com/site-de-prezentare/",
     hreflangRu: "https://chisinauweb.com/ru/sait-vizitka/",
   },
   {
     slug: "creare-site-chisinau",
-    navTitle: "Creare site Chisinau",
-    breadcrumbLabel: "Creare site Chisinau",
-    title: "Creare site Chisinau | Website local de la 150 EUR",
+    navTitle: "Creare site Chișinău",
+    breadcrumbLabel: "Creare site Chișinău",
+    title: "Creare site Chișinău | Website de la 50 EUR",
     description:
-      "Creare site in Chisinau si Moldova pentru afaceri locale: site de prezentare de la 150 EUR, mini-magazin de la 300 EUR si lansare rapida.",
-    heroTag: "Cautare locala",
-    h1: "Creare site in Chisinau pentru afaceri care au nevoie de clienti",
+      "Creare site în Chișinău pentru afaceri locale: landing page de la 50 EUR, site de prezentare de la 150 EUR și mini-magazin de la 300 EUR.",
+    heroTag: "Dezvoltator web independent · Chișinău",
+    h1: "Creare site în Chișinău, direct cu dezvoltatorul",
     intro:
-      "Website rapid, clar si optimizat pentru mobil, creat pentru firme din Chisinau si din toata Moldova.",
+      "Lucrezi direct cu mine de la prima discuție până la verificare și publicare. Construiesc site-uri și aplicații web pentru afaceri din Chișinău și din toată Moldova.",
     lead:
-      "Pornim cu structura potrivita afacerii tale, afisam costul orientativ de la inceput si livram un site pregatit pentru cereri, programari sau comenzi. Primesti design responsive, SEO on-page de baza si un proces simplu, cu raspuns initial in maximum 24 de ore.",
+      "Încep de la ce trebuie să facă website-ul: să explice serviciile, să primească cereri, să prezinte produse sau să susțină un flux de lucru. Aleg tehnologia după problemă, nu pentru a complica oferta.",
     highlights: [
-      "Potrivit pentru servicii, clinici, saloane si firme B2B",
-      "Accent pe Chisinau, dar valabil pentru toata Moldova",
-      "Site de prezentare de la 150 EUR",
-      "Mini-magazin online de la 300 EUR",
-      "Conectat direct cu paginile de preturi si servicii",
+      "Comunicare directă",
+      "Română și rusă",
+      "Mobil și desktop",
+      "Acces la proiect după lansare",
     ],
-    stats: [
-      { value: "150", label: "EUR site de prezentare" },
-      { value: "24h", label: "raspuns initial" },
-      { value: "MD", label: "target local principal" },
-    ],
-    packages: [
-      {
-        name: "Landing page",
-        price: "50 EUR",
-        priceValue: 50,
-        description:
-          "O pagina concentrata pe o singura oferta, campanie sau serviciu.",
-        features: [
-          "Structura completa pe o pagina",
-          "Design responsive",
-          "Formular sau CTA de contact",
-          "SEO on-page de baza",
-        ],
-      },
-      {
-        name: "Site de prezentare",
-        price: "150 EUR",
-        priceValue: 150,
-        description:
-          "Varianta recomandata pentru servicii locale si afaceri care vand prin cereri de oferta.",
-        features: [
-          "Pagini pentru servicii, despre si contact",
-          "Design adaptat brandului",
-          "Formular, telefon si email",
-          "Structura pregatita pentru Google",
-        ],
-        featured: true,
-      },
-      {
-        name: "Mini-magazin online",
-        price: "300 EUR",
-        priceValue: 300,
-        description:
-          "Start ecommerce pentru un catalog restrans si comenzi locale.",
-        features: [
-          "Catalog si pagini de produs",
-          "Cos sau cerere simplificata",
-          "Optiuni de plata si livrare",
-          "SEO pentru categorii si produse",
-        ],
-      },
-    ],
-    caseStudies: [
-      {
-        image: "/assets/tencuitor-md.webp",
-        title: "Tencuitor.md",
-        category: "Catalog utilaje",
-        description:
-          "Catalog si site de lead generation pentru vanzare, service si chirie de utilaje in Moldova.",
-        features: ["Catalog produse", "WhatsApp lead gen", "SEO local"],
-        href: "https://tencuitor.md",
-      },
-      {
-        image: "/assets/arcadie-systems.webp",
-        title: "Arcadie Systems",
-        category: "Aplicatie SaaS",
-        description:
-          "Aplicatie de vanzari cu import CSV, AI research, coada de apeluri si follow-up-uri.",
-        features: ["Import CSV", "AI sales research", "Call queue"],
-        href: "https://arcadie-systems.com",
-      },
-      {
-        image: "/assets/salon-beauty.webp",
-        title: "Beauty Studio Centru",
-        category: "Salon din Chisinau",
-        description:
-          "Site pentru un salon local, cu galerie, preturi si traseu simplu spre programare.",
-        features: ["Galerie foto", "Rezervari online", "Design premium"],
-      },
-    ],
+    stats: trustStats,
+    packages: websitePackages,
+    caseStudies: portfolioRo,
     painPoints: [
       {
-        title: "Homepage-ul nu raspunde suficient de local",
+        title: "Ai nevoie de un punct clar de contact",
         description:
-          "Clientii locali vor sa vada imediat ca lucrezi in Chisinau, ce servicii oferi si cum te pot contacta.",
+          "Pagina trebuie să explice serviciul și să ofere un traseu simplu spre telefon, formular sau WhatsApp.",
       },
       {
-        title: "Ai nevoie de o pagina pentru cautari de furnizor",
+        title: "Site-ul trebuie să reflecte afacerea reală",
         description:
-          "Un site bun trebuie sa explice rapid oferta, pretul orientativ, procesul si motivele pentru care meriti contactat.",
+          "Conținutul pornește de la serviciile, materialele și limitele tale, nu de la texte generice de agenție.",
       },
       {
-        title: "Trebuie sa legi intentia de actiune",
+        title: "Bugetul trebuie folosit practic",
         description:
-          "Pagina trebuie sa duca natural spre oferta, preturi, servicii conexe si contact, fara sa lase traficul intr-un punct mort.",
+          "Îți spun ce merită inclus acum și ce poate fi lăsat pentru o etapă ulterioară.",
       },
     ],
     deliverables: [
       {
-        title: "Pozitionare locala",
+        title: "Structură comercială clară",
         description:
-          "Mesajul este construit pentru afaceri din Chisinau si din alte orase din Moldova care cauta un executant concret.",
+          "Organizez oferta, paginile și CTA-urile astfel încât vizitatorul să știe ce poate face mai departe.",
       },
       {
-        title: "Structura comerciala",
+        title: "Design pentru utilizare reală",
         description:
-          "Punem in fata criteriile pe care le evalueaza un client: termen, tip de site, cost, proces si suport dupa lansare.",
+          "Interfața este verificată pe telefon și desktop, inclusiv meniuri, formulare și elemente interactive.",
       },
       {
-        title: "Linkuri spre paginile critice",
+        title: "Implementare tehnică",
         description:
-          "Pagina trimite direct spre preturi, site de prezentare, magazin online si contact pentru a consolida traseul comercial.",
+          "Lucrez cu JavaScript, TypeScript, React, Astro, Cloudflare, baze de date și integrări atunci când proiectul le cere.",
       },
       {
-        title: "Schema si semnale locale",
+        title: "Publicare și predare",
         description:
-          "Breadcrumb, Service si FAQ pentru a clarifica natura paginii si aria deservita.",
+          "Conectez domeniul și hostingul agreat, apoi predau accesul care ține de proiect.",
       },
     ],
-    process: [
-      {
-        title: "Discutie scurta despre obiectiv",
-        description:
-          "Identificam daca ai nevoie de site de prezentare, landing page, magazin online sau o combinatie intre ele.",
-      },
-      {
-        title: "Oferta si recomandare",
-        description:
-          "Primesti o directie clara legata de structura minima utila si de pachetul potrivit pentru prima lansare.",
-      },
-      {
-        title: "Executie si validare",
-        description:
-          "Implementam proiectul si verificam daca paginile comerciale principale sunt gata pentru indexare si conversie.",
-      },
-      {
-        title: "Optimizare continua",
-        description:
-          "Dupa lansare, datele din cautare si Analytics ne spun ce pagina merita extinsa in urmatoarea iteratie.",
-      },
-    ],
+    process: collaborationProcess,
     faqs: [
       {
-        question: "Lucrati doar in Chisinau?",
+        question: "Lucrezi doar cu afaceri din Chișinău?",
         answer:
-          "Nu. Chisinaul este principalul cluster de cautare locala, dar proiectele sunt facute si pentru afaceri din toata Moldova.",
+          "Nu. Sunt în Chișinău, dar colaborarea poate avea loc online cu afaceri din toată Moldova și din alte piețe.",
       },
       {
-        question: "Pagina asta este pentru creare site sau pentru design?",
+        question: "Care este prețul pentru creare site în Chișinău?",
         answer:
-          "Este pentru intentia comerciala generala de creare site. Daca proiectul are nevoie de accent pe UI/UX, pagina corecta este cea de web design.",
+          "Punctele de pornire sunt 50 EUR pentru un landing page, 150 EUR pentru un site de prezentare și 300 EUR pentru un mini-magazin. Oferta exactă depinde de cerințe.",
       },
       {
-        question: "Daca vreau si pret, unde merg?",
+        question: "Este inclusă optimizarea pentru mobil și Google?",
         answer:
-          "Pe pagina de preturi pentru creare site Chisinau. Site-ul de prezentare porneste de la 150 EUR, iar mini-magazinul online de la 300 EUR.",
+          "Includ design responsive și elementele tehnice SEO de bază. Acestea ajută site-ul să fie accesibil și indexabil, dar nu garantează o anumită poziție în Google.",
       },
       {
-        question: "Pot face si magazin online pentru Chisinau?",
+        question: "Ce trebuie să trimit înainte să începem?",
         answer:
-          "Da. Daca vrei ecommerce, pagina potrivita este creare magazin online Chisinau, cu pret de pornire de 300 EUR pentru mini-magazin.",
+          "Am nevoie de o explicație a afacerii, serviciile sau produsele, datele de contact și materialele deja disponibile. Un document tehnic nu este obligatoriu.",
       },
     ],
     relatedLinks: [
       {
         href: "/preturi/",
-        title: "Preturi pentru creare site",
-        description:
-          "Compara pachetele daca utilizatorul este deja in faza de evaluare a costului.",
+        title: "Preț creare site în Moldova",
+        description: "Pachete orientative și factori care schimbă costul final.",
       },
       {
         href: "/site-de-prezentare/",
         title: "Site de prezentare",
-        description:
-          "Daca proiectul tau este orientat pe servicii, asta este de regula pagina urmatoare.",
+        description: "Pentru servicii, companii și profesioniști care au nevoie de o prezență clară.",
       },
       {
         href: "/serviciiBlog/magazin-online/",
-        title: "Creare magazin online",
-        description:
-          "Pentru afaceri locale care vor catalog, comenzi, livrare si plati online.",
-      },
-      {
-        href: "/contact/",
-        title: "Trimite brief-ul",
-        description:
-          "Pasul direct catre oferta daca stii deja ca vrei un website pentru afacerea ta.",
+        title: "Creare magazin online Moldova",
+        description: "Catalog, comenzi, plăți și livrare stabilite în funcție de proiect.",
       },
     ],
     primaryCta: {
       href: "/contact/",
-      title: "Solicita oferta pentru Chisinau",
-      description: "Cerere de oferta pentru proiecte locale.",
+      title: "Descrie proiectul",
+      description: "Spune ce trebuie să realizeze site-ul.",
     },
     secondaryCta: {
       href: "/preturi/",
       title: "Vezi costurile orientative",
-      description: "Pagina de preturi pentru proiecte noi.",
+      description: "Compară pachetele de pornire.",
     },
-    serviceType: "Creare site",
-    serviceName: "Creare site in Chisinau si Moldova",
+    serviceType: "Creare site web",
+    serviceName: "Creare site în Chișinău",
     serviceDescription:
-      "Website-uri pentru afaceri locale din Chisinau, cu pret orientativ de la 150 EUR, structura comerciala clara si proces simplu de pornire.",
+      "Landing page, site de prezentare, magazin online și aplicații web construite direct de un dezvoltator independent din Chișinău.",
     canonicalUrl: "https://chisinauweb.com/creare-site-chisinau/",
     hreflangRo: "https://chisinauweb.com/creare-site-chisinau/",
     hreflangRu: "https://chisinauweb.com/ru/sozdanie-saitov-kishinev/",
@@ -373,441 +325,240 @@ export const roLandingPages: LandingPageData[] = [
     slug: "web-design-moldova",
     navTitle: "Web design Moldova",
     breadcrumbLabel: "Web design Moldova",
-    title: "Web design in Moldova | UX pentru conversii",
+    title: "Web design Moldova | Interfețe clare și responsive",
     description:
-      "Servicii de web design in Moldova pentru site-uri de prezentare si pagini comerciale. UX clar, structura curata si design orientat pe conversie.",
-    heroTag: "Intentie de design",
-    h1: "Web design in Moldova pentru pagini care conving",
+      "Servicii de web design în Moldova pentru site-uri de prezentare și produse web: structură, UX, design responsive și pregătire pentru implementare.",
+    heroTag: "Web design · Moldova",
+    h1: "Web design în Moldova pentru pagini clare și ușor de folosit",
     intro:
-      "Interogarile web design Moldova si web design Chisinau nu cauta doar executie tehnica. Cauta claritate vizuala, incredere si o pagina care sa arate profesionist.",
+      "Un design util explică oferta, ordonează informația și ajută oamenii să găsească următorul pas fără efecte inutile.",
     lead:
-      "Web design in Moldova pentru pagini care conving inseamna UX pentru conversii si ierarhie clara, nu doar o macheta frumoasa. Pagina asta trateaza intentia de design separat de dezvoltare: mesaje, CTA, consistenta vizuala si felul in care designul influenteaza conversia.",
+      "Lucrez de la conținut și funcții spre interfață. Verific ierarhia, navigarea, stările interactive și felul în care pagina se adaptează pe ecrane diferite.",
     highlights: [
-      "Design pentru pagini comerciale si site-uri de prezentare",
-      "UX clar pe mobil si desktop",
-      "Sectiuni construite pentru incredere si actiune",
-      "Poate continua direct in implementare completa",
+      "Ierarhie vizuală",
+      "UX pentru mobil",
+      "Componente reutilizabile",
+      "Design pregătit pentru implementare",
     ],
-    stats: [
-      { value: "UX", label: "axat pe claritate" },
-      { value: "CTA", label: "plasate strategic" },
-      { value: "100%", label: "responsive" },
-    ],
+    stats: trustStats,
+    caseStudies: portfolioRo,
     painPoints: [
       {
-        title: "Designul pare generic",
+        title: "Pagina pare generică",
         description:
-          "Multe site-uri pierd trafic pentru ca arata interschimbabil si nu spun nimic clar despre brand sau oferta.",
+          "Refac ierarhia și mesajele pornind de la oferta reală, fără secțiuni decorative care nu ajută vizitatorul.",
       },
       {
-        title: "Pagina nu ghideaza utilizatorul",
+        title: "Navigarea este confuză",
         description:
-          "Un design bun ordoneaza informatia, nu doar o decoreaza. Fara ierarhie vizuala, utilizatorul nu stie ce sa faca mai departe.",
+          "Simplific meniurile, ordinea secțiunilor și traseele spre contact, cont sau comandă.",
       },
       {
-        title: "Concurenta inspira mai multa incredere",
+        title: "Versiunea mobilă este neglijată",
         description:
-          "Pentru cautari de tip web design, utilizatorul compara foarte mult semnalele de profesionalism si consistenta vizuala.",
+          "Tratez telefonul ca parte principală a proiectului, nu ca o adaptare făcută la final.",
       },
     ],
     deliverables: [
       {
-        title: "Directie vizuala",
+        title: "Direcție vizuală",
         description:
-          "Stabilim sistemul de layout, tonul vizual, culorile, ritmul sectiunilor si relatia dintre text si CTA.",
+          "Culori, tipografie, spațiere și componente alese pentru conținutul și publicul proiectului.",
       },
       {
-        title: "UX pentru intentie comerciala",
+        title: "Structură UX",
         description:
-          "Fiecare sectiune este gandita sa raspunda unei intrebari: ce oferi, de ce sa te creada, cat de usor este sa te contacteze.",
+          "Ordinea paginilor, secțiunilor și acțiunilor importante, cu limitele explicate clar.",
       },
       {
-        title: "Compatibilitate cu dezvoltarea",
+        title: "Stări responsive",
         description:
-          "Designul este pregatit pentru implementare curata, rapida si coerenta, nu doar pentru o prezentare statica.",
+          "Layout-uri și componente verificate la dimensiuni relevante pentru telefon și desktop.",
       },
       {
-        title: "Conectare cu restul arhitecturii",
+        title: "Implementare coerentă",
         description:
-          "Legam pagina de servicii, preturi si pagini cu intentie mai specifica pentru a sustine rankingul si conversia.",
+          "Designul poate fi construit în același proiect, fără pierdere de context între designer și dezvoltator.",
       },
     ],
-    process: [
-      {
-        title: "Audit vizual",
-        description:
-          "Vedem unde designul actual pierde claritate, incredere sau consistenta fata de intentia comerciala.",
-      },
-      {
-        title: "Structura si mesaje",
-        description:
-          "Reordonam sectiunile in functie de ce trebuie sa afle si sa simta utilizatorul in primele secunde.",
-      },
-      {
-        title: "Design aplicat pe pagini cheie",
-        description:
-          "Prioritizam homepage-ul si landing page-urile cu cerere organica, nu doar pagini secundare.",
-      },
-      {
-        title: "Iteratie dupa date",
-        description:
-          "Ajustam zonele cu CTR slab sau comportament slab dupa lansare, nu presupunem ca prima versiune este perfecta.",
-      },
-    ],
+    process: collaborationProcess,
     faqs: [
       {
-        question: "Web design inseamna doar partea vizuala?",
+        question: "Designul include și versiunea mobilă?",
         answer:
-          "Nu. Partea vizuala este doar una dintre componente. Conteaza la fel de mult ordinea informatiei, CTA-urile si modul in care pagina sustine conversia.",
+          "Da. Stabilesc comportamentul componentelor pentru mobil și desktop, apoi verific paginile în implementare.",
       },
       {
-        question: "Daca am deja un site, pot schimba doar designul?",
+        question: "Poți lucra cu identitatea vizuală existentă?",
         answer:
-          "Da, dar merita facut impreuna cu o verificare a structurii si a intentiei de cautare. Doar schimbarea culorilor nu rezolva o pagina care nu raspunde cautarii.",
+          "Da. Folosesc logo-ul, culorile și materialele existente atunci când sunt potrivite și explic unde apar probleme de lizibilitate sau consistență.",
       },
       {
-        question: "Ce pagina completeaza cel mai bine aceasta intentie?",
+        question: "Livrezi doar macheta sau și site-ul funcțional?",
         answer:
-          "Pagina de creare site pentru componenta comerciala generala si pagina de SEO pentru vizibilitate in Google dupa lansare.",
+          "Pot construi proiectul complet. Dacă ai nevoie doar de design, livrabilele și formatele se stabilesc explicit în ofertă.",
+      },
+      {
+        question: "Web designul garantează mai multe conversii?",
+        answer:
+          "Nu. Un design mai clar poate reduce fricțiunea, dar rezultatele depind și de ofertă, trafic, preț, conținut și modul în care afacerea răspunde cererilor.",
       },
     ],
     relatedLinks: [
       {
         href: "/serviciiBlog/design-web/",
         title: "Serviciul de design web",
-        description:
-          "Versiunea de serviciu, utila daca vrei detalii despre ce include livrarea.",
+        description: "Detalii despre structură, UX, responsive și implementare.",
       },
       {
         href: "/creare-site-chisinau/",
-        title: "Creare site Chisinau",
-        description:
-          "Pagina comerciala pentru cautarile locale de furnizor si executie.",
+        title: "Creare site Chișinău",
+        description: "Colaborare directă pentru proiecte locale și aplicații web.",
       },
       {
-        href: "/serviciiBlog/seo-on-page/",
-        title: "SEO Moldova",
-        description:
-          "Urmatorul pas daca problema nu este doar designul, ci si vizibilitatea in cautare.",
-      },
-      {
-        href: "/contact/",
-        title: "Porneste un proiect de design",
-        description:
-          "Trimite un brief daca ai nevoie de redesign sau de o directie vizuala noua.",
+        href: "/serviciiBlog/dezvoltare-web/",
+        title: "Dezvoltare web Moldova",
+        description: "Implementarea tehnică pentru designul și funcțiile agreate.",
       },
     ],
     primaryCta: {
       href: "/contact/",
-      title: "Solicita un proiect de web design",
-      description: "Cerere pentru redesign sau design nou.",
+      title: "Descrie proiectul de design",
+      description: "Trimite pagina actuală sau explică ce trebuie construit.",
     },
     secondaryCta: {
       href: "/serviciiBlog/design-web/",
       title: "Vezi serviciul complet",
-      description: "Detaliile serviciului de design web.",
+      description: "Detalii practice despre design web.",
     },
     serviceType: "Web design",
-    serviceName: "Web design in Moldova",
+    serviceName: "Web design în Moldova",
     serviceDescription:
-      "Design orientat pe conversie, UX clar si sectiuni comerciale pentru afaceri locale din Chisinau si Moldova.",
+      "Structură UX, design responsive și implementare pentru site-uri și produse web din Moldova.",
     canonicalUrl: "https://chisinauweb.com/web-design-moldova/",
     hreflangRo: "https://chisinauweb.com/web-design-moldova/",
     hreflangRu: "https://chisinauweb.com/ru/web-design-kishinev/",
   },
   {
-    slug: "seo-moldova",
-    navTitle: "SEO Moldova",
-    breadcrumbLabel: "SEO Moldova",
-    title: "Servicii SEO Moldova | Audit on-page si CTR",
-    description:
-      "Servicii SEO in Moldova pentru pagini comerciale si site-uri locale. Audit on-page, structura, meta-taguri si imbunatatirea paginilor cu cerere organica.",
-    heroTag: "Intentie SEO",
-    h1: "SEO in Moldova pentru pagini care deja au impresii, dar nu aduc trafic suficient",
-    intro:
-      "Interogarile precum SEO Moldova, SEO Chisinau si servicii SEO profesionale au nevoie de o pagina dedicata. Intentia este diferita de simplul serviciu tehnic de optimizare.",
-    lead:
-      "Aici pozitionam oferta in jurul rezultatului cautat de client: trafic relevant, CTR mai bun si pagini comerciale mai usor de inteles de Google. Accentul este pe on-page si pe paginile care au deja semnale organice.",
-    highlights: [
-      "Audit pe paginile cu impresii, nu doar pe homepage",
-      "Prioritizare dupa impact comercial",
-      "Meta, structura, linkuri interne si schema",
-      "Recomandari clare pentru continut nou",
-    ],
-    stats: [
-      { value: "Date", label: "bazat pe cautari reale" },
-      { value: "On-page", label: "prioritate initiala" },
-      { value: "CTR", label: "urmarit explicit" },
-    ],
-    painPoints: [
-      {
-        title: "Ai impresii, dar foarte putine clickuri",
-        description:
-          "Exact asta se vede in datele actuale. Google testeaza paginile, dar snippetul si potrivirea cu intentia nu sunt suficient de competitive.",
-      },
-      {
-        title: "Arhitectura nu sustine rankingul",
-        description:
-          "Cand paginile importante nu primesc suficient context intern, Google nu le trateaza ca destinatii comerciale serioase.",
-      },
-      {
-        title: "Nu stii ce pagina sa optimizezi prima",
-        description:
-          "SEO bun incepe cu prioritizare. Nu toate paginile merita aceeasi atentie in acelasi moment.",
-      },
-    ],
-    deliverables: [
-      {
-        title: "Audit pe cluster de intentie",
-        description:
-          "Separat pentru creare site, site de prezentare, web design, SEO si paginile de pret, astfel incat fiecare cluster sa aiba pagina lui.",
-      },
-      {
-        title: "Meta si heading-uri refacute",
-        description:
-          "Rescriem titlurile si descrierile pentru a reflecta exact cautarile cu impresii si pozitiile cele mai promitatoare.",
-      },
-      {
-        title: "Linkuri interne si hub-uri",
-        description:
-          "Intarim conexiunile dintre homepage, preturi, hub-ul de servicii si landing page-urile comerciale dedicate.",
-      },
-      {
-        title: "Plan de continut urmator",
-        description:
-          "Nu ne oprim la fixuri tehnice. Definim si urmatoarele pagini sau articole care pot aduce mai mult trafic relevant.",
-      },
-    ],
-    process: [
-      {
-        title: "Analiza datelor si mapping",
-        description:
-          "Grupam interogarile care deja au volum de impresii si le mapam la paginile corecte sau la pagini noi.",
-      },
-      {
-        title: "Corectii on-page",
-        description:
-          "Refacem meta, structura, textul principal si contextul intern pentru paginile cu cel mai bun potential.",
-      },
-      {
-        title: "Verificare dupa recrawl",
-        description:
-          "Urmarim cum se misca impresiile, pozitia medie si CTR-ul dupa ce Google recrawleaza noile pagini.",
-      },
-      {
-        title: "Extindere pe continut nou",
-        description:
-          "Cand clusterul raspunde bine, adaugam suport cu pagini de pret, localizare sau articole care intaresc tema.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Pagina asta promite SEO complet sau doar on-page?",
-        answer:
-          "Accentul initial este pe on-page, arhitectura si mapping-ul corect al intentiei. Fara asta, nici campaniile off-page nu au fundatie buna.",
-      },
-      {
-        question: "De ce nu este suficienta pagina de serviciu SEO existenta?",
-        answer:
-          "Pentru ca intentia SEO Moldova este mai comerciala si mai locala. Are nevoie de o pagina construita in jurul acelei cautari, nu doar de o descriere generica a serviciului.",
-      },
-      {
-        question: "Cand se vad primele semnale?",
-        answer:
-          "De obicei dupa recrawl si reindexare. Semnalele tehnice si de snippet se pot misca in cateva saptamani, iar cresterea stabila cere iteratie si continut suplimentar.",
-      },
-    ],
-    relatedLinks: [
-      {
-        href: "/serviciiBlog/seo-on-page/",
-        title: "Serviciul SEO on-page",
-        description:
-          "Detaliile tactice despre audit, implementare si ce include livrarea.",
-      },
-      {
-        href: "/web-design-moldova/",
-        title: "Web design Moldova",
-        description:
-          "Pentru situatiile in care CTR-ul slab este cauzat si de lipsa de claritate vizuala.",
-      },
-      {
-        href: "/preturi/",
-        title: "Preturi",
-        description:
-          "Util pentru vizitatorii care compara costul dupa ce au inteles directia SEO.",
-      },
-      {
-        href: "/contact/",
-        title: "Solicita auditul",
-        description:
-          "Pasul direct daca vrei sa discutam paginile cu impresii mici si ranking slab.",
-      },
-    ],
-    primaryCta: {
-      href: "/contact/",
-      title: "Solicita un audit SEO",
-      description: "Cerere pentru audit on-page si prioritizare.",
-    },
-    secondaryCta: {
-      href: "/serviciiBlog/seo-on-page/",
-      title: "Vezi serviciul SEO on-page",
-      description: "Detaliile serviciului tehnic.",
-    },
-    serviceType: "SEO",
-    serviceName: "Servicii SEO in Moldova",
-    serviceDescription:
-      "Audit on-page, optimizare structurala si prioritizare pe paginile comerciale care au deja semnale organice.",
-    canonicalUrl: "https://chisinauweb.com/seo-moldova/",
-    hreflangRo: "https://chisinauweb.com/seo-moldova/",
-    hreflangRu: "https://chisinauweb.com/ru/seo-moldova/",
-  },
-  {
     slug: "site-la-comanda",
-    navTitle: "Site la comanda",
-    breadcrumbLabel: "Site la comanda",
-    title: "Website la comanda Moldova | Solutie la cheie",
+    navTitle: "Site la comandă",
+    breadcrumbLabel: "Site la comandă",
+    title: "Site la comandă Moldova | Website construit pentru afacerea ta",
     description:
-      "Site la comanda in Moldova pentru afaceri locale: strategie, design, dezvoltare, SEO on-page si lansare la cheie.",
-    heroTag: "Intentie comerciala directa",
-    h1: "Site la comanda in Moldova, construit pentru cereri reale",
+      "Site la comandă în Moldova, construit direct cu un dezvoltator independent: structură, design responsive, funcții, SEO on-page și publicare.",
+    heroTag: "Site la comandă · Moldova",
+    h1: "Site la comandă în Moldova, construit pentru utilizare reală",
     intro:
-      "Cautarile site la comanda, site la cheie Moldova si creare site la comanda arata intentie clara de cumparare. Utilizatorul nu cauta teorie, ci un executant care poate livra complet.",
+      "Un website la comandă are sens când proiectul nu încape într-o machetă standard sau are nevoie de formulare, conturi, baze de date, plăți ori fluxuri proprii.",
     lead:
-      "Site la comanda in Moldova, construit pentru cereri reale, inseamna website la comanda Moldova ca solutie la cheie si proces clar pentru clientul care vrea un site facut pentru afacerea lui. Lucram structura, mesajul, designul, implementarea si SEO-ul initial astfel incat site-ul sa poata fi lansat rapid si sa conduca vizitatorul spre contact.",
+      "Încep cu rezultatul dorit și reduc cerințele la o versiune care poate fi construită și verificată. Spun din timp ce este inclus, ce depinde de servicii externe și ce poate rămâne pentru o etapă ulterioară.",
     highlights: [
-      "Site la cheie: structura, design, implementare si lansare",
-      "Potrivit pentru servicii locale, B2B, saloane, clinici si magazine mici",
-      "Pret orientativ clar si recomandare dupa brief",
-      "Conectat cu paginile de preturi, portofoliu si contact",
+      "Cerințe clarificate",
+      "JavaScript și TypeScript",
+      "React, Astro și Cloudflare",
+      "Acces și proprietate explicate",
     ],
-    stats: [
-      { value: "50-300", label: "EUR pachete orientative" },
-      { value: "7-14", label: "zile lucratoare uzuale" },
-      { value: "RO/RU", label: "optional multi-language" },
-    ],
+    stats: trustStats,
+    packages: websitePackages,
+    caseStudies: portfolioRo,
     painPoints: [
       {
-        title: "Vrei un site complet, nu doar design",
+        title: "Ai funcții care nu există într-un pachet standard",
         description:
-          "Un site la comanda trebuie sa includa structura, texte, design, implementare, SEO de baza si lansare, nu doar o macheta frumoasa.",
+          "Conturi, formulare complexe, baze de date, plăți sau automatizări trebuie definite și testate ca fluxuri reale.",
       },
       {
-        title: "Ai nevoie de un executant local",
+        title: "Ideea încă are multe necunoscute",
         description:
-          "Pentru Moldova conteaza contextul local: limba, pretul, viteza de raspuns, exemplele de proiecte si intelegerea afacerilor mici.",
+          "Transform cerințele într-o listă de decizii și propun o primă versiune care poate fi verificată.",
       },
       {
-        title: "Vrei sa compari oferta si urmatorul pas",
+        title: "Vrei să știi ce primești",
         description:
-          "Utilizatorul care cauta site la comanda vrea repede raspuns la trei intrebari: ce include, cat costa orientativ si cum incepe proiectul.",
+          "Stabilesc livrabilele, accesul, dependențele și limitele înainte de implementare.",
       },
     ],
     deliverables: [
       {
-        title: "Brief si recomandare de structura",
+        title: "Plan de implementare",
         description:
-          "Stabilim daca ai nevoie de landing page, site de prezentare, mini-magazin sau o structura mixta pentru lead-uri.",
+          "Descriu paginile, datele, integrările și stările importante înainte de a construi.",
       },
       {
-        title: "Design si continut orientat pe conversie",
+        title: "Interfață și funcții",
         description:
-          "Construim sectiuni care explica oferta, creeaza incredere si duc natural spre formular, telefon sau WhatsApp.",
+          "Construiesc experiența pentru utilizator și logica necesară proiectului, fără funcții adăugate doar pentru impresie.",
       },
       {
-        title: "Dezvoltare si lansare",
+        title: "Verificare practică",
         description:
-          "Implementam site-ul, verificam responsive, viteza, formularele, meta-tagurile si configurarea de baza pentru indexare.",
+          "Testez fluxurile importante, formularele, legăturile și comportamentul responsive înainte de publicare.",
       },
       {
-        title: "SEO on-page initial",
+        title: "Publicare și acces",
         description:
-          "Adaugam title, description, heading-uri, linkuri interne, schema si continut local pentru Moldova si Chisinau.",
+          "Configurez procesul de publicare agreat și predau accesul la resursele proiectului.",
       },
     ],
-    process: [
-      {
-        title: "Discutie scurta",
-        description:
-          "In 15-20 de minute clarificam tipul de site, publicul, bugetul si ce trebuie sa se intample dupa ce omul intra pe pagina.",
-      },
-      {
-        title: "Oferta si plan",
-        description:
-          "Primesti o structura recomandata, un cost orientativ si pasii de lucru, ca sa stii exact ce cumperi.",
-      },
-      {
-        title: "Constructie",
-        description:
-          "Scriem si aranjam continutul, construim pagina/site-ul si legam CTA-urile de formular, telefon sau email.",
-      },
-      {
-        title: "Lansare si verificare",
-        description:
-          "Publicam site-ul, testam paginile principale si pregatim urmatoarele optimizari dupa datele din Google Search Console.",
-      },
-    ],
+    process: collaborationProcess,
     faqs: [
       {
-        question: "Ce inseamna site la comanda?",
+        question: "Cât costă un site la comandă în Moldova?",
         answer:
-          "Inseamna un website construit pentru obiectivul si continutul afacerii tale: structura, design, implementare, SEO de baza si lansare. Nu este doar instalarea unui template.",
+          "Punctele de pornire rămân 50 EUR pentru landing page, 150 EUR pentru site de prezentare și 300 EUR pentru mini-magazin. Funcțiile custom se estimează după clarificarea fluxurilor.",
       },
       {
-        question: "Care este diferenta dintre site la comanda si site de prezentare?",
+        question: "Ce tehnologii folosești?",
         answer:
-          "Site de prezentare este un format concret, de obicei 3-5 pagini. Site la comanda este abordarea completa: alegem formatul potrivit si il adaptam la business.",
+          "Lucrez în principal cu JavaScript, TypeScript, React, Astro, Cloudflare Workers, baze de date și integrări de plată. Aleg doar ce este necesar proiectului.",
       },
       {
-        question: "Cat costa un site la comanda in Moldova?",
+        question: "Poate proiectul fi extins după lansare?",
         answer:
-          "Pentru proiecte mici, pachetele orientative pornesc de la 50 EUR pentru landing page, 150 EUR pentru site de prezentare si 300 EUR pentru mini-magazin. Oferta exacta depinde de brief.",
+          "De regulă, da, dacă extinderea este luată în calcul în structură. Nu promit scalare nelimitată; explic dependențele și costurile când definim proiectul.",
+      },
+      {
+        question: "Folosirea AI înseamnă că proiectul este generat automat?",
+        answer:
+          "Nu. Folosesc instrumente AI pentru analiză și implementare, dar eu definesc rezultatul, inspectez schimbările, testez funcțiile și corectez problemele.",
       },
     ],
     relatedLinks: [
       {
         href: "/preturi/",
-        title: "Preturi site la comanda",
-        description:
-          "Vezi pachetele orientative si ce intra in cost pentru landing, site de prezentare sau mini-magazin.",
+        title: "Prețuri site la comandă",
+        description: "Puncte de pornire și factorii care schimbă costul.",
       },
       {
         href: "/creare-site-chisinau/",
-        title: "Creare site Chisinau",
-        description:
-          "Pagina pentru intentia locala de furnizor in Chisinau si Moldova.",
+        title: "Creare site Chișinău",
+        description: "Colaborare locală direct cu dezvoltatorul.",
       },
       {
         href: "/site-de-prezentare/",
         title: "Site de prezentare",
-        description:
-          "Formatul recomandat pentru servicii locale, B2B si afaceri care vand prin cereri de oferta.",
-      },
-      {
-        href: "/contact/",
-        title: "Solicita oferta",
-        description:
-          "Trimite brief-ul si primesti recomandarea potrivita pentru primul pas.",
+        description: "Varianta potrivită când proiectul are în principal rol informativ și comercial.",
       },
     ],
     primaryCta: {
       href: "/contact/",
-      title: "Solicita oferta pentru site la comanda",
-      description: "Cerere de oferta pentru un site construit la cheie.",
+      title: "Descrie proiectul",
+      description: "Explică problema și ce trebuie să poată face produsul.",
     },
     secondaryCta: {
       href: "/preturi/",
-      title: "Vezi preturile orientative",
-      description: "Compara rapid pachetele de pornire.",
+      title: "Vezi prețurile orientative",
+      description: "Compară punctele de pornire.",
     },
-    serviceType: "Site la comanda",
-    serviceName: "Site la comanda in Moldova",
+    serviceType: "Site la comandă",
+    serviceName: "Site la comandă în Moldova",
     serviceDescription:
-      "Website la cheie pentru afaceri locale: structura, design, dezvoltare, SEO on-page si lansare.",
+      "Website și aplicații web construite pentru cerințe specifice, cu structură, design, implementare, testare și publicare.",
     canonicalUrl: "https://chisinauweb.com/site-la-comanda/",
     hreflangRo: "https://chisinauweb.com/site-la-comanda/",
     hreflangRu: "https://chisinauweb.com/ru/sozdanie-saitov-kishinev/",
   },
-].filter((page) => page.slug !== "seo-moldova");
+];
 
 export const roLandingCards = roLandingPages.map((page) => ({
   href: `/${page.slug}/`,

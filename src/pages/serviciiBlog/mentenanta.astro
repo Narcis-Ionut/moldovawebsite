@@ -11,7 +11,7 @@ const jsonLd = {
       "@type": "WebPage",
       name: "Mentenanță Site Web în Moldova | Actualizări și Suport",
       description:
-        "Servicii profesionale de mentenanță site web în Moldova: actualizări de securitate, backup, optimizare viteză, suport tehnic și modificări de conținut. Asistență în română pentru afaceri din Chișinău și Moldova.",
+        "Mentenanță site web în Moldova de la 25 EUR pe lună, cu scop stabilit după audit: actualizări, backup, verificări și intervenții tehnice.",
       url: "https://chisinauweb.com/serviciiBlog/mentenanta/",
       inLanguage: "ro-MD",
       breadcrumb: {
@@ -43,14 +43,16 @@ const jsonLd = {
       serviceType: "Mentenanță site web",
       name: "Servicii de mentenanță site în Moldova",
       description:
-        "Actualizări de securitate, backup, monitorizare și optimizare de performanță pentru site-uri și magazine online.",
+        "Evaluare și mentenanță pentru site-uri și magazine online, cu actualizări, backup și intervenții definite în oferta proiectului.",
       provider: {
-        "@type": "ProfessionalService",
-        name: "ChisinauWeb.com",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Chișinău",
-          addressCountry: "MD",
+        "@type": "Person",
+        name: "Narcis",
+        url: "https://chisinauweb.com/about/",
+        jobTitle: "Dezvoltator web independent",
+        worksFor: {
+          "@type": "Organization",
+          name: "ChisinauWeb.com",
+          url: "https://chisinauweb.com/",
         },
       },
       areaServed: { "@type": "Country", name: "Moldova" },
@@ -59,7 +61,9 @@ const jsonLd = {
       offers: {
         "@type": "Offer",
         url: "https://chisinauweb.com/contact/",
+        price: "25",
         priceCurrency: "EUR",
+        name: "Mentenanță site de la 25 EUR pe lună",
         availability: "https://schema.org/InStock",
       },
     },
@@ -71,7 +75,7 @@ const jsonLd = {
           name: "Ce include mentenanța lunară a site-ului?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Serviciul include actualizări, backup, verificări de securitate și intervenții tehnice de bază.",
+            text: "Scopul se stabilește după audit și poate include actualizări, verificarea backupului, remedierea erorilor și modificări mici. Frecvența și limitele sunt scrise în ofertă.",
           },
         },
         {
@@ -79,7 +83,7 @@ const jsonLd = {
           name: "Mentenanța ajută la viteză și stabilitate?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Da. Monitorizăm erorile și optimizăm periodic performanța pentru a menține site-ul rapid și stabil.",
+            text: "Mentenanța poate identifica erori și degradări de performanță, dar rezultatul depinde de cod, hosting, trafic și servicii externe. Intervențiile se prioritizează după impact.",
           },
         },
         {
@@ -87,7 +91,7 @@ const jsonLd = {
           name: "Puteți prelua și site-uri făcute de alte echipe?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Da. Facem o evaluare tehnică inițială, apoi propunem un plan de mentenanță potrivit.",
+            text: "Da, după o evaluare tehnică și după ce primesc accesul necesar. Pot refuza sau estima separat un site care are probleme structurale ori tehnologii pe care nu le pot întreține responsabil.",
           },
         },
       ],
@@ -101,7 +105,7 @@ const jsonLd = {
   <head>
     <BaseHead
       title="Mentenanță Site Web în Moldova"
-      description="Mentenanță site web în Moldova: actualizări, backup, securitate, viteză și suport tehnic în română pentru afaceri locale."
+      description="Mentenanță site web în Moldova de la 25 EUR/lună. Audit inițial, actualizări, backup și intervenții cu scop și limite stabilite clar."
       canonicalUrl="https://chisinauweb.com/serviciiBlog/mentenanta/"
       hreflangRo="https://chisinauweb.com/serviciiBlog/mentenanta/"
       hreflangRu="https://chisinauweb.com/ru/serviciiBlog/mentenanta/"
@@ -117,18 +121,16 @@ const jsonLd = {
       <div class="container grid">
         <div class="hero-content">
           <h1>
-            Mentenanță Site Web în Moldova — Protejează și Optimizează
-            Investiția Ta
+            Mentenanță site web în Moldova, cu scop și limite clare
           </h1>
           <p class="subheading">
-            Servicii complete de întreținere tehnică, actualizări de securitate
-            și <strong>suport local</strong> pentru site-uri web și magazine online
-            din Moldova.
+            Sunt Narcis, dezvoltator web independent în Chișinău. Mentenanța
+            pornește de la <strong>25 EUR/lună</strong>, după o verificare a
+            site-ului și stabilirea exactă a actualizărilor, backupului și
+            intervențiilor incluse.
           </p>
           <div class="hero-actions">
-            <a href="/contact/" class="btn btn-primary"
-              >Solicită ofertă gratuită</a
-            >
+            <a href="/contact/" class="btn btn-primary">Cere evaluare</a>
           </div>
         </div>
       </div>
@@ -138,42 +140,36 @@ const jsonLd = {
     <section class="content-section">
       <div class="container">
         <div class="section-title">
-          <h2>De ce este esențială mentenanța site-ului tău</h2>
+          <h2>Ce rezolvă mentenanța unui site</h2>
           <p>
-            Un site web necesită întreținere regulată pentru performanță,
-            securitate și eficiență.
+            Mentenanța reduce riscul ca actualizările, erorile sau schimbările
+            serviciilor externe să rămână neobservate. Nu este o garanție că un
+            site nu va avea incidente.
           </p>
         </div>
 
         <div class="content-grid">
           <div class="content-block">
-            <p class="service-card-title">Protecție împotriva amenințărilor de securitate</p>
+            <p class="service-card-title">Actualizări și verificări tehnice</p>
             <p>
-              Hackerii vizează constant site-urile web, indiferent de mărimea
-              afacerii. Mentenanța regulată asigură:
+              După ce înțeleg tehnologia și accesul disponibil, pot include:
             </p>
             <ul>
-              <li>
-                Actualizări de securitate pentru toate componentele site-ului
-              </li>
-              <li>Protecție împotriva vulnerabilităților nou descoperite</li>
-              <li>
-                Backup regulat al datelor pentru recuperare în caz de incident
-              </li>
-              <li>
-                Monitorizare pentru activități suspecte sau tentative de acces
-                neautorizat
-              </li>
+              <li>actualizarea componentelor care intră în responsabilitatea mea;</li>
+              <li>verificarea erorilor apărute după o actualizare;</li>
+              <li>controlul formularelor, certificatelor și rutelor importante;</li>
+              <li>verificarea existenței și utilizabilității unei copii de siguranță.</li>
             </ul>
             <p>
-              Fără actualizări regulate, site-ul tău devine vulnerabil la
-              atacuri care pot duce la pierderi financiare și de reputație.
+              Frecvența backupului și locul unde este păstrat depind de hosting,
+              baza de date și cât de des se schimbă conținutul. Aceste detalii
+              se scriu în ofertă, nu se presupun.
             </p>
           </div>
           <div class="content-image">
             <img
               src="/assets/mentenanta-1.webp"
-              alt="Securitate web pentru site-uri din Moldova"
+              alt="Verificări tehnice pentru mentenanța unui site"
               width="500"
               height="300"
               loading="lazy"
@@ -183,31 +179,28 @@ const jsonLd = {
 
         <div class="content-grid reverse">
           <div class="content-block">
-            <p class="service-card-title">Performanță optimă și viteză crescută</p>
+            <p class="service-card-title">Erori și performanță</p>
             <p>
-              Un site lent pierde vizitatori și vânzări. Serviciile noastre de
-              mentenanță includ:
+              Un site poate încetini din cauza imaginilor, codului, bazei de
+              date, hostingului sau unui serviciu terț. În funcție de proiect,
+              verific:
             </p>
             <ul>
-              <li>Optimizare regulată a bazei de date</li>
-              <li>Curățare de fișiere temporare și cache</li>
-              <li>Compresie și optimizare imagini</li>
-              <li>
-                Actualizare plugin-uri și module pentru performanță mai bună
-              </li>
-              <li>
-                Monitorizare timpilor de încărcare și îmbunătățiri continue
-              </li>
+              <li>resursele și imaginile încărcate pe paginile importante;</li>
+              <li>erorile din aplicație sau din răspunsurile serverului;</li>
+              <li>schimbări de performanță după actualizări;</li>
+              <li>problemele care pot fi reproduse pe mobil sau desktop.</li>
             </ul>
             <p>
-              Aceste optimizări tehnice mențin site-ul tău rapid și receptiv,
-              îmbunătățind experiența utilizatorilor și pozițiile în Google.
+              Recomandarea poate fi o corecție locală, o schimbare de hosting
+              sau un proiect separat. Mentenanța nu garantează un scor, o
+              poziție în Google sau disponibilitate neîntreruptă.
             </p>
           </div>
           <div class="content-image">
             <img
               src="/assets/mentenanta-2.webp"
-              alt="Optimizare viteză site web în Moldova"
+              alt="Diagnostic de performanță pentru un site web"
               width="500"
               height="300"
               loading="lazy"
@@ -217,24 +210,24 @@ const jsonLd = {
 
         <div class="content-grid">
           <div class="content-block">
-            <p class="service-card-title">Suport tehnic și modificări de conținut</p>
-            <p>Un partener de încredere pentru toate nevoile tale de web:</p>
+            <p class="service-card-title">Intervenții și modificări convenite</p>
+            <p>În ofertă se notează exact ce tip de cereri intră în abonament:</p>
             <ul>
-              <li>Asistență tehnică promptă în limba română sau rusă</li>
-              <li>Actualizări de conținut și modificări de design la cerere</li>
-              <li>Adăugare de funcționalități noi când afacerea ta crește</li>
-              <li>Consultanță pentru îmbunătățiri și optimizări</li>
-              <li>Rapoarte periodice despre starea site-ului</li>
+              <li>corectarea unei erori reproductibile;</li>
+              <li>schimbări mici de text, imagine sau date de contact;</li>
+              <li>verificarea unei integrări deja existente;</li>
+              <li>recomandări pentru probleme care cer un proiect separat.</li>
             </ul>
             <p>
-              Cu serviciile noastre de mentenanță, ai un departament IT la
-              dispoziție fără costurile unui angajat permanent.
+              Funcțiile noi, redesignul, migrarea, recuperarea după un incident
+              major și intervențiile urgente sunt estimate separat dacă nu apar
+              explicit în acord.
             </p>
           </div>
           <div class="content-image">
             <img
               src="/assets/mentenanta-3.webp"
-              alt="Suport tehnic pentru site-uri web din Moldova"
+              alt="Intervenții de mentenanță pentru un site web"
               width="500"
               height="300"
               loading="lazy"
@@ -248,9 +241,10 @@ const jsonLd = {
     <section class="process">
       <div class="container">
         <div class="section-title">
-          <h2>Cum funcționează serviciile noastre de mentenanță</h2>
+          <h2>Cum funcționează mentenanța</h2>
           <p>
-            Proces simplu și eficient pentru întreținerea site-ului tău web.
+            Nu preiau un site fără să înțeleg mai întâi starea lui și accesul
+            disponibil.
           </p>
         </div>
 
@@ -259,32 +253,32 @@ const jsonLd = {
             <div class="step-number">1</div>
             <p class="step-title">Analiză inițială</p>
             <p class="step-desc">
-              Evaluăm starea actuală a site-ului, identificăm probleme și
-              stabilim priorități care Protejează și Optimizează.
+              Verific tehnologia, hostingul, actualizările, erorile vizibile și
+              modul în care sunt făcute copiile de siguranță.
             </p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <p class="step-title">Plan de mentenanță</p>
             <p class="step-desc">
-              Creăm un program personalizat de întreținere, adaptat nevoilor
-              specifice ale site-ului tău.
+              Propun ce merită verificat, frecvența, canalul de comunicare,
+              timpul de răspuns și ce rămâne în afara abonamentului.
             </p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
             <p class="step-title">Mentenanță regulată</p>
             <p class="step-desc">
-              Implementăm actualizări, optimizări și backup-uri conform
-              programului stabilit.
+              Fac verificările și intervențiile agreate și notez schimbările
+              care pot afecta funcționarea site-ului.
             </p>
           </div>
           <div class="step">
             <div class="step-number">4</div>
             <p class="step-title">Raportare și recomandări</p>
             <p class="step-desc">
-              Primești rapoarte periodice și sugestii pentru îmbunătățiri
-              viitoare.
+              Primești o explicație scurtă despre ce am schimbat, ce rămâne de
+              urmărit și ce necesită o ofertă separată.
             </p>
           </div>
         </div>
@@ -295,9 +289,10 @@ const jsonLd = {
     <section class="services">
       <div class="container">
         <div class="section-title">
-          <h2>Ce include serviciul nostru de mentenanță web</h2>
+          <h2>Ce poate include serviciul de mentenanță web</h2>
           <p>
-            Soluții complete pentru întreținerea și optimizarea site-ului tău.
+            Elementele de mai jos se aleg după audit și se scriu cu frecvență și
+            limite concrete în oferta de mentenanță.
           </p>
         </div>
 
@@ -306,48 +301,48 @@ const jsonLd = {
             <div class="service-icon">🔒</div>
             <p class="service-title">Actualizări de securitate</p>
             <p class="service-desc">
-              Actualizări regulate pentru CMS, plugin-uri și componente pentru
-              protecție maximă.
+              Actualizarea componentelor întreținute și verificarea problemelor
+              apărute după schimbare.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">💾</div>
             <p class="service-title">Backup regulat</p>
             <p class="service-desc">
-              Copii de siguranță complete ale site-ului și bazei de date,
-              stocate în locații sigure.
+              Verificarea sau configurarea copiilor de siguranță în funcție de
+              hosting și ritmul de modificare a datelor.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">⚡</div>
             <p class="service-title">Optimizare performanță</p>
             <p class="service-desc">
-              Îmbunătățiri tehnice pentru viteză de încărcare și experiență
-              fluidă.
+              Diagnostic și corecții punctuale; refactorizările mari se
+              estimează separat.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">📊</div>
-            <p class="service-title">Monitorizare uptime</p>
+            <p class="service-title">Verificări de disponibilitate</p>
             <p class="service-desc">
-              Verificare constantă a disponibilității site-ului și intervenție
-              rapidă în caz de probleme.
+              Monitorizare numai dacă este inclusă și configurată; nu presupune
+              supraveghere sau intervenție permanentă.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">📝</div>
             <p class="service-title">Actualizări conținut</p>
             <p class="service-desc">
-              Modificări de texte, imagini și produse la cerere (număr limitat
-              inclus în pachet).
+              Modificări mici convenite; paginile noi și schimbările de structură
+              nu sunt incluse implicit.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🛠️</div>
             <p class="service-title">Suport tehnic</p>
             <p class="service-desc">
-              Asistență prin email, telefon sau chat pentru orice problemă
-              tehnică.
+              Comunicare directă cu mine, în canalul și intervalul de răspuns
+              stabilite în ofertă.
             </p>
           </div>
         </div>
@@ -358,52 +353,52 @@ const jsonLd = {
     <section class="pricing">
       <div class="container">
         <div class="section-title">
-          <h2>Pachete de mentenanță pentru afaceri din Moldova</h2>
-          <p>Soluții flexibile adaptate nevoilor și bugetului tău.</p>
+          <h2>Mentenanță site web de la 25 EUR pe lună</h2>
+          <p>
+            Prețul de pornire este pentru un scop restrâns, stabilit după audit.
+            Oferta finală depinde de tehnologie, risc, acces și frecvența
+            schimbărilor.
+          </p>
         </div>
 
         <div class="pricing-grid">
           <div class="price-card card1">
-            <p class="service-card-title">Pachet Basic</p>
-            <div class="price">de la 30 EUR/lună</div>
+            <p class="service-card-title">Mentenanță de bază</p>
+            <div class="price">de la 25 EUR/lună</div>
             <ul>
-              <li>Actualizări de securitate lunare</li>
-              <li>Backup săptămânal</li>
-              <li>Monitorizare uptime</li>
-              <li>2 ore de asistență tehnică/lună</li>
-              <li>Raport lunar de performanță</li>
+              <li>audit inițial înainte de preluare;</li>
+              <li>lista exactă a componentelor întreținute;</li>
+              <li>frecvența actualizărilor și a verificărilor agreată;</li>
+              <li>reguli clare pentru backup și restaurare;</li>
+              <li>canal și interval de răspuns stabilite în ofertă.</li>
             </ul>
             <a href="/contact/" class="btn btn-primary">Solicită ofertă</a>
           </div>
 
-          <div class="price-card card2 featured">
-            <div class="popular-tag">Popular</div>
-            <p class="service-card-title">Pachet Business</p>
-            <div class="price">de la 60 EUR/lună</div>
+          <div class="price-card card2">
+            <p class="service-card-title">Ce poate schimba prețul</p>
+            <div class="price">după audit</div>
             <ul>
-              <li>Actualizări de securitate săptămânale</li>
-              <li>Backup zilnic</li>
-              <li>Optimizare performanță lunară</li>
-              <li>5 ore de asistență tehnică/lună</li>
-              <li>Actualizări de conținut (până la 10/lună)</li>
-              <li>Raport detaliat bilunar</li>
+              <li>magazin online sau date care se schimbă frecvent;</li>
+              <li>mai multe integrări și servicii externe;</li>
+              <li>cod vechi ori fără documentație;</li>
+              <li>cereri de conținut sau funcții noi;</li>
+              <li>nevoia unui timp de răspuns mai scurt.</li>
             </ul>
-            <a href="/contact/" class="btn btn-primary">Solicită ofertă</a>
+            <a href="/contact/" class="btn btn-primary">Cere evaluare</a>
           </div>
 
           <div class="price-card card3">
-            <p class="service-card-title">Pachet Premium</p>
-            <div class="price">de la 100 EUR/lună</div>
+            <p class="service-card-title">Ce nu este inclus automat</p>
+            <div class="price">se estimează separat</div>
             <ul>
-              <li>Actualizări de securitate săptămânale</li>
-              <li>Backup zilnic în locații multiple</li>
-              <li>Optimizare performanță săptămânală</li>
-              <li>10 ore de asistență tehnică/lună</li>
-              <li>Actualizări de conținut nelimitate</li>
-              <li>Monitorizare 24/7 cu alertare</li>
-              <li>Raport detaliat săptămânal</li>
+              <li>suport permanent sau intervenții non-stop;</li>
+              <li>modificări în afara limitei scrise în ofertă;</li>
+              <li>redesign, migrare sau funcții noi;</li>
+              <li>recuperare după incidente anterioare;</li>
+              <li>costurile hostingului și ale furnizorilor terți.</li>
             </ul>
-            <a href="/contact/" class="btn btn-primary">Solicită ofertă</a>
+            <a href="/contact/" class="btn btn-primary">Descrie site-ul</a>
           </div>
         </div>
       </div>
@@ -415,8 +410,8 @@ const jsonLd = {
         <div class="section-title">
           <h2>Întrebări frecvente despre mentenanța site-urilor web</h2>
           <p>
-            Răspunsuri la cele mai comune întrebări despre serviciile noastre de
-            mentenanță.
+            Ce trebuie verificat înainte să preiau un site și cum se stabilește
+            scopul lunar.
           </p>
         </div>
 
@@ -426,48 +421,39 @@ const jsonLd = {
               >Ce se întâmplă dacă nu fac mentenanță la site-ul web?</summary
             >
             <p>
-              Fără mentenanță regulată, site-ul tău devine vulnerabil la atacuri
-              de securitate, poate deveni instabil, încet sau chiar inaccesibil.
-              Componentele neactualizate pot cauza erori de funcționare, iar în
-              timp site-ul poate deveni incompatibil cu browserele moderne. În
-              plus, un site neîntreținut poate afecta negativ pozițiile în
-              motoarele de căutare și rata de conversie.
+              Componentele și serviciile externe se schimbă. Fără verificări,
+              actualizările pot rămâne nefăcute, formularele se pot opri, iar o
+              eroare poate fi observată târziu. Riscul diferă mult între un site
+              static și un magazin cu conturi și plăți.
             </p>
           </details>
           <details>
             <summary>Pot face mentenanța singur pentru site-ul meu?</summary>
             <p>
-              Deși anumite aspecte ale mentenanței pot fi realizate de
-              proprietarii de site-uri (cum ar fi actualizări simple de
-              conținut), majoritatea aspectelor tehnice necesită cunoștințe
-              specializate. Actualizările de securitate, optimizările de
-              performanță și remedierea problemelor tehnice sunt mai bine
-              gestionate de profesioniști pentru a evita erorile care pot afecta
-              funcționalitatea site-ului.
+              Da, dacă ai documentație, acces și un proces de backup testat.
+              Actualizările de conținut pot fi simple. Înainte de schimbări de
+              cod, baze de date sau integrări este important să știi cum revii
+              la versiunea anterioară dacă apare o problemă.
             </p>
           </details>
           <details>
             <summary>Cât de des trebuie să fac backup la site-ul meu?</summary>
             <p>
-              Frecvența backup-urilor depinde de cât de des se schimbă
-              conținutul site-ului tău. Pentru site-uri statice, un backup
-              săptămânal poate fi suficient. Pentru magazine online sau site-uri
-              cu actualizări frecvente, recomandăm backup-uri zilnice. Este
-              esențial să ai copii de siguranță stocate în locații diferite de
-              site-ul principal pentru a asigura recuperarea în caz de incident
-              major.
+              Frecvența depinde de cât de multe date s-ar pierde între două
+              copii și de ce oferă hostingul. O copie este utilă doar dacă poate
+              fi găsită și restaurată. De aceea stabilesc frecvența și
+              responsabilitatea după audit, nu folosesc aceeași regulă pentru
+              toate site-urile.
             </p>
           </details>
           <details>
             <summary>Mă puteți ajuta cu un site creat de altă companie?</summary
             >
             <p>
-              Da, oferim servicii de mentenanță pentru site-uri create de alte
-              companii sau freelanceri. Începem cu o analiză completă a
-              site-ului pentru a identifica structura, tehnologiile folosite și
-              potențialele probleme. Apoi, putem prelua întreaga mentenanță sau
-              putem colabora cu echipa existentă pentru a asigura
-              funcționalitatea optimă a site-ului tău.
+              Da, după o evaluare a codului, tehnologiei, accesului și problemelor
+              cunoscute. Dacă site-ul nu poate fi întreținut responsabil fără o
+              reparație inițială sau o migrare, explic acest lucru și estimez
+              separat lucrarea.
             </p>
           </details>
         </div>
@@ -478,13 +464,13 @@ const jsonLd = {
     <section class="cta-section">
       <div class="container grid">
         <div class="cta-container">
-          <h2>Pregătit să-ți protejezi investiția în site-ul web?</h2>
+          <h2>Ai un site care trebuie verificat sau întreținut?</h2>
           <p class="subheading">
-            Solicită o evaluare gratuită a site-ului tău și află cum putem
-            optimiza și proteja prezența ta online.
+            Trimite-mi adresa site-ului, tehnologia dacă o cunoști și problemele
+            observate. Îți spun ce pot prelua, ce trebuie reparat întâi și ce
+            ar include abonamentul.
           </p>
-          <a href="/contact/" class="btn btn-primary">Solicită ofertă gratuită</a
-          >
+          <a href="/contact/" class="btn btn-primary">Cere evaluare</a>
         </div>
       </div>
     </section>
